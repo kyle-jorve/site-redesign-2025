@@ -1,5 +1,5 @@
 import { SocialMediaType, NavType, NavItemType } from "@/types/global-types";
-import GumroadIcon from "@/styles/components/icons/gumroad-icon";
+import GumroadIcon from "@/components/icons/gumroad-icon";
 
 export const socialMedia: {
 	[index: string]: SocialMediaType;
@@ -37,7 +37,7 @@ export const socialMedia: {
 	},
 };
 
-export const nav: NavType = [
+export const navItems: NavType = [
 	{
 		name: "projects",
 		label: "Projects",
@@ -51,7 +51,7 @@ export const nav: NavType = [
 	{
 		name: "social",
 		label: "Social",
-		childItems: (() => {
+		children: (() => {
 			const socials = Object.entries(socialMedia).filter(
 				([_, value]) => value.type === "standard",
 			);
@@ -64,3 +64,12 @@ export const nav: NavType = [
 		})(),
 	},
 ];
+
+export const copyrightText = (
+	<>
+		&copy; Copyright {new Date().getFullYear()} Kyle Jorve. All rights
+		reserved.
+		<br />
+		Website designed and built by Kyle Jorve.
+	</>
+);
