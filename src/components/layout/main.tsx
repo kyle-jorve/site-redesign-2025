@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import SiteContext from "@/context/global-context";
+import SiteContext from "@/site-context";
 
 export default function Main({
 	children,

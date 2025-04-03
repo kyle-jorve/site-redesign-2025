@@ -1,0 +1,6 @@
+@layer global {
+	.image {
+		&.loaded {
+		}
+	}
+}

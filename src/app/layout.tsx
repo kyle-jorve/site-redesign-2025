@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { SiteContextProvider } from "@/context/global-context";
+import { SiteContextProvider } from "@/site-context";
 import Main from "@/components/layout/main";
 
 export const metadata: Metadata = {

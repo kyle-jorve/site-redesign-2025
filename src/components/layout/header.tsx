@@ -1,14 +1,12 @@
-import { HeaderProps } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
+import { printClassNames } from "@/utils";
 import Logo from "./logo";
 import Navigation from "./navigation";
 import styles from "@/styles/components/layout/header.module.css";
 
+export type HeaderProps = React.HTMLAttributes<HTMLElement>;
+
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const classes = printClassNames([
-		styles.header,
-		...className.trim().split(" "),
-	]);
+	const classes = printClassNames([styles.header, className]);
 
 	return (
 		<header

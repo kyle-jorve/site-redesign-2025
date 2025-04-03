@@ -1,10 +1,16 @@
 "use client";
 
-import { ParentNavItemProps } from "@/types/global-types";
+import { NavItemType } from "@/types/global-types";
 import { useState, useEffect, useRef } from "react";
-import { printClassNames } from "@/utils/utils";
+import { printClassNames } from "@/utils";
 import NavItem from "./nav-item";
-import styles from "@/styles/components/layout/nav.module.css";
+import styles from "@/styles/components/layout/navigation.module.css";
+
+export type ParentNavItemProps = {
+	id: string;
+	label: string;
+	childItems: NavItemType[];
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export default function ParentNavItem({
 	id,
@@ -18,7 +24,7 @@ export default function ParentNavItem({
 	const classes = printClassNames([
 		styles["nav-parent"],
 		expanded ? styles.expanded : "",
-		...className.trim().split(" "),
+		className,
 	]);
 
 	useEffect(() => {

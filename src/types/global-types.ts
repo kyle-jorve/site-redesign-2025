@@ -1,5 +1,3 @@
-// ----- DATA TYPES ----- //
-
 export type SiteContextType = {
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
@@ -7,6 +5,7 @@ export type SiteContextType = {
 };
 
 export type ImageDataType = {
+	name: string;
 	sources: {
 		url: string;
 		minScreenWidth: number;
@@ -37,29 +36,3 @@ export type NavItemParentType = {
 };
 
 export type NavType = (NavItemType | NavItemParentType)[];
-
-// ----- COMPONENT PROPS -----//
-
-export type CustomLinkProps = {
-	to: string;
-	onClick?: React.MouseEventHandler;
-} & React.PropsWithChildren &
-	Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
-
-export type HeaderProps = React.HTMLAttributes<HTMLElement>;
-
-export type LogoProps = React.HTMLAttributes<HTMLAnchorElement>;
-
-export type NavigationProps = React.HTMLAttributes<HTMLElement>;
-
-export type NavItemProps = {
-	url: string;
-	onClick?: React.MouseEventHandler;
-} & React.PropsWithChildren &
-	React.AnchorHTMLAttributes<HTMLAnchorElement>;
-
-export type ParentNavItemProps = {
-	id: string;
-	label: string;
-	childItems: NavItemType[];
-} & React.HTMLAttributes<HTMLDivElement>;

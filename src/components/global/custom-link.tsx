@@ -1,10 +1,15 @@
 "use client";
 
-import { CustomLinkProps } from "@/types/global-types";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import Link from "next/link";
-import SiteContext from "@/context/global-context";
+import SiteContext from "@/site-context";
+
+export type CustomLinkProps = {
+	to: string;
+	onClick?: React.MouseEventHandler;
+} & React.PropsWithChildren &
+	Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 export default function CustomLink({
 	to,

@@ -1,8 +1,13 @@
-import { NavItemProps } from "@/types/global-types";
 import { useRouter } from "next/router";
-import { printClassNames } from "@/utils/utils";
-import CustomLink from "./custom-link";
-import styles from "@/styles/components/layout/nav.module.css";
+import { printClassNames } from "@/utils";
+import CustomLink from "../global/custom-link";
+import styles from "@/styles/components/layout/navigation.module.css";
+
+export type NavItemProps = {
+	url: string;
+	onClick?: React.MouseEventHandler;
+} & React.PropsWithChildren &
+	React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export default function NavItem({
 	url,
@@ -14,7 +19,7 @@ export default function NavItem({
 	const classes = printClassNames([
 		styles["nav-item"],
 		router.pathname.startsWith(url) ? styles.current : "",
-		...className.trim().split(" "),
+		className,
 	]);
 
 	return (

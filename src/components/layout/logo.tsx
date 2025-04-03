@@ -1,13 +1,11 @@
-import { LogoProps } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
-import CustomLink from "./custom-link";
+import { printClassNames } from "@/utils";
+import CustomLink from "../global/custom-link";
 import styles from "@/styles/components/layout/header.module.css";
 
+export type LogoProps = React.HTMLAttributes<HTMLAnchorElement>;
+
 export default function Logo({ className = "", ...otherProps }: LogoProps) {
-	const classes = printClassNames([
-		styles.logo,
-		...className.trim().split(" "),
-	]);
+	const classes = printClassNames([styles.logo, className]);
 
 	return (
 		<CustomLink
