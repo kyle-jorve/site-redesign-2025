@@ -1,6 +1,6 @@
 import { printClassNames } from "@/utils";
-import Logo from "./logo";
-import Navigation from "./navigation";
+import Logo from "@/components/layout/logo";
+import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";
 
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;

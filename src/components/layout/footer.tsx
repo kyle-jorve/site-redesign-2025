@@ -1,6 +1,6 @@
 import { printClassNames } from "@/utils";
 import { copyrightText } from "@/data/global-data";
-import FooterIcons from "./footer-icons";
+import SocialIcons from "@/components/global/social-icons";
 import styles from "@/styles/components/layout/footer.module.css";
 
 export type FooterProps = React.HTMLAttributes<HTMLElement>;
@@ -14,7 +14,7 @@ export default function Footer({ className = "", ...otherProps }: FooterProps) {
 			{...otherProps}
 		>
 			<p className={styles.copyright}>{copyrightText}</p>
-			<FooterIcons />
+			<SocialIcons className={styles["footer-icons"]} />
 		</footer>
 	);
 }

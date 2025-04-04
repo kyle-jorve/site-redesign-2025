@@ -1,0 +1,57 @@
+@layer typography {
+	h1,
+	.heading-1 {
+	}
+
+	h2,
+	.heading-2 {
+		&.alt {
+		}
+	}
+
+	h3,
+	.heading-3 {
+	}
+
+	h4,
+	.heading-4 {
+	}
+
+	h5,
+	.heading-5 {
+	}
+
+	h6,
+	.heading-6 {
+	}
+
+	.superheading {
+	}
+
+	.page-title {
+	}
+
+	.supertitle {
+	}
+
+	p,
+	.body-text {
+		&.large {
+		}
+
+		&.small {
+		}
+	}
+
+	a,
+	.link {
+	}
+
+	.content-box {
+		&.small {
+		}
+
+		&.resume-item {
+		}
+	}
+}

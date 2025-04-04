@@ -1,0 +1,20 @@
+.filters {
+	.filter-menu-wrapper {
+	}
+
+	.filter-menu-button {
+	}
+
+	.filter-menu {
+		&.open {
+		}
+	}
+
+	.filter-chip {
+		&.red {
+		}
+
+		&.light {
+		}
+	}
+}

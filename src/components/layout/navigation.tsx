@@ -1,7 +1,7 @@
 import { navItems } from "@/data/global-data";
 import { printClassNames } from "@/utils";
-import NavItem from "./nav-item";
-import ParentNavItem from "./parent-nav-item";
+import NavItem from "@/components/layout/nav-item";
+import ParentNavItem from "@/components/layout/parent-nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 
 export type NavigationProps = React.HTMLAttributes<HTMLElement>;

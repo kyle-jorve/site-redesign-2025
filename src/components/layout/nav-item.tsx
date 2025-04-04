@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { printClassNames } from "@/utils";
-import CustomLink from "../global/custom-link";
+import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/navigation.module.css";
 
 export type NavItemProps = {

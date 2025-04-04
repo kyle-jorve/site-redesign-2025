@@ -35,7 +35,7 @@ export const socialMedia: {
 		label: "Digital Shop",
 		icon: <GumroadIcon />,
 	},
-};
+} as const;
 
 export const navItems: NavType = [
 	{
@@ -63,7 +63,7 @@ export const navItems: NavType = [
 			})) as NavItemType[];
 		})(),
 	},
-];
+] as const;
 
 export const copyrightText = (
 	<>

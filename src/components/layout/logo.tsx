@@ -1,5 +1,5 @@
 import { printClassNames } from "@/utils";
-import CustomLink from "../global/custom-link";
+import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/header.module.css";
 
 export type LogoProps = React.HTMLAttributes<HTMLAnchorElement>;

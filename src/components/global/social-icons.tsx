@@ -1,14 +1,17 @@
 import { printClassNames } from "@/utils";
-import CustomLink from "../global/custom-link";
+import CustomLink from "@/components/global/custom-link";
 import { socialMedia } from "@/data/global-data";
-import styles from "@/styles/components/layout/footer.module.css";
+import styles from "@/styles/components/global/social-icons.module.css";
 
-export type FooterIconsProps = React.HTMLAttributes<HTMLDivElement>;
+export type SocialIconsProps = {
+	color?: "dark" | "light" | "red";
+} & React.HTMLAttributes<HTMLDivElement>;
 
-export default function FooterIcons({
+export default function SocialIcons({
+	color = "dark",
 	className = "",
 	...otherProps
-}: FooterIconsProps) {
+}: SocialIconsProps) {
 	const classes = printClassNames([styles.social, className]);
 
 	return (
@@ -22,7 +25,7 @@ export default function FooterIcons({
 						key={key}
 						className={`${styles["social-icon"]} ${styles[key]} ${
 							styles[value.type]
-						}`}
+						} ${styles[color]}`}
 						to={value.url}
 						target="_blank"
 						rel="noreferrer"

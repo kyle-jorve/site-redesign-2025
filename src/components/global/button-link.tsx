@@ -1,10 +1,10 @@
-import CustomLink from "./custom-link";
+import CustomLink from "@/components/global/custom-link";
 import { printClassNames } from "@/utils";
 
 export type ButtonLinkType = {
 	url: string;
 	color?: "light" | "red" | "dark";
-	type?: "standard" | "filter" | "back" | "contact";
+	type?: "standard" | "back" | "contact";
 } & React.PropsWithChildren &
 	Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 

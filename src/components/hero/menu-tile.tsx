@@ -1,13 +1,13 @@
 import { ImageDataType } from "@/types/global-types";
 import { printClassNames } from "@/utils";
-import ButtonLink from "./global/button-link";
-import ResponsiveImage from "./global/responsive-image";
-import styles from "@/styles/components/menu-tile.module.css";
+import ButtonLink from "@/components/global/button-link";
+import ResponsiveImage from "@/components/global/responsive-image";
+import styles from "@/styles/components/hero/menu-tile.module.css";
 
 export type MenuTileProps = {
 	title: string;
 	url: string;
-	buttonText: string;
+	buttonText?: string;
 	image?: ImageDataType;
 	type?: "square" | "long";
 } & React.HTMLAttributes<HTMLElement>;
@@ -15,7 +15,7 @@ export type MenuTileProps = {
 export default function MenuTile({
 	title,
 	url,
-	buttonText,
+	buttonText = "See More",
 	image = undefined,
 	type = "square",
 	className = "",
@@ -33,14 +33,15 @@ export default function MenuTile({
 			{...otherProps}
 		>
 			<div className={styles.inner}>
-				<h2 className={styles.title}>{title}</h2>
+				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
 
 				<div className={styles["button-row"]}>
 					<ButtonLink
-						className="button dark"
 						url={url}
 						color="dark"
-					></ButtonLink>
+					>
+						{buttonText}
+					</ButtonLink>
 				</div>
 
 				<div

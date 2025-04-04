@@ -3,7 +3,7 @@
 import { NavItemType } from "@/types/global-types";
 import { useState, useEffect, useRef } from "react";
 import { printClassNames } from "@/utils";
-import NavItem from "./nav-item";
+import NavItem from "@/components/layout/nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 
 export type ParentNavItemProps = {

@@ -1,0 +1,30 @@
+.social {
+	.social-icon {
+		&.light {
+		}
+
+		&.red {
+		}
+
+		&.commerce {
+		}
+
+		&.instagram {
+		}
+
+		&.bluesky {
+		}
+
+		&.linkedin {
+		}
+
+		&.youtube {
+		}
+
+		&.email {
+		}
+
+		&.gumroad {
+		}
+	}
+}
