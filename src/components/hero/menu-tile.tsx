@@ -1,18 +1,13 @@
-import { ImageDataType } from "@/types/global-types";
+import { MenuTileType } from "@/types/hero-types";
 import { printClassNames } from "@/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/hero/menu-tile.module.css";
+import styles from "@/styles/components/hero/menu-tiles.module.css";
 
-export type MenuTileProps = {
-	title: string;
-	url: string;
-	buttonText?: string;
-	image?: ImageDataType;
-	type?: "square" | "long";
-} & React.HTMLAttributes<HTMLElement>;
+export type MenuTileProps = MenuTileType & React.HTMLAttributes<HTMLElement>;
 
 export default function MenuTile({
+	name,
 	title,
 	url,
 	buttonText = "See More",

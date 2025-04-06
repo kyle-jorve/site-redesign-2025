@@ -3,15 +3,6 @@
 		.icon {
 		}
 
-		&.light {
-		}
-
-		&.red {
-		}
-
-		&.dark {
-		}
-
 		&.filter {
 		}
 
@@ -19,6 +10,35 @@
 		}
 
 		&.contact {
+		}
+
+		&.light {
+		}
+
+		&.dark {
+		}
+	}
+
+	.circle-button {
+		&.heart {
+		}
+
+		&.heart-solid {
+		}
+
+		&.plus {
+		}
+
+		&.arrow-left {
+		}
+
+		&.arrow-right {
+		}
+
+		&.light {
+		}
+
+		&.dark {
 		}
 	}
 }

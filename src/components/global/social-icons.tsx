@@ -8,7 +8,7 @@ export type SocialIconsProps = {
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function SocialIcons({
-	color = "dark",
+	color = "red",
 	className = "",
 	...otherProps
 }: SocialIconsProps) {

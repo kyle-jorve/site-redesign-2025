@@ -1,28 +1,17 @@
-import { ImageDataType } from "@/types/global-types";
+import { FeatureType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils";
-import { CategoryType } from "@/types/gallery-types";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/feature.module.css";
 
-export type FeatureProps = {
-	title: string;
-	description: string;
-	url: string;
-	image: ImageDataType;
-	buttonText?: string;
-	alignment?: "image-left" | "image-right";
-	number?: string;
-	category?: CategoryType;
-	supertitle?: string;
-} & React.HTMLAttributes<HTMLElement>;
+export type FeatureProps = FeatureType & React.HTMLAttributes<HTMLElement>;
 
 export default function Feature({
 	title,
 	description,
-	url,
 	image,
+	url = undefined,
 	buttonText = "See More",
 	alignment = "image-right",
 	number = undefined,
@@ -62,9 +51,11 @@ export default function Feature({
 					{description}
 				</p>
 
-				<div className={styles["button-row"]}>
-					<ButtonLink url={url}>{buttonText}</ButtonLink>
-				</div>
+				{!!url && (
+					<div className={styles["button-row"]}>
+						<ButtonLink url={url}>{buttonText}</ButtonLink>
+					</div>
+				)}
 			</div>
 
 			<div className={styles["image-col"]}>

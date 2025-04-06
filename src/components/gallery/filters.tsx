@@ -1,30 +1,25 @@
 "use client";
 
-import { CategoryType } from "@/types/gallery-types";
+import { useState, useContext } from "react";
 import { printClassNames } from "@/utils";
-import { useState } from "react";
+import SiteContext from "@/site-context";
 import FilterChip from "@/components/gallery/filter-chip";
 import styles from "@/styles/components/gallery/filters.module.css";
 
-export type FiltersProps = {
-	categories: CategoryType[];
-	activeCategories: CategoryType[];
-	handleChipClick: (id: string) => void;
-} & React.HTMLAttributes<HTMLDivElement>;
+export type FiltersProps = React.HTMLAttributes<HTMLDivElement>;
 
 export default function Filters({
-	categories,
-	activeCategories,
-	handleChipClick,
 	className = "",
 	...otherProps
 }: FiltersProps) {
+	const context = useContext(SiteContext);
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 	const classes = printClassNames([styles.filters, className]);
 	const filterMenuID = "filter-menu";
-	const availableFilters = categories.filter(
-		(cat) => !activeCategories.some((acat) => acat.name === cat.name),
+	const availableFilters = context.projectFilters.filter(
+		(cat) => !cat.active,
 	);
+	const activeFilters = context.projectFilters.filter((cat) => cat.active);
 
 	return (
 		<div
@@ -52,8 +47,41 @@ export default function Filters({
 					id={filterMenuID}
 					aria-hidden={!menuOpen}
 				>
-					{availableFilters.map((filter) => {})}
+					{availableFilters.map((filter) => {
+						return (
+							<button
+								key={filter.name}
+								className={styles["add-filter-button"]}
+								aria-label={`add ${filter.label} project filter`}
+								onClick={() =>
+									context.updateFilters(filter.name)
+								}
+							>
+								{filter.label}
+							</button>
+						);
+					})}
 				</div>
+			</div>
+
+			<div className={styles["filter-chips"]}>
+				{activeFilters.map((filter) => {
+					return (
+						<FilterChip
+							key={filter.name}
+							category={filter}
+							handleClick={context.updateFilters}
+						/>
+					);
+				})}
+
+				<button
+					className={styles["clear-filters-button"]}
+					aria-label="remove all project filters"
+					onClick={() => context.setProjectFilters([])}
+				>
+					Clear Filters
+				</button>
 			</div>
 		</div>
 	);

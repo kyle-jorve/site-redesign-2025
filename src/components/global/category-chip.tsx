@@ -1,14 +1,12 @@
 import { CategoryType } from "@/types/gallery-types";
-import { NavItemType } from "@/types/global-types";
 import { printClassNames } from "@/utils";
-import { navItems } from "@/data/global-data";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/global/category-chips.module.css";
 
 export type CategoryChipProps = {
 	category: CategoryType;
 	addLink?: boolean;
-	size?: "large" | "small";
+	size?: "large" | "small" | "extra-small";
 	color?: "yellow" | "red" | "green";
 } & Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
 	React.HTMLAttributes<HTMLSpanElement>;
@@ -27,9 +25,7 @@ export default function CategoryChip({
 		styles[color],
 		className,
 	]);
-	const url = `${
-		(navItems.find((item) => item.name === "projects") as NavItemType).url
-	}?categories=[${category.name}]`;
+	const url = `/projects?categories=[${category.name}]`;
 
 	return addLink ? (
 		<CustomLink

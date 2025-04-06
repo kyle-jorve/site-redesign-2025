@@ -10,11 +10,20 @@
 		}
 	}
 
+	.add-filter-button {
+	}
+
+	.filter-chips {
+	}
+
 	.filter-chip {
 		&.red {
 		}
 
 		&.light {
 		}
+	}
+
+	.clear-filters-button {
 	}
 }

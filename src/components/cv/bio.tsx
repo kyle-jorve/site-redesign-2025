@@ -1,7 +1,5 @@
-import { NavItemType } from "@/types/global-types";
 import { printClassNames } from "@/utils";
 import { bio } from "@/data/cv-data";
-import { navItems } from "@/data/global-data";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
@@ -19,9 +17,7 @@ export default function Bio({
 	const classes = printClassNames([styles.bio, styles[placement], className]);
 	const isHero = placement === "hero";
 	const Heading = (isHero ? "h1" : "h2") as React.ElementType;
-	const url = `${
-		(navItems.find((item) => item.name === "cv") as NavItemType).url
-	}#resume`;
+	const url = "/cv#resume";
 
 	return (
 		<section

@@ -1,9 +1,3 @@
-export type SiteContextType = {
-	loadStatus: "idle" | "page-out" | "page-in";
-	mainRef: React.RefObject<HTMLElement | null> | null;
-	setLoadStatus: Function;
-};
-
 export type ImageDataType = {
 	name: string;
 	sources: {
