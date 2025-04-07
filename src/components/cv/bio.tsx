@@ -1,23 +1,30 @@
+import { HeadingType } from "@/types/global-types";
+import { BioType } from "@/types/cv-types";
 import { printClassNames } from "@/utils";
-import { bio } from "@/data/cv-data";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
 import styles from "@/styles/components/cv/bio.module.css";
 
-export type BioProps = {
+export type BioProps = BioType & {
 	placement?: "hero" | "body";
+	heading?: HeadingType;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function Bio({
+	title,
+	body,
+	image,
+	url = "/cv#resume",
+	buttonText = <>See R&eacute;sum&eacute;</>,
 	placement = "body",
+	heading = "h2",
 	className = "",
 	...otherProps
 }: BioProps) {
 	const classes = printClassNames([styles.bio, styles[placement], className]);
 	const isHero = placement === "hero";
-	const Heading = (isHero ? "h1" : "h2") as React.ElementType;
-	const url = "/cv#resume";
+	const Heading = heading as React.ElementType;
 
 	return (
 		<section
@@ -26,15 +33,15 @@ export default function Bio({
 		>
 			<article className={styles.inner}>
 				<div className={`content-box ${styles["content-col"]}`}>
-					<Heading className={styles.title}>{bio.title}</Heading>
+					<Heading className={styles.title}>{title}</Heading>
 
-					{bio.body}
+					{body}
 
 					{isHero ? (
 						<SocialIcons className={styles["bio-icons"]} />
 					) : (
 						<div className={styles["button-row"]}>
-							<ButtonLink url={url}>{bio.buttonText}</ButtonLink>
+							<ButtonLink url={url}>{buttonText}</ButtonLink>
 						</div>
 					)}
 				</div>
@@ -43,7 +50,7 @@ export default function Bio({
 					<div className={styles["image-wrapper"]}>
 						<ResponsiveImage
 							className={styles.image}
-							image={bio.image}
+							image={image}
 						/>
 					</div>
 				</div>

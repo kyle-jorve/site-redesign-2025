@@ -3,12 +3,17 @@ import { ImageDataType } from "@/types/global-types";
 export type CategoryType = {
 	name: string;
 	label: string;
+	primary?: boolean;
 	active?: boolean;
+	hidden?: boolean;
 };
 
-export type CategoriesType = CategoryType[];
+export type CategoriesType = {
+	[index: string]: CategoryType;
+};
 
 export type FeatureType = {
+	name: string;
 	title: string;
 	description: string;
 	image: ImageDataType;
@@ -23,16 +28,22 @@ export type FeatureType = {
 export type ProjectTileType = {
 	name: string;
 	title: string;
-	categories: CategoriesType;
-	faved: boolean;
-	thumbImage: ImageDataType;
+	categories: CategoryType[];
+	thumbImage: {
+		square: ImageDataType;
+		long: ImageDataType;
+		small: ImageDataType;
+		feature: ImageDataType;
+	};
+	featured?: boolean;
 };
 
 export type ProjectType = ProjectTileType & {
 	slideshow: ImageDataType[];
-	summary?: string;
+	summary: string;
 	problemText?: string;
 	solutionText?: string;
+	url?: string;
 	progressSteps?: FeatureType[];
 	descriptionTitle?: string;
 	descriptionBody?: React.ReactElement;

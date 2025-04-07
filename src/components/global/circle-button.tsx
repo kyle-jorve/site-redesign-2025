@@ -4,7 +4,7 @@ export type CircleButtonProps = {
 	icon: "heart" | "heart-solid" | "plus" | "arrow-left" | "arrow-right";
 	"aria-label": string;
 	color?: "light" | "red" | "dark";
-} & Exclude<React.HTMLAttributes<HTMLButtonElement>, "aria-label">;
+} & Omit<React.HTMLAttributes<HTMLButtonElement>, "aria-label">;
 
 export default function CircleButton({
 	icon,

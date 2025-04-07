@@ -3,9 +3,10 @@ import { printClassNames } from "@/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/feature.module.css";
+import styles from "@/styles/components/gallery/feature-grid.module.css";
 
-export type FeatureProps = FeatureType & React.HTMLAttributes<HTMLElement>;
+export type FeatureProps = Omit<FeatureType, "name"> &
+	React.HTMLAttributes<HTMLElement>;
 
 export default function Feature({
 	title,

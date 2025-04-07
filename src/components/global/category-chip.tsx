@@ -8,7 +8,7 @@ export type CategoryChipProps = {
 	addLink?: boolean;
 	size?: "large" | "small" | "extra-small";
 	color?: "yellow" | "red" | "green";
-} & Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
+} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> &
 	React.HTMLAttributes<HTMLSpanElement>;
 
 export default function CategoryChip({

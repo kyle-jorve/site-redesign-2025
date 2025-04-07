@@ -1,3 +1,13 @@
+.project-grid {
+	.projects {
+	}
+}
+
+.project-grid-interior {
+	.projects {
+	}
+}
+
 .project-tile {
 	.content {
 	}
@@ -15,6 +25,11 @@
 	}
 
 	.image {
+	}
+
+	.featured-flag {
+		&.small {
+		}
 	}
 
 	&.long {

@@ -1,15 +1,25 @@
 "use client";
 
 import { useRef } from "react";
+import { ImageDataType } from "@/types/global-types";
+import { MenuTileType } from "@/types/hero-types";
 import { printClassNames } from "@/utils";
-import { heroImage, supertitle, title } from "@/data/home-data";
-import ResponsiveImage from "../global/responsive-image";
-import MenuTiles from "./menu-tiles";
+import ResponsiveImage from "@/components/global/responsive-image";
+import MenuTiles from "@/components/hero/menu-tiles";
 import styles from "@/styles/components/hero/home-hero.module.css";
 
-export type HomeHeroProps = React.HTMLAttributes<HTMLElement>;
+export type HomeHeroProps = {
+	title: string;
+	heroImage: ImageDataType;
+	supertitle?: string;
+	menuTiles?: MenuTileType[];
+} & React.HTMLAttributes<HTMLElement>;
 
 export default function HomeHero({
+	title,
+	heroImage,
+	supertitle = undefined,
+	menuTiles = undefined,
 	className = "",
 	...otherProps
 }: HomeHeroProps) {
@@ -59,7 +69,12 @@ export default function HomeHero({
 				</div>
 			</div>
 
-			<MenuTiles ref={menuTilesRef} />
+			{menuTiles !== undefined && (
+				<MenuTiles
+					tiles={menuTiles}
+					ref={menuTilesRef}
+				/>
+			)}
 
 			<div className={styles["image-wrapper"]}>
 				<ResponsiveImage

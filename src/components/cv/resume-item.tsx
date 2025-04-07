@@ -1,27 +1,23 @@
-import { printClassNames } from "@/utils";
+import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
+import { printClassNames } from "@/utils";
 import styles from "@/styles/components/cv/resume.module.css";
 
-export type ResumeItemProps = Exclude<ResumeItemType, "id"> &
-	React.HTMLAttributes<HTMLLIElement>;
+export type ResumeItemProps = Omit<ResumeItemType, "name"> & {
+	heading?: HeadingType;
+} & React.HTMLAttributes<HTMLLIElement>;
 
 export default function ResumeItem({
 	title,
 	description,
-	startYear = undefined,
-	endYear = undefined,
+	heading = "h4",
 	company = undefined,
 	year = undefined,
 	className = "",
 	...otherProps
 }: ResumeItemProps) {
 	const classes = printClassNames([styles["resume-item"], className]);
-	const yearString = (() => {
-		if (startYear !== undefined && endYear !== undefined)
-			return `${startYear} - ${endYear}`;
-		if (year !== undefined) return String(year);
-		return null;
-	})();
+	const Heading = heading as React.ElementType;
 
 	return (
 		<li
@@ -31,13 +27,11 @@ export default function ResumeItem({
 			<div
 				className={`content-box medium ${styles["resume-item-content"]}`}
 			>
-				{!!yearString && (
-					<span className={`heading-5 ${styles.year}`}>
-						{yearString}
-					</span>
+				{year !== undefined && (
+					<span className={`heading-5 ${styles.year}`}>{year}</span>
 				)}
 
-				<h4 className={styles.title}>{title}</h4>
+				<Heading className={styles.title}>{title}</Heading>
 
 				{company !== undefined && (
 					<span className={`heading-5 ${styles.company}`}>

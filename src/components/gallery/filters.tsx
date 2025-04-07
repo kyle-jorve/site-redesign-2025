@@ -12,14 +12,12 @@ export default function Filters({
 	className = "",
 	...otherProps
 }: FiltersProps) {
-	const context = useContext(SiteContext);
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
+	const { filters, setFilters, updateFilters } = useContext(SiteContext);
 	const classes = printClassNames([styles.filters, className]);
 	const filterMenuID = "filter-menu";
-	const availableFilters = context.projectFilters.filter(
-		(cat) => !cat.active,
-	);
-	const activeFilters = context.projectFilters.filter((cat) => cat.active);
+	const availableFilters = filters.filter((cat) => !cat.active);
+	const activeFilters = filters.filter((cat) => cat.active);
 
 	return (
 		<div
@@ -53,9 +51,7 @@ export default function Filters({
 								key={filter.name}
 								className={styles["add-filter-button"]}
 								aria-label={`add ${filter.label} project filter`}
-								onClick={() =>
-									context.updateFilters(filter.name)
-								}
+								onClick={() => updateFilters(filter.name)}
 							>
 								{filter.label}
 							</button>
@@ -70,7 +66,7 @@ export default function Filters({
 						<FilterChip
 							key={filter.name}
 							category={filter}
-							handleClick={context.updateFilters}
+							handleClick={updateFilters}
 						/>
 					);
 				})}
@@ -78,7 +74,7 @@ export default function Filters({
 				<button
 					className={styles["clear-filters-button"]}
 					aria-label="remove all project filters"
-					onClick={() => context.setProjectFilters([])}
+					onClick={() => setFilters([])}
 				>
 					Clear Filters
 				</button>

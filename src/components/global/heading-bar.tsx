@@ -1,23 +1,30 @@
 import { printClassNames } from "@/utils";
+import { HeadingType } from "@/types/global-types";
 import ButtonLink from "@/components/global/button-link";
 import styles from "@/styles/components/global/heading-bar.module.css";
 
 export type HeadingBarProps = {
-	title: string;
-	url: string;
-	heading?: "h2" | "h3" | "h4" | "h5" | "h6";
+	title: string | React.ReactElement;
+	width?: "wide" | "narrow";
+	url?: string;
+	heading?: HeadingType;
 	buttonText?: string;
-} & React.HTMLAttributes<HTMLElement>;
+} & Omit<React.HTMLAttributes<HTMLElement>, "title">;
 
 export default function HeadingBar({
 	title,
-	url,
+	width = "wide",
+	url = undefined,
 	heading = "h2",
 	buttonText = "See More",
 	className = "",
 	...otherProps
 }: HeadingBarProps) {
-	const classes = printClassNames([styles["heading-bar"], className]);
+	const classes = printClassNames([
+		styles["heading-bar"],
+		styles[width],
+		className,
+	]);
 	const Heading = heading as React.ElementType;
 
 	return (
@@ -26,7 +33,10 @@ export default function HeadingBar({
 			{...otherProps}
 		>
 			<Heading className={styles.title}>{title}</Heading>
-			<ButtonLink url={url}>{buttonText}</ButtonLink>
+
+			{url !== undefined && (
+				<ButtonLink url={url}>{buttonText}</ButtonLink>
+			)}
 		</header>
 	);
 }

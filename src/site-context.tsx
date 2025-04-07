@@ -1,16 +1,18 @@
 import React, { useState, useRef } from "react";
-import { CategoriesType } from "@/types/gallery-types";
-import { categories } from "@/data/gallery-data";
+import { CategoryType } from "@/types/gallery-types";
+import { projectFilters } from "@/data/gallery-data";
 
 export type SiteContextType = {
 	favedProjects: string[];
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
-	projectFilters: CategoriesType;
+	filters: CategoryType[];
 
-	setFavedProjects: Function;
-	setLoadStatus: Function;
-	setProjectFilters: Function;
+	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
+	setLoadStatus: React.Dispatch<
+		React.SetStateAction<"idle" | "page-out" | "page-in">
+	>;
+	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	updateFilters: (id: string) => void;
 };
 
@@ -18,11 +20,11 @@ const SiteContext = React.createContext<SiteContextType>({
 	favedProjects: [],
 	loadStatus: "idle",
 	mainRef: null,
-	projectFilters: [],
+	filters: [],
 
 	setFavedProjects: () => {},
 	setLoadStatus: () => {},
-	setProjectFilters: () => {},
+	setFilters: () => {},
 	updateFilters: () => {},
 });
 
@@ -32,12 +34,13 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	const [favedProjects, setFavedProjects] = useState<string[]>([]);
 	const [loadStatus, setLoadStatus] =
 		useState<SiteContextType["loadStatus"]>("idle");
-	const [projectFilters, setProjectFilters] =
-		useState<SiteContextType["projectFilters"]>(categories);
+	const [filters, setFilters] = useState<SiteContextType["filters"]>(
+		Object.values(projectFilters),
+	);
 	const mainRef = useRef<HTMLElement>(null);
 
 	function updateFilters(id: string) {
-		setProjectFilters((prev) => {
+		setFilters((prev) => {
 			return prev.map((cat) => {
 				if (cat.name === id && cat.active) cat.active = false;
 				else if (cat.name === id) cat.active = true;
@@ -52,12 +55,12 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				favedProjects,
 				loadStatus,
 				mainRef,
-				projectFilters,
+				filters,
 
 				setFavedProjects,
 				setLoadStatus,
 				updateFilters,
-				setProjectFilters,
+				setFilters,
 			}}
 		>
 			{children}

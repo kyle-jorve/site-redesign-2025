@@ -6,7 +6,7 @@ export type ButtonLinkType = {
 	color?: "light" | "red" | "dark";
 	type?: "standard" | "back" | "contact";
 } & React.PropsWithChildren &
-	Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
+	Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 export default function ButtonLink({
 	url,

@@ -9,7 +9,7 @@ export type CustomLinkProps = {
 	to: string;
 	onClick?: React.MouseEventHandler;
 } & React.PropsWithChildren &
-	Exclude<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
+	Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
 
 export default function CustomLink({
 	to,
@@ -20,7 +20,7 @@ export default function CustomLink({
 	...otherProps
 }: CustomLinkProps) {
 	const router = useRouter();
-	const context = useContext(SiteContext);
+	const { mainRef, setLoadStatus } = useContext(SiteContext);
 	const classes = className.trim();
 	const linkIsExternal =
 		to.includes("http") || target !== "_self" || !!otherProps.download;
@@ -33,7 +33,7 @@ export default function CustomLink({
 
 		if (url.pathname === router.pathname) return;
 
-		context.mainRef?.current?.addEventListener(
+		mainRef?.current?.addEventListener(
 			"transitionend",
 			() => {
 				router.push(href);
@@ -41,7 +41,7 @@ export default function CustomLink({
 			{ once: true },
 		);
 
-		context.setLoadStatus("page-out");
+		setLoadStatus("page-out");
 
 		onClick(event);
 	}

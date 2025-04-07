@@ -1,4 +1,9 @@
-import { BioType } from "@/types/cv-types";
+import { socialMedia } from "@/data/global-data";
+import { BioType, ResumeType } from "@/types/cv-types";
+
+export const featuredWorkTitle = "Featured Work";
+export const featuredWorkUrl = "/projects/";
+export const featuredWorkButtonText = "See All Projects";
 
 export const bio: BioType = {
 	title: "About Me",
@@ -28,18 +33,180 @@ export const bio: BioType = {
 			</p>
 		</>
 	),
+	url: "/cv#resume",
 	buttonText: <>See R&eacute;sum&eacute;</>,
 	image: {
 		name: "bio-image",
 		sources: [
 			{
-				url: "/fake-url.jpg",
+				url: "https://placehold.co/664x790",
 				minScreenWidth: 640,
 			},
 		],
-		mobileSource: "/fake-url.jpg",
+		mobileSource: "https://placehold.co/640",
 		alt: "a portrait of Kyle Jorve",
 		width: 680,
 		height: 800,
 	},
+};
+
+export const resume: ResumeType = {
+	title: <>R&eacute;sum&eacute;</>,
+	url: socialMedia.email.url,
+	buttonText: "Contact Me",
+	sections: [
+		{
+			name: "experience",
+			title: "Experience",
+			items: [
+				{
+					name: "experience-item-1",
+					title: "Job Title",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year - Year",
+					company: "Company",
+				},
+				{
+					name: "experience-item-2",
+					title: "Job Title",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year - Year",
+					company: "Company",
+				},
+				{
+					name: "experience-item-3",
+					title: "Job Title",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year - Year",
+					company: "Company",
+				},
+			],
+		},
+		{
+			name: "skills",
+			title: "Skills",
+			items: [
+				{
+					name: "skills-item-1",
+					title: "Skill",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+				},
+				{
+					name: "skills-item-2",
+					title: "Skill",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+				},
+				{
+					name: "skills-item-3",
+					title: "Skill",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+				},
+			],
+		},
+		{
+			name: "education",
+			title: "Education",
+			items: [
+				{
+					name: "education-item-1",
+					title: "Degree",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year",
+				},
+				{
+					name: "education-item-2",
+					title: "Degree",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year",
+				},
+				{
+					name: "education-item-3",
+					title: "Degree",
+					description: (
+						<p>
+							Eventually, you do plan to have dinosaurs on your
+							dinosaur tour, right? You know what? It is beets.
+							I&apos;ve crashed into a beet truck. Just my luck,
+							no ice. Yeah, but John, if The Pirates of the
+							Caribbean breaks down, the pirates don&apos;t eat
+							the tourists.
+						</p>
+					),
+					year: "Year",
+				},
+			],
+		},
+	],
 };

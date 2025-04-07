@@ -8,11 +8,11 @@ export type MainProps = React.PropsWithChildren<
 >;
 
 export default function Main({ children, ...otherProps }: MainProps) {
-	const context = useContext(SiteContext);
+	const { mainRef } = useContext(SiteContext);
 
 	return (
 		<main
-			ref={context.mainRef}
+			ref={mainRef}
 			{...otherProps}
 		>
 			{children}

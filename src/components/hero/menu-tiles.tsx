@@ -1,13 +1,15 @@
 import { forwardRef } from "react";
+import { MenuTileType } from "@/types/hero-types";
 import { printClassNames } from "@/utils";
-import { menuTiles } from "@/data/home-data";
-import MenuTile from "./menu-tile";
+import MenuTile from "@/components/hero/menu-tile";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
 
-export type MenuTilesProps = React.HTMLAttributes<HTMLDivElement>;
+export type MenuTilesProps = {
+	tiles: MenuTileType[];
+} & React.HTMLAttributes<HTMLDivElement>;
 
 const MenuTiles = forwardRef<HTMLDivElement, MenuTilesProps>(function MenuTiles(
-	{ className = "", ...otherProps },
+	{ tiles, className = "", ...otherProps },
 	ref,
 ) {
 	const classes = printClassNames([styles["menu-tiles"], className]);
@@ -18,7 +20,7 @@ const MenuTiles = forwardRef<HTMLDivElement, MenuTilesProps>(function MenuTiles(
 			ref={ref}
 			{...otherProps}
 		>
-			{menuTiles.map((tile) => {
+			{tiles.map((tile) => {
 				return (
 					<MenuTile
 						key={`${tile.name}-menu-tile`}

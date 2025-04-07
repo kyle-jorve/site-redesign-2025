@@ -1,3 +1,8 @@
+.feature-grid {
+	.features {
+	}
+}
+
 .feature {
 	.content-col {
 	}
@@ -10,6 +15,7 @@
 
 	.supertitle {
 	}
+
 	.title {
 	}
 
@@ -26,5 +32,8 @@
 	}
 
 	.image {
+	}
+
+	&.image-left {
 	}
 }

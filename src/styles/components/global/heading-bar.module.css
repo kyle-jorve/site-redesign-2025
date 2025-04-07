@@ -1,4 +1,7 @@
 .heading-bar {
 	.title {
 	}
+
+	&.narrow {
+	}
 }
