@@ -4,7 +4,7 @@ import { printClassNames } from "@/utils";
 import SiteContext from "@/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
-import styles from "@/styles/components/gallery/project-grid.module.css";
+import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectGridProps = {
 	projects: ProjectTileType[];

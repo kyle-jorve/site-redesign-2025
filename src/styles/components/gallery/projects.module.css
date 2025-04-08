@@ -1,0 +1,86 @@
+.fave-button {
+}
+
+.project-grid {
+	.projects {
+	}
+}
+
+.project-grid-interior {
+	.projects {
+	}
+}
+
+.project-tile {
+	.content {
+	}
+
+	.categories-row {
+	}
+
+	.title {
+	}
+
+	.image-wrapper {
+	}
+
+	.fave-button {
+	}
+
+	.image {
+	}
+
+	.featured-flag {
+		&.small {
+		}
+	}
+
+	&.long {
+	}
+
+	&.small {
+	}
+}
+
+.project-slideshow {
+	.arrows {
+	}
+
+	.arrow {
+		&.prev {
+		}
+
+		&.next {
+		}
+	}
+
+	.dots {
+	}
+
+	.dot {
+		&.active {
+		}
+	}
+
+	.slide-track {
+	}
+
+	.slides {
+	}
+
+	.slide {
+		&.active {
+		}
+	}
+
+	.slide-image {
+	}
+}
+
+.problem-solution-row {
+	.title {
+	}
+
+	.desc {
+	}
+}

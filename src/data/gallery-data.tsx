@@ -708,6 +708,37 @@ export const projects: ProjectType[] = [
 	},
 ];
 
+export const projectsByName = (() => {
+	const returnObj: {
+		[index: string]: ProjectType;
+	} = {};
+
+	projects.forEach((proj) => {
+		returnObj[proj.name] = proj;
+	});
+
+	return returnObj;
+})();
+
+export const projectsByCategory = (() => {
+	const returnObj: {
+		[index: string]: ProjectType[];
+	} = {};
+
+	projects.forEach((proj) => {
+		const primaryCat =
+			proj.categories.find((cat) => cat.primary) || proj.categories[0];
+
+		if (Object.keys(returnObj).includes(primaryCat.name)) {
+			returnObj[primaryCat.name].push(proj);
+		} else {
+			returnObj[primaryCat.name] = [proj];
+		}
+	});
+
+	return returnObj;
+})();
+
 export const featuredProjects: ProjectType[] = projects.filter(
 	(proj) => proj.featured,
 );

@@ -3,7 +3,7 @@ import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils";
 import ProjectTile from "@/components/gallery/project-tile";
 import HeadingBar from "@/components/global/heading-bar";
-import styles from "@/styles/components/gallery/project-grid.module.css";
+import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectGridInteriorProps = {
 	title: string;

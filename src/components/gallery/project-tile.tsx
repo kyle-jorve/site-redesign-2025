@@ -1,14 +1,12 @@
-import { useContext } from "react";
 import { ProjectTileType } from "@/types/gallery-types";
 import { HeadingType, ImageDataType } from "@/types/global-types";
 import { printClassNames } from "@/utils";
-import SiteContext from "@/site-context";
 import CategoryChip from "@/components/global/category-chip";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import CircleButton from "@/components/global/circle-button";
+import FavButton from "./fav-button";
 import FeaturedFlag from "@/components/gallery/featured-flag";
-import styles from "@/styles/components/gallery/project-grid.module.css";
+import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectTileProps = Omit<ProjectTileType, "thumbImage"> & {
 	thumbnail: ImageDataType;
@@ -27,25 +25,13 @@ export default function ProjectTile({
 	className = "",
 	...otherProps
 }: ProjectTileProps) {
-	const { favedProjects, setFavedProjects } = useContext(SiteContext);
-	const faved = favedProjects.includes(name);
 	const classes = printClassNames([
 		styles["project-tile"],
 		styles[variant],
-		faved ? styles.faved : "",
 		className,
 	]);
 	const Heading = heading as React.ElementType;
 	const url = `/projects/${name}/`;
-
-	function handleFaveClick(id: string) {
-		setFavedProjects((prev) => {
-			const isFaved = prev.includes(id);
-
-			if (isFaved) return prev.filter((fav) => fav !== id);
-			return [...prev, id];
-		});
-	}
 
 	return (
 		<article
@@ -80,14 +66,9 @@ export default function ProjectTile({
 			<div className={styles["image-wrapper"]}>
 				{featured && <FeaturedFlag />}
 
-				<CircleButton
-					className={styles["fave-button"]}
-					icon={faved ? "heart-solid" : "heart"}
-					color="light"
-					aria-label={`${faved ? "remove" : "add"} ${title} ${
-						faved ? "from" : "to"
-					} favorites`}
-					onClick={() => handleFaveClick(name)}
+				<FavButton
+					projectID={name}
+					projectTitle={title}
 				/>
 
 				<ResponsiveImage
