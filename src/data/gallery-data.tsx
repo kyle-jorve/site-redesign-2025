@@ -6,6 +6,8 @@ import {
 
 export const pageTitle = "Projects";
 export const pageSummary = "I love to bring my ideas to life.";
+export const relatedProjectsTitle = "See Also";
+export const relatedProjectsButtonText = "See More";
 
 export const categories: CategoriesType = {
 	design: {
@@ -596,7 +598,10 @@ export const projects: ProjectType[] = [
 		summary: `Some summary text. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck.`,
 		problemText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
 		solutionText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
-		url: "https://www.irvingtexas.com/",
+		link: {
+			url: "https://www.irvingtexas.com/",
+			text: "Visit Website",
+		},
 		progressSteps: [
 			{
 				name: "visit-irving-progress-step-1",

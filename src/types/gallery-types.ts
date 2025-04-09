@@ -43,7 +43,10 @@ export type ProjectType = ProjectTileType & {
 	summary: string;
 	problemText?: string;
 	solutionText?: string;
-	url?: string;
+	link?: {
+		url: string;
+		text: string;
+	};
 	progressSteps?: FeatureType[];
 	descriptionTitle?: string;
 	descriptionBody?: React.ReactElement;

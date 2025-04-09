@@ -1,4 +1,5 @@
 import { ImageDataType } from "@/types/global-types";
+import { categories } from "@/data/gallery-data";
 import { MenuTileType } from "@/types/hero-types";
 
 export const heroImage: ImageDataType = {
@@ -23,7 +24,7 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "design-illustration",
 		title: "Design + Illustration",
-		url: `/projects?categories=[design,illustration]`,
+		url: `/projects?categories=[${categories.design.name},${categories.illustration.name}]`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "design-illustration-menu-tile-image",
@@ -42,7 +43,7 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "development",
 		title: "Development",
-		url: `/projects?categories=[development]`,
+		url: `/projects?categories=[${categories.development.name}]`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "development-menu-tile-image",
@@ -61,7 +62,7 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "writing",
 		title: "Writing",
-		url: `/projects?categories=[writing]`,
+		url: `/projects?categories=[${categories.writing.name}]`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "writing-menu-tile-image",

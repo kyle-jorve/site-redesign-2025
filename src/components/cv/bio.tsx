@@ -4,6 +4,7 @@ import { printClassNames } from "@/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
+import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/cv/bio.module.css";
 
 export type BioProps = BioType & {
@@ -32,7 +33,7 @@ export default function Bio({
 			{...otherProps}
 		>
 			<article className={styles.inner}>
-				<div className={`content-box ${styles["content-col"]}`}>
+				<ContentBox className={styles["content-col"]}>
 					<Heading className={styles.title}>{title}</Heading>
 
 					{body}
@@ -44,7 +45,7 @@ export default function Bio({
 							<ButtonLink url={url}>{buttonText}</ButtonLink>
 						</div>
 					)}
-				</div>
+				</ContentBox>
 
 				<div className={styles["image-col"]}>
 					<div className={styles["image-wrapper"]}>

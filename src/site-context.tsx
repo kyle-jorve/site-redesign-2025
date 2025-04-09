@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef } from "react";
 import { CategoryType } from "@/types/gallery-types";
 import { projectFilters } from "@/data/gallery-data";

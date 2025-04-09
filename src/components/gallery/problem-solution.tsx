@@ -1,5 +1,6 @@
 import { ProjectType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils";
+import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProblemSolutionProps = {
@@ -37,9 +38,9 @@ export default function ProblemSolution({
 		>
 			{data.map((item) => {
 				return (
-					<div
+					<ContentBox
 						key={item.name}
-						className="content-box small"
+						size="small"
 					>
 						<h2 className={`heading-5 ${styles.title}`}>
 							{item.title}
@@ -48,7 +49,7 @@ export default function ProblemSolution({
 						<p className={`body-text small ${styles.desc}`}>
 							{item.desc}
 						</p>
-					</div>
+					</ContentBox>
 				);
 			})}
 		</div>

@@ -4,7 +4,7 @@ import { printClassNames } from "@/utils";
 import CategoryChip from "@/components/global/category-chip";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import FavButton from "./fav-button";
+import FavButton from "@/components/gallery/fav-button";
 import FeaturedFlag from "@/components/gallery/featured-flag";
 import styles from "@/styles/components/gallery/projects.module.css";
 

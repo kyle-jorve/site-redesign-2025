@@ -1,6 +1,7 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
 import { printClassNames } from "@/utils";
+import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/cv/resume.module.css";
 
 export type ResumeItemProps = Omit<ResumeItemType, "name"> & {
@@ -24,8 +25,9 @@ export default function ResumeItem({
 			className={classes}
 			{...otherProps}
 		>
-			<div
-				className={`content-box medium ${styles["resume-item-content"]}`}
+			<ContentBox
+				size="medium"
+				className={styles["resume-item-content"]}
 			>
 				{year !== undefined && (
 					<span className={`heading-5 ${styles.year}`}>{year}</span>
@@ -40,7 +42,7 @@ export default function ResumeItem({
 				)}
 
 				<div className={styles.desc}>{description}</div>
-			</div>
+			</ContentBox>
 		</li>
 	);
 }

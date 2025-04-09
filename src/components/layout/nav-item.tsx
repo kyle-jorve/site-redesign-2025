@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+"use client";
+
+import { usePathname } from "next/navigation";
 import { printClassNames } from "@/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/navigation.module.css";
@@ -15,10 +17,10 @@ export default function NavItem({
 	className = "",
 	...otherProps
 }: NavItemProps) {
-	const router = useRouter();
+	const path = usePathname();
 	const classes = printClassNames([
 		styles["nav-item"],
-		router.pathname.startsWith(url) ? styles.current : "",
+		path.startsWith(url) ? styles.current : "",
 		className,
 	]);
 

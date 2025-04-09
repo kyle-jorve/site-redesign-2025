@@ -1,8 +1,8 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeType } from "@/types/cv-types";
 import { printClassNames } from "@/utils";
-import HeadingBar from "../global/heading-bar";
-import ResumeSection from "./resume-section";
+import HeadingBar from "@/components/global/heading-bar";
+import ResumeSection from "@/components/cv/resume-section";
 import styles from "@/styles/components/cv/resume.module.css";
 
 export type ResumeProps = ResumeType & {

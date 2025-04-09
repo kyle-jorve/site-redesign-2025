@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { printClassNames } from "@/utils";
+import { useRouter, usePathname } from "next/navigation";
 import { useContext } from "react";
 import Link from "next/link";
 import SiteContext from "@/site-context";
@@ -20,8 +21,9 @@ export default function CustomLink({
 	...otherProps
 }: CustomLinkProps) {
 	const router = useRouter();
+	const path = usePathname();
 	const { mainRef, setLoadStatus } = useContext(SiteContext);
-	const classes = className.trim();
+	const classes = printClassNames([className]);
 	const linkIsExternal =
 		to.includes("http") || target !== "_self" || !!otherProps.download;
 
@@ -31,7 +33,7 @@ export default function CustomLink({
 
 		event.preventDefault();
 
-		if (url.pathname === router.pathname) return;
+		if (url.pathname === path) return;
 
 		mainRef?.current?.addEventListener(
 			"transitionend",

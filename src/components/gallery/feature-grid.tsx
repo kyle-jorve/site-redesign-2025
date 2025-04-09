@@ -35,6 +35,7 @@ export default function FeatureGrid({
 			{hasHeadingBar && (
 				<HeadingBar
 					title={title}
+					heading={heading}
 					url={url}
 					buttonText={headingBarButtonText}
 				/>

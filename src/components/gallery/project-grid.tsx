@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext } from "react";
 import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils";
