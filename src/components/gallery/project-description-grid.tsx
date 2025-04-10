@@ -4,7 +4,7 @@ import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];

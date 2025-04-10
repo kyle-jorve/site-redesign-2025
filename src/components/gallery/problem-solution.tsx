@@ -1,7 +1,7 @@
 import { ProjectType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProblemSolutionProps = {
 	problemText: ProjectType["problemText"];

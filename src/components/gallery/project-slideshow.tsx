@@ -5,7 +5,7 @@ import { printClassNames } from "@/utils";
 import { ImageDataType } from "@/types/global-types";
 import CircleButton from "@/components/global/circle-button";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectSlideshowProps = {
 	images: ImageDataType[];

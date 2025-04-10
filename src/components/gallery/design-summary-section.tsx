@@ -2,7 +2,7 @@ import { printClassNames } from "@/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
 import ProjectLinkRow from "@/components/gallery/project-link-row";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type DesignSummerySectionProps = {
 	problemText?: ProjectType["problemText"];

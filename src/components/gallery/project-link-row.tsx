@@ -1,6 +1,6 @@
 import { printClassNames } from "@/utils";
 import ButtonLink from "@/components/global/button-link";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectLinkRowProps = {
 	url: string;
