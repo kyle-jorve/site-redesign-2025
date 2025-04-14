@@ -25,10 +25,6 @@ export default function ButtonLink({
 			{...otherProps}
 		>
 			{children}
-			<span
-				className="icon"
-				aria-hidden="true"
-			></span>
 		</CustomLink>
 	);
 }

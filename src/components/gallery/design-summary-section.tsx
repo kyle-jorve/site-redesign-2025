@@ -1,7 +1,7 @@
 import { printClassNames } from "@/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
-import ProjectLinkRow from "@/components/gallery/project-link-row";
+import ButtonLinkRow from "@/components/global/button-link-row";
 import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type DesignSummerySectionProps = {
@@ -36,7 +36,7 @@ export default function DesignSummarySection({
 			)}
 
 			{url !== undefined && (
-				<ProjectLinkRow
+				<ButtonLinkRow
 					url={url}
 					buttonText={buttonText}
 				/>

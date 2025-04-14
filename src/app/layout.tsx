@@ -4,6 +4,7 @@ import { SiteContextProvider } from "@/site-context";
 import Main from "@/components/layout/main";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import "@/styles/base/_index.css";
 
 export const metadata: Metadata = {
 	title: "Kyle Jorve | Design, Development, Illustration, and Writing",

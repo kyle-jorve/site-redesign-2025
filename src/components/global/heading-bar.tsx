@@ -1,6 +1,6 @@
 import { printClassNames } from "@/utils";
 import { HeadingType } from "@/types/global-types";
-import ButtonLink from "@/components/global/button-link";
+import ButtonLinkRow from "@/components/global/button-link-row";
 import styles from "@/styles/components/global/heading-bar.module.css";
 
 export type HeadingBarProps = {
@@ -35,7 +35,10 @@ export default function HeadingBar({
 			<Heading className={styles.title}>{title}</Heading>
 
 			{url !== undefined && (
-				<ButtonLink url={url}>{buttonText}</ButtonLink>
+				<ButtonLinkRow
+					url={url}
+					buttonText={buttonText}
+				/>
 			)}
 		</header>
 	);

@@ -7,13 +7,13 @@ import NavItem from "@/components/layout/nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 
 export type ParentNavItemProps = {
-	id: string;
+	name: string;
 	label: string;
 	childItems: NavItemType[];
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function ParentNavItem({
-	id,
+	name,
 	label,
 	childItems,
 	className = "",
@@ -23,6 +23,7 @@ export default function ParentNavItem({
 	const [expanded, setExpanded] = useState<boolean>(false);
 	const classes = printClassNames([
 		styles["nav-parent"],
+		styles[name],
 		expanded ? styles.expanded : "",
 		className,
 	]);
@@ -56,7 +57,7 @@ export default function ParentNavItem({
 			<button
 				className={styles["dropdown-toggle"]}
 				aria-label={`toggle ${label} menu`}
-				aria-controls={id}
+				aria-controls={name}
 				aria-expanded={expanded}
 				onClick={() => setExpanded((prev) => !prev)}
 			>
@@ -65,16 +66,17 @@ export default function ParentNavItem({
 
 			<div
 				className={styles["dropdown-menu"]}
-				id={id}
+				id={name}
 				aria-hidden={!expanded}
 			>
 				{childItems.map((child) => {
 					return (
 						<NavItem
+							key={child.name}
+							name={child.name}
 							className={`${styles["dropdown-nav-item"]} ${
 								styles[child.name]
 							}`}
-							key={child.name}
 							url={child.url}
 							onClick={() => setExpanded(false)}
 							tabIndex={expanded ? undefined : -1}

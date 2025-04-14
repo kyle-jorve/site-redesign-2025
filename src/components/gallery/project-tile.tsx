@@ -32,6 +32,8 @@ export default function ProjectTile({
 	]);
 	const Heading = heading as React.ElementType;
 	const url = `/projects/${name}/`;
+	const primaryCategory =
+		categories.find((cat) => cat.primary) || categories[0];
 
 	return (
 		<article
@@ -40,22 +42,11 @@ export default function ProjectTile({
 		>
 			<div className={styles.content}>
 				<div className={styles["categories-row"]}>
-					{categories
-						.filter((cat) => !cat.hidden)
-						.map((cat) => {
-							return (
-								<CategoryChip
-									key={`${name}-${cat.name}`}
-									category={cat}
-									addLink={false}
-									size={
-										variant === "small"
-											? "extra-small"
-											: "small"
-									}
-								/>
-							);
-						})}
+					<CategoryChip
+						category={primaryCategory}
+						addLink={false}
+						size={variant === "small" ? "extra-small" : "small"}
+					/>
 				</div>
 
 				<Heading className={styles.title}>

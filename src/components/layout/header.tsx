@@ -9,12 +9,16 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 	const classes = printClassNames([styles.header, className]);
 
 	return (
-		<header
-			className={classes}
-			{...otherProps}
-		>
-			<Logo />
-			<Navigation />
-		</header>
+		<>
+			<header
+				className={classes}
+				{...otherProps}
+			>
+				<Logo />
+				<Navigation />
+			</header>
+
+			<Navigation isMobileNav={true} />
+		</>
 	);
 }

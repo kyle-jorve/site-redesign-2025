@@ -1,26 +1,33 @@
 import { printClassNames } from "@/utils";
 import ButtonLink from "@/components/global/button-link";
-import styles from "@/styles/components/gallery/project-detail.module.css";
 
-export type ProjectLinkRowProps = {
+export type ButtonLinkRowProps = {
 	url: string;
 	buttonText?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export default function ProjectLinkRow({
+export default function ButtonLinkRow({
 	url,
 	buttonText = "Visit Website",
 	className = "",
 	...otherProps
-}: ProjectLinkRowProps) {
-	const classes = printClassNames([styles["link-row"], className]);
+}: ButtonLinkRowProps) {
+	const classes = printClassNames(["link-row", className]);
 
 	return (
 		<div
 			className={classes}
 			{...otherProps}
 		>
+			<span
+				className="lines left"
+				aria-hidden="true"
+			></span>
 			<ButtonLink url={url}>{buttonText}</ButtonLink>
+			<span
+				className="lines right"
+				aria-hidden="true"
+			></span>
 		</div>
 	);
 }

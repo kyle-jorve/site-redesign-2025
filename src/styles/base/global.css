@@ -1,6 +1,88 @@
 @layer global {
+	html,
+	body {
+		padding: 0;
+		margin: 0;
+	}
+
+	hmtl {
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	body {
+		width: 100%;
+		padding-bottom: 112px; /* leaves room for the mobile nav */
+		background: var(--body-bg);
+		overflow-x: hidden;
+	}
+
+	main {
+		position: relative;
+		z-index: 2;
+		transition: opacity var(--transition), filter var(--transition);
+	}
+
+	main.out {
+		opacity: 0;
+		filter: blur(40px);
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	img,
+	svg,
+	iframe,
+	video {
+		display: block;
+		max-width: 100%;
+	}
+
+	iframe {
+		border: none;
+	}
+
+	img,
+	svg {
+		height: auto;
+	}
+
 	.image {
 		&.loaded {
+		}
+	}
+
+	.underlines {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 0.25rem;
+
+		&::before,
+		&::after {
+			display: block;
+			height: var(--border-width);
+			background: var(--red);
+			border-radius: var(--border-width);
+			content: "";
+			pointer-events: none;
+		}
+
+		&::before {
+			width: 100%;
+		}
+
+		&::after {
+			width: 70%;
+		}
+	}
+
+	@media (min-width: 64em) {
+		body {
+			padding-bottom: 0;
 		}
 	}
 }

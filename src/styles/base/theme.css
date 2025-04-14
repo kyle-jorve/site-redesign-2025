@@ -1,0 +1,226 @@
+@layer theme {
+	:root {
+		/*----- typography -----*/
+
+		--font-bungee-shade: "Bungee Shade", sans-serif;
+		--font-bungee-inline: "Bungee Inline", sans-serif;
+		--font-pixelify: "Pixelify Sans", sans-serif;
+		--font-nunito: "Nunito", sans-serif;
+
+		--font-title: var(--font-bungee-shade);
+		--font-heading: var(--font-bungee-inline);
+		--font-body: var(--font-nunito);
+
+		--font-weight-normal: 400;
+		--font-weight-medium: 500;
+		--font-weight-bold: 700;
+		--font-weight-black: 900;
+
+		--leading-less: 0.9;
+		--leading-none: 1;
+		--leading-small: 1.2;
+		--leading-medium: 1.3;
+		--leading-large: 1.5;
+
+		--kerning-2x-small: 0.02em;
+		--kerning-x-small: 0.04em;
+		--kerning-small: 0.06em;
+		--kerning-medium: 0.16em;
+		--kerning-large: 0.2em;
+		--kerning-x-large: 0.24em;
+
+		--font-size-2x-small: 0.625rem;
+		--font-size-x-small: 0.75rem;
+		--font-size-small: 0.875rem;
+		--font-size-base: 1rem;
+		--font-size-large: 1.125rem;
+		--font-size-x-large: 1.25rem;
+		--font-size-2x-large: 1.5rem;
+
+		--font-size-supertitle: 1.375rem;
+		--font-size-page-title: 5.125rem;
+		--font-size-superheading: var(--font-size-x-large);
+		--font-size-heading-1: 3.375rem;
+		--font-size-heading-2: 3rem;
+		--font-size-heading-3: 2.25rem;
+		--font-size-heading-4: 1.625rem;
+		--font-size-heading-5: var(--font-size-large);
+		--font-size-heading-6: var(--font-size-large);
+		--font-size-body-large: var(--font-size-large);
+		--font-size-body: var(--font-size-base);
+		--font-size-body-small: var(--font-size-small);
+
+		@media (min-width: 64em) {
+			--font-size-supertitle: 1.6875rem;
+			--font-size-page-title: 8.1875rem;
+			--font-size-superheading: 1.375rem;
+			--font-size-heading-1: 4.8125rem;
+			--font-size-heading-2: 3.75rem;
+			--font-size-heading-3: 2.375rem;
+			--font-size-heading-4: 1.75rem;
+			--font-size-body-large: var(--font-size-x-large);
+			--font-size-body: 1.0625rem;
+		}
+
+		@media (min-width: 90em) {
+			--font-size-supertitle: 2rem;
+			--font-size-page-title: 11.25rem;
+			--font-size-superheading: var(--font-size-2x-large);
+			--font-size-heading-1: 6.25rem;
+			--font-size-heading-2: 4.5rem;
+			--font-size-heading-3: 2.5rem;
+			--font-size-heading-4: 1.875rem;
+			--font-size-body-large: 1.375rem;
+			--font-size-body: var(--font-size-large);
+		}
+
+		/*----- colors -----*/
+
+		--black: #000;
+		--white: #fff;
+
+		--navy: #0b1d26; /* rgb(11, 29, 38) */
+		--blue: #2a2e4b; /* rgb(42, 46, 75) */
+		--blue-light: #4b5181; /* rgb(75, 81, 129) */
+		--egg: #fef6e7; /* rgb(254, 246, 231) */
+		--cream: #fde9ce; /* rgb(253, 233, 206) */
+		--gold: #e7b159; /* rgb(231, 177, 89) */
+		--gold-light: #f2e1ae; /* rgb(242, 225, 174) */
+		--red: #f75551; /* rgb(247, 85, 81) */
+		--sunset: #d85887; /* rgb(216, 88, 135) */
+		--mint: #91cab1; /* rgb(145, 202, 177) */
+
+		--body-bg: var(--cream);
+		--supertitle-color: var(--blue-light);
+		--title-color: var(--red);
+		--superheading-color: var(--red);
+		--heading-color: var(--blue-light);
+		--text-color: var(--navy);
+
+		/*----- gradients -----*/
+
+		--gradient-red-straight: linear-gradient(
+			to right,
+			var(--red),
+			var(--sunset)
+		);
+		--gradient-red-diagonal: linear-gradient(
+			135deg,
+			var(--red),
+			var(--sunset)
+		);
+		--gradient-dark: linear-gradient(
+			to bottom,
+			var(--navy),
+			rgba(11, 29, 38, 0)
+		);
+		--gradient-dark-radial: radial-gradient(
+			circle farthest-side at left bottom,
+			var(--navy),
+			rgba(11, 29, 38, 0)
+		);
+		--gradient-sunset: linear-gradient(45deg, var(--red), var(--gold));
+		--gradient-gold: linear-gradient(
+			45deg,
+			var(--gold-light),
+			var(--cream)
+		);
+		--gradient-retro: linear-gradient(
+				to right,
+				rgba(247, 85, 81, 0.4),
+				rgba(216, 88, 135, 0.4)
+			),
+			linear-gradient(
+				to right,
+				var(--blue),
+				var(--blue) 3.33%,
+				var(--blue-light) 3.34%,
+				var(--blue-light) 10%,
+				var(--sunset) 10.01%,
+				var(--sunset) 23.33%,
+				var(--red) 23.34%,
+				var(--red) 50%,
+				var(--gold) 50.01%,
+				var(--gold)
+			);
+
+		/*----- layout -----*/
+
+		--padding-body-edge: 20px;
+		--padding-content: 1.25rem;
+		--padding-large: 2rem;
+
+		--width-narrow: calc(50rem + (var(--padding-body-edge) * 2));
+		--width-intro: calc(60rem + (var(--padding-body-edge) * 2));
+		--width-medium: calc(68.75 + (var(--padding-body-edge) * 2));
+		--width-hero-menu: calc(75rem + (var(--padding-body-edge) * 2));
+		--width-wide: calc(85rem + (var(--padding-body-edge) * 2));
+
+		--section-margin: 6.25rem;
+
+		--grid-gap: 0.5rem;
+
+		@media (min-width: 64em) {
+			--padding-content: 2rem;
+			--padding-large: 3.25rem;
+
+			--section-margin: 10rem;
+
+			--grid-gap: 1rem;
+		}
+
+		/*----- borders -----*/
+
+		--border-width: 0.125rem;
+		--border-width-wide: 1rem;
+
+		--border-radius: 0.5rem;
+		--border-radius-rounded: 1000px;
+
+		--border-red: var(--border-width) solid var(--red);
+		--border-red-dotted: var(--border-width) dotted var(--red);
+		--border-gold: var(--border-width) solid var(--gold);
+		--border-gold-dotted: var(--border-width) dotted var(--gold);
+		--border-light: var(--border-width) solid var(--gold-light);
+		--border-cream: var(--border-width) solid var(--cream);
+
+		@media (min-width: 64em) {
+			--border-width-wide: 1.5rem;
+		}
+
+		/*----- shadows -----*/
+
+		--hard-shadow-offset: -0.25rem 0.25rem;
+		--long-shadow-offset: -0.5rem 0.5rem;
+		--longer-shadow-offset: -1rem 1rem;
+
+		--shadow-color: var(--blue);
+		--shadow-color-blue: var(--blue-light);
+		--shadow-color-light: var(--gold-light);
+		--shadow-color-red: var(--red);
+		--shadow-color-gold: var(--gold);
+
+		--hard-shadow: var(--hard-shadow-offset)
+			var(--shadow-color-override, var(--shadow-color));
+		--hard-shadow-blue: var(--hard-shadow-offset)
+			var(--shadow-color-blue-override, var(--shadow-color-blue));
+		--hard-shadow-light: var(--hard-shadow-offset)
+			var(--shadow-color-light-override, var(--shadow-color-light));
+		--hard-shadow-red: var(--hard-shadow-offset)
+			var(--shadow-color-red-override, var(--shadow-color-red));
+		--hard-shadow-gold: var(--hard-shadow-offset)
+			var(--shadow-color-gold-override, var(--shadow-color-gold));
+
+		--hard-shadow-red-long: var(--long-shadow-offset)
+			var(--shadow-color-red-override, var(--shadow-color-red));
+		--hard-shadow-gold-long: var(--long-shadow-offset)
+			var(--shadow-color-gold-override, var(--shadow-color-gold));
+
+		--exploding-shadow: var(--long-shadow-offset) rgba(231, 177, 89, 0.5),
+			var(--longer-shadow-offset) rgba(231, 177, 89, 0.25);
+
+		/*----- transitions -----*/
+
+		--transition: 0.4s ease;
+	}
+}

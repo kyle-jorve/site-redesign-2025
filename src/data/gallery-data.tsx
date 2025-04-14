@@ -258,12 +258,38 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-image-grid-image-2",
 				sources: [
 					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 640,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Ignoble Blood Vignettes image grid image 2",
+				width: 320,
+				height: 320,
+			},
+			{
+				name: "ignoble-blood-vignettes-image-grid-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 640,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Ignoble Blood Vignettes image grid image 3",
+				width: 320,
+				height: 320,
+			},
+			{
+				name: "ignoble-blood-vignettes-image-grid-image-4",
+				sources: [
+					{
 						url: "https://placehold.co/1440x590",
 						minScreenWidth: 640,
 					},
 				],
 				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes image grid image 2",
+				alt: "Ignoble Blood Vignettes image grid image 4",
 				width: 640,
 				height: 480,
 			},

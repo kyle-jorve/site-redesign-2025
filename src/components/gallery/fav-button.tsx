@@ -41,7 +41,8 @@ export default function FavButton({
 	return (
 		<CircleButton
 			className={classes}
-			icon={isFaved ? "heart-solid" : "heart"}
+			icon={"heart"}
+			weight={isFaved ? "solid" : "regular"}
 			color={color}
 			aria-label={`${isFaved ? "remove" : "add"} ${projectTitle} ${
 				isFaved ? "from" : "to"

@@ -4,13 +4,19 @@ import NavItem from "@/components/layout/nav-item";
 import ParentNavItem from "@/components/layout/parent-nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 
-export type NavigationProps = React.HTMLAttributes<HTMLElement>;
+export type NavigationProps = {
+	isMobileNav?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
 
 export default function Navigation({
+	isMobileNav = false,
 	className = "",
 	...otherProps
 }: NavigationProps) {
-	const classes = printClassNames([styles.navigation, className]);
+	const classes = printClassNames([
+		isMobileNav ? styles["mobile-navigation"] : styles.navigation,
+		className,
+	]);
 
 	return (
 		<nav
@@ -22,7 +28,7 @@ export default function Navigation({
 					return (
 						<ParentNavItem
 							key={item.name}
-							id={item.name}
+							name={item.name}
 							label={item.label}
 							childItems={item.children}
 						/>
@@ -32,6 +38,7 @@ export default function Navigation({
 				return (
 					<NavItem
 						key={item.name}
+						name={item.name}
 						url={item.url}
 					>
 						{item.label}
