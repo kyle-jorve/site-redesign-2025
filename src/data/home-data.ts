@@ -7,13 +7,17 @@ export const heroImage: ImageDataType = {
 	sources: [
 		{
 			url: "https://placehold.co/1440x1100",
+			minScreenWidth: 1024,
+		},
+		{
+			url: "https://placehold.co/1024x980",
 			minScreenWidth: 640,
 		},
 	],
-	mobileSource: "https://placehold.co/640x720",
+	mobileSource: "https://placehold.co/640x875",
 	alt: "Photo of Kyle Jorve",
 	width: 640,
-	height: 720,
+	height: 875,
 };
 export const supertitle = "Designer, Developer, Illustrator, Writer";
 export const title = "Kyle Jorve";
@@ -31,13 +35,13 @@ export const menuTiles: MenuTileType[] = [
 			sources: [
 				{
 					url: "https://placehold.co/390x316",
-					minScreenWidth: 640,
+					minScreenWidth: 768,
 				},
 			],
-			mobileSource: "https://placehold.co/320",
+			mobileSource: "https://placehold.co/640x384",
 			alt: `Image representing Kyle Jorve's design and illustration capabilities`,
-			width: 320,
-			height: 320,
+			width: 640,
+			height: 384,
 		},
 	},
 	{
@@ -50,13 +54,13 @@ export const menuTiles: MenuTileType[] = [
 			sources: [
 				{
 					url: "https://placehold.co/390x316",
-					minScreenWidth: 640,
+					minScreenWidth: 768,
 				},
 			],
-			mobileSource: "https://placehold.co/320",
+			mobileSource: "https://placehold.co/640x384",
 			alt: `Image representing Kyle Jorve's development capabilities`,
-			width: 320,
-			height: 320,
+			width: 640,
+			height: 384,
 		},
 	},
 	{
@@ -69,13 +73,13 @@ export const menuTiles: MenuTileType[] = [
 			sources: [
 				{
 					url: "https://placehold.co/390x316",
-					minScreenWidth: 640,
+					minScreenWidth: 768,
 				},
 			],
-			mobileSource: "https://placehold.co/320",
+			mobileSource: "https://placehold.co/640x384",
 			alt: `Image representing Kyle Jorve's writing capabilities`,
-			width: 320,
-			height: 320,
+			width: 640,
+			height: 384,
 		},
 	},
 	{

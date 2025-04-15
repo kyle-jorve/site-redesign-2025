@@ -20,11 +20,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<Header />
 				<SiteContextProvider>
+					<Header />
 					<Main>{children}</Main>
+					<Footer />
 				</SiteContextProvider>
-				<Footer />
 				<Script src="https://kit.fontawesome.com/867df664d5.js" />
 			</body>
 		</html>

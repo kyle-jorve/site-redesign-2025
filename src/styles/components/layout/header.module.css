@@ -1,7 +1,19 @@
 .header {
+	position: fixed;
+	inset: 10px auto auto 10px;
+	z-index: 100;
+	padding: 0.5rem;
+	background: var(--header-footer-background);
+	border-radius: var(--border-radius-large);
+	border: var(--border-dark);
+	backdrop-filter: var(--header-footer-backdrop-blur);
+
 	.logo {
+		display: block;
+		text-decoration: none;
 	}
 
 	.logo-img {
+		width: 3rem;
 	}
 }

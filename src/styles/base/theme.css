@@ -91,6 +91,7 @@
 		--mint: #91cab1; /* rgb(145, 202, 177) */
 
 		--body-bg: var(--cream);
+		--header-footer-background: rgba(11, 29, 38, 0.9);
 		--supertitle-color: var(--blue-light);
 		--title-color: var(--red);
 		--superheading-color: var(--red);
@@ -160,6 +161,8 @@
 
 		--grid-gap: 0.5rem;
 
+		--header-footer-backdrop-blur: blur(64px);
+
 		@media (min-width: 64em) {
 			--padding-content: 2rem;
 			--padding-large: 3.25rem;
@@ -175,8 +178,11 @@
 		--border-width-wide: 1rem;
 
 		--border-radius: 0.5rem;
+		--border-radius-medium: 0.625rem;
+		--border-radius-large: 0.75rem;
 		--border-radius-rounded: 1000px;
 
+		--border-dark: var(--border-width) solid var(--navy);
 		--border-red: var(--border-width) solid var(--red);
 		--border-red-dotted: var(--border-width) dotted var(--red);
 		--border-gold: var(--border-width) solid var(--gold);

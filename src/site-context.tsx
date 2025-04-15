@@ -9,6 +9,7 @@ export type SiteContextType = {
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
 	filters: CategoryType[];
+	visited: boolean;
 
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
 	setLoadStatus: React.Dispatch<
@@ -16,6 +17,7 @@ export type SiteContextType = {
 	>;
 	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	updateFilters: (id: string) => void;
+	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SiteContext = React.createContext<SiteContextType>({
@@ -23,16 +25,19 @@ const SiteContext = React.createContext<SiteContextType>({
 	loadStatus: "idle",
 	mainRef: null,
 	filters: [],
+	visited: false,
 
 	setFavedProjects: () => {},
 	setLoadStatus: () => {},
 	setFilters: () => {},
 	updateFilters: () => {},
+	setVisited: () => {},
 });
 
 export default SiteContext;
 
 export function SiteContextProvider({ children }: React.PropsWithChildren) {
+	const [visited, setVisited] = useState<SiteContextType["visited"]>(false);
 	const [favedProjects, setFavedProjects] = useState<string[]>([]);
 	const [loadStatus, setLoadStatus] =
 		useState<SiteContextType["loadStatus"]>("idle");
@@ -58,11 +63,13 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				loadStatus,
 				mainRef,
 				filters,
+				visited,
 
 				setFavedProjects,
 				setLoadStatus,
 				updateFilters,
 				setFilters,
+				setVisited,
 			}}
 		>
 			{children}

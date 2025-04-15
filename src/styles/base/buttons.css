@@ -209,7 +209,7 @@
 			--text-color-hover: var(--cream);
 			--background-color-hover: var(--red);
 
-			box-shadow: var(--hard-shadow-red);
+			box-shadow: var(--hard-shadow-light);
 		}
 	}
 

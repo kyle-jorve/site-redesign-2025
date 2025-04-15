@@ -34,7 +34,9 @@ export default function Bio({
 		>
 			<article className={styles.inner}>
 				<ContentBox className={styles["content-col"]}>
-					<Heading className={styles.title}>{title}</Heading>
+					<Heading className={`underline ${styles.title}`}>
+						{title}
+					</Heading>
 
 					{body}
 

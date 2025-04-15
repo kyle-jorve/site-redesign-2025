@@ -1,8 +1,85 @@
 .mobile-navigation {
-	.nav-item {
+	position: fixed;
+	inset: auto 1.875rem 1.625rem;
+	z-index: 100;
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	padding: 0.25rem 0.75rem;
+	color: var(--cream);
+
+	&::before,
+	&::after {
+		position: absolute;
+		display: block;
+		content: "";
+		border-radius: var(--border-radius-medium);
+		pointer-events: none;
 	}
 
-	.nav-item.current {
+	&::before {
+		inset: 0;
+		z-index: -1;
+		background: var(--red);
+	}
+
+	&::after {
+		inset: 1.5rem -1.25rem -1rem;
+		z-index: -2;
+		background: var(--header-footer-background);
+		border: var(--border-dark);
+		backdrop-filter: var(--header-footer-backdrop-blur);
+	}
+
+	.nav-item,
+	.dropdown-toggle {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+		min-width: 5.25rem;
+		padding: 0.5rem;
+		font-family: var(--font-body);
+		font-weight: var(--font-weight-black);
+		font-size: var(--font-size-2x-small);
+		line-height: var(--leading-none);
+		letter-spacing: var(--kerning-large);
+		text-transform: uppercase;
+		text-decoration: none;
+		text-align: center;
+		color: inherit;
+		background: none;
+		border: none;
+		border-radius: var(--border-radius);
+		transition: translate var(--transition), color var(--transition),
+			background-color var(--transition);
+
+		&.projects::before,
+		&.cv::before {
+			font: var(--fa-font-regular);
+			font-size: var(--font-size-2x-large);
+		}
+
+		&.projects::before {
+			content: "\f302";
+		}
+
+		&.cv::before {
+			content: "\f2bb";
+		}
+
+		&.social::before {
+			font: var(--fa-font-solid);
+			font-size: var(--font-size-2x-large);
+			content: "\23";
+		}
+	}
+
+	.nav-item.current,
+	.dropdown-toggle.expanded {
+		translate: 0 -0.75rem;
+		color: var(--red);
+		background-color: var(--cream);
 	}
 
 	.nav-parent {
@@ -15,6 +92,7 @@
 	}
 
 	.dropdown-menu {
+		display: none;
 	}
 
 	.dropdown-nav-item {

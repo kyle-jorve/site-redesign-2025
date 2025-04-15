@@ -27,6 +27,11 @@ export default function ParentNavItem({
 		expanded ? styles.expanded : "",
 		className,
 	]);
+	const dropdownToggleClasses = printClassNames([
+		styles["dropdown-toggle"],
+		styles[name],
+		expanded ? styles.expanded : "",
+	]);
 
 	useEffect(() => {
 		function handleDocumentClick(event: MouseEvent) {
@@ -55,7 +60,7 @@ export default function ParentNavItem({
 			{...otherProps}
 		>
 			<button
-				className={styles["dropdown-toggle"]}
+				className={dropdownToggleClasses}
 				aria-label={`toggle ${label} menu`}
 				aria-controls={name}
 				aria-expanded={expanded}

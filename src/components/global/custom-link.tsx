@@ -28,23 +28,22 @@ export default function CustomLink({
 		to.includes("http") || target !== "_self" || !!otherProps.download;
 
 	function pageTransition(event: React.MouseEvent) {
-		const href = (event.target as HTMLAnchorElement).href;
-		const url = new URL(href);
+		if (to === path) {
+			event.preventDefault();
+			return;
+		}
 
 		event.preventDefault();
-
-		if (url.pathname === path) return;
 
 		mainRef?.current?.addEventListener(
 			"transitionend",
 			() => {
-				router.push(href);
+				router.push(to);
 			},
 			{ once: true },
 		);
 
 		setLoadStatus("page-out");
-
 		onClick(event);
 	}
 
@@ -65,6 +64,7 @@ export default function CustomLink({
 			href={to}
 			target={target}
 			onClick={pageTransition}
+			data-custom-link="true"
 			{...otherProps}
 		>
 			{children}

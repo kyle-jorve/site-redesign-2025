@@ -43,10 +43,10 @@ export const bio: BioType = {
 				minScreenWidth: 640,
 			},
 		],
-		mobileSource: "https://placehold.co/640",
+		mobileSource: "https://placehold.co/640x730",
 		alt: "a portrait of Kyle Jorve",
-		width: 680,
-		height: 800,
+		width: 640,
+		height: 730,
 	},
 };
 

@@ -28,7 +28,11 @@ export default function MenuTile({
 			{...otherProps}
 		>
 			<div className={styles.inner}>
-				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
+				<h2
+					className={`heading-3 underline underline-center underline-light ${styles.title}`}
+				>
+					{title}
+				</h2>
 
 				<div className={styles["button-row"]}>
 					<ButtonLink

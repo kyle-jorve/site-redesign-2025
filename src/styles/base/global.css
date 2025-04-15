@@ -33,6 +33,11 @@
 		box-sizing: border-box;
 	}
 
+	*:focus-visible {
+		outline: var(--border-width) solid var(--gold);
+		outline-offset: 0.25rem;
+	}
+
 	img,
 	svg,
 	iframe,
@@ -55,10 +60,9 @@
 		}
 	}
 
-	.underlines {
+	.underline {
 		display: flex;
 		flex-direction: column;
-		align-items: start;
 		gap: 0.25rem;
 
 		&::before,
@@ -73,11 +77,35 @@
 
 		&::before {
 			width: 100%;
+			margin-top: 0.75rem;
+			order: 1;
 		}
 
 		&::after {
 			width: 70%;
+			order: 2;
 		}
+
+		&.underline-light {
+			&::before,
+			&::after {
+				background: var(--cream);
+			}
+		}
+
+		&.underline-dark {
+			&::before,
+			&::after {
+				background: var(--blue-light);
+			}
+		}
+
+		&.underline-center::after {
+			margin: 0 auto;
+		}
+	}
+
+	.underline-light {
 	}
 
 	@media (min-width: 64em) {
