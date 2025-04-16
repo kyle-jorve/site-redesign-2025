@@ -26,18 +26,6 @@ export default function HomeHero({
 	const menuTilesRef = useRef<HTMLDivElement>(null);
 	const classes = printClassNames([styles["home-hero"], className]);
 
-	function scrollSection() {
-		const offset = (
-			menuTilesRef.current as HTMLDivElement
-		).getBoundingClientRect().top;
-
-		window.scroll({
-			left: 0,
-			top: offset,
-			behavior: "smooth",
-		});
-	}
-
 	return (
 		<section
 			className={classes}
@@ -50,23 +38,6 @@ export default function HomeHero({
 					</span>
 					{title}
 				</h1>
-
-				<div className={styles["cursor-wrapper"]}>
-					<button
-						className={styles["cursor-button"]}
-						aria-label="scroll down to next section"
-						onClick={scrollSection}
-					>
-						<span
-							className={styles.cursor}
-							aria-hidden="true"
-						></span>
-						<span
-							className={styles["cursor-arrow"]}
-							aria-hidden="true"
-						></span>
-					</button>
-				</div>
 			</div>
 
 			{menuTiles !== undefined && (

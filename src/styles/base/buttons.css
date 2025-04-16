@@ -46,9 +46,11 @@
 	.button {
 		--text-color: var(--cream);
 		--background-color: var(--red);
+		--box-shadow: var(--hard-shadow);
 
 		--text-color-hover: var(--cream);
-		--background-color-hover: var(--shadow-color);
+		--background-color-hover: var(--red-light);
+		--box-shadow-hover: var(--hard-shadow-long);
 
 		position: relative;
 		display: inline-flex;
@@ -69,7 +71,7 @@
 		background-color: var(--background-color);
 		border: none;
 		border-radius: var(--border-radius-rounded);
-		box-shadow: var(--hard-shadow);
+		box-shadow: var(--box-shadow);
 		transition: color var(--transition), background-color var(--transition),
 			box-shadow var(--transition);
 
@@ -113,9 +115,11 @@
 	.circle-button {
 		--text-color: var(--cream);
 		--background-color: var(--red);
+		--box-shadow: var(--hard-shadow);
 
 		--text-color-hover: var(--cream);
-		--background-color-hover: var(--shadow-color);
+		--background-color-hover: var(--red-light);
+		--box-shadow-hover: var(--hard-shadow-long);
 
 		position: relative;
 		display: flex;
@@ -134,7 +138,7 @@
 		background-color: var(--background-color);
 		border: none;
 		border-radius: 50%;
-		box-shadow: var(--hard-shadow);
+		box-shadow: var(--box-shadow);
 		transition: color var(--transition), background-color var(--transition),
 			box-shadow var(--transition);
 
@@ -189,13 +193,13 @@
 	.circle-button {
 		&.light {
 			--background-color: rgba(253, 233, 206, 0.1);
+			--box-shadow: none;
 
 			--text-color-hover: var(--egg);
 			--background-color-hover: rgba(254, 246, 231, 0.2);
 			--border-color-hover: var(--egg);
 
 			border: var(--border-cream);
-			box-shadow: none;
 			backdrop-filter: blur(16px);
 			transition: color var(--transition),
 				background-color var(--transition),
@@ -205,26 +209,21 @@
 		&.dark {
 			--text-color: var(--gold-light);
 			--background-color: var(--blue);
+			--box-shadow: var(--hard-shadow-light);
 
 			--text-color-hover: var(--cream);
-			--background-color-hover: var(--red);
-
-			box-shadow: var(--hard-shadow-light);
+			--background-color-hover: var(--blue-light);
+			--box-shadow-hover: var(--hard-shadow-light-long);
 		}
 	}
 
 	@media (hover: hover) {
 		.button:hover,
 		.circle-button:hover {
-			--shadow-color-override: var(--red);
-
 			color: var(--text-color-hover);
 			background-color: var(--background-color-hover);
 			border-color: var(--border-color-hover);
-
-			&.dark {
-				--shadow-color-override: var(--blue);
-			}
+			box-shadow: var(--box-shadow-hover, var(--box-shadow));
 		}
 	}
 }

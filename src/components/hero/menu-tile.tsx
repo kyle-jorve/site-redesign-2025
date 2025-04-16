@@ -27,33 +27,27 @@ export default function MenuTile({
 			className={classes}
 			{...otherProps}
 		>
-			<div className={styles.inner}>
-				<h2
-					className={`heading-3 underline underline-center underline-light ${styles.title}`}
-				>
-					{title}
-				</h2>
+			<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
 
-				<div className={styles["button-row"]}>
-					<ButtonLink
-						url={url}
-						color="dark"
-					>
-						{buttonText}
-					</ButtonLink>
-				</div>
-
-				<div
-					className={styles.background}
-					aria-hidden={!image}
+			<div className={styles["button-row"]}>
+				<ButtonLink
+					url={url}
+					color="dark"
 				>
-					{!!image && (
-						<ResponsiveImage
-							className={styles["image"]}
-							image={image}
-						/>
-					)}
-				</div>
+					{buttonText}
+				</ButtonLink>
+			</div>
+
+			<div
+				className={styles.background}
+				aria-hidden={!image}
+			>
+				{!!image && (
+					<ResponsiveImage
+						className={styles["image"]}
+						image={image}
+					/>
+				)}
 			</div>
 		</article>
 	);

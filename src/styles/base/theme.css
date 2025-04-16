@@ -86,7 +86,9 @@
 		--cream: #fde9ce; /* rgb(253, 233, 206) */
 		--gold: #e7b159; /* rgb(231, 177, 89) */
 		--gold-light: #f2e1ae; /* rgb(242, 225, 174) */
+		--peach: #f28d88;
 		--red: #f75551; /* rgb(247, 85, 81) */
+		--red-light: #ff7370;
 		--sunset: #d85887; /* rgb(216, 88, 135) */
 		--mint: #91cab1; /* rgb(145, 202, 177) */
 
@@ -100,7 +102,7 @@
 
 		/*----- gradients -----*/
 
-		--gradient-red-straight: linear-gradient(
+		--gradient-red-horizontal: linear-gradient(
 			to right,
 			var(--red),
 			var(--sunset)
@@ -110,7 +112,7 @@
 			var(--red),
 			var(--sunset)
 		);
-		--gradient-dark: linear-gradient(
+		--gradient-dark-vertical: linear-gradient(
 			to bottom,
 			var(--navy),
 			rgba(11, 29, 38, 0)
@@ -120,13 +122,22 @@
 			var(--navy),
 			rgba(11, 29, 38, 0)
 		);
-		--gradient-sunset: linear-gradient(45deg, var(--red), var(--gold));
-		--gradient-gold: linear-gradient(
+		--gradient-sunset-diagonal: linear-gradient(
+			45deg,
+			var(--red),
+			var(--gold)
+		);
+		--gradient-gold-diagonal: linear-gradient(
 			45deg,
 			var(--gold-light),
 			var(--cream)
 		);
-		--gradient-retro: linear-gradient(
+		--gradient-peach-vertical: linear-gradient(
+			to bottom,
+			var(--cream),
+			var(--peach)
+		);
+		--gradient-retro-horizontal: linear-gradient(
 				to right,
 				rgba(247, 85, 81, 0.4),
 				rgba(216, 88, 135, 0.4)
@@ -147,7 +158,7 @@
 
 		/*----- layout -----*/
 
-		--padding-body-edge: 20px;
+		--padding-body-edge: 1.25rem;
 		--padding-content: 1.25rem;
 		--padding-large: 2rem;
 
@@ -206,27 +217,30 @@
 		--shadow-color-red: var(--red);
 		--shadow-color-gold: var(--gold);
 
-		--hard-shadow: var(--hard-shadow-offset)
-			var(--shadow-color-override, var(--shadow-color));
-		--hard-shadow-blue: var(--hard-shadow-offset)
-			var(--shadow-color-blue-override, var(--shadow-color-blue));
-		--hard-shadow-light: var(--hard-shadow-offset)
-			var(--shadow-color-light-override, var(--shadow-color-light));
-		--hard-shadow-red: var(--hard-shadow-offset)
-			var(--shadow-color-red-override, var(--shadow-color-red));
-		--hard-shadow-gold: var(--hard-shadow-offset)
-			var(--shadow-color-gold-override, var(--shadow-color-gold));
+		--hard-shadow: var(--hard-shadow-offset) var(--shadow-color);
+		--hard-shadow-blue: var(--hard-shadow-offset) var(--shadow-color-blue);
+		--hard-shadow-light: var(--hard-shadow-offset) var(--shadow-color-light);
+		--hard-shadow-red: var(--hard-shadow-offset) var(--shadow-color-red);
+		--hard-shadow-gold: var(--hard-shadow-offset) var(--shadow-color-gold);
 
+		--hard-shadow-long: var(--long-shadow-offset) var(--shadow-color);
+		--hard-shadow-blue-long: var(--long-shadow-offset)
+			var(--shadow-color-blue);
+		--hard-shadow-light-long: var(--long-shadow-offset)
+			var(--shadow-color-light);
 		--hard-shadow-red-long: var(--long-shadow-offset)
-			var(--shadow-color-red-override, var(--shadow-color-red));
+			var(--shadow-color-red);
 		--hard-shadow-gold-long: var(--long-shadow-offset)
-			var(--shadow-color-gold-override, var(--shadow-color-gold));
+			var(--shadow-color-gold);
 
 		--exploding-shadow: var(--long-shadow-offset) rgba(231, 177, 89, 0.5),
 			var(--longer-shadow-offset) rgba(231, 177, 89, 0.25);
 
+		--hero-title-text-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
+			-0.25rem 0.125rem rgba(255, 0, 230, 0.5);
+
 		/*----- transitions -----*/
 
-		--transition: 0.4s ease;
+		--transition: 0.25s ease;
 	}
 }

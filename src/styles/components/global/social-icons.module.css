@@ -1,30 +1,90 @@
 .social {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.5rem;
+
 	.social-icon {
-		&.light {
+		--text-color: var(--cream);
+		--background-color: var(--red);
+		--box-shadow: var(--hard-shadow-blue);
+
+		--background-color-hover: var(--red-light);
+		--box-shadow-hover: var(--hard-shadow-blue-long);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.75rem;
+		aspect-ratio: 1;
+		flex-shrink: 0;
+		font-size: var(--font-size-2x-large);
+		line-height: var(--leading-none);
+		text-align: center;
+		text-decoration: none;
+		color: var(--text-color);
+		background-color: var(--background-color);
+		box-shadow: var(--hard-shadow-blue);
+		border-radius: 50%;
+		transition: color var(--transition), background-color var(--transition),
+			box-shadow var(--transition);
+
+		svg {
+			fill: currentColor;
+			height: 1em;
 		}
 
 		&.dark {
+			--text-color: var(--gold-light);
+			--backgorund-color: var(--blue);
+			--box-shadow: none;
+
+			--text-color-hover: var(--blue);
+			--background-color-hover: var(--gold-light);
 		}
 
 		&.commerce {
+			--text-color: var(--red);
+			--background-color: var(--cream);
+
+			--text-color-hover: var(--cream);
+			--background-color-hover: var(--red);
 		}
 
-		&.instagram {
+		&.instagram::before,
+		&.bluesky::before,
+		&.linkedin::before,
+		&.youtube::before {
+			font: var(--fa-font-brands);
 		}
 
-		&.bluesky {
+		&.instagram::before {
+			content: "\f16d";
 		}
 
-		&.linkedin {
+		&.bluesky::before {
+			content: "\e671";
 		}
 
-		&.youtube {
+		&.linkedin::before {
+			content: "\f0e1";
 		}
 
-		&.email {
+		&.youtube::before {
+			content: "\f167";
 		}
 
-		&.gumroad {
+		&.email::before {
+			font: var(--fa-font-solid);
+			content: "\40";
+		}
+	}
+
+	@media (hover: hover) {
+		.social-icon:hover {
+			color: var(--text-color-hover, var(--text-color));
+			background-color: var(--background-color-hover);
+			box-shadow: var(--box-shadow-hover, var(--box-shadow));
 		}
 	}
 }

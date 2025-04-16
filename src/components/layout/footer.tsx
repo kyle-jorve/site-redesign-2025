@@ -13,8 +13,11 @@ export default function Footer({ className = "", ...otherProps }: FooterProps) {
 			className={classes}
 			{...otherProps}
 		>
-			<p className={styles.copyright}>{copyrightText}</p>
 			<SocialIcons className={styles["footer-icons"]} />
+
+			<p className={`body-text small ${styles.copyright}`}>
+				{copyrightText}
+			</p>
 		</footer>
 	);
 }

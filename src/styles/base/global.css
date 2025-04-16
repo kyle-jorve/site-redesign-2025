@@ -10,9 +10,15 @@
 	}
 
 	body {
+		position: relative;
 		width: 100%;
 		padding-bottom: 112px; /* leaves room for the mobile nav */
-		background: var(--body-bg);
+		background-color: var(--body-bg);
+		background-image: url("/images/icon-pattern-sunset.svg"),
+			var(--gradient-peach-vertical);
+		background-repeat: repeat-x, no-repeat;
+		background-position: left bottom, center bottom;
+		background-size: auto 30rem, 100% 20rem;
 		overflow-x: hidden;
 	}
 

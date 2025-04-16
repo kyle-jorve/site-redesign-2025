@@ -97,6 +97,10 @@
 
 	.dropdown-nav-item {
 	}
+
+	@media (min-width: 64em) {
+		display: none;
+	}
 }
 
 .navigation {

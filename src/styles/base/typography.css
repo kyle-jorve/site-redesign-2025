@@ -13,6 +13,16 @@
 	}
 
 	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0;
+	}
+
+	h1,
 	.heading-1 {
 		margin-bottom: 2.5rem;
 		font-family: var(--font-title);
@@ -170,13 +180,13 @@
 			inset: 0 0 auto;
 			display: block;
 			height: var(--border-width-wide);
-			background: var(--gradient-red-straight);
+			background: var(--gradient-red-horizontal);
 			content: "";
 			pointer-events: none;
 		}
 
 		&.small {
-			background: var(--gradient-gold);
+			background: var(--gradient-gold-diagonal);
 			backdrop-filter: none;
 		}
 	}

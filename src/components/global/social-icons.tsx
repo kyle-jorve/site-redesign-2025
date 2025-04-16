@@ -4,7 +4,7 @@ import { socialMedia } from "@/data/global-data";
 import styles from "@/styles/components/global/social-icons.module.css";
 
 export type SocialIconsProps = {
-	color?: "dark" | "light" | "red";
+	color?: "dark" | "red";
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function SocialIcons({
@@ -29,7 +29,11 @@ export default function SocialIcons({
 						to={value.url}
 						target="_blank"
 						rel="noreferrer"
-						aria-label={`go to Kyle's ${value.label} page`}
+						aria-label={
+							key === "email"
+								? "email Kyle"
+								: `go to Kyle's ${value.label} page`
+						}
 					>
 						{value.icon}
 					</CustomLink>
