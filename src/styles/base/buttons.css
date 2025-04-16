@@ -200,7 +200,7 @@
 			--border-color-hover: var(--egg);
 
 			border: var(--border-cream);
-			backdrop-filter: blur(16px);
+			backdrop-filter: var(--backrop-blur);
 			transition: color var(--transition),
 				background-color var(--transition),
 				border-color var(--transition);

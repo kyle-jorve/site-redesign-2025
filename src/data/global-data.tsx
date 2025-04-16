@@ -32,7 +32,7 @@ export const socialMedia: {
 	gumroad: {
 		url: "https://gumroad.com/kylejorve",
 		type: "commerce",
-		label: "Digital Shop",
+		label: "Shop",
 		icon: <GumroadIcon />,
 	},
 } as const;
@@ -51,17 +51,13 @@ export const navItems: NavType = [
 	{
 		name: "social",
 		label: "Social",
-		children: (() => {
-			const socials = Object.entries(socialMedia).filter(
-				([_, value]) => value.type === "standard",
-			);
-
-			return socials.map(([key, value]) => ({
+		children: Object.entries(socialMedia).map(([key, value]) => {
+			return {
 				name: key,
 				label: value.label,
 				url: value.url,
-			})) as NavItemType[];
-		})(),
+			} as NavItemType;
+		}),
 	},
 ] as const;
 

@@ -1,28 +1,71 @@
 .bio {
-	&.hero {
-	}
+	position: relative;
+	width: 100%;
+	max-width: var(--width-wider);
+	padding: 0 var(--padding-body-edge);
+	margin: 0 auto var(--section-margin);
 
 	.inner {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: start;
+		align-content: start;
+
+		&::before {
+			position: absolute;
+			inset: -0.5rem 1rem auto 2rem;
+			z-index: 3;
+			display: block;
+			aspect-ratio: 64 / 73;
+			content: "";
+			border: var(--border-gold-dotted);
+			border-radius: var(--border-radius);
+			pointer-events: none;
+		}
 	}
 
 	.content-col {
-	}
-
-	.title {
-	}
-
-	.bio-icons {
+		position: relative;
+		z-index: 2;
+		margin-top: -36px;
 	}
 
 	.button-row {
+		margin-bottom: 1rem;
 	}
 
 	.image-col {
-	}
+		position: relative;
+		order: -1;
+		width: calc(100% - 3rem);
+		margin: 0 auto;
+		border-radius: var(--border-radius);
+		box-shadow: var(--hard-shadow-gold-long);
+		overflow: hidden;
 
-	.image-wrapper {
+		&::before {
+			position: absolute;
+			inset: 0;
+			z-index: 2;
+			display: block;
+			content: "";
+			background: var(--gradient-red-diagonal);
+			opacity: 0.15;
+			pointer-events: none;
+		}
 	}
 
 	.image {
+		width: 100%;
+	}
+
+	&.hero {
+	}
+
+	@media (min-width: 40em) {
+		.inner::before {
+			aspect-ratio: 128 / 85;
+		}
 	}
 }

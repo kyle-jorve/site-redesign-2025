@@ -1,10 +1,28 @@
 .category-chip {
+	display: block;
+	max-width: max-content;
+	padding: 0.375rem 0.625rem;
+	font-family: var(--font-body);
+	font-weight: var(--font-weight-black);
+	font-size: var(--font-size-x-small);
+	line-height: var(--leading-none);
+	letter-spacing: var(--kerning-medium);
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--blue);
+	border-radius: var(--border-radius-small);
+	background: var(--mint);
+
 	&.large {
+		font-size: var(--font-size-base);
 	}
 
 	&.yellow {
+		background: var(--gold);
 	}
 
 	&.red {
+		color: var(--cream);
+		background: var(--red);
 	}
 }

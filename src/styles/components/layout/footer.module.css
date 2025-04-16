@@ -12,7 +12,7 @@
 	background: var(--header-footer-background);
 	border: var(--border-dark);
 	border-radius: var(--border-radius-large);
-	backdrop-filter: var(--header-footer-backdrop-blur);
+	backdrop-filter: var(--backdrop-blur-large);
 
 	.copyright {
 		margin: 0;

@@ -6,7 +6,7 @@
 	background: var(--header-footer-background);
 	border-radius: var(--border-radius-large);
 	border: var(--border-dark);
-	backdrop-filter: var(--header-footer-backdrop-blur);
+	backdrop-filter: var(--backdrop-blur-large);
 
 	.logo {
 		display: block;
@@ -15,5 +15,24 @@
 
 	.logo-img {
 		width: 3rem;
+	}
+
+	@media (min-width: 40em) {
+		right: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+		padding: 1rem;
+
+		.logo-img {
+			width: 3.75rem;
+		}
+	}
+
+	@media (min-width: 64em) {
+		.logo-img {
+			width: 4.5rem;
+		}
 	}
 }

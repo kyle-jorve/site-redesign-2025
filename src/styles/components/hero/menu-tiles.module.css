@@ -1,15 +1,25 @@
 .menu-tiles {
+	position: relative;
+	z-index: 2;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 	align-items: start;
 	align-content: start;
-	gap: 1rem;
+	gap: var(--grid-gap);
+	width: 100%;
+	max-width: var(--width-wide);
 	padding: 0 var(--padding-body-edge);
+	margin: -140px auto 0;
+	background: url("/images/icon-pattern-gold.png") repeat-x center center /
+		auto 95%;
 }
 
 .menu-tile {
 	position: relative;
 	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 	width: 100%;
 	aspect-ratio: 35 / 21;
 	padding: 1rem 1rem 2rem;
@@ -22,12 +32,14 @@
 		flex-direction: column;
 		justify-content: center;
 		min-height: 5.25rem;
+		margin: 0;
 		color: var(--gold-light);
 	}
 
 	.button-row {
 		display: flex;
 		justify-content: center;
+		margin-top: auto;
 	}
 
 	.background {
@@ -55,5 +67,61 @@
 	}
 
 	&.long {
+		aspect-ratio: unset;
+		background: var(--gradient-retro-horizontal);
+		box-shadow: var(--exploding-shadow);
+
+		.title {
+			min-height: 0;
+		}
+
+		.background {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: 40em) {
+	.menu-tile {
+		aspect-ratio: 2 / 1;
+
+		&.long {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: 2rem;
+			text-align: left;
+		}
+	}
+}
+
+@media (min-width: 48em) {
+	.menu-tiles {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		align-items: stretch;
+		align-content: stretch;
+	}
+
+	.menu-tile {
+		aspect-ratio: unset;
+		padding: 1rem 0.5rem;
+
+		&.square {
+			.title {
+				font-size: var(--font-size-2x-large);
+			}
+
+			.button {
+				font-size: var(--font-size-x-small);
+			}
+		}
+
+		&.long {
+			grid-column: span 3;
+
+			.title {
+				font-size: 2rem;
+			}
+		}
 	}
 }

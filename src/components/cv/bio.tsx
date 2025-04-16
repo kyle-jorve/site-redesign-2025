@@ -50,12 +50,10 @@ export default function Bio({
 				</ContentBox>
 
 				<div className={styles["image-col"]}>
-					<div className={styles["image-wrapper"]}>
-						<ResponsiveImage
-							className={styles.image}
-							image={image}
-						/>
-					</div>
+					<ResponsiveImage
+						className={styles.image}
+						image={image}
+					/>
 				</div>
 			</article>
 		</section>

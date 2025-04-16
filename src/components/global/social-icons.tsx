@@ -34,9 +34,7 @@ export default function SocialIcons({
 								? "email Kyle"
 								: `go to Kyle's ${value.label} page`
 						}
-					>
-						{value.icon}
-					</CustomLink>
+					></CustomLink>
 				);
 			})}
 		</div>

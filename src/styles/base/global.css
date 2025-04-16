@@ -12,13 +12,13 @@
 	body {
 		position: relative;
 		width: 100%;
-		padding-bottom: 112px; /* leaves room for the mobile nav */
+		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
 		background-color: var(--body-bg);
 		background-image: url("/images/icon-pattern-sunset.svg"),
 			var(--gradient-peach-vertical);
 		background-repeat: repeat-x, no-repeat;
 		background-position: left bottom, center bottom;
-		background-size: auto 30rem, 100% 20rem;
+		background-size: auto 36.75rem, 100% 26.75rem;
 		overflow-x: hidden;
 	}
 
@@ -67,12 +67,12 @@
 	}
 
 	.underline {
-		display: flex;
-		flex-direction: column;
-		gap: 0.25rem;
+		position: relative;
+		padding-bottom: calc((var(--border-width) * 2) + 1rem);
 
 		&::before,
 		&::after {
+			position: absolute;
 			display: block;
 			height: var(--border-width);
 			background: var(--red);
@@ -82,20 +82,18 @@
 		}
 
 		&::before {
-			width: 100%;
-			margin-top: 0.75rem;
-			order: 1;
+			inset: auto 0 calc(var(--border-width) + 0.25rem);
 		}
 
 		&::after {
+			inset: auto auto 0 0;
 			width: 70%;
-			order: 2;
 		}
 
 		&.underline-light {
 			&::before,
 			&::after {
-				background: var(--cream);
+				background: var(--gold-light);
 			}
 		}
 
@@ -107,14 +105,43 @@
 		}
 
 		&.underline-center::after {
-			margin: 0 auto;
+			left: 50%;
+			translate: -50% 0;
 		}
 	}
 
-	.underline-light {
+	button:not(:disabled),
+	a {
+		cursor: pointer;
 	}
 
-	@media (min-width: 64em) {
+	.content-box {
+		position: relative;
+		z-index: 2;
+		padding: calc(var(--padding-content) + var(--border-width-wide))
+			var(--padding-content) var(--padding-content);
+		background: rgba(254, 246, 231, 0.4);
+		backdrop-filter: var(--backdrop-blur-large);
+		border: var(--border-red);
+		border-radius: var(--border-radius);
+
+		&::before {
+			position: absolute;
+			inset: 0 0 auto;
+			display: block;
+			height: var(--border-width-wide);
+			background: var(--gradient-red-horizontal);
+			content: "";
+			pointer-events: none;
+		}
+
+		&.small {
+			background: var(--gradient-gold-diagonal);
+			backdrop-filter: none;
+		}
+	}
+
+	@media (min-width: 40em) {
 		body {
 			padding-bottom: 0;
 		}

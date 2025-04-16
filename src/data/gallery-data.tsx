@@ -94,6 +94,10 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x512",
 						minScreenWidth: 640,
 					},
 				],
@@ -340,6 +344,10 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x512",
 						minScreenWidth: 640,
 					},
 				],
@@ -558,6 +566,10 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x512",
 						minScreenWidth: 640,
 					},
 				],

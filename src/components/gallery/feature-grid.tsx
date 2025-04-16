@@ -19,7 +19,7 @@ export default function FeatureGrid({
 	heading = "h2",
 	title = "Featured Work",
 	url = undefined,
-	headingBarButtonText = "See All Projects",
+	headingBarButtonText = "See All",
 	slideButtonText = "See More",
 	className = "",
 	...otherProps
@@ -34,6 +34,7 @@ export default function FeatureGrid({
 		>
 			{hasHeadingBar && (
 				<HeadingBar
+					className={styles.header}
 					title={title}
 					heading={heading}
 					url={url}

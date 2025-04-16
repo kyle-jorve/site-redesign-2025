@@ -23,7 +23,12 @@ export default function HeadingBar({
 	const classes = printClassNames([
 		styles["heading-bar"],
 		styles[width],
+		url === undefined ? "underline underline-center" : "",
 		className,
+	]);
+	const titleClasses = printClassNames([
+		styles.title,
+		url !== undefined ? "underline underline-center" : "",
 	]);
 	const Heading = heading as React.ElementType;
 
@@ -32,7 +37,7 @@ export default function HeadingBar({
 			className={classes}
 			{...otherProps}
 		>
-			<Heading className={styles.title}>{title}</Heading>
+			<Heading className={titleClasses}>{title}</Heading>
 
 			{url !== undefined && (
 				<ButtonLinkRow

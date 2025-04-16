@@ -1,6 +1,8 @@
 @layer theme {
 	:root {
-		/*----- typography -----*/
+		/*================================*/
+		/*=====----- TYPOGRAPHY -----=====*/
+		/*================================*/
 
 		--font-bungee-shade: "Bungee Shade", sans-serif;
 		--font-bungee-inline: "Bungee Inline", sans-serif;
@@ -37,44 +39,225 @@
 		--font-size-x-large: 1.25rem;
 		--font-size-2x-large: 1.5rem;
 
-		--font-size-supertitle: 1.375rem;
-		--font-size-page-title: 5.125rem;
-		--font-size-superheading: var(--font-size-x-large);
-		--font-size-heading-1: 3.375rem;
-		--font-size-heading-2: 3rem;
-		--font-size-heading-3: 2.25rem;
-		--font-size-heading-4: 1.625rem;
-		--font-size-heading-5: var(--font-size-large);
-		--font-size-heading-6: var(--font-size-large);
-		--font-size-body-large: var(--font-size-large);
-		--font-size-body: var(--font-size-base);
-		--font-size-body-small: var(--font-size-small);
+		--font-size-supertitle-mobile: 1.375rem;
+		--font-size-page-title-mobile: 5.125rem;
+		--font-size-superheading-mobile: var(--font-size-x-large);
+		--font-size-heading-1-mobile: 3.375rem;
+		--font-size-heading-2-mobile: 3rem;
+		--font-size-heading-3-mobile: 2rem;
+		--font-size-heading-4-mobile: 1.625rem;
+		--font-size-heading-5-mobile: var(--font-size-large);
+		--font-size-heading-6-mobile: var(--font-size-large);
+		--font-size-body-large-mobile: var(--font-size-large);
+		--font-size-body-mobile: var(--font-size-base);
+		--font-size-body-small-mobile: var(--font-size-small);
 
-		@media (min-width: 64em) {
-			--font-size-supertitle: 1.6875rem;
-			--font-size-page-title: 8.1875rem;
-			--font-size-superheading: 1.375rem;
-			--font-size-heading-1: 4.8125rem;
-			--font-size-heading-2: 3.75rem;
-			--font-size-heading-3: 2.375rem;
-			--font-size-heading-4: 1.75rem;
-			--font-size-body-large: var(--font-size-x-large);
-			--font-size-body: 1.0625rem;
+		--font-size-supertitle-desktop: 2rem;
+		--font-size-page-title-desktop: 11.25rem;
+		--font-size-superheading-desktop: var(--font-size-2x-large);
+		--font-size-heading-1-desktop: 6.25rem;
+		--font-size-heading-2-desktop: 4.5rem;
+		--font-size-heading-3-desktop: 2.5rem;
+		--font-size-heading-4-desktop: 1.875rem;
+		--font-size-body-large-desktop: 1.375rem;
+		--font-size-body-desktop: var(--font-size-large);
+
+		--font-size-supertitle: var(--font-size-supertitle-mobile);
+		--font-size-page-title: var(--font-size-page-title-mobile);
+		--font-size-superheading: var(--font-size-superheading-mobile);
+		--font-size-heading-1: var(--font-size-heading-1-mobile);
+		--font-size-heading-2: var(--font-size-heading-2-mobile);
+		--font-size-heading-3: var(--font-size-heading-3-mobile);
+		--font-size-heading-4: var(--font-size-heading-4-mobile);
+		--font-size-heading-5: var(--font-size-heading-5-mobile);
+		--font-size-heading-6: var(--font-size-heading-6-mobile);
+		--font-size-body-large: var(--font-size-body-large-mobile);
+		--font-size-body: var(--font-size-body-mobile);
+		--font-size-body-small: var(--font-size-body-small-mobile);
+
+		@media (min-width: 40em) {
+			--font-size-supertitle: calc(
+				(
+						(
+								var(--font-size-supertitle-desktop) -
+									var(--font-size-supertitle-mobile)
+							) / 3
+					) + var(--font-size-supertitle-mobile)
+			);
+			--font-size-page-title: calc(
+				(
+						(
+								var(--font-size-page-title-desktop) -
+									var(--font-size-page-title-mobile)
+							) / 3
+					) + var(--font-size-page-title-mobile)
+			);
+			--font-size-superheading: calc(
+				(
+						(
+								var(--font-size-superheading-desktop) -
+									var(--font-size-superheading-mobile)
+							) / 3
+					) + var(--font-size-superheading-mobile)
+			);
+			--font-size-heading-1: calc(
+				(
+						(
+								var(--font-size-heading-1-desktop) -
+									var(--font-size-heading-1-mobile)
+							) / 3
+					) + var(--font-size-heading-1-mobile)
+			);
+			--font-size-heading-2: calc(
+				(
+						(
+								var(--font-size-heading-2-desktop) -
+									var(--font-size-heading-2-mobile)
+							) / 3
+					) + var(--font-size-heading-2-mobile)
+			);
+			--font-size-heading-3: calc(
+				(
+						(
+								var(--font-size-heading-3-desktop) -
+									var(--font-size-heading-3-mobile)
+							) / 3
+					) + var(--font-size-heading-3-mobile)
+			);
+			--font-size-heading-4: calc(
+				(
+						(
+								var(--font-size-heading-4-desktop) -
+									var(--font-size-heading-4-mobile)
+							) / 3
+					) + var(--font-size-heading-4-mobile)
+			);
+			--font-size-body-large: calc(
+				(
+						(
+								var(--font-size-body-large-desktop) -
+									var(--font-size-body-large-mobile)
+							) / 3
+					) + var(--font-size-body-large-mobile)
+			);
+			--font-size-body: calc(
+				(
+						(
+								var(--font-size-body-desktop) -
+									var(--font-size-body-mobile)
+							) / 3
+					) + var(--font-size-body-mobile)
+			);
+		}
+
+		@media (min-width: 48em) {
+			--font-size-supertitle: calc(
+				(
+						(
+								(
+										var(--font-size-supertitle-desktop) -
+											var(--font-size-supertitle-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-supertitle-mobile)
+			);
+			--font-size-page-title: calc(
+				(
+						(
+								(
+										var(--font-size-page-title-desktop) -
+											var(--font-size-page-title-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-page-title-mobile)
+			);
+			--font-size-superheading: calc(
+				(
+						(
+								(
+										var(--font-size-superheading-desktop) -
+											var(--font-size-superheading-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-superheading-mobile)
+			);
+			--font-size-heading-1: calc(
+				(
+						(
+								(
+										var(--font-size-heading-1-desktop) -
+											var(--font-size-heading-1-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-heading-1-mobile)
+			);
+			--font-size-heading-2: calc(
+				(
+						(
+								(
+										var(--font-size-heading-2-desktop) -
+											var(--font-size-heading-2-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-heading-2-mobile)
+			);
+			--font-size-heading-3: calc(
+				(
+						(
+								(
+										var(--font-size-heading-3-desktop) -
+											var(--font-size-heading-3-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-heading-3-mobile)
+			);
+			--font-size-heading-4: calc(
+				(
+						(
+								(
+										var(--font-size-heading-4-desktop) -
+											var(--font-size-heading-4-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-heading-4-mobile)
+			);
+			--font-size-body-large: calc(
+				(
+						(
+								(
+										var(--font-size-body-large-desktop) -
+											var(--font-size-body-large-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-body-large-mobile)
+			);
+			--font-size-body: calc(
+				(
+						(
+								(
+										var(--font-size-body-desktop) -
+											var(--font-size-body-mobile)
+									) / 3
+							) * 2
+					) + var(--font-size-body-mobile)
+			);
 		}
 
 		@media (min-width: 90em) {
-			--font-size-supertitle: 2rem;
-			--font-size-page-title: 11.25rem;
-			--font-size-superheading: var(--font-size-2x-large);
-			--font-size-heading-1: 6.25rem;
-			--font-size-heading-2: 4.5rem;
-			--font-size-heading-3: 2.5rem;
-			--font-size-heading-4: 1.875rem;
-			--font-size-body-large: 1.375rem;
-			--font-size-body: var(--font-size-large);
+			--font-size-supertitle: var(--font-size-supertitle-desktop);
+			--font-size-page-title: var(--font-size-page-title-desktop);
+			--font-size-superheading: var(--font-size-superheading-desktop);
+			--font-size-heading-1: var(--font-size-heading-1-desktop);
+			--font-size-heading-2: var(--font-size-heading-2-desktop);
+			--font-size-heading-3: var(--font-size-heading-3-desktop);
+			--font-size-heading-4: var(--font-size-heading-4-desktop);
+			--font-size-body-large: var(--font-size-body-large-desktop);
+			--font-size-body: var(--font-size-body-desktop);
 		}
 
-		/*----- colors -----*/
+		/*============================*/
+		/*=====----- COLORS -----=====*/
+		/*============================*/
 
 		--black: #000;
 		--white: #fff;
@@ -156,23 +339,23 @@
 				var(--gold)
 			);
 
-		/*----- layout -----*/
+		/*============================*/
+		/*=====----- LAYOUT -----=====*/
+		/*============================*/
 
-		--padding-body-edge: 1.25rem;
+		--padding-body-edge: 20px;
 		--padding-content: 1.25rem;
 		--padding-large: 2rem;
 
 		--width-narrow: calc(50rem + (var(--padding-body-edge) * 2));
 		--width-intro: calc(60rem + (var(--padding-body-edge) * 2));
 		--width-medium: calc(68.75 + (var(--padding-body-edge) * 2));
-		--width-hero-menu: calc(75rem + (var(--padding-body-edge) * 2));
-		--width-wide: calc(85rem + (var(--padding-body-edge) * 2));
+		--width-wide: calc(75rem + (var(--padding-body-edge) * 2));
+		--width-wider: calc(85rem + (var(--padding-body-edge) * 2));
 
 		--section-margin: 6.25rem;
 
 		--grid-gap: 0.5rem;
-
-		--header-footer-backdrop-blur: blur(64px);
 
 		@media (min-width: 64em) {
 			--padding-content: 2rem;
@@ -183,29 +366,41 @@
 			--grid-gap: 1rem;
 		}
 
-		/*----- borders -----*/
+		/*=============================*/
+		/*=====----- BORDERS -----=====*/
+		/*=============================*/
 
 		--border-width: 0.125rem;
 		--border-width-wide: 1rem;
 
+		--border-radius-small: 0.25rem;
 		--border-radius: 0.5rem;
 		--border-radius-medium: 0.625rem;
 		--border-radius-large: 0.75rem;
 		--border-radius-rounded: 1000px;
 
-		--border-dark: var(--border-width) solid var(--navy);
-		--border-red: var(--border-width) solid var(--red);
-		--border-red-dotted: var(--border-width) dotted var(--red);
-		--border-gold: var(--border-width) solid var(--gold);
-		--border-gold-dotted: var(--border-width) dotted var(--gold);
-		--border-light: var(--border-width) solid var(--gold-light);
-		--border-cream: var(--border-width) solid var(--cream);
+		--border-dark-color: var(--navy);
+		--border-red-color: var(--red);
+		--border-gold-color: var(--gold);
+		--border-light-color: var(--gold-light);
+		--border-cream-color: var(--cream);
+
+		--border-dark: var(--border-width) solid var(--border-dark-color);
+		--border-red: var(--border-width) solid var(--border-red-color);
+		--border-red-dotted: var(--border-width) dotted var(--border-red-color);
+		--border-gold: var(--border-width) solid var(--border-gold-color);
+		--border-gold-dotted: var(--border-width) dotted
+			var(--border-gold-color);
+		--border-light: var(--border-width) solid var(--border-light-color);
+		--border-cream: var(--border-width) solid var(--border-cream-color);
 
 		@media (min-width: 64em) {
 			--border-width-wide: 1.5rem;
 		}
 
-		/*----- shadows -----*/
+		/*=============================*/
+		/*=====----- SHADOWS -----=====*/
+		/*=============================*/
 
 		--hard-shadow-offset: -0.25rem 0.25rem;
 		--long-shadow-offset: -0.5rem 0.5rem;
@@ -236,11 +431,21 @@
 		--exploding-shadow: var(--long-shadow-offset) rgba(231, 177, 89, 0.5),
 			var(--longer-shadow-offset) rgba(231, 177, 89, 0.25);
 
-		--hero-title-text-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
+		--chromatic-distortion-text-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
 			-0.25rem 0.125rem rgba(255, 0, 230, 0.5);
 
-		/*----- transitions -----*/
+		@media (min-width: 64em) {
+			--chromatic-distortion-text-shadow: 0.5rem -0.25rem rgba(0, 255, 208, 0.5),
+				-0.5rem 0.25rem rgba(255, 0, 230, 0.5);
+		}
 
-		--transition: 0.25s ease;
+		/*===========================*/
+		/*=====----- MISC. -----=====*/
+		/*===========================*/
+
+		--transition: 0.3s ease;
+
+		--backdrop-blur: blur(16px);
+		--backdrop-blur-large: blur(64px);
 	}
 }

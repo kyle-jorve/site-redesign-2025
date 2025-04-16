@@ -58,6 +58,11 @@
 			font: var(--fa-font-brands);
 		}
 
+		&.email::before,
+		&.gumroad::before {
+			font: var(--fa-font-solid);
+		}
+
 		&.instagram::before {
 			content: "\f16d";
 		}
@@ -75,8 +80,12 @@
 		}
 
 		&.email::before {
-			font: var(--fa-font-solid);
 			content: "\40";
+		}
+
+		&.gumroad::before {
+			font-size: var(--font-size-x-large);
+			content: "\f07a";
 		}
 	}
 

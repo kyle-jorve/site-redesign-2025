@@ -1,7 +1,14 @@
 .heading-bar {
+	width: 100%;
+	max-width: var(--width-wide);
+	margin: 0 auto;
+	text-align: center;
+
 	.title {
+		margin: 0;
 	}
 
 	&.narrow {
+		max-width: var(--width-narrow);
 	}
 }

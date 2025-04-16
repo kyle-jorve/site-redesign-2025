@@ -18,8 +18,13 @@ export default function MenuTile({
 }: MenuTileProps) {
 	const classes = printClassNames([
 		styles["menu-tile"],
-		type === "long" ? styles.long : "",
+		styles[type],
 		className,
+	]);
+	const titleClasses = printClassNames([
+		"heading-3",
+		type !== "long" ? "underline underline-light underline-center" : "",
+		styles.title,
 	]);
 
 	return (
@@ -27,10 +32,11 @@ export default function MenuTile({
 			className={classes}
 			{...otherProps}
 		>
-			<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
+			<h2 className={titleClasses}>{title}</h2>
 
 			<div className={styles["button-row"]}>
 				<ButtonLink
+					className={styles.button}
 					url={url}
 					color="dark"
 				>

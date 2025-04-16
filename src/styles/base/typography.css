@@ -48,7 +48,7 @@
 
 	h3,
 	.heading-3 {
-		margin-bottom: 1.5rem;
+		margin-bottom: 0.75rem;
 		font-family: var(--font-heading);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-heading-3);
@@ -163,32 +163,6 @@
 		text-underline-offset: 18%;
 		color: var(--blue-light);
 		transition: color var(--transition);
-	}
-
-	.content-box {
-		position: relative;
-		z-index: 2;
-		padding: calc(var(--padding-content) + var(--border-width-wide))
-			var(--padding-content) var(--padding-content);
-		background: rgba(254, 246, 231, 0.4);
-		backdrop-filter: blur(64px);
-		border: var(--border-red);
-		border-radius: var(--border-radius);
-
-		&::before {
-			position: absolute;
-			inset: 0 0 auto;
-			display: block;
-			height: var(--border-width-wide);
-			background: var(--gradient-red-horizontal);
-			content: "";
-			pointer-events: none;
-		}
-
-		&.small {
-			background: var(--gradient-gold-diagonal);
-			backdrop-filter: none;
-		}
 	}
 
 	@media (hover: hover) {

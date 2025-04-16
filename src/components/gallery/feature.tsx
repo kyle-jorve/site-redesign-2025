@@ -29,11 +29,7 @@ export default function Feature({
 			{...otherProps}
 		>
 			<div className={styles["content-col"]}>
-				{!!number && (
-					<span className={`page-title ${styles.number}`}>
-						{number}
-					</span>
-				)}
+				{!!number && <span className={styles.number}>{number}</span>}
 
 				{!!category && (
 					<CategoryChip
@@ -43,7 +39,9 @@ export default function Feature({
 				)}
 
 				{!!supertitle && (
-					<span className={styles.supertitle}>{supertitle}</span>
+					<span className={`superheading ${styles.supertitle}`}>
+						{supertitle}
+					</span>
 				)}
 
 				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
@@ -60,12 +58,10 @@ export default function Feature({
 			</div>
 
 			<div className={styles["image-col"]}>
-				<div className={styles["image-wrapper"]}>
-					<ResponsiveImage
-						className={styles.image}
-						image={image}
-					/>
-				</div>
+				<ResponsiveImage
+					className={styles.image}
+					image={image}
+				/>
 			</div>
 		</article>
 	);
