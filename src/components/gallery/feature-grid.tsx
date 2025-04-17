@@ -25,7 +25,7 @@ export default function FeatureGrid({
 	...otherProps
 }: FeatureGridProps) {
 	const classes = printClassNames([styles["feature-grid"], className]);
-	const hasHeadingBar = title !== undefined || url !== undefined;
+	const hasHeadingBar = title !== undefined && url !== undefined;
 
 	return (
 		<section
@@ -50,7 +50,7 @@ export default function FeatureGrid({
 						<Feature
 							key={slide.name}
 							{...slide}
-							alignment={isOdd ? "image-left" : "image-right"}
+							alignment={isOdd ? "image-right" : "image-left"}
 							buttonText={slideButtonText}
 							number={String(index + 1).padStart(2, "0")}
 						/>

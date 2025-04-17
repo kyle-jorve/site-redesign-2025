@@ -21,7 +21,11 @@ export default function Feature({
 	className = "",
 	...otherProps
 }: FeatureProps) {
-	const classes = printClassNames([styles.feature, alignment, className]);
+	const classes = printClassNames([
+		styles.feature,
+		styles[alignment],
+		className,
+	]);
 
 	return (
 		<article
@@ -52,7 +56,12 @@ export default function Feature({
 
 				{!!url && (
 					<div className={styles["button-row"]}>
-						<ButtonLink url={url}>{buttonText}</ButtonLink>
+						<ButtonLink
+							className={styles.button}
+							url={url}
+						>
+							{buttonText}
+						</ButtonLink>
 					</div>
 				)}
 			</div>

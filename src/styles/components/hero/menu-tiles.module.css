@@ -1,6 +1,6 @@
 .menu-tiles {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 	align-items: start;
@@ -10,8 +10,6 @@
 	max-width: var(--width-wide);
 	padding: 0 var(--padding-body-edge);
 	margin: -140px auto 0;
-	background: url("/images/icon-pattern-gold.png") repeat-x center center /
-		auto 95%;
 }
 
 .menu-tile {
@@ -40,6 +38,13 @@
 		display: flex;
 		justify-content: center;
 		margin-top: auto;
+	}
+
+	.button::before {
+		position: absolute;
+		inset: 0;
+		z-index: 4;
+		content: "";
 	}
 
 	.background {
@@ -103,7 +108,6 @@
 	}
 
 	.menu-tile {
-		aspect-ratio: unset;
 		padding: 1rem 0.5rem;
 
 		&.square {
@@ -123,5 +127,41 @@
 				font-size: 2rem;
 			}
 		}
+	}
+}
+
+@media (min-width: 64em) {
+	.menu-tile {
+		aspect-ratio: 195 / 158;
+		padding: 1.5rem 1rem;
+
+		&.square {
+			.title {
+				font-size: var(--font-size-heading-4);
+			}
+
+			.button {
+				font-size: var(--font-size-small);
+			}
+		}
+
+		&.long {
+			padding: 2.625rem 2rem;
+
+			.title {
+				font-size: var(--font-size-heading-3);
+			}
+		}
+	}
+}
+
+@media (min-width: 90em) {
+	.menu-tiles {
+		margin-top: -225px;
+	}
+
+	.menu-tile.square .title {
+		min-height: 6.25rem;
+		font-size: var(--font-size-heading-3);
 	}
 }

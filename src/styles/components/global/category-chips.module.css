@@ -12,6 +12,7 @@
 	color: var(--blue);
 	border-radius: var(--border-radius-small);
 	background: var(--mint);
+	transition: box-shadow var(--transition);
 
 	&.large {
 		font-size: var(--font-size-base);
@@ -24,5 +25,11 @@
 	&.red {
 		color: var(--cream);
 		background: var(--red);
+	}
+
+	@media (hover: hover) {
+		a&:hover {
+			box-shadow: var(--hard-shadow);
+		}
 	}
 }

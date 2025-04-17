@@ -22,4 +22,19 @@
 	.footer-icons {
 		justify-content: center;
 	}
+
+	@media (min-width: 64em) {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 1.5rem 2rem;
+		text-align: left;
+
+		.copyright {
+			order: -1;
+		}
+
+		.footer-icons {
+			justify-content: end;
+		}
+	}
 }

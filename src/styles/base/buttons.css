@@ -52,7 +52,6 @@
 		--background-color-hover: var(--red-light);
 		--box-shadow-hover: var(--hard-shadow-long);
 
-		position: relative;
 		display: inline-flex;
 		align-items: center;
 		flex-shrink: 0;

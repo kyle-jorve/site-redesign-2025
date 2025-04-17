@@ -27,7 +27,7 @@
 
 	.content-col {
 		position: relative;
-		z-index: 2;
+		z-index: 4;
 		margin-top: -36px;
 	}
 
@@ -42,7 +42,6 @@
 		margin: 0 auto;
 		border-radius: var(--border-radius);
 		box-shadow: var(--hard-shadow-gold-long);
-		overflow: hidden;
 
 		&::before {
 			position: absolute;
@@ -51,6 +50,7 @@
 			display: block;
 			content: "";
 			background: var(--gradient-red-diagonal);
+			border-radius: var(--border-radius);
 			opacity: 0.15;
 			pointer-events: none;
 		}
@@ -66,6 +66,51 @@
 	@media (min-width: 40em) {
 		.inner::before {
 			aspect-ratio: 128 / 85;
+		}
+	}
+
+	@media (min-width: 64em) {
+		.inner {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			align-items: start;
+			align-content: unset;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		.content-col {
+			margin: 0;
+		}
+
+		.image-col {
+			order: unset;
+			width: calc(100% + 3.5rem);
+			margin: 2rem 0 0 -3.5rem;
+			box-shadow: var(--hard-shadow-red-long);
+
+			&::after {
+				position: absolute;
+				inset: -0.5rem -0.5rem 0.5rem 0.5rem;
+				z-index: 3;
+				display: block;
+				content: "";
+				border: var(--border-red-dotted);
+				border-radius: var(--border-radius);
+				pointer-events: none;
+			}
+		}
+	}
+
+	@media (min-width: 90em) {
+		.inner {
+			align-items: end;
+		}
+
+		.image-col {
+			margin-top: 0;
+			margin-bottom: 3.5rem;
 		}
 	}
 }

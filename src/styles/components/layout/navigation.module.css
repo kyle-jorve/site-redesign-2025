@@ -20,6 +20,7 @@
 	opacity: 0;
 	visibility: hidden;
 	border-radius: var(--border-radius);
+	box-shadow: var(--hard-shadow-light-long);
 	transition: translate var(--transition), opacity var(--transition),
 		visibility var(--transition);
 
@@ -63,6 +64,7 @@
 	&::before {
 		width: 1.25rem;
 		flex-shrink: 0;
+		color: var(--red);
 	}
 
 	&.instagram::before,
@@ -135,7 +137,7 @@
 		backdrop-filter: var(--backdrop-blur-large);
 	}
 
-	.nav-item,
+	.nav-item:not(.dropdown-nav-item),
 	.dropdown-toggle {
 		display: flex;
 		flex-direction: column;
@@ -260,7 +262,7 @@
 	gap: 1.5rem;
 	color: var(--gold-light);
 
-	.nav-item,
+	.nav-item:not(.dropdown-nav-item),
 	.dropdown-toggle {
 		padding: 0;
 		margin: 0;
@@ -274,6 +276,7 @@
 		background: none;
 		border: none;
 		border-radius: 0;
+		transition: color var(--transition);
 	}
 
 	.nav-item.current {
@@ -287,24 +290,27 @@
 
 	.dropdown-menu {
 		inset: 100% 0 auto auto;
-		translate: 0 1rem;
-		color: var(--red);
-		background: var(--gold-light);
+		translate: 0 2rem;
+		color: var(--blue-light);
+		background: var(--cream);
+		box-shadow: var(--hard-shadow-red-long);
 
 		&::before {
 			inset: auto 2rem calc(100% - 0.75rem) auto;
-			color: var(--gold-light);
+			color: var(--cream);
 			content: "\f0d8";
 		}
 	}
 
-	.dropdown-nav-item {
-		&::before {
-			color: var(--blue-light);
-		}
+	.nav-parent.expanded .dropdown-menu {
+		translate: 0 1rem;
 	}
 
-	.nav-parent.expanded {
+	@media (hover: hover) {
+		.nav-item:hover,
+		.dropdown-toggle:hover {
+			color: var(--red);
+		}
 	}
 
 	@media (min-width: 40em) {
@@ -314,7 +320,7 @@
 	@media (min-width: 64em) {
 		gap: 2.5rem;
 
-		.nav-item,
+		.nav-item:not(.dropdown-nav-item),
 		.dropdown-toggle {
 			font-size: var(--font-size-x-large);
 		}

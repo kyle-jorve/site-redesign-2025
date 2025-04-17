@@ -68,7 +68,7 @@
 
 	.underline {
 		position: relative;
-		padding-bottom: calc((var(--border-width) * 2) + 1rem);
+		padding-bottom: var(--padding-underlines);
 
 		&::before,
 		&::after {
@@ -144,6 +144,12 @@
 	@media (min-width: 40em) {
 		body {
 			padding-bottom: 0;
+		}
+	}
+
+	@media (min-width: 64em) {
+		body {
+			background-size: auto 34rem, 100% 24rem;
 		}
 	}
 }
