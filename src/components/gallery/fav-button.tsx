@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext } from "react";
-import { printClassNames } from "@/utils";
-import SiteContext from "@/site-context";
+import { printClassNames } from "@/utils/utils";
+import SiteContext from "@/utils/site-context";
 import CircleButton, {
 	CircleButtonProps,
 } from "@/components/global/circle-button";

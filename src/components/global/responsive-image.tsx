@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageDataType } from "@/types/global-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { useState, useEffect } from "react";
 
 export type ResponsiveImageProps = {

@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type FeaturedFlagProps = {

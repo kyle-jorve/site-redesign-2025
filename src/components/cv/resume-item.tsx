@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/cv/resume.module.css";
 
@@ -26,7 +26,7 @@ export default function ResumeItem({
 			{...otherProps}
 		>
 			<ContentBox
-				size="medium"
+				size="small"
 				className={styles["resume-item-content"]}
 			>
 				{year !== undefined && (

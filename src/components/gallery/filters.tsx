@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useContext } from "react";
-import { printClassNames } from "@/utils";
-import SiteContext from "@/site-context";
+import { printClassNames } from "@/utils/utils";
+import SiteContext from "@/utils/site-context";
 import FilterChip from "@/components/gallery/filter-chip";
 import styles from "@/styles/components/gallery/filters.module.css";
 

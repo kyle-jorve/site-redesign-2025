@@ -1,5 +1,9 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { FeatureType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -21,6 +25,8 @@ export default function Feature({
 	className = "",
 	...otherProps
 }: FeatureProps) {
+	const articleRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(articleRef);
 	const classes = printClassNames([
 		styles.feature,
 		styles[alignment],
@@ -29,7 +35,12 @@ export default function Feature({
 
 	return (
 		<article
+			ref={articleRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<div className={styles["content-col"]}>

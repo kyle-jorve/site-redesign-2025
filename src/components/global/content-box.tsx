@@ -1,7 +1,7 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 
 export type ContentBoxProps = {
-	size?: "standard" | "medium" | "small";
+	size?: "standard" | "small";
 } & React.PropsWithChildren &
 	React.HTMLAttributes<HTMLDivElement>;
 

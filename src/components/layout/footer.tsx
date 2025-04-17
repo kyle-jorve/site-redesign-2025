@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { copyrightText } from "@/data/global-data";
 import SocialIcons from "@/components/global/social-icons";
 import styles from "@/styles/components/layout/footer.module.css";

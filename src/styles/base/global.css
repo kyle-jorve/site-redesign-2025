@@ -14,11 +14,13 @@
 		width: 100%;
 		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
 		background-color: var(--body-bg);
-		background-image: url("/images/icon-pattern-sunset.svg"),
+		background-image: url("/images/icon-pattern-gold-vertical.svg"),
+			var(--gradient-gold-vertical),
+			url("/images/icon-pattern-sunset.svg"),
 			var(--gradient-peach-vertical);
-		background-repeat: repeat-x, no-repeat;
-		background-position: left bottom, center bottom;
-		background-size: auto 36.75rem, 100% 26.75rem;
+		background-repeat: repeat-x, no-repeat, repeat-x, no-repeat;
+		background-position: left top, center top, left bottom, center bottom;
+		background-size: auto 43.25rem, 100% 45rem, auto 36.75rem, 100% 26.75rem;
 		overflow-x: hidden;
 	}
 

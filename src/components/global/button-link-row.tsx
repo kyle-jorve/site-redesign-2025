@@ -1,13 +1,17 @@
-import { printClassNames } from "@/utils";
-import ButtonLink from "@/components/global/button-link";
+import { printClassNames } from "@/utils/utils";
+import ButtonLink, { ButtonLinkProps } from "@/components/global/button-link";
 
 export type ButtonLinkRowProps = {
 	url: string;
+	buttonType?: ButtonLinkProps["type"];
+	buttonColor?: ButtonLinkProps["color"];
 	buttonText?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function ButtonLinkRow({
 	url,
+	buttonType = undefined,
+	buttonColor = undefined,
 	buttonText = "Visit Website",
 	className = "",
 	...otherProps
@@ -23,7 +27,13 @@ export default function ButtonLinkRow({
 				className="lines left"
 				aria-hidden="true"
 			></span>
-			<ButtonLink url={url}>{buttonText}</ButtonLink>
+			<ButtonLink
+				url={url}
+				type={buttonType}
+				color={buttonColor}
+			>
+				{buttonText}
+			</ButtonLink>
 			<span
 				className="lines right"
 				aria-hidden="true"

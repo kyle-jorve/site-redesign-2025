@@ -1,10 +1,10 @@
 "use client";
 
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { useRouter, usePathname } from "next/navigation";
 import { useContext } from "react";
 import Link from "next/link";
-import SiteContext from "@/site-context";
+import SiteContext from "@/utils/site-context";
 
 export type CustomLinkProps = {
 	to: string;

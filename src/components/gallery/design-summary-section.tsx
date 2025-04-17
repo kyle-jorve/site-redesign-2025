@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
 import ButtonLinkRow from "@/components/global/button-link-row";

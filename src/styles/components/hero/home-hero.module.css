@@ -30,7 +30,8 @@
 	.title {
 		max-width: 6ch;
 		margin: 0;
-		text-shadow: var(--chromatic-distortion-text-shadow);
+		text-shadow: var(--chromatic-distortion-shadow);
+		transition: text-shadow var(--transition);
 	}
 
 	.supertitle {
@@ -61,6 +62,12 @@
 		width: 100%;
 	}
 
+	@media (hover: hover) {
+		.title:hover {
+			text-shadow: var(--chromatic-distortion-shadow-long);
+		}
+	}
+
 	@media (min-width: 40em) {
 		.content {
 			top: 10rem;
@@ -74,7 +81,8 @@
 
 	@media (min-width: 64em) {
 		.content {
-			inset: 20% 0 auto auto;
+			inset: 15% 4% auto auto;
+			padding: 0;
 		}
 
 		.supertitle {
@@ -84,7 +92,7 @@
 
 	@media (min-width: 90em) {
 		.content {
-			padding: 0 3.5rem;
+			top: 20%;
 		}
 	}
 }

@@ -1,7 +1,8 @@
 .heading-bar {
 	display: contents;
 	width: 100%;
-	max-width: var(--width-wide);
+	width: calc(100% - (var(--padding-body-edge) * 2));
+	max-width: calc(var(--width-wide) - (var(--padding-body-edge) * 2));
 	margin: 0 auto 3rem;
 	text-align: center;
 
@@ -10,8 +11,14 @@
 		display: none;
 	}
 
+	.title,
+	:global(.link-row) {
+		width: calc(100% - (var(--padding-body-edge) * 2));
+		margin: 0 auto;
+	}
+
 	.title {
-		margin: 0;
+		color: var(--heading-bar-title-color-override, var(--heading-color));
 	}
 
 	:global(.link-row) {
@@ -33,6 +40,12 @@
 			display: block;
 		}
 
+		.title,
+		:global(.link-row) {
+			width: auto;
+			margin: 0;
+		}
+
 		.title {
 			padding: 0;
 
@@ -45,7 +58,6 @@
 		:global(.link-row) {
 			display: block;
 			order: unset;
-			width: auto;
 
 			:global(.lines) {
 				display: none;

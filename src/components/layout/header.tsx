@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import Logo from "@/components/layout/logo";
 import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";

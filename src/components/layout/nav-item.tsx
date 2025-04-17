@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/navigation.module.css";
 

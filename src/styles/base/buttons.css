@@ -86,6 +86,13 @@
 			content: "\f061";
 			border: var(--border-cream);
 			border-radius: 50%;
+			transition: translate var(--transition),
+				text-shadow var(--transition), box-shadow var(--transition);
+		}
+
+		.button-text {
+			transition: translate var(--transition),
+				text-shadow var(--transition);
 		}
 
 		&.filter,
@@ -107,6 +114,7 @@
 		}
 
 		&.contact::after {
+			padding-left: 0.125rem;
 			content: "\40";
 		}
 	}
@@ -223,6 +231,17 @@
 			background-color: var(--background-color-hover);
 			border-color: var(--border-color-hover);
 			box-shadow: var(--box-shadow-hover, var(--box-shadow));
+
+			&::before,
+			&::after,
+			.button-text {
+				translate: 0.25rem -0.25rem;
+				text-shadow: var(--hard-shadow);
+			}
+
+			&::after {
+				box-shadow: var(--hard-shadow);
+			}
 		}
 	}
 }

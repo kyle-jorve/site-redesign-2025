@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import ResumeItem from "@/components/cv/resume-item";
 import styles from "@/styles/components/cv/resume.module.css";
 

@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 
 export type CircleButtonProps = {
 	icon: "heart" | "arrow-left" | "arrow-right";

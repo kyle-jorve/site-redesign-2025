@@ -1,4 +1,8 @@
 .interior-hero {
+	position: relative;
+	padding: 8.75rem var(--padding-body-edge) 0;
+	margin-bottom: var(--section-margin);
+
 	.top-bar {
 	}
 

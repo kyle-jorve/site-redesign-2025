@@ -1,6 +1,6 @@
 import { ProjectTileType } from "@/types/gallery-types";
 import { HeadingType, ImageDataType } from "@/types/global-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";

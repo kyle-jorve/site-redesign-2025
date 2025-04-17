@@ -6,6 +6,10 @@ export const heroImage: ImageDataType = {
 	name: "home-hero-image",
 	sources: [
 		{
+			url: "https://placehold.co/1920x1467",
+			minScreenWidth: 1440,
+		},
+		{
 			url: "https://placehold.co/1440x1100",
 			minScreenWidth: 1024,
 		},

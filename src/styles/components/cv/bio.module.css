@@ -15,7 +15,7 @@
 		&::before {
 			position: absolute;
 			inset: -0.5rem 1rem auto 2rem;
-			z-index: 3;
+			z-index: 6;
 			display: block;
 			aspect-ratio: 64 / 73;
 			content: "";
@@ -61,6 +61,15 @@
 	}
 
 	&.hero {
+		margin-top: 8.75rem;
+
+		.inner::before {
+			border-color: var(--red);
+		}
+
+		.image-col {
+			box-shadow: var(--hard-shadow-red-long);
+		}
 	}
 
 	@media (min-width: 40em) {
@@ -89,6 +98,7 @@
 			width: calc(100% + 3.5rem);
 			margin: 2rem 0 0 -3.5rem;
 			box-shadow: var(--hard-shadow-red-long);
+			transition: box-shadow var(--transition);
 
 			&::after {
 				position: absolute;
@@ -99,6 +109,17 @@
 				border: var(--border-red-dotted);
 				border-radius: var(--border-radius);
 				pointer-events: none;
+				transition: translate var(--transition);
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover .image-col {
+				box-shadow: var(--hard-shadow-red-longer);
+
+				&::after {
+					translate: 0.5rem -0.5rem;
+				}
 			}
 		}
 	}

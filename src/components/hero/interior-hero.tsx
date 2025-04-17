@@ -1,5 +1,5 @@
 import { CategoryType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import styles from "@/styles/components/hero/interior-hero.module.css";
 import React from "react";

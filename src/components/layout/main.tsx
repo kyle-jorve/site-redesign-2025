@@ -2,7 +2,7 @@
 
 import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import SiteContext from "@/site-context";
+import SiteContext from "@/utils/site-context";
 
 export type MainProps = React.PropsWithChildren<
 	React.HTMLAttributes<HTMLElement>

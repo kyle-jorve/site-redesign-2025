@@ -1,5 +1,5 @@
 import { CategoryType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import styles from "@/styles/components/gallery/filters.module.css";
 
 export type FilterChipProps = {

@@ -11,21 +11,22 @@
 .feature-grid {
 	position: relative;
 	gap: 2.5rem;
-	max-width: var(--width-wide);
-	margin: 0 auto var(--section-margin);
-	padding: 0 var(--padding-body-edge);
+	margin-bottom: var(--section-margin);
 }
 
 .features {
 	gap: 2rem;
-	max-width: var(--width-medium);
+	max-width: var(--width-wide);
+	padding: 0 var(--padding-body-edge);
 	margin: 0 auto;
 }
 
 .feature {
 	position: relative;
 	z-index: 2;
+	max-width: var(--width-medium);
 	padding: 0 1rem 2rem;
+	margin: 0 auto;
 
 	&::before,
 	&::after {

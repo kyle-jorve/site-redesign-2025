@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { ImageDataType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";

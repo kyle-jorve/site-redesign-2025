@@ -1,5 +1,5 @@
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
@@ -21,10 +21,9 @@ export default function MenuTile({
 		styles[type],
 		className,
 	]);
-	const titleClasses = printClassNames([
-		"heading-3",
+	const headerClasses = printClassNames([
 		type !== "long" ? "underline underline-light underline-center" : "",
-		styles.title,
+		styles.header,
 	]);
 
 	return (
@@ -32,7 +31,9 @@ export default function MenuTile({
 			className={classes}
 			{...otherProps}
 		>
-			<h2 className={titleClasses}>{title}</h2>
+			<header className={headerClasses}>
+				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
+			</header>
 
 			<div className={styles["button-row"]}>
 				<ButtonLink

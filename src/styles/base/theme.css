@@ -310,6 +310,11 @@
 			var(--red),
 			var(--gold)
 		);
+		--gradient-gold-vertical: linear-gradient(
+			to bottom,
+			rgba(231, 177, 89, 0.6),
+			rgba(253, 233, 206, 0.6)
+		);
 		--gradient-gold-diagonal: linear-gradient(
 			45deg,
 			var(--gold-light),
@@ -355,7 +360,7 @@
 		--border-dark-color: var(--navy);
 		--border-red-color: var(--red);
 		--border-gold-color: var(--gold);
-		--border-light-color: var(--gold-light);
+		--border-light-color: rgba(242, 225, 174, 0.75);
 		--border-cream-color: var(--cream);
 
 		--border-dark: var(--border-width) solid var(--border-dark-color);
@@ -365,6 +370,8 @@
 		--border-gold-dotted: var(--border-width) dotted
 			var(--border-gold-color);
 		--border-light: var(--border-width) solid var(--border-light-color);
+		--border-light-dotted: var(--border-width) dotted
+			var(--border-light-color);
 		--border-cream: var(--border-width) solid var(--border-cream-color);
 
 		@media (min-width: 64em) {
@@ -378,6 +385,7 @@
 		--hard-shadow-offset: -0.25rem 0.25rem;
 		--long-shadow-offset: -0.5rem 0.5rem;
 		--longer-shadow-offset: -1rem 1rem;
+		--longest-shadow-offset: -2rem 2rem;
 
 		--shadow-color: var(--blue);
 		--shadow-color-blue: var(--blue-light);
@@ -413,13 +421,20 @@
 
 		--exploding-shadow: var(--long-shadow-offset) rgba(231, 177, 89, 0.5),
 			var(--longer-shadow-offset) rgba(231, 177, 89, 0.25);
+		--exploding-shadow-long: var(--longer-shadow-offset)
+				rgba(231, 177, 89, 0.5),
+			var(--longest-shadow-offset) rgba(231, 177, 89, 0.25);
 
-		--chromatic-distortion-text-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
+		--chromatic-distortion-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
 			-0.25rem 0.125rem rgba(255, 0, 230, 0.5);
+		--chromatic-distortion-shadow-long: 0.5rem -0.25rem rgba(0, 255, 208, 0.5),
+			-0.5rem 0.25rem rgba(255, 0, 230, 0.5);
 
 		@media (min-width: 64em) {
-			--chromatic-distortion-text-shadow: 0.5rem -0.25rem rgba(0, 255, 208, 0.5),
+			--chromatic-distortion-shadow: 0.5rem -0.25rem rgba(0, 255, 208, 0.5),
 				-0.5rem 0.25rem rgba(255, 0, 230, 0.5);
+			--chromatic-distortion-shadow-long: 0.75rem -0.5rem rgba(0, 255, 208, 0.5),
+				-0.75rem 0.5rem rgba(255, 0, 230, 0.5);
 		}
 
 		/*============================*/
@@ -435,7 +450,7 @@
 		--width-intro: calc(60rem + (var(--padding-body-edge) * 2));
 		--width-medium: calc(68.75 + (var(--padding-body-edge) * 2));
 		--width-wide: calc(75rem + (var(--padding-body-edge) * 2));
-		--width-wider: calc(85rem + (var(--padding-body-edge) * 2));
+		--width-wider: calc(86rem + (var(--padding-body-edge) * 2));
 
 		--section-margin: 6.25rem;
 

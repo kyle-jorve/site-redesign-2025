@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import { ImageDataType } from "@/types/global-types";
 import CircleButton from "@/components/global/circle-button";
 import ResponsiveImage from "@/components/global/responsive-image";

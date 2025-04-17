@@ -1,7 +1,7 @@
 import CustomLink from "@/components/global/custom-link";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 
-export type ButtonLinkType = {
+export type ButtonLinkProps = {
 	url: string;
 	color?: "light" | "red" | "dark";
 	type?: "standard" | "back" | "contact";
@@ -15,7 +15,7 @@ export default function ButtonLink({
 	type = "standard",
 	className = "",
 	...otherProps
-}: ButtonLinkType) {
+}: ButtonLinkProps) {
 	const classes = printClassNames(["button", color, type, className]);
 
 	return (
@@ -24,7 +24,7 @@ export default function ButtonLink({
 			to={url}
 			{...otherProps}
 		>
-			{children}
+			<span className="button-text">{children}</span>
 		</CustomLink>
 	);
 }

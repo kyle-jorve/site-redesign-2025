@@ -1,6 +1,10 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import Feature from "@/components/gallery/feature";
 import HeadingBar from "@/components/global/heading-bar";
 import styles from "@/styles/components/gallery/feature-grid.module.css";
@@ -24,12 +28,19 @@ export default function FeatureGrid({
 	className = "",
 	...otherProps
 }: FeatureGridProps) {
+	const sectionRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["feature-grid"], className]);
 	const hasHeadingBar = title !== undefined && url !== undefined;
 
 	return (
 		<section
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			{hasHeadingBar && (

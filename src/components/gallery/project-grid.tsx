@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { ProjectTileType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils";
-import SiteContext from "@/site-context";
+import { printClassNames } from "@/utils/utils";
+import SiteContext from "@/utils/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
 import styles from "@/styles/components/gallery/projects.module.css";
@@ -49,17 +49,20 @@ export default function ProjectGrid({
 			<Filters />
 
 			<div className={styles.projects}>
-				{filteredProjects.map((project, index) => {
-					const isLong = index === 0 && project.featured;
+				{filteredProjects.map((proj, index) => {
+					const isLong = index === 0 && proj.featured;
 
 					return (
 						<ProjectTile
-							key={project.name}
-							{...project}
+							key={proj.name}
+							name={proj.name}
+							title={proj.title}
+							categories={proj.categories}
+							featured={proj.featured}
 							thumbnail={
 								isLong
-									? project.thumbImage.long
-									: project.thumbImage.square
+									? proj.thumbImage.long
+									: proj.thumbImage.square
 							}
 							variant={isLong ? "long" : "standard"}
 						/>

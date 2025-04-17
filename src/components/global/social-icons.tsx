@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import { socialMedia } from "@/data/global-data";
 import styles from "@/styles/components/global/social-icons.module.css";

@@ -1,11 +1,16 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { BioType } from "@/types/cv-types";
-import { printClassNames } from "@/utils";
+import { printClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
 import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/cv/bio.module.css";
+import socialStyles from "@/styles/components/global/social-icons.module.css";
 
 export type BioProps = BioType & {
 	placement?: "hero" | "body";
@@ -23,13 +28,20 @@ export default function Bio({
 	className = "",
 	...otherProps
 }: BioProps) {
+	const sectionRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles.bio, styles[placement], className]);
 	const isHero = placement === "hero";
 	const Heading = heading as React.ElementType;
 
 	return (
 		<section
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<article className={styles.inner}>
@@ -41,7 +53,7 @@ export default function Bio({
 					{body}
 
 					{isHero ? (
-						<SocialIcons className={styles["bio-icons"]} />
+						<SocialIcons className={socialStyles["bio-icons"]} />
 					) : (
 						<div className={styles["button-row"]}>
 							<ButtonLink url={url}>{buttonText}</ButtonLink>

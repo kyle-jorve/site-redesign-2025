@@ -1,11 +1,50 @@
+.resume .sections,
+.resume-section .items-list {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-items: start;
+	align-content: start;
+}
+
 .resume {
+	margin-bottom: var(--section-margin);
+
+	.header {
+		--heading-bar-title-color-override: var(--red);
+
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		width: 100%;
+
+		:global(.link-row .lines) {
+			&::before,
+			&::after {
+				background: var(--blue-light);
+			}
+		}
+	}
+
+	.sections {
+		gap: 4rem;
+	}
 }
 
 .resume-section {
+	width: 100%;
+	max-width: var(--width-narrow);
+	padding: 0 var(--padding-body-edge);
+	margin: 0 auto;
+
 	.title {
+		margin-bottom: 2rem;
 	}
 
 	.items-list {
+		gap: 1rem;
+		padding: 0;
+		margin: 0;
+		list-style: none;
 	}
 }
 
