@@ -16,7 +16,6 @@ export default function CV() {
 			<ProjectGridInterior
 				title={cvData.featuredWorkTitle}
 				url={cvData.featuredWorkUrl}
-				buttonText={cvData.featuredWorkButtonText}
 				projects={featuredProjects.slice(0, 3)}
 			/>
 		</>

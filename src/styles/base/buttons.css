@@ -105,6 +105,11 @@
 			}
 		}
 
+		&.filter::after,
+		&.contact::after {
+			padding-left: 0.125rem;
+		}
+
 		&.filter::after {
 			content: "\f1de";
 		}
@@ -114,7 +119,6 @@
 		}
 
 		&.contact::after {
-			padding-left: 0.125rem;
 			content: "\40";
 		}
 	}
@@ -147,7 +151,7 @@
 		border-radius: 50%;
 		box-shadow: var(--box-shadow);
 		transition: color var(--transition), background-color var(--transition),
-			box-shadow var(--transition);
+			border-color var(--transition), box-shadow var(--transition);
 
 		&::before {
 			font: var(--fa-font-solid);
@@ -161,7 +165,8 @@
 			&::before,
 			&::after {
 				content: "\f004";
-				transition: opacity var(--transition);
+				transition: translate var(--transition),
+					text-shadow var(--transition), opacity var(--transition);
 			}
 
 			&::before {
@@ -202,15 +207,12 @@
 			--background-color: rgba(253, 233, 206, 0.1);
 			--box-shadow: none;
 
-			--text-color-hover: var(--egg);
-			--background-color-hover: rgba(254, 246, 231, 0.2);
-			--border-color-hover: var(--egg);
+			--background-color-hover: var(--red);
+			--border-color-hover: transparent;
+			--box-shadow-hover: var(--hard-shadow);
 
 			border: var(--border-cream);
 			backdrop-filter: var(--backrop-blur);
-			transition: color var(--transition),
-				background-color var(--transition),
-				border-color var(--transition);
 		}
 
 		&.dark {
@@ -232,7 +234,13 @@
 			border-color: var(--border-color-hover);
 			box-shadow: var(--box-shadow-hover, var(--box-shadow));
 
-			&::before,
+			&::before {
+				translate: 0.25rem -0.25rem;
+				text-shadow: var(--hard-shadow);
+			}
+		}
+
+		.button:hover {
 			&::after,
 			.button-text {
 				translate: 0.25rem -0.25rem;
@@ -242,6 +250,11 @@
 			&::after {
 				box-shadow: var(--hard-shadow);
 			}
+		}
+
+		.circle-button.heart:hover::after {
+			translate: calc(-50% + 0.25rem) calc(-50% - 0.25rem);
+			text-shadow: var(--hard-shadow);
 		}
 	}
 }

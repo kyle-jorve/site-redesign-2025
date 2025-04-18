@@ -77,7 +77,7 @@
 			position: absolute;
 			display: block;
 			height: var(--border-width);
-			background: var(--red);
+			background: var(--underlines-override-color, var(--red));
 			border-radius: var(--border-width);
 			content: "";
 			pointer-events: none;
@@ -95,14 +95,14 @@
 		&.underline-light {
 			&::before,
 			&::after {
-				background: var(--gold-light);
+				background: var(--underlines-override-color, var(--gold-light));
 			}
 		}
 
 		&.underline-dark {
 			&::before,
 			&::after {
-				background: var(--blue-light);
+				background: var(--underlines-override-color, var(--blue-light));
 			}
 		}
 
@@ -138,6 +138,7 @@
 		}
 
 		&.small {
+			padding: calc(1.25rem + var(--border-width-wide)) 1.25rem 1.25rem;
 			background: var(--gradient-gold-diagonal);
 			backdrop-filter: none;
 		}
@@ -152,6 +153,10 @@
 	@media (min-width: 64em) {
 		body {
 			background-size: auto 34rem, 100% 24rem;
+		}
+
+		.content-box.small {
+			padding: calc(1.5rem + var(--border-width-wide)) 1.5rem 1.5rem;
 		}
 	}
 }

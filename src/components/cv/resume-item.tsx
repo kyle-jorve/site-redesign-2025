@@ -27,19 +27,23 @@ export default function ResumeItem({
 		>
 			<ContentBox
 				size="small"
-				className={styles["resume-item-content"]}
+				className={styles.content}
 			>
-				{year !== undefined && (
-					<span className={`heading-5 ${styles.year}`}>{year}</span>
-				)}
+				<header className={styles["item-header"]}>
+					{year !== undefined && (
+						<span className={`heading-5 ${styles.year}`}>
+							{year}
+						</span>
+					)}
 
-				<Heading className={styles.title}>{title}</Heading>
+					<Heading className={styles["item-title"]}>{title}</Heading>
 
-				{company !== undefined && (
-					<span className={`heading-5 ${styles.company}`}>
-						{company}
-					</span>
-				)}
+					{company !== undefined && (
+						<span className={`heading-5 ${styles.company}`}>
+							{company}
+						</span>
+					)}
+				</header>
 
 				<div className={styles.desc}>{description}</div>
 			</ContentBox>

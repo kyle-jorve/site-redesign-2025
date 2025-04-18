@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
@@ -18,10 +22,12 @@ export default function ProjectGridInterior({
 	url,
 	projects,
 	heading = "h2",
-	buttonText = "See All Projects",
+	buttonText = "See All",
 	className = "",
 	...otherProps
 }: ProjectGridInteriorProps) {
+	const gridRef = useRef<HTMLDivElement>(null);
+	const intersected = useIntersectionObserver(gridRef);
 	const classes = printClassNames([
 		styles["project-grid-interior"],
 		className,
@@ -39,7 +45,14 @@ export default function ProjectGridInterior({
 				buttonText={buttonText}
 			/>
 
-			<div className={styles.projects}>
+			<div
+				ref={gridRef}
+				className={styles.projects}
+				style={{
+					opacity: intersected ? 1 : 0,
+					transition: "opacity 1s ease",
+				}}
+			>
 				{projects.map((proj) => {
 					return (
 						<ProjectTile

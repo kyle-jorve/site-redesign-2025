@@ -3,7 +3,6 @@ import { BioType, ResumeType } from "@/types/cv-types";
 
 export const featuredWorkTitle = "Featured Work";
 export const featuredWorkUrl = "/projects/";
-export const featuredWorkButtonText = "See All Projects";
 
 export const bio: BioType = {
 	title: "About Me",

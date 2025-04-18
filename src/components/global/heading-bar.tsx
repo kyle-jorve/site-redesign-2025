@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { HeadingType } from "@/types/global-types";
 import { ButtonLinkProps } from "@/components/global/button-link";
@@ -27,6 +31,8 @@ export default function HeadingBar({
 	className = "",
 	...otherProps
 }: HeadingBarProps) {
+	const headerRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(headerRef);
 	const classes = printClassNames([
 		styles["heading-bar"],
 		styles[width],
@@ -41,7 +47,12 @@ export default function HeadingBar({
 
 	return (
 		<header
+			ref={headerRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<Heading className={titleClasses}>{title}</Heading>

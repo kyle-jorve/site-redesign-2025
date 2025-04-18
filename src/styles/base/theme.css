@@ -302,13 +302,13 @@
 		);
 		--gradient-dark-radial: radial-gradient(
 			circle farthest-side at left bottom,
-			var(--navy),
+			rgba(11, 29, 38, 0.6),
 			rgba(11, 29, 38, 0)
 		);
 		--gradient-sunset-diagonal: linear-gradient(
 			45deg,
-			var(--red),
-			var(--gold)
+			rgba(247, 85, 81, 0.4),
+			rgba(231, 177, 89, 0.4)
 		);
 		--gradient-gold-vertical: linear-gradient(
 			to bottom,
@@ -351,6 +351,7 @@
 		--border-width: 0.125rem;
 		--border-width-wide: 1rem;
 
+		--border-radius-x-small: 0.125rem;
 		--border-radius-small: 0.25rem;
 		--border-radius: 0.5rem;
 		--border-radius-medium: 0.625rem;
@@ -373,10 +374,6 @@
 		--border-light-dotted: var(--border-width) dotted
 			var(--border-light-color);
 		--border-cream: var(--border-width) solid var(--border-cream-color);
-
-		@media (min-width: 64em) {
-			--border-width-wide: 1.5rem;
-		}
 
 		/*=============================*/
 		/*=====----- SHADOWS -----=====*/
@@ -451,10 +448,15 @@
 		--width-medium: calc(68.75 + (var(--padding-body-edge) * 2));
 		--width-wide: calc(75rem + (var(--padding-body-edge) * 2));
 		--width-wider: calc(86rem + (var(--padding-body-edge) * 2));
+		--width-widest: calc(90rem + (var(--padding-body-edge) * 2));
 
 		--section-margin: 6.25rem;
 
 		--grid-gap: 0.5rem;
+
+		@media (min-width: 48em) {
+			--grid-gap: 1rem;
+		}
 
 		@media (min-width: 64em) {
 			--padding-content: 2rem;

@@ -41,16 +41,17 @@ export default function ProjectTile({
 			{...otherProps}
 		>
 			<div className={styles.content}>
-				<div className={styles["categories-row"]}>
-					<CategoryChip
-						category={primaryCategory}
-						addLink={false}
-						size={variant === "small" ? "extra-small" : "small"}
-					/>
-				</div>
+				<CategoryChip
+					className={styles.category}
+					category={primaryCategory}
+					addLink={false}
+					size={variant === "small" ? "extra-small" : "small"}
+				/>
 
 				<Heading className={styles.title}>
-					<CustomLink to={url}>{title}</CustomLink>
+					<CustomLink to={url}>
+						<span className={styles["title-text"]}>{title}</span>
+					</CustomLink>
 				</Heading>
 			</div>
 

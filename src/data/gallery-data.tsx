@@ -111,13 +111,13 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/444x320",
-						minScreenWidth: 640,
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/444x320",
+				mobileSource: "https://placehold.co/768x554",
 				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 444,
-				height: 320,
+				width: 768,
+				height: 554,
 			},
 		},
 		slideshow: [
@@ -361,10 +361,10 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/444x320",
-						minScreenWidth: 640,
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/444x320",
+				mobileSource: "https://placehold.co/768x554",
 				alt: "a preview of an illustration from the Theater Toolkit website",
 				width: 444,
 				height: 320,
@@ -583,10 +583,10 @@ export const projects: ProjectType[] = [
 				sources: [
 					{
 						url: "https://placehold.co/444x320",
-						minScreenWidth: 640,
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/444x320",
+				mobileSource: "https://placehold.co/768x554",
 				alt: "a preview of the Visit Irving website",
 				width: 444,
 				height: 320,

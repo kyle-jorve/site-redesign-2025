@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
 import { printClassNames } from "@/utils/utils";
@@ -15,12 +19,19 @@ export default function ResumeSection({
 	className = "",
 	...otherProps
 }: ResumeSectionProps) {
+	const sectionRef = useRef<HTMLDivElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["resume-section"], className]);
 	const Heading = heading as React.ElementType;
 
 	return (
 		<div
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<Heading className={styles.title}>{title}</Heading>

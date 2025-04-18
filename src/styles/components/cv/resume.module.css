@@ -36,10 +36,6 @@
 	padding: 0 var(--padding-body-edge);
 	margin: 0 auto;
 
-	.title {
-		margin-bottom: 2rem;
-	}
-
 	.items-list {
 		gap: 1rem;
 		padding: 0;
@@ -51,11 +47,41 @@
 .resume-item {
 	.year,
 	.company {
+		display: block;
+		margin: 0;
 	}
 
-	.title {
+	.item-header {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 0.5rem;
+		margin-bottom: 1.25rem;
 	}
 
-	.desc {
+	.item-title {
+		padding: 0.5rem 0.625rem;
+		margin: 0 0 0 -0.5rem;
+		background: var(--red);
+		border-radius: var(--border-radius-small);
+		color: var(--cream);
+	}
+
+	.desc > *:last-child {
+		margin: 0;
+	}
+}
+
+@media (min-width: 64em) {
+	.resume {
+		.header {
+			--underlines-override-color: var(--blue-light);
+
+			flex-direction: row;
+		}
+
+		.sections {
+			gap: 5rem;
+		}
 	}
 }
