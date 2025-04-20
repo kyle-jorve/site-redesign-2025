@@ -62,7 +62,7 @@
 
 	&.hero {
 		max-width: var(--width-widest);
-		margin-top: 8.75rem;
+		margin-top: var(--padding-body-top);
 
 		.inner::before {
 			border-color: var(--red);
@@ -83,10 +83,6 @@
 	@media (min-width: 40em) {
 		.inner::before {
 			aspect-ratio: 128 / 85;
-		}
-
-		&.hero {
-			margin-top: 12rem;
 		}
 	}
 

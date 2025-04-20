@@ -22,9 +22,22 @@
 		margin: 0;
 	}
 
+	.heading-1,
+	.heading-2,
+	.heading-3,
+	.heading-4,
+	.heading-5,
+	.heading-6,
+	.page-title,
+	.supertitle,
+	.superheading,
+	.body-text {
+		display: block;
+	}
+
 	h1,
 	.heading-1 {
-		margin-bottom: 2.5rem;
+		margin-bottom: var(--heading-1-margin);
 		font-family: var(--font-title);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-heading-1);
@@ -36,19 +49,19 @@
 
 	h2,
 	.heading-2 {
-		margin-bottom: 1.75rem;
+		margin-bottom: var(--heading-2-margin);
 		font-family: var(--font-heading);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-heading-2);
 		line-height: var(--leading-none);
-		letter-spacing: var(--kerning-small);
+		letter-spacing: 0;
 		text-transform: uppercase;
 		color: var(--heading-color);
 	}
 
 	h3,
 	.heading-3 {
-		margin-bottom: 0.75rem;
+		margin-bottom: var(--heading-3-margin);
 		font-family: var(--font-heading);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-heading-3);
@@ -60,7 +73,7 @@
 
 	h4,
 	.heading-4 {
-		margin-bottom: 1.375rem;
+		margin-bottom: var(--heading-4-margin);
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
 		font-size: var(--font-size-heading-4);
@@ -74,7 +87,7 @@
 	h6,
 	.heading-5,
 	.heading-6 {
-		margin-bottom: 0.75rem;
+		margin-bottom: var(--heading-5-margin);
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
 		line-height: var(--leading-none);
@@ -95,8 +108,7 @@
 	}
 
 	.page-title {
-		display: block;
-		margin-bottom: 2rem;
+		margin-bottom: var(--page-title-margin);
 		font-family: var(--font-title);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-page-title);
@@ -106,33 +118,30 @@
 		color: var(--title-color);
 	}
 
-	.supertitle {
-		display: block;
-		margin-bottom: 0.25rem;
+	.supertitle,
+	.superheading {
 		font-family: var(--font-pixelify);
 		font-weight: var(--font-weight-bold);
-		font-size: var(--font-size-supertitle);
 		line-height: var(--leading-none);
 		letter-spacing: var(--kerning-x-large);
 		text-transform: uppercase;
+	}
+
+	.supertitle {
+		margin-bottom: var(--supertitle-margin);
+		font-size: var(--font-size-supertitle);
 		color: var(--supertitle-color);
 	}
 
 	.superheading {
-		display: block;
-		margin-bottom: 0.125rem;
-		font-family: var(--font-pixelify);
-		font-weight: var(--font-weight-bold);
+		margin-bottom: var(--superheading-margin);
 		font-size: var(--font-size-superheading);
-		line-height: var(--leading-none);
-		letter-spacing: var(--kerning-x-large);
-		text-transform: uppercase;
 		color: var(--superheading-color);
 	}
 
 	p,
 	.body-text {
-		margin-bottom: 1.25rem;
+		margin-bottom: var(--body-text-margin);
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-normal);
 		font-size: var(--font-size-body);
@@ -142,6 +151,7 @@
 		color: var(--text-color);
 
 		&.large {
+			margin-bottom: var(--body-text-large-margin);
 			font-family: var(--font-pixelify);
 			font-weight: var(--font-weight-medium);
 			font-size: var(--font-size-body-large);
@@ -149,7 +159,7 @@
 		}
 
 		&.small {
-			margin-bottom: 1rem;
+			margin-bottom: var(--body-text-small-margin);
 			font-size: var(--font-size-body-small);
 			line-height: var(--leading-small);
 			letter-spacing: var(--kerning-2x-small);
@@ -173,72 +183,15 @@
 	}
 
 	@media (min-width: 64em) {
-		h1,
-		.heading-1 {
-			margin-bottom: 2.9375rem;
-		}
-
 		h2,
 		.heading-2 {
-			margin-bottom: 1.875rem;
-		}
-
-		h4,
-		.heading-4 {
-			margin-bottom: 1.4375rem;
-		}
-
-		.page-title {
-			margin-bottom: 2.6875rem;
-		}
-
-		.supertitle {
-			margin-bottom: 0.125rem;
-		}
-
-		.superheading {
-			margin-bottom: 0.0625rem;
-		}
-
-		p,
-		.body-text {
-			&.large {
-				margin-bottom: 1.375rem;
-			}
+			letter-spacing: var(--kerning-small);
 		}
 	}
 
 	@media (min-width: 90em) {
-		h1,
-		.heading-1,
-		.page-title {
-			margin-bottom: 3.375rem;
-		}
-
-		h2,
-		.heading-2 {
-			margin-bottom: 2rem;
-		}
-
-		h4,
-		.heading-4 {
-			margin-bottom: 1.5rem;
-		}
-
-		.supertitle,
-		.superheading {
-			margin: 0;
-		}
-
 		.superheading {
 			letter-spacing: var(--kerning-medium);
-		}
-
-		p,
-		.body-text {
-			&.large {
-				margin-bottom: 1.5rem;
-			}
 		}
 	}
 }

@@ -11,16 +11,16 @@ import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectGridInteriorProps = {
 	title: string;
-	url: string;
 	projects: ProjectTileType[];
+	url?: string;
 	heading?: HeadingType;
 	buttonText?: string;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function ProjectGridInterior({
 	title,
-	url,
 	projects,
+	url = undefined,
 	heading = "h2",
 	buttonText = "See All",
 	className = "",
@@ -53,7 +53,7 @@ export default function ProjectGridInterior({
 					transition: "opacity 1s ease",
 				}}
 			>
-				{projects.map((proj) => {
+				{projects.slice(0, 3).map((proj) => {
 					return (
 						<ProjectTile
 							key={proj.name}

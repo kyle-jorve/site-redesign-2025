@@ -6,6 +6,7 @@ import { FeatureType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
+import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/feature-grid.module.css";
 
@@ -78,10 +79,22 @@ export default function Feature({
 			</div>
 
 			<div className={styles["image-col"]}>
-				<ResponsiveImage
-					className={styles.image}
-					image={image}
-				/>
+				{!!url ? (
+					<CustomLink
+						to={url}
+						className={styles["image-link"]}
+					>
+						<ResponsiveImage
+							className={styles.image}
+							image={image}
+						/>
+					</CustomLink>
+				) : (
+					<ResponsiveImage
+						className={styles.image}
+						image={image}
+					/>
+				)}
 			</div>
 		</article>
 	);

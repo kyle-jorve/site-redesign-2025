@@ -33,6 +33,7 @@ export default function Resume({
 				heading={heading}
 				buttonType="contact"
 				buttonText={buttonText}
+				linesColor="blue"
 				width="narrow"
 			/>
 

@@ -5,7 +5,7 @@ import { printClassNames } from "@/utils/utils";
 import { ImageDataType } from "@/types/global-types";
 import CircleButton from "@/components/global/circle-button";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import styles from "@/styles/components/gallery/slideshow.module.css";
 
 export type ProjectSlideshowProps = {
 	images: ImageDataType[];
@@ -17,7 +17,7 @@ export default function ProjectSlideshow({
 	...otherProps
 }: ProjectSlideshowProps) {
 	const [activeSlide, setActiveSlide] = useState<number>(0);
-	const classes = printClassNames([styles["project-slideshow"], className]);
+	const classes = printClassNames([styles.slideshow, className]);
 
 	function handleArrowClick(direction: "forward" | "back") {
 		setActiveSlide((prev) => {
@@ -39,6 +39,21 @@ export default function ProjectSlideshow({
 			{...otherProps}
 		>
 			<div className={styles["slide-track"]}>
+				<div className={styles.arrows}>
+					<CircleButton
+						className={`${styles["arrow"]} ${styles["prev"]}`}
+						icon="arrow-left"
+						aria-label="go to previous slide"
+						onClick={() => handleArrowClick("back")}
+					/>
+
+					<CircleButton
+						className={`${styles["arrow"]} ${styles["next"]}`}
+						icon="arrow-right"
+						aria-label="go to next slide"
+						onClick={() => handleArrowClick("forward")}
+					/>
+				</div>
 				<div className={styles.slides}>
 					{images.map((image, index) => {
 						return (
@@ -58,22 +73,6 @@ export default function ProjectSlideshow({
 						);
 					})}
 				</div>
-			</div>
-
-			<div className={styles.arrows}>
-				<CircleButton
-					className={`${styles["arrow"]} ${styles["prev"]}`}
-					icon="arrow-left"
-					aria-label="go to previous slide"
-					onClick={() => handleArrowClick("back")}
-				/>
-
-				<CircleButton
-					className={`${styles["arrow"]} ${styles["next"]}`}
-					icon="arrow-right"
-					aria-label="go to next slide"
-					onClick={() => handleArrowClick("forward")}
-				/>
 			</div>
 
 			<div className={styles.dots}>

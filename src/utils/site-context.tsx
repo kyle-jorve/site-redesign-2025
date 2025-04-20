@@ -6,32 +6,34 @@ import { projectFilters } from "@/data/gallery-data";
 
 export type SiteContextType = {
 	favedProjects: string[];
+	filters: CategoryType[];
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
-	filters: CategoryType[];
 	visited: boolean;
 
+	resetFilters: Function;
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
+	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	setLoadStatus: React.Dispatch<
 		React.SetStateAction<"idle" | "page-out" | "page-in">
 	>;
-	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
-	updateFilters: (id: string) => void;
 	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
+	updateFilters: (id: string) => void;
 };
 
 const SiteContext = React.createContext<SiteContextType>({
 	favedProjects: [],
+	filters: [],
 	loadStatus: "idle",
 	mainRef: null,
-	filters: [],
 	visited: false,
 
+	resetFilters: () => {},
 	setFavedProjects: () => {},
-	setLoadStatus: () => {},
 	setFilters: () => {},
-	updateFilters: () => {},
+	setLoadStatus: () => {},
 	setVisited: () => {},
+	updateFilters: () => {},
 });
 
 export default SiteContext;
@@ -41,35 +43,49 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	const [favedProjects, setFavedProjects] = useState<string[]>([]);
 	const [loadStatus, setLoadStatus] =
 		useState<SiteContextType["loadStatus"]>("idle");
+	const unsetFilters = Object.values(projectFilters).map((filter) => ({
+		...filter,
+		active: false,
+	}));
 	const [filters, setFilters] = useState<SiteContextType["filters"]>(
-		Object.values(projectFilters),
+		structuredClone(unsetFilters),
 	);
 	const mainRef = useRef<HTMLElement>(null);
 
 	function updateFilters(id: string) {
 		setFilters((prev) => {
 			return prev.map((cat) => {
-				if (cat.name === id && cat.active) cat.active = false;
-				else if (cat.name === id) cat.active = true;
-				return cat;
+				const newCat = {
+					...cat,
+				};
+
+				if (cat.name === id && cat.active) newCat.active = false;
+				else if (cat.name === id) newCat.active = true;
+
+				return newCat;
 			});
 		});
+	}
+
+	function resetFilters() {
+		setFilters(structuredClone(unsetFilters));
 	}
 
 	return (
 		<SiteContext.Provider
 			value={{
 				favedProjects,
+				filters,
 				loadStatus,
 				mainRef,
-				filters,
 				visited,
 
+				resetFilters,
 				setFavedProjects,
-				setLoadStatus,
-				updateFilters,
 				setFilters,
+				setLoadStatus,
 				setVisited,
+				updateFilters,
 			}}
 		>
 			{children}

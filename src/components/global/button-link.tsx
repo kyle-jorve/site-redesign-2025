@@ -4,6 +4,7 @@ import { printClassNames } from "@/utils/utils";
 export type ButtonLinkProps = {
 	url: string;
 	color?: "light" | "red" | "dark";
+	shadowColor?: "light" | "red" | "dark";
 	type?: "standard" | "back" | "contact";
 } & React.PropsWithChildren &
 	Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">;
@@ -12,11 +13,25 @@ export default function ButtonLink({
 	url,
 	children,
 	color = "red",
+	shadowColor = undefined,
 	type = "standard",
 	className = "",
 	...otherProps
 }: ButtonLinkProps) {
-	const classes = printClassNames(["button", color, type, className]);
+	const derivedShadowColor = (() => {
+		if (shadowColor) return shadowColor;
+
+		if (color === "red") return "dark";
+		if (color === "dark") return "light";
+		if (color === "light") return undefined;
+	})();
+	const classes = printClassNames([
+		"button",
+		derivedShadowColor ? `shadow-${derivedShadowColor}` : "",
+		color,
+		type,
+		className,
+	]);
 
 	return (
 		<CustomLink

@@ -6,14 +6,14 @@ import React from "react";
 
 export type InteriorHeroProps = {
 	title: string;
-	description: string;
+	description?: string;
 	topBar?: React.ReactElement;
 	categories?: CategoryType[];
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function InteriorHero({
 	title,
-	description,
+	description = undefined,
 	topBar = undefined,
 	categories = [],
 	className = "",
@@ -29,7 +29,9 @@ export default function InteriorHero({
 			{!!topBar && <div className={styles["top-bar"]}>{topBar}</div>}
 
 			<div className={styles.content}>
-				<h1 className={styles.title}>{title}</h1>
+				<h1 className={`underline underline-center ${styles.title}`}>
+					{title}
+				</h1>
 
 				{!!categories.length && (
 					<div className={styles["categories-row"]}>
@@ -39,17 +41,19 @@ export default function InteriorHero({
 								return (
 									<CategoryChip
 										key={cat.name}
+										className={styles.category}
 										category={cat}
-										size="large"
 									/>
 								);
 							})}
 					</div>
 				)}
 
-				<p className={`body-text large ${styles.desc}`}>
-					{description}
-				</p>
+				{!!description?.trim().length && (
+					<p className={`body-text large ${styles.desc}`}>
+						{description}
+					</p>
+				)}
 			</div>
 		</section>
 	);

@@ -1,3 +1,7 @@
+/*=============================*/
+/*=====----- GENERAL -----=====*/
+/*=============================*/
+
 .nav-parent {
 	position: relative;
 	z-index: 2;
@@ -17,10 +21,9 @@
 	width: 200px;
 	max-width: calc(100vw - 3.25rem);
 	padding: 1.25rem;
+	border-radius: var(--border-radius);
 	opacity: 0;
 	visibility: hidden;
-	border-radius: var(--border-radius);
-	box-shadow: var(--hard-shadow-light-long);
 	transition: translate var(--transition), opacity var(--transition),
 		visibility var(--transition);
 
@@ -103,6 +106,10 @@
 		content: "\f07a";
 	}
 }
+
+/*================================*/
+/*=====----- MOBILE NAV -----=====*/
+/*================================*/
 
 .mobile-navigation {
 	position: fixed;
@@ -193,6 +200,7 @@
 		translate: -50% -1rem;
 		background: var(--header-footer-background);
 		border: var(--border-dark);
+		box-shadow: var(--hard-shadow-light-long);
 		backdrop-filter: var(--backdrop-blur);
 
 		&::before {
@@ -256,6 +264,10 @@
 	}
 }
 
+/*=================================*/
+/*=====----- DESKTOP NAV -----=====*/
+/*=================================*/
+
 .navigation {
 	display: none;
 	align-items: baseline;
@@ -292,7 +304,7 @@
 	.dropdown-menu {
 		inset: 100% 0 auto auto;
 		translate: 0 2rem;
-		color: var(--blue-light);
+		color: var(--blue);
 		background: var(--cream);
 		box-shadow: var(--hard-shadow-red-long);
 

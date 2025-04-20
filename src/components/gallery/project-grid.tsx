@@ -1,6 +1,7 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
@@ -17,6 +18,8 @@ export default function ProjectGrid({
 	className = "",
 	...otherProps
 }: ProjectGridProps) {
+	const sectionRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const { filters, favedProjects } = useContext(SiteContext);
 	const classes = printClassNames([styles["project-grid"], className]);
 	const filteredProjects = (() => {
@@ -43,7 +46,12 @@ export default function ProjectGrid({
 
 	return (
 		<section
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<Filters />

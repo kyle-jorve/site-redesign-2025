@@ -31,7 +31,7 @@ export default function ProjectDescriptionGrid({
 			{...otherProps}
 		>
 			<ContentBox className={styles["desc-box"]}>
-				<h2 className={styles.title}>{title}</h2>
+				<h2 className={`underline ${styles.title}`}>{title}</h2>
 
 				<div className={styles.desc}>{bodyText}</div>
 
@@ -42,20 +42,23 @@ export default function ProjectDescriptionGrid({
 				)}
 			</ContentBox>
 
-			{!!images.length &&
-				images.map((image) => {
-					return (
-						<div
-							key={`project-image-grid-${image.name}`}
-							className={styles["image-wrapper"]}
-						>
-							<ResponsiveImage
-								className={styles.image}
-								image={image}
-							/>
-						</div>
-					);
-				})}
+			{!!images.length && (
+				<div className={styles["image-grid"]}>
+					{images.map((image) => {
+						return (
+							<div
+								key={`project-image-grid-${image.name}`}
+								className={styles["image-wrapper"]}
+							>
+								<ResponsiveImage
+									className={styles.image}
+									image={image}
+								/>
+							</div>
+						);
+					})}
+				</div>
+			)}
 		</section>
 	);
 }

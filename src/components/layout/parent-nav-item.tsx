@@ -37,7 +37,6 @@ export default function ParentNavItem({
 		function handleDocumentClick(event: MouseEvent) {
 			const target = event.target as HTMLElement;
 			const targetIsNavItem =
-				target === rootRef.current ||
 				target.closest("[data-parent-root]") === rootRef.current;
 
 			if (!expanded || targetIsNavItem) return;

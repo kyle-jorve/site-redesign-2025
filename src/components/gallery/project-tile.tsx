@@ -45,11 +45,14 @@ export default function ProjectTile({
 					className={styles.category}
 					category={primaryCategory}
 					addLink={false}
-					size={variant === "small" ? "extra-small" : "small"}
+					size="extra-small"
 				/>
 
 				<Heading className={styles.title}>
-					<CustomLink to={url}>
+					<CustomLink
+						className={styles.link}
+						to={url}
+					>
 						<span className={styles["title-text"]}>{title}</span>
 					</CustomLink>
 				</Heading>

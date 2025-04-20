@@ -42,8 +42,8 @@
 		--font-size-supertitle-mobile: 1.375rem;
 		--font-size-page-title-mobile: 5.125rem;
 		--font-size-superheading-mobile: var(--font-size-x-large);
-		--font-size-heading-1-mobile: 3.375rem;
-		--font-size-heading-2-mobile: 3rem;
+		--font-size-heading-1-mobile: 2.5rem;
+		--font-size-heading-2-mobile: 2.25rem;
 		--font-size-heading-3-mobile: 2rem;
 		--font-size-heading-4-mobile: 1.625rem;
 		--font-size-heading-5-mobile: var(--font-size-large);
@@ -74,6 +74,18 @@
 		--font-size-body-large: var(--font-size-body-large-mobile);
 		--font-size-body: var(--font-size-body-mobile);
 		--font-size-body-small: var(--font-size-body-small-mobile);
+
+		--supertitle-margin: 0.25rem;
+		--page-title-margin: 2.5rem;
+		--superheading-margin: 0.125rem;
+		--heading-1-margin: 2.5rem;
+		--heading-2-margin: 1.75rem;
+		--heading-3-margin: 0.75rem;
+		--heading-4-margin: 1.375rem;
+		--heading-5-margin: 0.75rem;
+		--body-text-margin: 1.25rem;
+		--body-text-large-margin: var(--body-text-margin);
+		--body-text-small-margin: 1rem;
 
 		@media (min-width: 40em) {
 			--font-size-supertitle: calc(
@@ -243,6 +255,16 @@
 			);
 		}
 
+		@media (min-width: 64em) {
+			--supertitle-margin: 0.125rem;
+			--page-title-margin: 2.6875rem;
+			--superheading-margin: 0.0625rem;
+			--heading-1-margin: 2.9375rem;
+			--heading-2-margin: 1.875rem;
+			--heading-4-margin: 1.4375rem;
+			--body-text-large-margin: 1.375rem;
+		}
+
 		@media (min-width: 90em) {
 			--font-size-supertitle: var(--font-size-supertitle-desktop);
 			--font-size-page-title: var(--font-size-page-title-desktop);
@@ -253,6 +275,14 @@
 			--font-size-heading-4: var(--font-size-heading-4-desktop);
 			--font-size-body-large: var(--font-size-body-large-desktop);
 			--font-size-body: var(--font-size-body-desktop);
+
+			--supertitle-margin: 0;
+			--page-title-margin: 3.375rem;
+			--superheading-margin: var(--supertitle-margin);
+			--heading-1-margin: var(--page-title-margin);
+			--heading-2-margin: 2rem;
+			--heading-4-margin: 1.5rem;
+			--body-text-large-margin: 1.5rem;
 		}
 
 		/*============================*/
@@ -359,12 +389,14 @@
 		--border-radius-rounded: 1000px;
 
 		--border-dark-color: var(--navy);
+		--border-blue-color: var(--blue);
 		--border-red-color: var(--red);
 		--border-gold-color: var(--gold);
 		--border-light-color: rgba(242, 225, 174, 0.75);
 		--border-cream-color: var(--cream);
 
 		--border-dark: var(--border-width) solid var(--border-dark-color);
+		--border-blue: var(--border-width) solid var(--border-blue-color);
 		--border-red: var(--border-width) solid var(--border-red-color);
 		--border-red-dotted: var(--border-width) dotted var(--border-red-color);
 		--border-gold: var(--border-width) solid var(--border-gold-color);
@@ -379,10 +411,24 @@
 		/*=====----- SHADOWS -----=====*/
 		/*=============================*/
 
-		--hard-shadow-offset: -0.25rem 0.25rem;
+		/* --hard-shadow-offset: -0.25rem 0.25rem;
 		--long-shadow-offset: -0.5rem 0.5rem;
 		--longer-shadow-offset: -1rem 1rem;
-		--longest-shadow-offset: -2rem 2rem;
+		--longest-shadow-offset: -2rem 2rem; */
+
+		--hard-shadow-offset: 0.25rem;
+		--long-shadow-offset: 0.5rem;
+		--longer-shadow-offset: 1rem;
+		--longest-shadow-offset: 2rem;
+
+		--hard-shadow-offset-applied: calc(var(--hard-shadow-offset) * -1)
+			var(--hard-shadow-offset);
+		--long-shadow-offset-applied: calc(var(--long-shadow-offset) * -1)
+			var(--long-shadow-offset);
+		--longer-shadow-offset-applied: calc(var(--longer-shadow-offset) * -1)
+			var(--longer-shadow-offset);
+		--longest-shadow-offset-applied: calc(var(--longest-shadow-offset) * -1)
+			var(--longest-shadow-offset);
 
 		--shadow-color: var(--blue);
 		--shadow-color-blue: var(--blue-light);
@@ -390,35 +436,42 @@
 		--shadow-color-red: var(--red);
 		--shadow-color-gold: var(--gold);
 
-		--hard-shadow: var(--hard-shadow-offset) var(--shadow-color);
-		--hard-shadow-blue: var(--hard-shadow-offset) var(--shadow-color-blue);
-		--hard-shadow-light: var(--hard-shadow-offset) var(--shadow-color-light);
-		--hard-shadow-red: var(--hard-shadow-offset) var(--shadow-color-red);
-		--hard-shadow-gold: var(--hard-shadow-offset) var(--shadow-color-gold);
-
-		--hard-shadow-long: var(--long-shadow-offset) var(--shadow-color);
-		--hard-shadow-blue-long: var(--long-shadow-offset)
+		--hard-shadow: var(--hard-shadow-offset-applied) var(--shadow-color);
+		--hard-shadow-blue: var(--hard-shadow-offset-applied)
 			var(--shadow-color-blue);
-		--hard-shadow-light-long: var(--long-shadow-offset)
+		--hard-shadow-light: var(--hard-shadow-offset-applied)
 			var(--shadow-color-light);
-		--hard-shadow-red-long: var(--long-shadow-offset)
+		--hard-shadow-red: var(--hard-shadow-offset-applied)
 			var(--shadow-color-red);
-		--hard-shadow-gold-long: var(--long-shadow-offset)
+		--hard-shadow-gold: var(--hard-shadow-offset-applied)
 			var(--shadow-color-gold);
 
-		--hard-shadow-longer: var(--longer-shadow-offset) var(--shadow-color);
-		--hard-shadow-blue-longer: var(--longer-shadow-offset)
+		--hard-shadow-long: var(--long-shadow-offset-applied)
+			var(--shadow-color);
+		--hard-shadow-blue-long: var(--long-shadow-offset-applied)
 			var(--shadow-color-blue);
-		--hard-shadow-light-longer: var(--longer-shadow-offset)
+		--hard-shadow-light-long: var(--long-shadow-offset-applied)
 			var(--shadow-color-light);
-		--hard-shadow-red-longer: var(--longer-shadow-offset)
+		--hard-shadow-red-long: var(--long-shadow-offset-applied)
 			var(--shadow-color-red);
-		--hard-shadow-gold-longer: var(--longer-shadow-offset)
+		--hard-shadow-gold-long: var(--long-shadow-offset-applied)
 			var(--shadow-color-gold);
 
-		--exploding-shadow: var(--long-shadow-offset) rgba(231, 177, 89, 0.5),
-			var(--longer-shadow-offset) rgba(231, 177, 89, 0.25);
-		--exploding-shadow-long: var(--longer-shadow-offset)
+		--hard-shadow-longer: var(--longer-shadow-offset-applied)
+			var(--shadow-color);
+		--hard-shadow-blue-longer: var(--longer-shadow-offset-applied)
+			var(--shadow-color-blue);
+		--hard-shadow-light-longer: var(--longer-shadow-offset-applied)
+			var(--shadow-color-light);
+		--hard-shadow-red-longer: var(--longer-shadow-offset-applied)
+			var(--shadow-color-red);
+		--hard-shadow-gold-longer: var(--longer-shadow-offset-applied)
+			var(--shadow-color-gold);
+
+		--exploding-shadow: var(--long-shadow-offset-applied)
+				rgba(231, 177, 89, 0.5),
+			var(--longer-shadow-offset-applied) rgba(231, 177, 89, 0.25);
+		--exploding-shadow-long: var(--longer-shadow-offset-applied)
 				rgba(231, 177, 89, 0.5),
 			var(--longest-shadow-offset) rgba(231, 177, 89, 0.25);
 
@@ -438,6 +491,7 @@
 		/*=====----- LAYOUT -----=====*/
 		/*============================*/
 
+		--padding-body-top: 8.75rem;
 		--padding-body-edge: 20px;
 		--padding-content: 1.25rem;
 		--padding-large: 2rem;
@@ -453,6 +507,10 @@
 		--section-margin: 6.25rem;
 
 		--grid-gap: 0.5rem;
+
+		@media (min-width: 40em) {
+			--padding-body-top: 12rem;
+		}
 
 		@media (min-width: 48em) {
 			--grid-gap: 1rem;

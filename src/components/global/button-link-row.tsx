@@ -6,6 +6,8 @@ export type ButtonLinkRowProps = {
 	buttonType?: ButtonLinkProps["type"];
 	buttonColor?: ButtonLinkProps["color"];
 	buttonText?: string;
+	linesClass?: string;
+	linesColor?: "red" | "blue";
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export default function ButtonLinkRow({
@@ -13,10 +15,20 @@ export default function ButtonLinkRow({
 	buttonType = undefined,
 	buttonColor = undefined,
 	buttonText = "Visit Website",
+	linesClass = undefined,
+	linesColor = "red",
 	className = "",
 	...otherProps
 }: ButtonLinkRowProps) {
-	const classes = printClassNames(["link-row", className]);
+	const classes = printClassNames([
+		"link-row",
+		`lines-${linesColor}`,
+		className,
+	]);
+	const linesClasses = printClassNames([
+		linesClass !== undefined ? linesClass : "",
+		"lines",
+	]);
 
 	return (
 		<div
@@ -24,7 +36,7 @@ export default function ButtonLinkRow({
 			{...otherProps}
 		>
 			<span
-				className="lines left"
+				className={`${linesClasses} left`}
 				aria-hidden="true"
 			></span>
 			<ButtonLink
@@ -35,7 +47,7 @@ export default function ButtonLinkRow({
 				{buttonText}
 			</ButtonLink>
 			<span
-				className="lines right"
+				className={`${linesClasses} right`}
 				aria-hidden="true"
 			></span>
 		</div>

@@ -16,13 +16,6 @@
 		flex-direction: column;
 		gap: 1.5rem;
 		width: 100%;
-
-		:global(.link-row .lines) {
-			&::before,
-			&::after {
-				background: var(--blue-light);
-			}
-		}
 	}
 
 	.sections {

@@ -67,27 +67,35 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-thumb-image-square",
 				sources: [
 					{
-						url: "https://placehold.co/670x460",
-						minScreenWidth: 640,
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/670x460",
+				mobileSource: "https://placehold.co/384x427",
 				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 670,
-				height: 460,
+				width: 384,
+				height: 427,
 			},
 			long: {
 				name: "ignoble-blood-vignettes-thumb-image-long",
 				sources: [
 					{
-						url: "https://placehold.co/1356x320",
-						minScreenWidth: 640,
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/1356x320",
+				mobileSource: "https://placehold.co/768x416",
 				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 1356,
-				height: 320,
+				width: 768,
+				height: 416,
 			},
 			feature: {
 				name: "ignoble-blood-vignettes-thumb-image-feature",
@@ -110,14 +118,18 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-thumb-image-small",
 				sources: [
 					{
-						url: "https://placehold.co/444x320",
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/342x380",
 						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/768x554",
+				mobileSource: "https://placehold.co/768x415",
 				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
 				width: 768,
-				height: 554,
+				height: 415,
 			},
 		},
 		slideshow: [
@@ -125,7 +137,15 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-slideshow-image-1",
 				sources: [
 					{
-						url: "https://placehold.co/1200x604",
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x516",
 						minScreenWidth: 640,
 					},
 				],
@@ -175,10 +195,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Ignoble Blood Vignettes progress image 1",
 					width: 640,
 					height: 480,
@@ -194,10 +218,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Ignoble Blood Vignettes progress image 2",
 					width: 640,
 					height: 480,
@@ -213,10 +241,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Ignoble Blood Vignettes progress image 3",
 					width: 640,
 					height: 480,
@@ -317,11 +349,15 @@ export const projects: ProjectType[] = [
 				name: "theater-toolkit-thumb-image-square",
 				sources: [
 					{
-						url: "https://placehold.co/670x460",
-						minScreenWidth: 640,
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/670x460",
+				mobileSource: "https://placehold.co/384x427",
 				alt: "a preview of an illustration from the Theater Toolkit website",
 				width: 670,
 				height: 460,
@@ -330,11 +366,15 @@ export const projects: ProjectType[] = [
 				name: "theater-toolkit-thumb-image-long",
 				sources: [
 					{
-						url: "https://placehold.co/1356x320",
-						minScreenWidth: 640,
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/1356x320",
+				mobileSource: "https://placehold.co/768x416",
 				alt: "a preview of an illustration from the Theater Toolkit website",
 				width: 1356,
 				height: 320,
@@ -360,11 +400,15 @@ export const projects: ProjectType[] = [
 				name: "theater-toolkit-thumb-image-small",
 				sources: [
 					{
-						url: "https://placehold.co/444x320",
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/342x380",
 						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/768x554",
+				mobileSource: "https://placehold.co/768x415",
 				alt: "a preview of an illustration from the Theater Toolkit website",
 				width: 444,
 				height: 320,
@@ -375,7 +419,15 @@ export const projects: ProjectType[] = [
 				name: "theater-toolkit-vignettes-slideshow-image-1",
 				sources: [
 					{
-						url: "https://placehold.co/1200x604",
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x516",
 						minScreenWidth: 640,
 					},
 				],
@@ -425,10 +477,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Theater Toolkit progress image 1",
 					width: 640,
 					height: 480,
@@ -444,10 +500,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Theater Toolkit progress image 2",
 					width: 640,
 					height: 480,
@@ -463,10 +523,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Theater Toolkit progress image 3",
 					width: 640,
 					height: 480,
@@ -539,11 +603,15 @@ export const projects: ProjectType[] = [
 				name: "visit-irving-thumb-image-square",
 				sources: [
 					{
-						url: "https://placehold.co/670x460",
-						minScreenWidth: 640,
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/670x460",
+				mobileSource: "https://placehold.co/384x427",
 				alt: "a preview of the Visit Irving website",
 				width: 670,
 				height: 460,
@@ -552,11 +620,15 @@ export const projects: ProjectType[] = [
 				name: "visit-irving-thumb-image-long",
 				sources: [
 					{
-						url: "https://placehold.co/1356x320",
-						minScreenWidth: 640,
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/1356x320",
+				mobileSource: "https://placehold.co/768x416",
 				alt: "a preview of the Visit Irving website",
 				width: 1356,
 				height: 320,
@@ -582,11 +654,15 @@ export const projects: ProjectType[] = [
 				name: "visit-irving-thumb-image-small",
 				sources: [
 					{
-						url: "https://placehold.co/444x320",
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/342x380",
 						minScreenWidth: 768,
 					},
 				],
-				mobileSource: "https://placehold.co/768x554",
+				mobileSource: "https://placehold.co/768x415",
 				alt: "a preview of the Visit Irving website",
 				width: 444,
 				height: 320,
@@ -597,7 +673,15 @@ export const projects: ProjectType[] = [
 				name: "visit-irving-slideshow-image-1",
 				sources: [
 					{
-						url: "https://placehold.co/1200x604",
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+					},
+					{
+						url: "https://placehold.co/1024x516",
 						minScreenWidth: 640,
 					},
 				],
@@ -651,10 +735,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Visit Irving progress image 1",
 					width: 640,
 					height: 480,
@@ -670,10 +758,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Visit Irving progress image 2",
 					width: 640,
 					height: 480,
@@ -689,10 +781,14 @@ export const projects: ProjectType[] = [
 					sources: [
 						{
 							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+						},
+						{
+							url: "https://placehold.co/1024x512",
 							minScreenWidth: 640,
 						},
 					],
-					mobileSource: "https://placehold.co/640x480",
+					mobileSource: "https://placehold.co/640",
 					alt: "Visit Irving progress image 3",
 					width: 640,
 					height: 480,

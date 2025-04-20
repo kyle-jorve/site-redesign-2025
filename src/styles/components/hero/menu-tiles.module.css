@@ -46,6 +46,7 @@
 
 	.title {
 		margin: 0;
+		font-size: var(--font-size-heading-4);
 		color: var(--gold-light);
 		transition: translate var(--transition), text-shadow var(--transition);
 	}
@@ -171,10 +172,6 @@
 		padding: 1.5rem 1rem;
 
 		&.square {
-			.title {
-				font-size: var(--font-size-heading-4);
-			}
-
 			.button {
 				font-size: var(--font-size-small);
 			}

@@ -4,30 +4,34 @@ import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { HeadingType } from "@/types/global-types";
-import { ButtonLinkProps } from "@/components/global/button-link";
+import { ButtonLinkRowProps } from "@/components/global/button-link-row";
 import ButtonLinkRow from "@/components/global/button-link-row";
 import styles from "@/styles/components/global/heading-bar.module.css";
 
 export type HeadingBarProps = {
 	title: string | React.ReactElement;
-	url: string;
 	underlineTitle?: boolean;
+	url?: string;
 	width?: "wide" | "narrow";
 	heading?: HeadingType;
-	buttonType?: ButtonLinkProps["type"];
-	buttonColor?: ButtonLinkProps["color"];
+	buttonType?: ButtonLinkRowProps["buttonType"];
+	buttonColor?: ButtonLinkRowProps["buttonColor"];
 	buttonText?: string;
+	linesClass?: ButtonLinkRowProps["linesClass"];
+	linesColor?: ButtonLinkRowProps["linesColor"];
 } & Omit<React.HTMLAttributes<HTMLElement>, "title">;
 
 export default function HeadingBar({
 	title,
 	width = "wide",
-	url,
+	url = undefined,
 	underlineTitle = true,
 	heading = "h2",
 	buttonType = undefined,
 	buttonColor = undefined,
 	buttonText = "See More",
+	linesClass = styles.lines,
+	linesColor = undefined,
 	className = "",
 	...otherProps
 }: HeadingBarProps) {
@@ -57,12 +61,17 @@ export default function HeadingBar({
 		>
 			<Heading className={titleClasses}>{title}</Heading>
 
-			<ButtonLinkRow
-				url={url}
-				buttonType={buttonType}
-				buttonColor={buttonColor}
-				buttonText={buttonText}
-			/>
+			{!!url && (
+				<ButtonLinkRow
+					className={styles["link-row"]}
+					url={url}
+					buttonType={buttonType}
+					buttonColor={buttonColor}
+					buttonText={buttonText}
+					linesClass={linesClass}
+					linesColor={linesColor}
+				/>
+			)}
 		</header>
 	);
 }

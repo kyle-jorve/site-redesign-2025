@@ -104,6 +104,11 @@
 		}
 	}
 
+	.image-link {
+		display: block;
+		text-decoration: none;
+	}
+
 	.image {
 		width: 100%;
 		border-radius: var(--border-radius);

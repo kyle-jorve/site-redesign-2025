@@ -27,16 +27,14 @@ export default async function ProjectDetailPage({
 
 	const primaryCategory =
 		data.categories.find((cat) => cat.primary) || data.categories[0];
-	const relatedProjects = projectsByCategory[primaryCategory.name].slice(
-		0,
-		3,
-	);
+	const relatedProjects = projectsByCategory[primaryCategory.name];
 	const categoryUrl = `/projects?categories=[${primaryCategory.name}]`;
 	const topBarMarkup = (
 		<>
 			<ButtonLink
 				url="/projects/"
 				color="dark"
+				shadowColor="red"
 				type="back"
 			>
 				Back to Projects
@@ -80,11 +78,19 @@ export default async function ProjectDetailPage({
 			{!!relatedProjects.length && (
 				<ProjectGridInterior
 					title={relatedProjectsTitle || "See Also"}
-					url={categoryUrl}
+					url={relatedProjects.length > 3 ? categoryUrl : undefined}
 					projects={relatedProjects}
 					buttonText={relatedProjectsButtonText || "See More"}
 				/>
 			)}
 		</>
 	);
+}
+
+export async function generateStaticParams() {
+	const detailPages = Object.keys(projectsByName);
+
+	return detailPages.map((page) => ({
+		projectID: page,
+	}));
 }

@@ -16,7 +16,7 @@ export default function CV() {
 			<ProjectGridInterior
 				title={cvData.featuredWorkTitle}
 				url={cvData.featuredWorkUrl}
-				projects={featuredProjects.slice(0, 3)}
+				projects={featuredProjects}
 			/>
 		</>
 	);
