@@ -11,7 +11,11 @@
 
 	body {
 		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: start;
 		width: 100%;
+		min-height: 100vh;
 		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
 		background-color: var(--body-bg);
 		background-image: url("/images/icon-pattern-gold-vertical.svg"),
@@ -85,11 +89,16 @@
 
 		&::before {
 			inset: auto 0 calc(var(--border-width) + 0.25rem);
+			width: 100%;
+			max-width: calc(var(--width-wide) - (var(--padding-body-edge) * 2));
 		}
 
 		&::after {
 			inset: auto auto 0 0;
 			width: 70%;
+			max-width: calc(
+				(var(--width-wide) - (var(--padding-body-edge) * 2)) * 0.7
+			);
 		}
 
 		&.underline-light {
@@ -106,9 +115,18 @@
 			}
 		}
 
-		&.underline-center::after {
-			left: 50%;
-			translate: -50% 0;
+		&.underline-center {
+			&::before,
+			&::after {
+				right: auto;
+				left: 50%;
+				translate: -50% 0;
+			}
+
+			&::after {
+				left: 50%;
+				translate: -50% 0;
+			}
 		}
 	}
 

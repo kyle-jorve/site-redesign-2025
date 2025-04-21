@@ -5,6 +5,8 @@ export type ImageDataType = {
 	sources: {
 		url: string;
 		minScreenWidth: number;
+		width?: number;
+		height?: number;
 	}[];
 	mobileSource: string;
 	alt: string;

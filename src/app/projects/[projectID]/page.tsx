@@ -1,9 +1,10 @@
 import {
+	projects,
 	projectsByName,
-	projectsByCategory,
 	relatedProjectsTitle,
 	relatedProjectsButtonText,
 } from "@/data/gallery-data";
+import NotFound from "@/components/global/not-found";
 import InteriorHero from "@/components/hero/interior-hero";
 import ButtonLink from "@/components/global/button-link";
 import FavButton from "@/components/gallery/fav-button";
@@ -12,6 +13,7 @@ import DesignSummarySection from "@/components/gallery/design-summary-section";
 import FeatureGrid from "@/components/gallery/feature-grid";
 import ProjectDescriptionGrid from "@/components/gallery/project-description-grid";
 import ProjectGridInterior from "@/components/gallery/project-grid-interior";
+import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectDetailPageProps = {
 	params: Promise<{ projectID: string }>;
@@ -23,12 +25,29 @@ export default async function ProjectDetailPage({
 	const { projectID } = await params;
 	const data = projectsByName[projectID];
 
-	if (!data) return null;
+	if (!data) return <NotFound />;
 
 	const primaryCategory =
 		data.categories.find((cat) => cat.primary) || data.categories[0];
-	const relatedProjects = projectsByCategory[primaryCategory.name];
-	const categoryUrl = `/projects?categories=[${primaryCategory.name}]`;
+	const relatedProjects = projects
+		.filter(
+			(proj) =>
+				proj.categories.some(
+					(projCat) => projCat.name === primaryCategory.name,
+				) && proj.name !== data.name,
+		)
+		.sort((a, _) => {
+			if (a.featured) return -1;
+			return 1;
+		})
+		.sort((a, b) => {
+			if (a.title < b.title) return -1;
+			if (a.title > b.title) return 1;
+			return 0;
+		});
+	const categoryUrl = `/projects?categories=${JSON.stringify([
+		primaryCategory.name,
+	])}`;
 	const topBarMarkup = (
 		<>
 			<ButtonLink
@@ -43,7 +62,8 @@ export default async function ProjectDetailPage({
 			<FavButton
 				projectID={projectID}
 				projectTitle={data.title}
-				color="red"
+				color="dark"
+				shadowColor="red"
 			/>
 		</>
 	);
@@ -51,8 +71,9 @@ export default async function ProjectDetailPage({
 	return (
 		<>
 			<InteriorHero
+				className={styles.hero}
 				title={data.title}
-				description={data.summary}
+				description={<p className="body-text large">{data.summary}</p>}
 				topBar={topBarMarkup}
 				categories={data.categories}
 			/>

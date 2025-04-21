@@ -25,7 +25,7 @@ export default function CategoryChip({
 		styles[color],
 		className,
 	]);
-	const url = `/projects?categories=[${category.name}]`;
+	const url = `/projects?categories=${JSON.stringify([category.name])}`;
 
 	return addLink ? (
 		<CustomLink

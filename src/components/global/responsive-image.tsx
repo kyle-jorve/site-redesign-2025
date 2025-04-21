@@ -43,6 +43,8 @@ export default function ResponsiveImage({
 						key={`${image.name}-${src.minScreenWidth}`}
 						srcSet={src.url}
 						media={`(min-width: ${src.minScreenWidth}px)`}
+						width={src.width}
+						height={src.height}
 					/>
 				);
 			})}

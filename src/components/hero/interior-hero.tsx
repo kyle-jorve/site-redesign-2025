@@ -6,7 +6,7 @@ import React from "react";
 
 export type InteriorHeroProps = {
 	title: string;
-	description?: string;
+	description?: React.ReactElement;
 	topBar?: React.ReactElement;
 	categories?: CategoryType[];
 } & React.HTMLAttributes<HTMLElement>;
@@ -49,10 +49,11 @@ export default function InteriorHero({
 					</div>
 				)}
 
-				{!!description?.trim().length && (
-					<p className={`body-text large ${styles.desc}`}>
-						{description}
-					</p>
+				{!!description && (
+					<div className={styles.desc}>{description}</div>
+					// <p className={`body-text large ${styles.desc}`}>
+					// 	{description}
+					// </p>
 				)}
 			</div>
 		</section>

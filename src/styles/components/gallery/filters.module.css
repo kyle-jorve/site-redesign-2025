@@ -18,10 +18,12 @@
 		gap: 0.5rem;
 		width: 200px;
 		max-width: calc(100vw - (var(--padding-body-edge) * 2));
-		padding: 1.25rem;
-		background: var(--cream);
+		padding: 1rem 0.75rem;
+		background: var(--header-footer-background);
+		border: var(--border-dark);
 		border-radius: var(--border-radius);
-		box-shadow: var(--hard-shadow-long);
+		box-shadow: var(--hard-shadow-red-long);
+		backdrop-filter: var(--backdrop-blur);
 		opacity: 0;
 		visibility: hidden;
 		transition: translate var(--transition), opacity var(--transition),
@@ -29,10 +31,10 @@
 
 		&::before {
 			position: absolute;
-			inset: -0.75rem auto auto 2rem;
+			inset: auto auto calc(100% - 0.625rem) 2rem;
 			font: var(--fa-font-solid);
 			font-size: 1.5rem;
-			color: var(--cream);
+			color: var(--border-dark-color);
 			content: "\f0d8";
 		}
 
@@ -52,7 +54,7 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
-		padding: 0.25rem 0;
+		padding: 0.25rem 0.75rem 0.25rem 0.25rem;
 		margin: 0;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
@@ -60,16 +62,27 @@
 		line-height: var(--leading-small);
 		letter-spacing: var(--kerning-x-small);
 		text-align: left;
-		color: var(--blue);
+		color: var(--cream);
 		background: none;
 		border: none;
-		border-radius: 0;
+		border-radius: var(--border-radius-rounded);
+		transition: background-color var(--transition);
 
 		&::before {
 			font: var(--fa-font-solid);
 			font-size: var(--font-size-large);
 			color: var(--red);
 			content: "\f055";
+			transition: rotate var(--transition), color var(--transition);
+		}
+
+		&.active {
+			background-color: var(--blue-light);
+
+			&::before {
+				rotate: 45deg;
+				color: inherit;
+			}
 		}
 	}
 }

@@ -1,5 +1,21 @@
 import { SocialMediaType, NavType, NavItemType } from "@/types/global-types";
+import CustomLink from "@/components/global/custom-link";
 import GumroadIcon from "@/components/icons/gumroad-icon";
+
+export const pageNotFoundTitle = "Page Not Found";
+export const pageNotFoundDescription = (
+	<p className="body-text large">
+		I&apos;m not sure how you got here, but click{" "}
+		<CustomLink to="/">here</CustomLink> to find safer ground.
+	</p>
+);
+
+export const errorPageTitle = "I am unwell 🥴";
+export const errorPageDescription = (
+	<p className="body-text large">
+		Something is wrong. Please return later when I&apos;m feeling better.
+	</p>
+);
 
 export const socialMedia: {
 	[index: string]: SocialMediaType;

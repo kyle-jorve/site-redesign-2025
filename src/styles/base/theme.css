@@ -411,11 +411,6 @@
 		/*=====----- SHADOWS -----=====*/
 		/*=============================*/
 
-		/* --hard-shadow-offset: -0.25rem 0.25rem;
-		--long-shadow-offset: -0.5rem 0.5rem;
-		--longer-shadow-offset: -1rem 1rem;
-		--longest-shadow-offset: -2rem 2rem; */
-
 		--hard-shadow-offset: 0.25rem;
 		--long-shadow-offset: 0.5rem;
 		--longer-shadow-offset: 1rem;
@@ -497,9 +492,10 @@
 		--padding-large: 2rem;
 		--padding-underlines: calc((var(--border-width) * 2) + 1rem);
 
+		--width-content-box: 72ch;
 		--width-narrow: calc(50rem + (var(--padding-body-edge) * 2));
 		--width-intro: calc(60rem + (var(--padding-body-edge) * 2));
-		--width-medium: calc(68.75 + (var(--padding-body-edge) * 2));
+		--width-medium: calc(68.75rem + (var(--padding-body-edge) * 2));
 		--width-wide: calc(75rem + (var(--padding-body-edge) * 2));
 		--width-wider: calc(86rem + (var(--padding-body-edge) * 2));
 		--width-widest: calc(90rem + (var(--padding-body-edge) * 2));
@@ -507,6 +503,8 @@
 		--section-margin: 6.25rem;
 
 		--grid-gap: 0.5rem;
+
+		--circle-button-width: 2.5rem;
 
 		@media (min-width: 40em) {
 			--padding-body-top: 12rem;
@@ -521,6 +519,8 @@
 			--padding-large: 3.25rem;
 
 			--section-margin: 10rem;
+
+			--circle-button-width: 3rem;
 		}
 
 		@media (min-width: 90em) {

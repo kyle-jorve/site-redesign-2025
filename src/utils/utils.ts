@@ -1,3 +1,5 @@
+import { ButtonLinkProps } from "@/components/global/button-link";
+
 export function printClassNames(classes: string[]) {
 	const cleanClasses = classes
 		.filter((c) => c)
@@ -5,4 +7,15 @@ export function printClassNames(classes: string[]) {
 		.flat();
 
 	return cleanClasses.join(" ");
+}
+
+export function deriveButtonShadowColor(
+	color: ButtonLinkProps["color"],
+	shadowColor: ButtonLinkProps["shadowColor"] = undefined,
+) {
+	if (shadowColor) return shadowColor;
+
+	if (color === "red") return "dark";
+	if (color === "dark") return "light";
+	if (color === "light") return undefined;
 }

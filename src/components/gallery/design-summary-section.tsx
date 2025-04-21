@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
@@ -19,13 +23,20 @@ export default function DesignSummarySection({
 	className = "",
 	...otherProps
 }: DesignSummerySectionProps) {
+	const sectionRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["design-summary"], className]);
 
 	if (!problemText && !solutionText && !url) return null;
 
 	return (
 		<section
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			{problemText !== undefined && solutionText !== undefined && (
@@ -39,6 +50,7 @@ export default function DesignSummarySection({
 				<ButtonLinkRow
 					url={url}
 					buttonText={buttonText}
+					linesColor="blue"
 				/>
 			)}
 		</section>

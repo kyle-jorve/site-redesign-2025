@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
 import { printClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
@@ -13,11 +14,56 @@ export default function Filters({
 	...otherProps
 }: FiltersProps) {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
-	const { filters, resetFilters, updateFilters } = useContext(SiteContext);
+	const { filters, resetFilters, updateFilters, setFilters } =
+		useContext(SiteContext);
 	const classes = printClassNames([styles.filters, className]);
 	const filterMenuID = "filter-menu";
-	const availableFilters = filters.filter((cat) => !cat.active);
 	const activeFilters = filters.filter((cat) => cat.active);
+	const params = useSearchParams();
+	const router = useRouter();
+	const path = usePathname();
+
+	useEffect(() => {
+		const urlCategories: string[] | null = (() => {
+			const cats = params.get("categories");
+
+			if (!cats) return null;
+
+			try {
+				return JSON.parse(cats);
+			} catch {
+				return null;
+			}
+		})();
+
+		if (!urlCategories?.length) {
+			resetFilters();
+			return;
+		}
+
+		setFilters((prev) => {
+			const newState = prev.map((filter) => ({
+				...filter,
+				active: false,
+			}));
+
+			return newState.map((filter) => ({
+				...filter,
+				active: urlCategories.some((cat) => cat === filter.name),
+			}));
+		});
+	}, []);
+
+	useEffect(() => {
+		const activeFilters = filters.filter((cat) => cat.active);
+		const newURL = activeFilters.length
+			? `${path}?categories=${JSON.stringify(
+					activeFilters.map((cat) => cat.name),
+			  )}`
+			: path;
+
+		router.replace(newURL);
+	}, [filters]);
 
 	useEffect(() => {
 		function handleDocumentClick(event: MouseEvent) {
@@ -63,13 +109,18 @@ export default function Filters({
 					id={filterMenuID}
 					aria-hidden={!menuOpen}
 				>
-					{availableFilters.map((filter) => {
+					{filters.map((filter) => {
+						const filterButtonClasses = printClassNames([
+							styles["add-filter-button"],
+							filter.active ? styles.active : "",
+						]);
+
 						return (
 							<button
 								key={filter.name}
-								className={styles["add-filter-button"]}
+								className={filterButtonClasses}
 								aria-label={`add ${filter.label} project filter`}
-								onClick={() => updateFilters(filter.name)}
+								onClick={() => updateFilters([filter.name])}
 								data-add-filter-button
 							>
 								{filter.label}

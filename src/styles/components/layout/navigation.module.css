@@ -200,7 +200,7 @@
 		translate: -50% -1rem;
 		background: var(--header-footer-background);
 		border: var(--border-dark);
-		box-shadow: var(--hard-shadow-light-long);
+		box-shadow: var(--hard-shadow-red-long);
 		backdrop-filter: var(--backdrop-blur);
 
 		&::before {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import { useState, useRef, createContext, useEffect } from "react";
 import { CategoryType } from "@/types/gallery-types";
 import { projectFilters } from "@/data/gallery-data";
 
@@ -18,10 +18,10 @@ export type SiteContextType = {
 		React.SetStateAction<"idle" | "page-out" | "page-in">
 	>;
 	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
-	updateFilters: (id: string) => void;
+	updateFilters: (ids: string[]) => void;
 };
 
-const SiteContext = React.createContext<SiteContextType>({
+const SiteContext = createContext<SiteContextType>({
 	favedProjects: [],
 	filters: [],
 	loadStatus: "idle",
@@ -51,16 +51,18 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 		structuredClone(unsetFilters),
 	);
 	const mainRef = useRef<HTMLElement>(null);
+	const favoritesStorageKey = "favorites";
 
-	function updateFilters(id: string) {
+	function updateFilters(ids: string[]) {
 		setFilters((prev) => {
 			return prev.map((cat) => {
 				const newCat = {
 					...cat,
 				};
+				const match = ids.some((id) => id === cat.name);
 
-				if (cat.name === id && cat.active) newCat.active = false;
-				else if (cat.name === id) newCat.active = true;
+				if (match && cat.active) newCat.active = false;
+				else if (match) newCat.active = true;
 
 				return newCat;
 			});
@@ -70,6 +72,59 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	function resetFilters() {
 		setFilters(structuredClone(unsetFilters));
 	}
+
+	function checkLocalStorageAvailability() {
+		return (() => {
+			const test = "__storage_test__";
+
+			try {
+				localStorage.setItem(test, test);
+				localStorage.removeItem(test);
+				return true;
+			} catch (error) {
+				return (
+					error instanceof DOMException &&
+					error.name === "QuotaExceededError" &&
+					localStorage?.length !== 0
+				);
+			}
+		})();
+	}
+
+	useEffect(() => {
+		const localStorageAvailable = checkLocalStorageAvailability();
+
+		if (!localStorageAvailable) return;
+
+		const favs = (() => {
+			const storedFavs = localStorage.getItem(favoritesStorageKey);
+
+			if (!storedFavs) return null;
+
+			try {
+				return JSON.parse(storedFavs);
+			} catch {
+				return null;
+			}
+		})();
+
+		if (!favs) return;
+
+		setFavedProjects(favs);
+	}, []);
+
+	useEffect(() => {
+		const localStorageAvailable = checkLocalStorageAvailability();
+
+		if (!localStorageAvailable) return;
+
+		localStorage.setItem(
+			favoritesStorageKey,
+			JSON.stringify(favedProjects),
+		);
+
+		console.log(`localStorage`, localStorage.getItem(favoritesStorageKey));
+	}, [favedProjects]);
 
 	return (
 		<SiteContext.Provider

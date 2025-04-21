@@ -8,14 +8,20 @@ export const heroImage: ImageDataType = {
 		{
 			url: "https://placehold.co/1920x1467",
 			minScreenWidth: 1440,
+			width: 1920,
+			height: 1467,
 		},
 		{
 			url: "https://placehold.co/1440x1100",
 			minScreenWidth: 1024,
+			width: 1440,
+			height: 1100,
 		},
 		{
 			url: "https://placehold.co/1024x1800",
 			minScreenWidth: 640,
+			width: 1024,
+			height: 1800,
 		},
 	],
 	mobileSource: "https://placehold.co/640x1436",
@@ -32,7 +38,10 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "design-illustration",
 		title: "Design + Illustration",
-		url: `/projects?categories=[${categories.design.name},${categories.illustration.name}]`,
+		url: `/projects?categories=${JSON.stringify([
+			categories.design.name,
+			categories.illustration.name,
+		])}`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "design-illustration-menu-tile-image",
@@ -40,6 +49,8 @@ export const menuTiles: MenuTileType[] = [
 				{
 					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
+					width: 390,
+					height: 316,
 				},
 			],
 			mobileSource: "https://placehold.co/768x461",
@@ -51,7 +62,9 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "development",
 		title: "Development",
-		url: `/projects?categories=[${categories.development.name}]`,
+		url: `/projects?categories=${JSON.stringify([
+			categories.development.name,
+		])}`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "development-menu-tile-image",
@@ -59,6 +72,8 @@ export const menuTiles: MenuTileType[] = [
 				{
 					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
+					width: 390,
+					height: 316,
 				},
 			],
 			mobileSource: "https://placehold.co/768x461",
@@ -70,7 +85,9 @@ export const menuTiles: MenuTileType[] = [
 	{
 		name: "writing",
 		title: "Writing",
-		url: `/projects?categories=[${categories.writing.name}]`,
+		url: `/projects?categories=${JSON.stringify([
+			categories.writing.name,
+		])}`,
 		buttonText: menuTileButtonText,
 		image: {
 			name: "writing-menu-tile-image",
@@ -78,6 +95,8 @@ export const menuTiles: MenuTileType[] = [
 				{
 					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
+					width: 390,
+					height: 316,
 				},
 			],
 			mobileSource: "https://placehold.co/768x461",

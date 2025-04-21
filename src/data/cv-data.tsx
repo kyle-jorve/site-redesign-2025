@@ -40,10 +40,14 @@ export const bio: BioType = {
 			{
 				url: "https://placehold.co/664x790",
 				minScreenWidth: 1024,
+				width: 664,
+				height: 790,
 			},
 			{
 				url: "https://placehold.co/1024x680",
 				minScreenWidth: 640,
+				width: 1024,
+				height: 680,
 			},
 		],
 		mobileSource: "https://placehold.co/640x730",

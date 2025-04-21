@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { ImageDataType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
@@ -23,11 +27,18 @@ export default function ProjectDescriptionGrid({
 	className = "",
 	...otherProps
 }: ProjectDescriptionGridProps) {
+	const sectionRef = useRef<HTMLElement>(null);
+	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["description-grid"], className]);
 
 	return (
 		<section
+			ref={sectionRef}
 			className={classes}
+			style={{
+				opacity: intersected ? 1 : 0,
+				transition: "opacity 1s ease",
+			}}
 			{...otherProps}
 		>
 			<ContentBox className={styles["desc-box"]}>
