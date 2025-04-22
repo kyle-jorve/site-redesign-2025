@@ -87,14 +87,18 @@
 		}
 	}
 
-	&.bio-icons .social-icon.commerce {
-		--text-color: var(--cream);
-		--background-color: var(--blue-light);
-		--box-shadow: var(--hard-shadow-red);
+	&.bio-icons {
+		margin: 2rem 0 1rem;
 
-		--text-color-hover: var(--cream);
-		--background-color-hover: var(--red);
-		--box-shadow-hover: var(--hard-shadow-blue-long);
+		.social-icon.commerce {
+			--text-color: var(--cream);
+			--background-color: var(--blue-light);
+			--box-shadow: var(--hard-shadow-red);
+
+			--text-color-hover: var(--cream);
+			--background-color-hover: var(--red);
+			--box-shadow-hover: var(--hard-shadow-blue-long);
+		}
 	}
 
 	@media (hover: hover) {

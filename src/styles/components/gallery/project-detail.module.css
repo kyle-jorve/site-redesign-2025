@@ -81,7 +81,7 @@
 
 		.desc-box {
 			width: calc(100% + 2.625rem - var(--padding-body-edge));
-			max-width: var(--width-content-box);
+			max-width: var(--width-content);
 			margin: -8rem -2.625rem 2.625rem auto;
 		}
 

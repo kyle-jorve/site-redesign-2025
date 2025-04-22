@@ -36,7 +36,11 @@ export default function ResumeItem({
 						</span>
 					)}
 
-					<Heading className={styles["item-title"]}>{title}</Heading>
+					<Heading className={styles["item-title"]}>
+						<span className={styles["item-title-text"]}>
+							{title}
+						</span>
+					</Heading>
 
 					{company !== undefined && (
 						<span className={`heading-5 ${styles.company}`}>

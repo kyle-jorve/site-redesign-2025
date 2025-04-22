@@ -122,8 +122,6 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 			favoritesStorageKey,
 			JSON.stringify(favedProjects),
 		);
-
-		console.log(`localStorage`, localStorage.getItem(favoritesStorageKey));
 	}, [favedProjects]);
 
 	return (

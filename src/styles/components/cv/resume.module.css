@@ -48,16 +48,22 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		gap: 0.5rem;
+		gap: 1rem;
 		margin-bottom: 1.25rem;
 	}
 
 	.item-title {
-		padding: 0.5rem 0.625rem;
 		margin: 0 0 0 -0.5rem;
+		letter-spacing: var(--kerning-medium);
+		line-height: var(--leading-small);
+		color: var(--cream);
+	}
+
+	.item-title-text {
+		padding: 0.25rem 0.625rem;
 		background: var(--red);
 		border-radius: var(--border-radius-small);
-		color: var(--cream);
+		box-decoration-break: clone;
 	}
 
 	.desc > *:last-child {

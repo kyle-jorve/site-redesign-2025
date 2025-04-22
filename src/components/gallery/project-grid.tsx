@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useRef } from "react";
+import { useContext, useRef, Suspense } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
@@ -54,7 +54,9 @@ export default function ProjectGrid({
 			}}
 			{...otherProps}
 		>
-			<Filters />
+			<Suspense fallback={null}>
+				<Filters />
+			</Suspense>
 
 			<div className={styles.projects}>
 				{filteredProjects.map((proj, index) => {

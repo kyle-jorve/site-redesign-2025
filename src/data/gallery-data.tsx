@@ -5,7 +5,12 @@ import {
 } from "@/types/gallery-types";
 
 export const pageTitle = "Projects";
-export const pageSummary = "I love to bring my ideas to life.";
+export const pageSummary = (
+	<p className="body-text large">
+		I love nothing more than bringing my ideas to life&mdash;but sharing
+		them with others is a close second.
+	</p>
+);
 export const relatedProjectsTitle = "See Also";
 export const relatedProjectsButtonText = "See More";
 

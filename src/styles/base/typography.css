@@ -166,6 +166,27 @@
 		}
 	}
 
+	ul,
+	ol {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		align-items: start;
+		align-content: start;
+		gap: 1rem;
+		margin-bottom: var(--body-text-margin);
+		font-family: var(--font-body);
+		font-weight: var(--font-weight-normal);
+		font-size: var(--font-size-body);
+		line-height: var(--leading-small);
+		letter-spacing: 0;
+		text-transform: none;
+		color: var(--text-color);
+	}
+
+	ul {
+		list-style-type: square;
+	}
+
 	a,
 	.link {
 		font-weight: var(--font-weight-black);

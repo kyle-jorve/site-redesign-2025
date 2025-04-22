@@ -41,6 +41,7 @@
 	.image-wrapper {
 		position: relative;
 		order: -1;
+		overflow: hidden;
 
 		&::before {
 			position: absolute;

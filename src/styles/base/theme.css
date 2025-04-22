@@ -492,7 +492,7 @@
 		--padding-large: 2rem;
 		--padding-underlines: calc((var(--border-width) * 2) + 1rem);
 
-		--width-content-box: 72ch;
+		--width-content: 72ch;
 		--width-narrow: calc(50rem + (var(--padding-body-edge) * 2));
 		--width-intro: calc(60rem + (var(--padding-body-edge) * 2));
 		--width-medium: calc(68.75rem + (var(--padding-body-edge) * 2));

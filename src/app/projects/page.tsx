@@ -9,9 +9,7 @@ export default function ProjectsPage() {
 		<>
 			<InteriorHero
 				title={galleryData.pageTitle}
-				description={
-					<p className="body-text large">{galleryData.pageSummary}</p>
-				}
+				description={galleryData.pageSummary}
 			/>
 			<ProjectGrid projects={galleryData.projects} />
 			<Bio {...bio} />
