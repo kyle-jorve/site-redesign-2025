@@ -5,7 +5,9 @@ export default function NotFound() {
 	return (
 		<InteriorHero
 			title={pageNotFoundTitle}
-			description={pageNotFoundDescription}
+			description={
+				<p className="body-text large">{pageNotFoundDescription}</p>
+			}
 		/>
 	);
 }

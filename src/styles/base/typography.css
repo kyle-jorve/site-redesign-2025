@@ -203,15 +203,9 @@
 		}
 	}
 
-	@media (min-width: 64em) {
-		h2,
-		.heading-2 {
-			letter-spacing: var(--kerning-small);
-		}
-	}
-
 	@media (min-width: 90em) {
-		.superheading {
+		.superheading,
+		.supertitle {
 			letter-spacing: var(--kerning-medium);
 		}
 	}

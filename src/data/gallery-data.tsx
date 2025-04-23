@@ -6,10 +6,10 @@ import {
 
 export const pageTitle = "Projects";
 export const pageSummary = (
-	<p className="body-text large">
+	<>
 		I love nothing more than bringing my ideas to life&mdash;but sharing
 		them with others is a close second.
-	</p>
+	</>
 );
 export const relatedProjectsTitle = "See Also";
 export const relatedProjectsButtonText = "See More";
@@ -42,15 +42,15 @@ export const categories: CategoriesType = {
 } as const;
 
 export const projectFilters: CategoriesType = {
-	...categories,
-	featured: {
-		name: "featured",
-		label: "Featured",
-	},
 	favorited: {
 		name: "favorited",
 		label: "Favorited",
 	},
+	featured: {
+		name: "featured",
+		label: "Featured",
+	},
+	...categories,
 } as const;
 
 export const projects: ProjectType[] = [
@@ -236,15 +236,26 @@ export const projects: ProjectType[] = [
 				height: 480,
 			},
 		],
-		summary: `Some summary text. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck.`,
-		problemText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
-		solutionText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
+		summary: `An art book project meant to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		progressSteps: [
 			{
 				name: "ignoble-blood-vignettes-progress-step-1",
-				supertitle: "Superheading",
-				title: "Progress Step 1",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "Step 1",
+				title: "The Design Phase",
+				description: (
+					<>
+						<p className="body-text large">
+							In planning this project, it was my goal to showcase
+							both my design and illustrative talents.
+						</p>
+						<p>
+							I wanted to create a page layout that spoke of
+							Ignoble Blood&apos;s hard fantasy roots without
+							looking overly historical. The Ignoble Blood
+							universe is a fictional one, after all.
+						</p>
+					</>
+				),
 				image: {
 					name: "ignoble-blood-vignettes-progress-image-1",
 					sources: [
@@ -269,9 +280,23 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-2",
-				supertitle: "Superheading",
-				title: "Progress Step 2",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "Step 2",
+				title: "Typography",
+				description: (
+					<>
+						<p className="body-text large">
+							I experimented with a wide variety of font faces and
+							configurations, the goal being to find a combination
+							which was less medieval and more modern fantasy.
+						</p>
+						<p>
+							In the end, I landed on something which I believe is
+							evocative of both the beauty and brutality of
+							Ignoble Blood&apos;s world: a harmony of gothic and
+							script type faces.
+						</p>
+					</>
+				),
 				image: {
 					name: "ignoble-blood-vignettes-progress-image-2",
 					sources: [
@@ -296,9 +321,24 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-3",
-				supertitle: "Superheading",
-				title: "Progress Step 3",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "Step 3",
+				title: "Character Vignettes",
+				description: (
+					<>
+						<p className="body-text large">
+							My intention was to start slow, to create simple
+							illustrations whose sole focus was to showcase each
+							character&apos;s unique flavor and design.
+						</p>
+						<p>
+							One of my favorite bonus features of modern video
+							games is the ability to view detailed character
+							models. Often these models are posed on a sort of
+							cross-sectioned platform. This was my inspiration
+							for these character vignettes.
+						</p>
+					</>
+				),
 				image: {
 					name: "ignoble-blood-vignettes-progress-image-3",
 					sources: [
@@ -322,24 +362,21 @@ export const projects: ProjectType[] = [
 				},
 			},
 		],
-		descriptionTitle: "Project Description",
+		descriptionTitle: "Illustrating Ignoble Blood",
 		descriptionBody: (
 			<>
 				<p className="body-text large">
-					Eventually, you do plan to have dinosaurs on your dinosaur
-					tour, right? You know what? It is beets. I&apos;ve crashed
-					into a beet truck. Just my luck, no ice. Yeah, but John, if
-					The Pirates of the Caribbean breaks down, the pirates
-					don&apos;t eat the tourists.
+					It has long been a dream of mine to create an art book. This
+					in-progress book is only the first in a planned series, each
+					of which is to be based on a corresponding novel.
 				</p>
 				<p>
-					What do they got in there? King Kong? Eventually, you do
-					plan to have dinosaurs on your dinosaur tour, right? Hey,
-					take a look at the earthlings. Goodbye! Must go faster. Life
-					finds a way. We gotta burn the rain forest, dump toxic
-					waste, pollute the air, and rip up the OZONE! &apos;Cause
-					maybe if we screw up this planet enough, they won&apos;t
-					want it anymore!
+					The first in this series of novels is titled{" "}
+					<b>The Ashes of Hope</b>. In it, a young noble must reckon
+					with a dangerous foreign adversary, navigate his fraught
+					relationship with his father, and navigate all the pitfalls
+					of growing into a responsible adult&mdash;all while an
+					ancient, much larger threat looms on the horizon.
 				</p>
 			</>
 		),
@@ -636,15 +673,34 @@ export const projects: ProjectType[] = [
 				height: 480,
 			},
 		],
-		summary: `Some summary text. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck.`,
-		problemText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
-		solutionText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
+		summary: `A simple website solution for independent movie theaters.`,
+		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device.`,
+		solutionText: `Theater Toolkit is a simple, affordable website solution that integrates directly with a theater's point of sale, allowing users to browse showtimes and buy tickets with a quick and painless checkout process.`,
 		progressSteps: [
 			{
 				name: "theater-toolkit-progress-step-1",
-				supertitle: "Superheading",
-				title: "Progress Step 1",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "Revealing the Toolkit",
+				title: "Website Design",
+				description: (
+					<>
+						<p className="body-text large">
+							The first step in any software venture is, of
+							course, to create a website to advertise your idea.
+						</p>
+						<p>
+							I designed Theater Toolkit&apos;s website with the
+							aim of highlighting its user-friendliness and ease
+							of use. Its warm, inviting palette is evocative of
+							the colors one might see in an actual movie theater.
+						</p>
+						<p>
+							I created simple, uncluttered layouts that would
+							draw the user through the site, feeding them
+							detailed information about Theater Toolkit while
+							keeping a focus on salesmanship.
+						</p>
+					</>
+				),
 				image: {
 					name: "theater-toolkit-progress-image-1",
 					sources: [
@@ -669,9 +725,23 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "theater-toolkit-progress-step-2",
-				supertitle: "Superheading",
-				title: "Progress Step 2",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "A Strong Brand Means",
+				title: "Illustrations",
+				description: (
+					<>
+						<p className="body-text large">
+							When it comes to design, I believe my greatest
+							strength is in my background: illustration.
+						</p>
+						<p>
+							I knew that the best way to get Theater Toolkit to
+							stand out among the crowd was to distinguish its
+							branding as much as possible. And what better way to
+							stand out among a crowd than with colorful
+							illustrations?
+						</p>
+					</>
+				),
 				image: {
 					name: "theater-toolkit-progress-image-2",
 					sources: [
@@ -694,52 +764,25 @@ export const projects: ProjectType[] = [
 					height: 480,
 				},
 			},
-			{
-				name: "theater-toolkit-progress-step-3",
-				supertitle: "Superheading",
-				title: "Progress Step 3",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
-				image: {
-					name: "theater-toolkit-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Theater Toolkit progress image 3",
-					width: 640,
-					height: 480,
-				},
-			},
 		],
-		descriptionTitle: "Project Description",
+		descriptionSupertitle: "Marketing the Toolkit",
+		descriptionTitle: "Creating an Eye-Catching Brand",
 		descriptionBody: (
 			<>
 				<p className="body-text large">
-					Eventually, you do plan to have dinosaurs on your dinosaur
-					tour, right? You know what? It is beets. I&apos;ve crashed
-					into a beet truck. Just my luck, no ice. Yeah, but John, if
-					The Pirates of the Caribbean breaks down, the pirates
-					don&apos;t eat the tourists.
+					After designing Theater Toolkit, I then built it from the
+					ground up using the Umbraco CMS.
 				</p>
 				<p>
-					What do they got in there? King Kong? Eventually, you do
-					plan to have dinosaurs on your dinosaur tour, right? Hey,
-					take a look at the earthlings. Goodbye! Must go faster. Life
-					finds a way. We gotta burn the rain forest, dump toxic
-					waste, pollute the air, and rip up the OZONE! &apos;Cause
-					maybe if we screw up this planet enough, they won&apos;t
-					want it anymore!
+					The illustrations I created would be used throughout the
+					site to highlight Theater Toolkit&apos;s many outstanding
+					features. They would also be used in signage at tradeshows
+					and in various other marketing materials.
+				</p>
+				<p>
+					Unfortunately, following my departure from Desert Lab
+					Studio, these illustrations were removed from the Theater
+					Toolkit website. They live now only in my memory...
 				</p>
 			</>
 		),

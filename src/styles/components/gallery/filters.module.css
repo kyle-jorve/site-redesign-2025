@@ -43,6 +43,14 @@
 			pointer-events: none;
 		}
 
+		.divider {
+			display: block;
+			width: 100%;
+			height: var(--border-width);
+			background: var(--gold);
+			border-radius: var(--border-width);
+		}
+
 		&.open {
 			translate: 0 -0.5rem;
 			opacity: 1;

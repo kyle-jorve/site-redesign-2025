@@ -13,6 +13,7 @@ import styles from "@/styles/components/gallery/project-detail.module.css";
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];
 	bodyText: ProjectType["descriptionBody"];
+	supertitle?: ProjectType["descriptionSupertitle"];
 	url?: string;
 	buttonText?: string;
 	images?: ImageDataType[];
@@ -21,6 +22,7 @@ export type ProjectDescriptionGridProps = {
 export default function ProjectDescriptionGrid({
 	title,
 	bodyText,
+	supertitle = undefined,
 	url = undefined,
 	buttonText = "Visit Website",
 	images = [],
@@ -42,6 +44,10 @@ export default function ProjectDescriptionGrid({
 			{...otherProps}
 		>
 			<ContentBox className={styles["desc-box"]}>
+				{!!supertitle && (
+					<span className="superheading">{supertitle}</span>
+				)}
+
 				<h2 className={`underline ${styles.title}`}>{title}</h2>
 
 				<div className={styles.desc}>{bodyText}</div>

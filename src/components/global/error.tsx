@@ -5,7 +5,9 @@ export default function Error() {
 	return (
 		<InteriorHero
 			title={errorPageTitle}
-			description={errorPageDescription}
+			description={
+				<p className="body-text large">{errorPageDescription}</p>
+			}
 		/>
 	);
 }

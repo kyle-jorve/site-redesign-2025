@@ -15,7 +15,7 @@ export type CategoriesType = {
 export type FeatureType = {
 	name: string;
 	title: string;
-	description: string;
+	description: React.ReactElement;
 	image: ImageDataType;
 	url?: string;
 	buttonText?: string;
@@ -48,6 +48,7 @@ export type ProjectType = ProjectTileType & {
 		text: string;
 	};
 	progressSteps?: FeatureType[];
+	descriptionSupertitle?: string;
 	descriptionTitle?: string;
 	descriptionBody?: React.ReactElement;
 	imageGrid?: ImageDataType[];

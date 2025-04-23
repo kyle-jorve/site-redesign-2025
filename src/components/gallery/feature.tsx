@@ -62,9 +62,7 @@ export default function Feature({
 
 				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
 
-				<p className={`body-text large ${styles.desc}`}>
-					{description}
-				</p>
+				{description}
 
 				{!!url && (
 					<div className={styles["button-row"]}>

@@ -1,20 +1,17 @@
 import { SocialMediaType, NavType, NavItemType } from "@/types/global-types";
 import CustomLink from "@/components/global/custom-link";
-import GumroadIcon from "@/components/icons/gumroad-icon";
 
 export const pageNotFoundTitle = "Page Not Found";
 export const pageNotFoundDescription = (
-	<p className="body-text large">
+	<>
 		I&apos;m not sure how you got here, but click{" "}
 		<CustomLink to="/">here</CustomLink> to find safer ground.
-	</p>
+	</>
 );
 
 export const errorPageTitle = "I am unwell 🥴";
 export const errorPageDescription = (
-	<p className="body-text large">
-		Something is wrong. Please return later when I&apos;m feeling better.
-	</p>
+	<>Something is wrong. Please return later when I&apos;m feeling better.</>
 );
 
 export const socialMedia: {
@@ -49,7 +46,6 @@ export const socialMedia: {
 		url: "https://gumroad.com/kylejorve",
 		type: "commerce",
 		label: "Shop",
-		icon: <GumroadIcon />,
 	},
 } as const;
 
@@ -79,9 +75,18 @@ export const navItems: NavType = [
 
 export const copyrightText = (
 	<>
+		Website designed and built by Kyle Jorve.
+		<br />
+		Photography by{" "}
+		<CustomLink
+			to="https://katherynmoranphotography.com/"
+			target="_blank"
+		>
+			Katheryn Moran Photography
+		</CustomLink>
+		.
+		<br />
 		&copy; Copyright {new Date().getFullYear()} Kyle Jorve. All rights
 		reserved.
-		<br />
-		Website designed and built by Kyle Jorve.
 	</>
 );

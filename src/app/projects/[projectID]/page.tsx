@@ -89,6 +89,7 @@ export default async function ProjectDetailPage({
 			)}
 			{!!data.descriptionTitle && !!data.descriptionBody && (
 				<ProjectDescriptionGrid
+					supertitle={data.descriptionSupertitle}
 					title={data.descriptionTitle}
 					bodyText={data.descriptionBody}
 					url={data.link?.url}

@@ -116,15 +116,23 @@ export default function Filters({
 						]);
 
 						return (
-							<button
-								key={filter.name}
-								className={filterButtonClasses}
-								aria-label={`add ${filter.label} project filter`}
-								onClick={() => updateFilters([filter.name])}
-								data-add-filter-button
-							>
-								{filter.label}
-							</button>
+							<>
+								<button
+									key={filter.name}
+									className={filterButtonClasses}
+									aria-label={`add ${filter.label} project filter`}
+									onClick={() => updateFilters([filter.name])}
+									data-add-filter-button
+								>
+									{filter.label}
+								</button>
+								{filter.name === "featured" && (
+									<span
+										className={styles.divider}
+										aria-hidden="true"
+									></span>
+								)}
+							</>
 						);
 					})}
 				</div>
