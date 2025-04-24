@@ -14,7 +14,6 @@
 		inset: calc(100% + 1.5rem) auto auto 0;
 		display: flex;
 		flex-direction: column;
-		align-items: start;
 		gap: 0.5rem;
 		width: 200px;
 		max-width: calc(100vw - (var(--padding-body-edge) * 2));
@@ -47,6 +46,7 @@
 			display: block;
 			width: 100%;
 			height: var(--border-width);
+			margin-top: 0.5rem;
 			background: var(--gold);
 			border-radius: var(--border-width);
 		}

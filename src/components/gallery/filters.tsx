@@ -116,9 +116,11 @@ export default function Filters({
 						]);
 
 						return (
-							<>
+							<div
+								key={filter.name}
+								className={styles["filter-row"]}
+							>
 								<button
-									key={filter.name}
 									className={filterButtonClasses}
 									aria-label={`add ${filter.label} project filter`}
 									onClick={() => updateFilters([filter.name])}
@@ -132,7 +134,7 @@ export default function Filters({
 										aria-hidden="true"
 									></span>
 								)}
-							</>
+							</div>
 						);
 					})}
 				</div>

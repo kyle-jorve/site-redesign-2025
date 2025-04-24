@@ -21,6 +21,12 @@
 	gap: 1rem;
 }
 
+.design-overview {
+	width: 100%;
+	max-width: var(--width-content);
+	margin: 0 auto;
+}
+
 .description-grid {
 	margin-bottom: var(--section-margin);
 

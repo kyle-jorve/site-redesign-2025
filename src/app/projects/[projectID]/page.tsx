@@ -1,5 +1,5 @@
 import {
-	projects,
+	projectsSorted,
 	projectsByName,
 	relatedProjectsTitle,
 	relatedProjectsButtonText,
@@ -29,22 +29,12 @@ export default async function ProjectDetailPage({
 
 	const primaryCategory =
 		data.categories.find((cat) => cat.primary) || data.categories[0];
-	const relatedProjects = projects
-		.filter(
-			(proj) =>
-				proj.categories.some(
-					(projCat) => projCat.name === primaryCategory.name,
-				) && proj.name !== data.name,
-		)
-		.sort((a, _) => {
-			if (a.featured) return -1;
-			return 1;
-		})
-		.sort((a, b) => {
-			if (a.title < b.title) return -1;
-			if (a.title > b.title) return 1;
-			return 0;
-		});
+	const relatedProjects = projectsSorted.filter(
+		(proj) =>
+			proj.categories.some(
+				(projCat) => projCat.name === primaryCategory.name,
+			) && proj.name !== data.name,
+	);
 	const categoryUrl = `/projects?categories=${JSON.stringify([
 		primaryCategory.name,
 	])}`;
@@ -81,6 +71,7 @@ export default async function ProjectDetailPage({
 			<DesignSummarySection
 				problemText={data.problemText}
 				solutionText={data.solutionText}
+				overviewText={data.overviewText}
 				url={data.link?.url}
 				buttonText={data.link?.text}
 			/>

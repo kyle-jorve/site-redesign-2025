@@ -75,7 +75,10 @@ export const navItems: NavType = [
 
 export const copyrightText = (
 	<>
-		Website designed and built by Kyle Jorve.
+		&copy; Copyright {new Date().getFullYear()} Kyle Jorve. All rights
+		reserved
+		<br />
+		Website designed and built by Kyle Jorve
 		<br />
 		Photography by{" "}
 		<CustomLink
@@ -84,9 +87,5 @@ export const copyrightText = (
 		>
 			Katheryn Moran Photography
 		</CustomLink>
-		.
-		<br />
-		&copy; Copyright {new Date().getFullYear()} Kyle Jorve. All rights
-		reserved.
 	</>
 );

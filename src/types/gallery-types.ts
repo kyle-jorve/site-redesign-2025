@@ -43,6 +43,7 @@ export type ProjectType = ProjectTileType & {
 	summary: string;
 	problemText?: string;
 	solutionText?: string;
+	overviewText?: string;
 	link?: {
 		url: string;
 		text: string;

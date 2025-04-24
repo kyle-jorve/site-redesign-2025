@@ -11,6 +11,7 @@ import styles from "@/styles/components/gallery/project-detail.module.css";
 export type DesignSummerySectionProps = {
 	problemText?: ProjectType["problemText"];
 	solutionText?: ProjectType["solutionText"];
+	overviewText?: ProjectType["overviewText"];
 	url?: string;
 	buttonText?: string;
 } & React.HTMLAttributes<HTMLElement>;
@@ -18,6 +19,7 @@ export type DesignSummerySectionProps = {
 export default function DesignSummarySection({
 	problemText = undefined,
 	solutionText = undefined,
+	overviewText = undefined,
 	url = undefined,
 	buttonText = "Visit Website",
 	className = "",
@@ -44,6 +46,17 @@ export default function DesignSummarySection({
 					problemText={problemText}
 					solutionText={solutionText}
 				/>
+			)}
+
+			{overviewText !== undefined && (
+				<div
+					className={`content-box small ${styles["design-overview"]}`}
+				>
+					<h2 className={`heading-5 ${styles.title}`}>Overview</h2>
+					<p className={`body-text small ${styles.desc}`}>
+						{overviewText}
+					</p>
+				</div>
 			)}
 
 			{url !== undefined && (

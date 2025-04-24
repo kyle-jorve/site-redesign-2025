@@ -13,7 +13,7 @@ export default function ProjectsPage() {
 					<p className="body-text large">{galleryData.pageSummary}</p>
 				}
 			/>
-			<ProjectGrid projects={galleryData.projects} />
+			<ProjectGrid projects={galleryData.projectsSorted} />
 			<Bio {...bio} />
 		</>
 	);

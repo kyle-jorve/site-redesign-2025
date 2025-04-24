@@ -674,8 +674,8 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `A simple website solution for independent movie theaters.`,
-		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device.`,
-		solutionText: `Theater Toolkit is a simple, affordable website solution that integrates directly with a theater's point of sale, allowing users to browse showtimes and buy tickets with a quick and painless checkout process.`,
+		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
+		solutionText: `In order to help Theater Toolkit stand out from the crowd, I designed an eye-catching website with colorful illustrations. As an added bonus, these illustrations could also be used in marketing materials.`,
 		progressSteps: [
 			{
 				name: "theater-toolkit-progress-step-1",
@@ -770,8 +770,8 @@ export const projects: ProjectType[] = [
 		descriptionBody: (
 			<>
 				<p className="body-text large">
-					After designing Theater Toolkit, I then built it from the
-					ground up using the Umbraco CMS.
+					After designing the Theater Toolkit website, I then built it
+					from the ground up using the Umbraco CMS.
 				</p>
 				<p>
 					The illustrations I created would be used throughout the
@@ -782,7 +782,7 @@ export const projects: ProjectType[] = [
 				<p>
 					Unfortunately, following my departure from Desert Lab
 					Studio, these illustrations were removed from the Theater
-					Toolkit website. They live now only in my memory...
+					Toolkit website.
 				</p>
 			</>
 		),
@@ -1023,9 +1023,8 @@ export const projects: ProjectType[] = [
 				height: 480,
 			},
 		],
-		summary: `Some summary text. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck.`,
-		problemText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
-		solutionText: `Eventually, you do plan to have dinosaurs on your dinosaur tour, right? You know what? It is beets. I've crashed into a beet truck. Just my luck, no ice. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.`,
+		summary: `A website to market a very musical Texas tourist destination.`,
+		overviewText: `I helped build the Visit Irving website alongside my teammates at Simpleview. Following are some curated examples of the work I contributed to this website.`,
 		link: {
 			url: "https://www.irvingtexas.com/",
 			text: "Visit Website",
@@ -1033,9 +1032,24 @@ export const projects: ProjectType[] = [
 		progressSteps: [
 			{
 				name: "visit-irving-progress-step-1",
-				supertitle: "Superheading",
-				title: "Progress Step 1",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "A Strong First Impression",
+				title: "The Homepage Hero",
+				description: (
+					<>
+						<p className="body-text large">
+							I was tasked with building many components of
+							Irving&apos;s website, but I am thrilled to have
+							been the one to build the scroll-animated homepage
+							hero.
+						</p>
+						<p>
+							The image grids on either side part like curtains as
+							the user scrolls down, revealing an eye-catching
+							video which promotes Irving&apos;s various venues,
+							amenities, and attractions.
+						</p>
+					</>
+				),
 				image: {
 					name: "visit-irving-progress-image-1",
 					sources: [
@@ -1060,9 +1074,23 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "visit-irving-progress-step-2",
-				supertitle: "Superheading",
-				title: "Progress Step 2",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "The Only Way Down Is Right",
+				title: "The Side-Scrolling Editorial Grid",
+				description: (
+					<>
+						<p className="body-text large">
+							One of my favorite aspects about web development is
+							that I am often tasked with solving some very
+							intesting problems.
+						</p>
+						<p>
+							For that reason, this horizonally scrolling blog
+							grid was an absolute joy to build. It consumes the
+							screen and pulls you in with its old typography and
+							colorful odes to Irving&apos;s rich music culture.
+						</p>
+					</>
+				),
 				image: {
 					name: "visit-irving-progress-image-2",
 					sources: [
@@ -1087,9 +1115,23 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "visit-irving-progress-step-3",
-				supertitle: "Superheading",
-				title: "Progress Step 3",
-				description: `Remind me to thank John for a lovely weekend. Jaguar shark! So tell me - does it really exist? Just my luck, no ice. God help us, we're in the hands of engineers.`,
+				supertitle: "A Preview of Your Next Vacation",
+				title: "The Preview Slideshow",
+				description: (
+					<>
+						<p className="body-text large">
+							There is so much to love about this design, but this
+							is one of my favorite elements.
+						</p>
+						<p>
+							This screen-spanning slideshow literally captivates
+							the user, daring them to scroll past without
+							clicking through at least a couple of its gorgeous
+							slides. The hover effects are minimal and elegant,
+							drawing the user in even further.
+						</p>
+					</>
+				),
 				image: {
 					name: "visit-irving-progress-image-3",
 					sources: [
@@ -1113,24 +1155,19 @@ export const projects: ProjectType[] = [
 				},
 			},
 		],
-		descriptionTitle: "Project Description",
+		descriptionTitle: "A Web Developer's Dream",
 		descriptionBody: (
 			<>
 				<p className="body-text large">
-					Eventually, you do plan to have dinosaurs on your dinosaur
-					tour, right? You know what? It is beets. I&apos;ve crashed
-					into a beet truck. Just my luck, no ice. Yeah, but John, if
-					The Pirates of the Caribbean breaks down, the pirates
-					don&apos;t eat the tourists.
+					I love making good design come to life, and I am privileged
+					to work for a company that outputs so many strong designs.
 				</p>
 				<p>
-					What do they got in there? King Kong? Eventually, you do
-					plan to have dinosaurs on your dinosaur tour, right? Hey,
-					take a look at the earthlings. Goodbye! Must go faster. Life
-					finds a way. We gotta burn the rain forest, dump toxic
-					waste, pollute the air, and rip up the OZONE! &apos;Cause
-					maybe if we screw up this planet enough, they won&apos;t
-					want it anymore!
+					Visit Irving is just one among a very large pile of
+					excellent website designs that I have had the joy of helping
+					build. While I did not design the Visit Irving website, and
+					while building it was a collaborative effort, I am proud of
+					the part I played in making this design a reality.
 				</p>
 			</>
 		),
@@ -1191,7 +1228,365 @@ export const projects: ProjectType[] = [
 			},
 		],
 	},
+	{
+		name: "captive-content",
+		title: "Captive Content",
+		featured: false,
+		categories: [
+			{
+				...categories.design,
+				primary: true,
+			},
+			categories.development,
+			categories.clientWork,
+		],
+		thumbImage: {
+			square: {
+				name: "captive-content-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of the Captive Content website",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "captive-content-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of the Captive Content website",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "captive-content-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of the Captive Content website",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "captive-content-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of the Captive Content website",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "captive-content-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Captive Content slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "captive-content-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Captive Content slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "captive-content-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Captive Content slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A product that bridges the gap between advertisers and captive audiences.`,
+		problemText: `All over the world, people are waiting. Waiting for the bus, waiting for an appointment to begin, waiting to connect to a Wi-Fi hotspot. Captive Content is the affordable ad-serving solution for capitalizing on all that waiting potential.`,
+		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the mood of the website, and its illustrations, were extrapolated from there.`,
+		progressSteps: [
+			{
+				name: "captive-content-progress-step-1",
+				supertitle: "Step 1",
+				title: "A Logo",
+				description: (
+					<>
+						<p className="body-text large">
+							From the initial sketch phase, I envisioned a nested
+							box as the Captive Content&apos;s logo&apos; focal
+							point.
+						</p>
+						<p>
+							The visual of both containing and releasing this box
+							perfectly symbolized, to me, what Captive Content
+							was about.
+						</p>
+					</>
+				),
+				image: {
+					name: "captive-content-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Captive Content progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "captive-content-progress-step-2",
+				supertitle: "Step 2",
+				title: "A Website",
+				description: (
+					<>
+						<p className="body-text large">
+							After the logo and color palette were finalized, my
+							vision for the website rapidly fell into place.
+						</p>
+						<p>
+							Using stylized diamonds and arrows, I illustrated
+							the concept of Captive Content without getting
+							bogged down in technical details.
+						</p>
+					</>
+				),
+				image: {
+					name: "captive-content-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Captive Content progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionSupertitle: "An Ad Server for a Captive Audience",
+		descriptionTitle: "A Website to Captivate Advertisers",
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					After designing the Captive Content website, I then built it
+					from the ground up using the Umbraco CMS. It and other
+					promotional materials were used to gain lucrative business
+					for Desert Lab Studio.
+				</p>
+				<p>
+					The site is sadly no longer live, as the Captive Content
+					product was sold following my departure from Desert Lab
+					Studio. Still, its simple yet elegant design remains a
+					strong part of my portfolio, and a prime example of my
+					diverse talents.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "captive-content-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Captive Content image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "captive-content-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Captive Content image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
 ];
+
+function titleSort(a: ProjectType, b: ProjectType) {
+	if (a.title < b.title) return -1;
+	if (a.title > b.title) return 1;
+	return 0;
+}
+
+export const projectsSorted = (() => {
+	const sortedFeatured = [...projects]
+		.filter((proj) => proj.featured)
+		.sort(titleSort);
+	const sortedOther = [...projects]
+		.filter((proj) => !proj.featured)
+		.sort(titleSort);
+
+	return [...sortedFeatured, ...sortedOther];
+})();
 
 export const projectsByName = (() => {
 	const returnObj: {
@@ -1232,7 +1627,7 @@ export const featuredProjectsFeatureType: FeatureType[] = featuredProjects.map(
 	(proj) => ({
 		name: proj.name,
 		title: proj.title,
-		description: proj.summary,
+		description: <p className="body-text large">{proj.summary}</p>,
 		image: proj.thumbImage.feature,
 		url: `/projects/${proj.name}`,
 		category: proj.categories.find((cat) => cat.primary),
