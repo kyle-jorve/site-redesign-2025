@@ -29,7 +29,7 @@ export default function DesignSummarySection({
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["design-summary"], className]);
 
-	if (!problemText && !solutionText && !url) return null;
+	if (!problemText && !solutionText && !overviewText && !url) return null;
 
 	return (
 		<section

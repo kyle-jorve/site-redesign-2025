@@ -82,7 +82,7 @@
 
 	@media (min-width: 64em) {
 		.content {
-			inset: 15% 4% auto auto;
+			inset: 15% 2% auto auto;
 			padding: 0;
 		}
 
@@ -94,6 +94,7 @@
 	@media (min-width: 90em) {
 		.content {
 			top: 20%;
+			right: 5%;
 		}
 	}
 }

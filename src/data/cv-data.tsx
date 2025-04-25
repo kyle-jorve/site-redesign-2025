@@ -246,14 +246,20 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								I am expertly skilled in Adobe Creative Cloud
-								software, most especially in Photoshop,
-								Illustrator, and InDesign.
+								I am expertly skilled in{" "}
+								<b>Adobe Creative Cloud</b> software, most
+								especially in <b>Photoshop</b>,{" "}
+								<b>Illustrator</b>, and <b>InDesign</b>. For
+								drawing and painting I tend to use{" "}
+								<b>Procreate</b> on an iPad Pro.
 							</p>
 							<p>
-								For web design, my software of choice is Figma.
+								For web design, my software of choice is{" "}
+								<b>Figma</b>.
 							</p>
-							<p>My preferred IDE is Visual Studio Code.</p>
+							<p>
+								My preferred IDE is <b>Visual Studio Code</b>.
+							</p>
 						</>
 					),
 				},

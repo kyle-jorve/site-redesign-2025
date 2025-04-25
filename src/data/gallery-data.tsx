@@ -1,3 +1,4 @@
+import CustomLink from "@/components/global/custom-link";
 import {
 	CategoriesType,
 	FeatureType,
@@ -237,7 +238,7 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `An art book project meant to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
-		progressSteps: [
+		features: [
 			{
 				name: "ignoble-blood-vignettes-progress-step-1",
 				supertitle: "Step 1",
@@ -377,6 +378,13 @@ export const projects: ProjectType[] = [
 					relationship with his father, and navigate all the pitfalls
 					of growing into a responsible adult&mdash;all while an
 					ancient, much larger threat looms on the horizon.
+				</p>
+				<p>
+					For the character illustrations, I drew, colored, and
+					applied lighting to each character in Procreate on an iPad
+					Pro before moving to Photoshop to complete the painting. For
+					the design of the book and pages, I used Adobe Illustrator
+					and InDesign.
 				</p>
 			</>
 		),
@@ -676,7 +684,7 @@ export const projects: ProjectType[] = [
 		summary: `A simple website solution for independent movie theaters.`,
 		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
 		solutionText: `In order to help Theater Toolkit stand out from the crowd, I designed an eye-catching website with colorful illustrations. As an added bonus, these illustrations could also be used in marketing materials.`,
-		progressSteps: [
+		features: [
 			{
 				name: "theater-toolkit-progress-step-1",
 				supertitle: "Revealing the Toolkit",
@@ -1024,22 +1032,22 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `A website to market a very musical Texas tourist destination.`,
-		overviewText: `I helped build the Visit Irving website alongside my teammates at Simpleview. Following are some curated examples of the work I contributed to this website.`,
+		overviewText: `I helped build the Visit Irving website alongside my teammates at Simpleview. Following are some curated examples of the work I contributed.`,
 		link: {
 			url: "https://www.irvingtexas.com/",
 			text: "Visit Website",
 		},
-		progressSteps: [
+		features: [
 			{
 				name: "visit-irving-progress-step-1",
 				supertitle: "A Strong First Impression",
-				title: "The Homepage Hero",
+				title: "The Home Page Hero",
 				description: (
 					<>
 						<p className="body-text large">
 							I was tasked with building many components of
 							Irving&apos;s website, but I am thrilled to have
-							been the one to build the scroll-animated homepage
+							been the one to build the scroll-animated home page
 							hero.
 						</p>
 						<p>
@@ -1229,6 +1237,438 @@ export const projects: ProjectType[] = [
 		],
 	},
 	{
+		name: "showplace-cinemas",
+		title: "Showplace Cinemas",
+		categories: [
+			{
+				...categories.design,
+				primary: true,
+			},
+			categories.development,
+			categories.clientWork,
+		],
+		thumbImage: {
+			square: {
+				name: "showplace-cinemas-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of the Showplace Cinemas website",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "showplace-cinemas-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of the Showplace Cinemas website",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "showplace-cinemas-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of the Showplace Cinemas website",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "showplace-cinemas-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of the Showplace Cinemas website",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "showplace-cinemas-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Showplace Cinemas slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "showplace-cinemas-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Showplace Cinemas slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "showplace-cinemas-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Showplace Cinemas slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A website design for a one-of-a-kind indie movie theater.`,
+		problemText: `Showplace Cinemas was among the first theaters to adopt the Theater Toolkit product. In order to bring them up to speed with the modern web, we were tasked with giving their site a modern makeover.`,
+		solutionText: `Showplace Cinemas has more than just movies attracting guests to its venues. I designed a website that focused on their main draw (the theater), while also giving their bowling alley, arcade, and other entertainments the attention they deserved.`,
+		features: [
+			{
+				name: "showplace-cinemas-progress-step-1",
+				supertitle: "Design for",
+				title: "Mobile First",
+				description: (
+					<>
+						<p className="body-text large">
+							One of the points we emphasized most when selling a
+							new client on the Theater Toolkit platform was how
+							much web traffic occurred on mobile devices these
+							days.
+						</p>
+						<p>
+							Without a strong mobile presence, a site that loads
+							quickly, or a design that intuitively guides users
+							to make fast bookings, a movie theater&apos;s
+							website may as well be a vision board.
+						</p>
+					</>
+				),
+				image: {
+					name: "showplace-cinemas-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Showplace Cinemas progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "showplace-cinemas-progress-step-2",
+				supertitle: "Take a Look Around",
+				title: "The Home Page",
+				description: (
+					<>
+						<p className="body-text large">
+							When you&apos;re an indie theater rubbing shoulders
+							with big chains, a strong first impression is a
+							must.
+						</p>
+						<p>
+							A slideshow of movies coming soon is the perfect
+							thing to put in a hero section to encourage repeat
+							business. Just below the fold are all currently
+							playing features and their showtimes, so the
+							user&apos;s primary concern is just a short scroll
+							away.
+						</p>
+					</>
+				),
+				image: {
+					name: "showplace-cinemas-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Showplace Cinemas progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "showplace-cinemas-progress-step-3",
+				supertitle: "Get to Know Your",
+				title: "Movies in Detail",
+				description: (
+					<>
+						<p className="body-text large">
+							Not quite ready to pull the trigger on a ticket
+							purchase yet? No problem.
+						</p>
+						<p>
+							The movie detail page has everything you need to
+							make your decision: movie synopses and details,
+							trailers, and upcoming showtimes are all at your
+							fingertips.
+						</p>
+					</>
+				),
+				image: {
+					name: "showplace-cinemas-progress-image-3",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Showplace Cinemas progress image 3",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "showplace-cinemas-progress-step-4",
+				supertitle: "A Seamless",
+				title: "Checkout Process",
+				description: (
+					<>
+						<p className="body-text large">
+							What good are all those showtimes if you can&apos;
+							make your booking faster than a movie trailer?
+						</p>
+						<p>
+							An easy, intuitive design guides users through the
+							ticket purchasing process, so they can get to
+							planning the rest of their outing as quickly as
+							possible.
+						</p>
+					</>
+				),
+				image: {
+					name: "showplace-cinemas-progress-image-4",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Showplace Cinemas progress image 4",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionSupertitle: "Small Theater",
+		descriptionTitle: "Big Design",
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					It&apos;s important to make a splash when you&apos;re
+					competing with big theaters like AMC and Harkins.
+				</p>
+				<p>
+					Just because a theater is small doesn&apos;t mean it
+					can&apos;t be given the luxe treatment. In the world of
+					indie movie theaters, design will take you far, and Theater
+					Toolkit has proven that time and time again.
+				</p>
+				<p>
+					I designed Showplace Cinemas&apos; site with the user in
+					mind, allowing them to focus on what drove them to the site
+					in the first place, while also enticing them to return for
+					future bookings. Though I gave Showplace&apos;s movie
+					theater the bulk of the attention, I also designed avenues
+					to generate interest in their other amenities and modes of
+					entertainment.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "showplace-cinemas-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Showplace Cinemas image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "showplace-cinemas-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Showplace Cinemas image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
+	{
 		name: "captive-content",
 		title: "Captive Content",
 		featured: false,
@@ -1412,7 +1852,7 @@ export const projects: ProjectType[] = [
 		summary: `A product that bridges the gap between advertisers and captive audiences.`,
 		problemText: `All over the world, people are waiting. Waiting for the bus, waiting for an appointment to begin, waiting to connect to a Wi-Fi hotspot. Captive Content is the affordable ad-serving solution for capitalizing on all that waiting potential.`,
 		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the mood of the website, and its illustrations, were extrapolated from there.`,
-		progressSteps: [
+		features: [
 			{
 				name: "captive-content-progress-step-1",
 				supertitle: "Step 1",
@@ -1569,23 +2009,753 @@ export const projects: ProjectType[] = [
 			},
 		],
 	},
+	{
+		name: "visit-las-vegas",
+		title: "Visit Las Vegas",
+		categories: [
+			{
+				...categories.development,
+				primary: true,
+			},
+			categories.clientWork,
+		],
+		thumbImage: {
+			square: {
+				name: "visit-las-vegas-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of the Visit Las Vegas website",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "visit-las-vegas-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of the Visit Las Vegas website",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "visit-las-vegas-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of the Visit Las Vegas website",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "visit-las-vegas-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of the Visit Las Vegas website",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "visit-las-vegas-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Visit Las Vegas slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "visit-las-vegas-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Visit Las Vegas slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "visit-las-vegas-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Visit Las Vegas slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A website to market the world's most unique destination.`,
+		overviewText: `I helped build the Visit Las Vegas website alongside my teammates at Simpleview. Following are some curated examples of the worl I contributed.`,
+		link: {
+			url: "https://www.visitlasvegas.com/",
+			text: "Visit Website",
+		},
+		features: [
+			{
+				name: "visit-las-vegas-progress-step-1",
+				supertitle: "A Very Friendly",
+				title: "Takeover",
+				description: (
+					<>
+						<p className="body-text large">
+							With a site as large as VLV&apos;s, building a nav
+							that is both non-intrusive and easy to use is a
+							delicate balance to strike.
+						</p>
+						<p>
+							The header&apos;s middle row has everything a
+							visitor will need to see, and hovering over each
+							item reveals a more detailed menu.
+						</p>
+						<p>
+							The takeover navigation lends focus to the sitemap
+							without overwhelming the user, and invites them to
+							engage with other areas of the site.
+						</p>
+					</>
+				),
+				image: {
+					name: "visit-las-vegas-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Visit Las Vegas progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "visit-las-vegas-progress-step-2",
+				supertitle: "Just Keep Sliding",
+				title: "Events Slideshow",
+				description: (
+					<>
+						<p className="body-text large">
+							What would a visit to Las Vegas be without taking
+							advantage of their constant and amazing events?
+						</p>
+						<p>
+							The events slideshow invites the user to browse Las
+							Vegas&apos;s hottest events at a glance, and to take
+							a deeper dive if need be.
+						</p>
+					</>
+				),
+				image: {
+					name: "visit-las-vegas-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Visit Las Vegas progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "visit-las-vegas-progress-step-3",
+				supertitle: "Now Trending",
+				title: "The Animated Marquee",
+				description: (
+					<>
+						<p className="body-text large">
+							Simpleview&apos;s tailored site designs often
+							include these moments of delightful interactivity.
+						</p>
+						<p>
+							They&apos;re fun for the user, and even more fun for
+							me, the developer, to build. As you can imagine, as
+							I come from a background of illustration and design,
+							building complex animations from scratch is one of
+							my job&apos;s greatest joys.
+						</p>
+					</>
+				),
+				image: {
+					name: "visit-las-vegas-progress-image-3",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Visit Las Vegas progress image 3",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionSupertitle: `Business on the Back End`,
+		descriptionTitle: `Party on the Front End`,
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					As I&apos;ve made abundantly clear, I am hugely motivated by
+					strong design.
+				</p>
+				<p>
+					Whether it&apos;s something playful, like{" "}
+					<CustomLink to="/projects/theater-toolkit">
+						Theater Toolkit
+					</CustomLink>
+					; bold, like{" "}
+					<CustomLink to="/projects/visit-irving">
+						Visit Irving
+					</CustomLink>
+					; or deceptively simple, like Visit Las Vegas, I always find
+					something to enjoy about building what great designers have
+					imagined.
+				</p>
+				<p>
+					I did not design the Visit Las Vegas website, and building
+					it was a collaborative effort involving many talented
+					developers. I am honored, however, to have been part of that
+					effort, and to have made my mark on this one-of-a-kind
+					destination.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "visit-las-vegas-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Visit Las Vegas image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "visit-las-vegas-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Visit Las Vegas image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
+	{
+		name: "kingdom-hearts-fan-art",
+		title: "Kingdom Hearts Fan Art",
+		categories: [
+			{
+				...categories.illustration,
+				primary: true,
+			},
+			categories.personalWork,
+		],
+		thumbImage: {
+			square: {
+				name: "kingdom-hearts-fan-art-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of an illustration based on Kingdom Hearts",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "kingdom-hearts-fan-art-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of an illustration based on Kingdom Hearts",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "kingdom-hearts-fan-art-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of an illustration based on Kingdom Hearts",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "kingdom-hearts-fan-art-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of an illustration based on Kingdom Hearts",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "kingdom-hearts-fan-art-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Kingdom Hearts fan art slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "kingdom-hearts-fan-art-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Kingdom Hearts fan art slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "kingdom-hearts-fan-art-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Kingdom Hearts fan art slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `The future doesn't scare me where fears and lies melt away.`,
+		overviewText: `I made these twin illustrations in preparation for several conventions in 2011. My intent was to compose them in such a way that the characters of the first piece would mirror those on the right.`,
+		features: [
+			{
+				name: "kingdom-hearts-fan-art-progress-step-1",
+				supertitle: "Glimpsing Destiny",
+				title: "The Future Doesn't Scare Me",
+				description: (
+					<>
+						<p className="body-text large">
+							This piece features Sora, Kairi, and Riku looking
+							out at a sunset from a beach on Destiny Island.
+						</p>
+						<p>
+							I filled this piece with small details from the
+							Kingdom Hearts games, like star fruit, sea salt ice
+							cream, and, of course, keyblades! So. Many.
+							Keyblades.
+						</p>
+					</>
+				),
+				image: {
+					name: "kingdom-hearts-fan-art-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Kingdom Hearts fan art progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "kingdom-hearts-fan-art-progress-step-2",
+				supertitle: "A Dark Mirror",
+				title: "Where Fears and Lies Melt Away",
+				description: (
+					<>
+						<p className="body-text large">
+							This companion piece features the Nobodies of the
+							characters of the first piece: Roxas, Namine, and
+							Riku of Organization XIII.
+						</p>
+						<p>
+							Once again, I filled the background with detail that
+							fans of the games would recognize. There are yet
+							more keyblades, a King Mickey, and even Kingdom
+							Hearts itself.
+						</p>
+					</>
+				),
+				image: {
+					name: "kingdom-hearts-fan-art-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Kingdom Hearts fan art progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionTitle: `A Duology of Destiny and Fate`,
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					These pieces were sketched, composed, and painted entirely
+					in Corel Painter X using a Wacom Intuos 3 drawing tablet.
+				</p>
+				<p>
+					While it has been many years since I&apos;ve used Corel
+					Painter, I appreciated its commitment to emulating physical
+					media on a digital canvas. I mainly used the oil pastels, as
+					I found they easy to blend with and great for letting the
+					painting surface&apos;s underlying texture show through.
+				</p>
+				<p>
+					Kingdom Hearts is owned and copyrighted by Disney and Square
+					Enix.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "kingdom-hearts-fan-art-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Kingdom Hearts fan art image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "kingdom-hearts-fan-art-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Kingdom Hearts fan art image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
 ];
 
-function titleSort(a: ProjectType, b: ProjectType) {
-	if (a.title < b.title) return -1;
-	if (a.title > b.title) return 1;
-	return 0;
-}
-
 export const projectsSorted = (() => {
-	const sortedFeatured = [...projects]
-		.filter((proj) => proj.featured)
-		.sort(titleSort);
-	const sortedOther = [...projects]
-		.filter((proj) => !proj.featured)
-		.sort(titleSort);
+	const featured = [...projects].filter((proj) => proj.featured);
+	const other = [...projects].filter((proj) => !proj.featured);
 
-	return [...sortedFeatured, ...sortedOther];
+	return [...featured, ...other];
 })();
 
 export const projectsByName = (() => {

@@ -1,6 +1,6 @@
 .header {
 	position: fixed;
-	inset: 10px auto auto 10px;
+	inset: 10px auto auto var(--padding-body-edge);
 	z-index: 100;
 	padding: 0.5rem;
 	background: var(--header-footer-background);
@@ -18,7 +18,7 @@
 	}
 
 	@media (min-width: 40em) {
-		right: 10px;
+		right: var(--padding-body-edge);
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
