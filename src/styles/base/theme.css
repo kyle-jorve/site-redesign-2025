@@ -56,7 +56,7 @@
 		--font-size-page-title-desktop: 11.25rem;
 		--font-size-superheading-desktop: var(--font-size-2x-large);
 		--font-size-heading-1-desktop: 6.25rem;
-		--font-size-heading-2-desktop: 4.5rem;
+		--font-size-heading-2-desktop: 4rem;
 		--font-size-heading-3-desktop: 2.5rem;
 		--font-size-heading-4-desktop: 1.875rem;
 		--font-size-body-large-desktop: 1.375rem;
@@ -301,6 +301,7 @@
 		--gold-light: #f2e1ae; /* rgb(242, 225, 174) */
 		--peach: #f28d88;
 		--red: #f75551; /* rgb(247, 85, 81) */
+		--red-dark: #c94341; /* rgb(201, 67, 65) */
 		--red-light: #ff7370;
 		--sunset: #d85887; /* rgb(216, 88, 135) */
 		--mint: #91cab1; /* rgb(145, 202, 177) */
@@ -468,7 +469,7 @@
 			var(--longer-shadow-offset-applied) rgba(231, 177, 89, 0.25);
 		--exploding-shadow-long: var(--longer-shadow-offset-applied)
 				rgba(231, 177, 89, 0.5),
-			var(--longest-shadow-offset) rgba(231, 177, 89, 0.25);
+			var(--longest-shadow-offset-applied) rgba(231, 177, 89, 0.25);
 
 		--chromatic-distortion-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
 			-0.25rem 0.125rem rgba(255, 0, 230, 0.5);

@@ -14,11 +14,11 @@ export const bio: BioType = {
 				would be fair to say I&apos;m a jack of all trades.
 			</p>
 			<p>
-				It would also be fair to say I&apos;ve had quite a meandering
-				career path. I graduated summa cum laude from the University of
-				Arizona with a bachelor&apos;s of fine art, emphasis in visual
-				communication. It was there I planted the seeds of the stories
-				I&apos;m presently writing.
+				It&apos;s hardly a surprise, then, that I&apos;ve had such a
+				meandering career path. I graduated summa cum laude from the
+				University of Arizona with a bachelor&apos;s of fine art,
+				emphasis in visual communication. It was there I planted the
+				seeds of the stories I&apos;m presently writing.
 			</p>
 			<p>
 				In 2015, I landed my first job doing web design and development,
@@ -247,18 +247,20 @@ export const resume: ResumeType = {
 						<>
 							<p>
 								I am expertly skilled in{" "}
-								<b>Adobe Creative Cloud</b> software, most
-								especially in <b>Photoshop</b>,{" "}
-								<b>Illustrator</b>, and <b>InDesign</b>. For
-								drawing and painting I tend to use{" "}
-								<b>Procreate</b> on an iPad Pro.
+								<strong>Adobe Creative Cloud</strong> software,
+								most especially in <strong>Photoshop</strong>,{" "}
+								<strong>Illustrator</strong>, and{" "}
+								<strong>InDesign</strong>. For drawing and
+								painting I tend to use{" "}
+								<strong>Procreate</strong> on an iPad Pro.
 							</p>
 							<p>
 								For web design, my software of choice is{" "}
-								<b>Figma</b>.
+								<strong>Figma</strong>.
 							</p>
 							<p>
-								My preferred IDE is <b>Visual Studio Code</b>.
+								My preferred IDE is{" "}
+								<strong>Visual Studio Code</strong>.
 							</p>
 						</>
 					),

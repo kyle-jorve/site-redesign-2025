@@ -373,11 +373,11 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					The first in this series of novels is titled{" "}
-					<b>The Ashes of Hope</b>. In it, a young noble must reckon
-					with a dangerous foreign adversary, navigate his fraught
-					relationship with his father, and navigate all the pitfalls
-					of growing into a responsible adult&mdash;all while an
-					ancient, much larger threat looms on the horizon.
+					<strong>The Ashes of Hope</strong>. In it, a young noble
+					must reckon with a dangerous foreign adversary, navigate his
+					fraught relationship with his father, and navigate all the
+					pitfalls of growing into a responsible adult&mdash;all while
+					an ancient, much larger threat looms on the horizon.
 				</p>
 				<p>
 					For the character illustrations, I drew, colored, and
@@ -687,25 +687,20 @@ export const projects: ProjectType[] = [
 		features: [
 			{
 				name: "theater-toolkit-progress-step-1",
-				supertitle: "Revealing the Toolkit",
-				title: "Website Design",
+				supertitle: "A Strong Brand Means",
+				title: "Illustrations",
 				description: (
 					<>
 						<p className="body-text large">
-							The first step in any software venture is, of
-							course, to create a website to advertise your idea.
+							When it comes to design, I believe my greatest
+							strength is in my background: illustration.
 						</p>
 						<p>
-							I designed Theater Toolkit&apos;s website with the
-							aim of highlighting its user-friendliness and ease
-							of use. Its warm, inviting palette is evocative of
-							the colors one might see in an actual movie theater.
-						</p>
-						<p>
-							I created simple, uncluttered layouts that would
-							draw the user through the site, feeding them
-							detailed information about Theater Toolkit while
-							keeping a focus on salesmanship.
+							I knew that the best way to get Theater Toolkit to
+							stand out among the crowd was to distinguish its
+							branding as much as possible. And what better way to
+							stand out among a crowd than with colorful
+							illustrations?
 						</p>
 					</>
 				),
@@ -733,20 +728,25 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "theater-toolkit-progress-step-2",
-				supertitle: "A Strong Brand Means",
-				title: "Illustrations",
+				supertitle: "Revealing the Toolkit",
+				title: "Website Design",
 				description: (
 					<>
 						<p className="body-text large">
-							When it comes to design, I believe my greatest
-							strength is in my background: illustration.
+							The first step in any software venture is, of
+							course, to create a website to advertise your idea.
 						</p>
 						<p>
-							I knew that the best way to get Theater Toolkit to
-							stand out among the crowd was to distinguish its
-							branding as much as possible. And what better way to
-							stand out among a crowd than with colorful
-							illustrations?
+							I designed Theater Toolkit&apos;s website with the
+							aim of highlighting its user-friendliness and ease
+							of use. Its warm, inviting palette is evocative of
+							the colors one might see in an actual movie theater.
+						</p>
+						<p>
+							I created simple, uncluttered layouts that would
+							draw the user through the site, feeding them
+							detailed information about Theater Toolkit while
+							keeping a focus on salesmanship.
 						</p>
 					</>
 				),
@@ -772,8 +772,51 @@ export const projects: ProjectType[] = [
 					height: 480,
 				},
 			},
+			{
+				name: "theater-toolkit-progress-step-3",
+				supertitle: "Marketing the Toolkit",
+				title: "Printed Promotional Materials",
+				description: (
+					<>
+						<p className="body-text large">
+							We&apos;d built a brand, and now we needed to market
+							it. To that end, I designed business cards, flyers,
+							and other collateral to use at tradeshows and other
+							marketing events.
+						</p>
+						<p>
+							Leaning into the bold, warm color palette and
+							Theater Toolkit&apos;s unique, quirky, and
+							illustrative design, I created marketing materials
+							that stood out in a crowded space and enticed
+							potential clients to learn more about how our
+							product could accelerate their business.
+						</p>
+					</>
+				),
+				image: {
+					name: "theater-toolkit-progress-image-3",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Theater Toolkit progress image 3",
+					width: 640,
+					height: 480,
+				},
+			},
 		],
-		descriptionSupertitle: "Marketing the Toolkit",
 		descriptionTitle: "Creating an Eye-Catching Brand",
 		descriptionBody: (
 			<>
@@ -1032,7 +1075,13 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `A website to market a very musical Texas tourist destination.`,
-		overviewText: `I helped build the Visit Irving website alongside my teammates at Simpleview. Following are some curated examples of the work I contributed.`,
+		overviewText: (
+			<>
+				I helped build the Visit Irving website alongside my teammates
+				at Simpleview. Following are some curated examples of the work I
+				contributed.
+			</>
+		),
 		link: {
 			url: "https://www.irvingtexas.com/",
 			text: "Visit Website",
@@ -1244,7 +1293,6 @@ export const projects: ProjectType[] = [
 				...categories.design,
 				primary: true,
 			},
-			categories.development,
 			categories.clientWork,
 		],
 		thumbImage: {
@@ -2189,7 +2237,13 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `A website to market the world's most unique destination.`,
-		overviewText: `I helped build the Visit Las Vegas website alongside my teammates at Simpleview. Following are some curated examples of the worl I contributed.`,
+		overviewText: (
+			<>
+				I helped build the Visit Las Vegas website alongside my
+				teammates at Simpleview. Following are some curated examples of
+				the worl I contributed.
+			</>
+		),
 		link: {
 			url: "https://www.visitlasvegas.com/",
 			text: "Visit Website",
@@ -2409,6 +2463,401 @@ export const projects: ProjectType[] = [
 		],
 	},
 	{
+		name: "zarpara-labels",
+		title: "Zarpara Vineyard",
+		categories: [
+			{
+				...categories.illustration,
+				primary: true,
+			},
+			categories.design,
+			categories.clientWork,
+		],
+		thumbImage: {
+			square: {
+				name: "zarpara-labels-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of a Zarpara wine label",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "zarpara-labels-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of a Zarpara wine label",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "zarpara-labels-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of a Zarpara wine label",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "zarpara-labels-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of a Zarpara wine label",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "zarpara-labels-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Zarpara labels slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "zarpara-labels-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Zarpara labels slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "zarpara-labels-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Zarpara labels slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A brand refresh for Zarpara Vineyard's wine labels using painterly illustrations.`,
+		problemText: `Zarpara Vineyard was in need of a design refresh. They'd lost their previous designer, and were searching for another who could evolve their brand.`,
+		solutionText: `I designed labels that had a touch of modernity along with some unique background illustrations that would help them stand out in a crowd.`,
+		features: [
+			{
+				name: "zarpara-labels-progress-step-1",
+				supertitle: "Red, White, and Rosé",
+				title: "The Primary Front Labels",
+				description: (
+					<>
+						<p className="body-text large">
+							Each label had to seem part of a set while also
+							illustrating the unique qualities and flavors of the
+							wine color they represented.
+						</p>
+						<p>
+							I began with the white label&apos;s illustration,
+							whose look and feel would inform the others. I
+							decided on an impressionist style of loose
+							brushstrokes and a flat value scale, which gave the
+							label a distinct color palette without competing
+							with the typography.
+						</p>
+						<p>
+							After the white label&apos;s illustration style was
+							established, I moved on to paint the backgrounds for
+							the red and ros&eacute; labels. I chose darker hues
+							for the red, and a pleasant pink-and-purple palette
+							for the ros&eacute;.
+						</p>
+					</>
+				),
+				image: {
+					name: "zarpara-labels-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Zarpara labels progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "zarpara-labels-progress-step-2",
+				supertitle: "Two Sides to Every Bottle",
+				title: "The Back Labels",
+				description: (
+					<>
+						<p className="body-text large">
+							Each wine variant&apos;s back label has its own
+							color combination to match both its flavor profile
+							and description.
+						</p>
+					</>
+				),
+				image: {
+					name: "zarpara-labels-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Zarpara labels progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "zarpara-labels-progress-step-3",
+				supertitle: "Aurora and Luna de Sangre",
+				title: "Port and Dessert Wine Labels",
+				description: (
+					<>
+						<p className="body-text large">
+							Some time after creating the red, white, and
+							ros&eacute; wine labels, Zarpara reached out to have
+							some additional labels designed.
+						</p>
+						<p>
+							These would be for their port and dessert
+							wines&mdash;Aurora and Luna de Sangre, respectively.
+							I stuck with the impressionistic style of the
+							previous labels and painted a couple backgrounds I
+							thought would capture the essence of these new
+							variants.
+						</p>
+						<p>
+							For the Aurora, a sunrise bursts over a cloud-laden
+							mountain. For the Luna de Sangre, a blood moon limns
+							the same mountai&apos;s peak in vibrant red hues.
+						</p>
+					</>
+				),
+				image: {
+					name: "zarpara-labels-progress-image-3",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Zarpara labels progress image 3",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionTitle: `An Illustrative Brand Refresh`,
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					Zarpara&apos;s unique labels allow their brand to shine in a
+					crowded market.
+				</p>
+				<p>
+					While many label iterations were pitched, Zarpara was drawn
+					to the more illustrative ones. They saw these labels as a
+					path forward for their brand that wouldn&apos;t alienate
+					their existing customer base by straying too far from where
+					they&apos;d come.
+				</p>
+				<p>
+					These labels are still used today, and Zarpara&apos;s
+					business continues to be strong.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "zarpara-labels-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Zarpara labels image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "zarpara-labels-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Zarpara labels image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
+	{
 		name: "kingdom-hearts-fan-art",
 		title: "Kingdom Hearts Fan Art",
 		categories: [
@@ -2588,7 +3037,14 @@ export const projects: ProjectType[] = [
 			},
 		],
 		summary: `The future doesn't scare me where fears and lies melt away.`,
-		overviewText: `I made these twin illustrations in preparation for several conventions in 2011. My intent was to compose them in such a way that the characters of the first piece would mirror those on the right.`,
+		overviewText: (
+			<>
+				I made these twin illustrations in preparation for several
+				conventions in 2011. My intent was to compose them in such a way
+				that the characters of the first piece would mirror those on the
+				right.
+			</>
+		),
 		features: [
 			{
 				name: "kingdom-hearts-fan-art-progress-step-1",
@@ -2744,6 +3200,794 @@ export const projects: ProjectType[] = [
 				],
 				mobileSource: "https://placehold.co/320x320",
 				alt: "Kingdom Hearts fan art image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
+	{
+		name: "figure-studies",
+		title: "Figure Studies",
+		categories: [
+			{
+				...categories.illustration,
+				primary: true,
+			},
+			categories.personalWork,
+		],
+		thumbImage: {
+			square: {
+				name: "figure-studies-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of a drawing of a nude model",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "figure-studies-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of a drawing of a nude model",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "figure-studies-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of a drawing of a nude model",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "figure-studies-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of a drawing of a nude model",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "figure-studies-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Figure studies slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "figure-studies-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Figure studies slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "figure-studies-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Figure studies slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A curated collection of two years' worth of figure studies.`,
+		overviewText: (
+			<>
+				As mentioned in my <CustomLink to="/cv#resume">CV</CustomLink>,
+				a major focus in my college education was on drawing the human
+				figure. People are still my favorite subject to draw, and I have
+				made a regular practice of doing so in recent years.
+			</>
+		),
+		features: [
+			{
+				name: "figure-studies-progress-step-1",
+				supertitle: "Studio Grafit",
+				title: "An Invaluable Resource",
+				description: (
+					<>
+						<p className="body-text large">
+							For learning how to draw the human figure, there is
+							no substitute for drawing from life.
+						</p>
+						<p>
+							You won&apos;t find a much better alternative,
+							though, than{" "}
+							<CustomLink to="https://grafitschool.gumroad.com/">
+								Studio Grafit&apos;s
+							</CustomLink>{" "}
+							wonderful photo packs. Filled to the brim with
+							excellent reference photos of a diverse set of
+							models that are expertly lit, these packs are an
+							indispensable resource for those who don&apos;t have
+							access to live models.
+						</p>
+						<p>
+							These photo packs form the foundation for my regular
+							figure studies.
+						</p>
+					</>
+				),
+				image: {
+					name: "figure-studies-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Figure studies progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "figure-studies-progress-step-2",
+				supertitle: "The Flexibility of",
+				title: "Digital Media",
+				description: (
+					<>
+						<p className="body-text large">
+							For these studies, I draw on an iPad Pro using
+							Procreate.
+						</p>
+						<p>
+							For drawing the lines, I prefer to use
+							DizzyTara&apos;s{" "}
+							<CustomLink to="https://dizzytara.gumroad.com/l/foaDL">
+								Oval Sketch 2 brush
+							</CustomLink>
+							. It has just enough grit to satisfy without being
+							too distracting.
+						</p>
+						<p>
+							For painting the figure, I use Max Ulichney&apos;s{" "}
+							<CustomLink to="https://maxulichney.gumroad.com/l/watercolormaxpack">
+								digital watercolor brushes
+							</CustomLink>
+							. These brushes are intuitive and easy to use, and
+							the results are always fantastic.
+						</p>
+					</>
+				),
+				image: {
+					name: "figure-studies-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Figure studies progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionSupertitle: `The Art of Anatomy`,
+		descriptionTitle: `Drawing the Human Figure`,
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					Since I was young enough to hold a pencil, I have been
+					drawing characters.
+				</p>
+				<p>
+					The foundation of all character design must be, I believe, a
+					strong grasp of the human figure. Even if anatomy is
+					stylized, one must have knowledge of what they are
+					stylizing.
+				</p>
+				<p>
+					Since characters are what I love to illustrate most, I
+					gravitated very quickly to life drawing classes in college.
+					There, I soaked up every ounce of knowledge I could about
+					human anatomy and how to express it.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "figure-studies-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Figure studies image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "figure-studies-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Figure studies image grid image 2",
+				width: 640,
+				height: 480,
+			},
+		],
+	},
+	{
+		name: "post-autumn",
+		title: "Post-Autumn",
+		categories: [
+			{
+				...categories.illustration,
+				primary: true,
+			},
+			categories.personalWork,
+		],
+		thumbImage: {
+			square: {
+				name: "post-autumn-thumb-image-square",
+				sources: [
+					{
+						url: "https://placehold.co/720x480",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 480,
+					},
+					{
+						url: "https://placehold.co/512x410",
+						minScreenWidth: 768,
+						width: 512,
+						height: 410,
+					},
+				],
+				mobileSource: "https://placehold.co/384x427",
+				alt: "a preview of an illustration of an original character",
+				width: 670,
+				height: 460,
+			},
+			long: {
+				name: "post-autumn-thumb-image-long",
+				sources: [
+					{
+						url: "https://placehold.co/1440x540",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 540,
+					},
+					{
+						url: "https://placehold.co/1024x471",
+						minScreenWidth: 768,
+						width: 1024,
+						height: 471,
+					},
+				],
+				mobileSource: "https://placehold.co/768x416",
+				alt: "a preview of an illustration of an original character",
+				width: 1356,
+				height: 320,
+			},
+			feature: {
+				name: "post-autumn-thumb-image-feature",
+				sources: [
+					{
+						url: "https://placehold.co/540x570",
+						minScreenWidth: 1024,
+						width: 540,
+						height: 570,
+					},
+					{
+						url: "https://placehold.co/1024x512",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 512,
+					},
+				],
+				mobileSource: "https://placehold.co/640",
+				alt: "a preview of an illustration of an original character",
+				width: 640,
+				height: 640,
+			},
+			small: {
+				name: "post-autumn-thumb-image-small",
+				sources: [
+					{
+						url: "https://placehold.co/480x343",
+						minScreenWidth: 1024,
+						width: 480,
+						height: 343,
+					},
+					{
+						url: "https://placehold.co/342x380",
+						minScreenWidth: 768,
+						width: 342,
+						height: 380,
+					},
+				],
+				mobileSource: "https://placehold.co/768x415",
+				alt: "a preview of an illustration of an original character",
+				width: 444,
+				height: 320,
+			},
+		},
+		slideshow: [
+			{
+				name: "post-autumn-slideshow-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Post-Autumn slideshow image 1",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "post-autumn-slideshow-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Post-Autumn slideshow image 2",
+				width: 640,
+				height: 480,
+			},
+			{
+				name: "post-autumn-slideshow-image-3",
+				sources: [
+					{
+						url: "https://placehold.co/1920x968",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 968,
+					},
+					{
+						url: "https://placehold.co/1440x726",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 726,
+					},
+					{
+						url: "https://placehold.co/1024x516",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 516,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Post-Autumn slideshow image 3",
+				width: 640,
+				height: 480,
+			},
+		],
+		summary: `A uniquely powerful technology arises, along with a uniquely terrifying despot, after a planetary apocalypse.`,
+		overviewText: (
+			<>
+				In 2009, I finished an illustration that was in need of a story.
+				A would-be assassin plummets from a skyscraper window, his
+				adversary soaring after him, seemingly unconcerned that both are
+				ostensibly falling toward their deaths. I envisioned that the
+				latter was somehow immortal, while the former was about to find
+				out that he was, too. After asking myself why this would be the
+				case, reasons gave way to narrative, and Post-Autumn was thereby
+				born.
+			</>
+		),
+		features: [
+			{
+				name: "post-autumn-progress-step-1",
+				supertitle: "Designing Crow",
+				title: "An Anti-Hero Is Born",
+				description: (
+					<>
+						<p className="body-text large">
+							Crow is the name of the assassin I originally
+							envisioned. Though he has gone through many
+							iterations since his conception, his core has
+							remained the same.
+						</p>
+						<p>
+							<b>Crow is a sociopath.</b> At a young age, he was
+							recognized for his unique gifts and given a chance
+							at a life that would both indulge and reward his
+							murderous tendencies. And so a state-sponsored
+							assassin was born.
+						</p>
+						<p>
+							From his home city of Valkyrie, Crow is sent on
+							missions across the planet to eradicate threats to
+							the global world order. In his storied career he has
+							never met an adversary he could not subdue.
+						</p>
+					</>
+				),
+				image: {
+					name: "post-autumn-progress-image-1",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Post-Autumn progress image 1",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "post-autumn-progress-step-2",
+				supertitle: "Deceased Gods",
+				title: "The Ravens",
+				description: (
+					<>
+						<p className="body-text large">
+							An unknown element of Crow&apos;s past collides with
+							an even more ancient history.
+						</p>
+						<p>
+							Crow shares a connection with the long-dead deities
+							known as Ravens. What that connection is, and what
+							role these ancient gods have to play in Crow&apos;s
+							future, is a mystery that Crow must solve if he is
+							to achieve his ultimate destiny.
+						</p>
+					</>
+				),
+				image: {
+					name: "post-autumn-progress-image-2",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Post-Autumn progress image 2",
+					width: 640,
+					height: 480,
+				},
+			},
+			{
+				name: "post-autumn-progress-step-3",
+				supertitle: "The Bionic Assassin",
+				title: "A Cybernetic Future",
+				description: (
+					<>
+						<p className="body-text large">
+							Owing to his dangerous profession, Crow often
+							suffers grievous injuries&mdash;like the loss of an
+							eye.
+						</p>
+						<p>
+							Luckily, he lives in a booming technology age, and
+							cybernetic enhancements are commonplace among those
+							of his position.
+						</p>
+						<p>
+							What humanity has yet to grasp, however, is what
+							ultimate price these technologies will force them to
+							pay. Though civilization has never been more
+							technologically powerful, it has also never been
+							more vulnerable&mdash;or more ignorant of that
+							vulnerability.
+						</p>
+					</>
+				),
+				image: {
+					name: "post-autumn-progress-image-3",
+					sources: [
+						{
+							url: "https://placehold.co/540x570",
+							minScreenWidth: 1024,
+							width: 540,
+							height: 570,
+						},
+						{
+							url: "https://placehold.co/1024x512",
+							minScreenWidth: 640,
+							width: 1024,
+							height: 512,
+						},
+					],
+					mobileSource: "https://placehold.co/640",
+					alt: "Post-Autumn progress image 3",
+					width: 640,
+					height: 480,
+				},
+			},
+		],
+		descriptionSupertitle: `An Ages-Old Mystery on`,
+		descriptionTitle: `A Seasonless Planet`,
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					For Post-Autumn, I conceived of a world bereft of its
+					seasons.
+				</p>
+				<p>
+					Civilization, having severed itself entirely from the
+					natural world, finds itself, after a planet-wide cataclysm,
+					completely dependent on the very technology that caused its
+					downfall.
+				</p>
+				<p>
+					What caused this cataclysm and who is ultimately to blame
+					are central mysteries to this world. Before the protagonists
+					can uncover those mysteries, however, they are faced with a
+					new threat&mdash;one that promises to finish the job that
+					the cataclysm could not.
+				</p>
+				<p>
+					The illustration that inspired the world of Post-Autumn is
+					very old (and very bad), at this point, so I won&apos;t be
+					sharing it. The world it spawned, however, continues to live
+					and grow in my imagination.
+				</p>
+			</>
+		),
+		imageGrid: [
+			{
+				name: "post-autumn-image-grid-image-1",
+				sources: [
+					{
+						url: "https://placehold.co/960x803",
+						minScreenWidth: 1440,
+						width: 960,
+						height: 803,
+					},
+					{
+						url: "https://placehold.co/720x600",
+						minScreenWidth: 1024,
+						width: 720,
+						height: 600,
+					},
+					{
+						url: "https://placehold.co/1024x576",
+						minScreenWidth: 640,
+						width: 1024,
+						height: 576,
+					},
+				],
+				mobileSource: "https://placehold.co/640x480",
+				alt: "Post-Autumn image grid image 1",
+				width: 640,
+				height: 512,
+			},
+			{
+				name: "post-autumn-image-grid-image-2",
+				sources: [
+					{
+						url: "https://placehold.co/1920x1080",
+						minScreenWidth: 1440,
+						width: 1920,
+						height: 1080,
+					},
+					{
+						url: "https://placehold.co/1440x810",
+						minScreenWidth: 1024,
+						width: 1440,
+						height: 810,
+					},
+					{
+						url: "https://placehold.co/512x427",
+						minScreenWidth: 640,
+						width: 512,
+						height: 427,
+					},
+				],
+				mobileSource: "https://placehold.co/320x320",
+				alt: "Post-Autumn image grid image 2",
 				width: 640,
 				height: 480,
 			},

@@ -60,7 +60,10 @@ export default function ProjectGrid({
 
 			<div className={styles.projects}>
 				{filteredProjects.map((proj, index) => {
-					const isLong = index === 0 && proj.featured;
+					const isLong =
+						(index === 0 && proj.featured) ||
+						(index === filteredProjects.length - 1 &&
+							(index + 1) % 2 === 0);
 
 					return (
 						<ProjectTile

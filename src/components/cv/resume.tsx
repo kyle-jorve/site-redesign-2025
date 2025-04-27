@@ -23,6 +23,7 @@ export default function Resume({
 	return (
 		<section
 			className={classes}
+			id="resume"
 			{...otherProps}
 		>
 			<HeadingBar

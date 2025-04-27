@@ -8,6 +8,7 @@
 
 .resume {
 	margin-bottom: var(--section-margin);
+	scroll-margin-top: calc(10px + 4.75rem);
 
 	.header {
 		--heading-bar-title-color-override: var(--red);
@@ -71,8 +72,16 @@
 	}
 }
 
+@media (min-width: 40em) {
+	.resume {
+		scroll-margin-top: calc(10px + 7.4375rem);
+	}
+}
+
 @media (min-width: 64em) {
 	.resume {
+		scroll-margin-top: calc(10px + 8.125rem);
+
 		.header {
 			--underlines-override-color: var(--blue-light);
 

@@ -78,6 +78,10 @@
 		box-shadow: var(--hard-shadow);
 	}
 
+	.supertitle {
+		color: var(--red-dark);
+	}
+
 	.button::before {
 		position: absolute;
 		inset: 0;
@@ -143,7 +147,7 @@
 		}
 
 		.content-col {
-			padding: 0 3.5rem;
+			padding: 4.5rem 3.5rem 0;
 		}
 
 		.category {
@@ -155,9 +159,13 @@
 		}
 
 		.number {
-			inset: -4.5rem auto auto 0;
+			inset: 0 auto auto 0;
 			font-size: var(--font-size-page-title);
 			color: var(--gold);
+		}
+
+		.supertitle {
+			color: var(--superheading-color);
 		}
 
 		.image-col {
