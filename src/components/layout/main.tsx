@@ -37,7 +37,7 @@ export default function Main({ children, ...otherProps }: MainProps) {
 		return () => {
 			main?.removeEventListener("transitionend", handleTransition);
 		};
-	}, [path]);
+	}, [path, visited]);
 
 	return (
 		<main

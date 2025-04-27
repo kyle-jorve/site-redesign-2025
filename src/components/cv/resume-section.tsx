@@ -28,11 +28,12 @@ export default function ResumeSection({
 		<div
 			ref={sectionRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<Heading className={styles.title}>{title}</Heading>
 

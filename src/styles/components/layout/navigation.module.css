@@ -120,6 +120,7 @@
 	justify-content: space-between;
 	padding: 0.25rem 0.75rem;
 	color: var(--cream);
+	transition: translate var(--transition);
 
 	&::before,
 	&::after {
@@ -142,6 +143,10 @@
 		background: var(--header-footer-background);
 		border: var(--border-dark);
 		backdrop-filter: var(--backdrop-blur-large);
+	}
+
+	&.hidden:not(:has(.nav-parent.expanded)) {
+		translate: 0 calc(100% + 36px);
 	}
 
 	.nav-item:not(.dropdown-nav-item),
@@ -245,6 +250,10 @@
 		&:last-child .dropdown-menu {
 			translate: 0 0;
 		}
+	}
+
+	*:focus-visible {
+		outline-color: var(--blue);
 	}
 
 	@media (hover: hover) {

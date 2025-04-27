@@ -10,6 +10,15 @@
 	}
 
 	body {
+		--top-icon-background: url("/images/icon-pattern-gold-vertical.svg")
+			repeat-x left top / auto 43.25rem;
+		--top-gradient-background: var(--gradient-gold-vertical) no-repeat
+			center top / 100% 45rem;
+		--bottom-icon-background: url("/images/icon-pattern-sunset.svg")
+			repeat-x left bottom / auto 36.75rem;
+		--bottom-gradient-background: var(--gradient-peach-vertical) no-repeat
+			center bottom / 100% 26.75rem;
+
 		position: relative;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
@@ -17,20 +26,16 @@
 		width: 100%;
 		min-height: 100vh;
 		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
+		background: var(--bottom-icon-background),
+			var(--bottom-gradient-background);
 		background-color: var(--body-bg);
-		background-image: url("/images/icon-pattern-gold-vertical.svg"),
-			var(--gradient-gold-vertical),
-			url("/images/icon-pattern-sunset.svg"),
-			var(--gradient-peach-vertical);
-		background-repeat: repeat-x, no-repeat, repeat-x, no-repeat;
-		background-position: left top, center top, left bottom, center bottom;
-		background-size: auto 43.25rem, 100% 45rem, auto 36.75rem, 100% 26.75rem;
 		overflow-x: hidden;
 	}
 
 	main {
 		position: relative;
 		z-index: 2;
+		background: var(--top-icon-background), var(--top-gradient-background);
 		transition: opacity var(--transition), filter var(--transition);
 	}
 
@@ -46,8 +51,8 @@
 	}
 
 	*:focus-visible {
-		outline: var(--border-width) solid var(--gold);
-		outline-offset: 0.25rem;
+		outline: var(--focus-outline);
+		outline-offset: var(--focus-outline-offset);
 	}
 
 	img,
@@ -170,7 +175,7 @@
 
 	@media (min-width: 64em) {
 		body {
-			background-size: auto 43.25rem, 100% 45rem, auto 30rem, 100% 24rem;
+			background-size: auto 30rem, 100% 24rem;
 		}
 
 		.content-box.small {

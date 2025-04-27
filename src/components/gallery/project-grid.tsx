@@ -48,11 +48,12 @@ export default function ProjectGrid({
 		<section
 			ref={sectionRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<Suspense fallback={null}>
 				<Filters />

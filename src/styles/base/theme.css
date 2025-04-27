@@ -408,6 +408,9 @@
 			var(--border-light-color);
 		--border-cream: var(--border-width) solid var(--border-cream-color);
 
+		--focus-outline: var(--border-width) solid var(--blue-light);
+		--focus-outline-offset: 0.25rem;
+
 		/*=============================*/
 		/*=====----- SHADOWS -----=====*/
 		/*=============================*/

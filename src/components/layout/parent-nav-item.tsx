@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect, useRef, useContext } from "react";
+import SiteContext from "@/utils/site-context";
 import { NavItemType } from "@/types/global-types";
-import { useState, useEffect, useRef } from "react";
 import { printClassNames } from "@/utils/utils";
 import NavItem from "@/components/layout/nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
@@ -19,6 +20,7 @@ export default function ParentNavItem({
 	className = "",
 	...otherProps
 }: ParentNavItemProps) {
+	const { setDropdownOpen } = useContext(SiteContext);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const [expanded, setExpanded] = useState<boolean>(false);
 	const classes = printClassNames([
@@ -50,6 +52,10 @@ export default function ParentNavItem({
 			document.removeEventListener("click", handleDocumentClick);
 		};
 	}, [expanded]);
+
+	useEffect(() => {
+		setDropdownOpen(expanded);
+	}, [expanded, setDropdownOpen]);
 
 	return (
 		<div

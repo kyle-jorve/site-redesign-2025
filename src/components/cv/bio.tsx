@@ -38,11 +38,12 @@ export default function Bio({
 		<section
 			ref={sectionRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<article className={styles.inner}>
 				<ContentBox className={styles["content-col"]}>
@@ -65,6 +66,8 @@ export default function Bio({
 					<ResponsiveImage
 						className={styles.image}
 						image={image}
+						loading={placement === "hero" ? "eager" : "lazy"}
+						fetchPriority={placement === "hero" ? "high" : "low"}
 					/>
 				</div>
 			</article>

@@ -38,11 +38,12 @@ export default function Feature({
 		<article
 			ref={articleRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<div className={styles["content-col"]}>
 				{!!number && <span className={styles.number}>{number}</span>}

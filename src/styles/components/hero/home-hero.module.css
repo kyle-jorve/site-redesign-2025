@@ -97,4 +97,14 @@
 			right: 5%;
 		}
 	}
+
+	@media (min-width: 112em) {
+		.title {
+			font-size: 10vw;
+		}
+
+		.supertitle {
+			font-size: 1.8vw;
+		}
+	}
 }

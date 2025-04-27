@@ -24,11 +24,12 @@ export default function MenuTiles({
 		<div
 			ref={containerRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			{tiles.map((tile) => {
 				return (

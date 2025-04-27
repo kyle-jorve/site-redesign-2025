@@ -37,11 +37,12 @@ export default function ProjectDescriptionGrid({
 		<section
 			ref={sectionRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<ContentBox className={styles["desc-box"]}>
 				{!!supertitle && (

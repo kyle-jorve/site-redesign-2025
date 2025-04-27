@@ -35,11 +35,12 @@ export default function DesignSummarySection({
 		<section
 			ref={sectionRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			{problemText !== undefined && solutionText !== undefined && (
 				<ProblemSolution

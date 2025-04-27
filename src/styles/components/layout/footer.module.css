@@ -27,6 +27,10 @@
 		justify-content: center;
 	}
 
+	@media (min-width: 40em) {
+		width: calc(100% - (var(--padding-body-edge) * 2));
+	}
+
 	@media (min-width: 64em) {
 		flex-direction: row;
 		justify-content: space-between;

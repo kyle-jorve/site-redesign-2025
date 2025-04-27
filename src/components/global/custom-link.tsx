@@ -28,12 +28,9 @@ export default function CustomLink({
 		to.includes("http") || target !== "_self" || !!otherProps.download;
 
 	function pageTransition(event: React.MouseEvent) {
-		if (to === path) {
-			event.preventDefault();
-			return;
-		}
-
 		event.preventDefault();
+
+		if (to === path) return;
 
 		mainRef?.current?.addEventListener(
 			"transitionend",

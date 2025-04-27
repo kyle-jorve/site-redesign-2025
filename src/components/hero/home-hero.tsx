@@ -154,6 +154,8 @@ export default function HomeHero({
 					ref={imageRef}
 					className={styles.image}
 					image={heroImage}
+					loading="eager"
+					fetchPriority="high"
 				/>
 			</div>
 		</section>

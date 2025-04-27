@@ -53,11 +53,12 @@ export default function HeadingBar({
 		<header
 			ref={headerRef}
 			className={classes}
+			{...otherProps}
 			style={{
+				...otherProps.style,
 				opacity: intersected ? 1 : 0,
 				transition: "opacity 1s ease",
 			}}
-			{...otherProps}
 		>
 			<Heading className={titleClasses}>{title}</Heading>
 
