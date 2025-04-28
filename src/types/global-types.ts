@@ -2,16 +2,17 @@ export type HeadingType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 export type ImageDataType = {
 	name: string;
+	pathKey: string;
 	sources: {
-		url: string;
 		minScreenWidth: number;
-		width?: number;
-		height?: number;
+		imageWidth: number;
+		imageHeight?: number;
 	}[];
-	mobileSource: string;
+	mobileSource: {
+		imageWidth: number;
+		imageHeight?: number;
+	};
 	alt: string;
-	width: number;
-	height: number;
 };
 
 export type SocialMediaType = {

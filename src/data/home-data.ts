@@ -4,30 +4,25 @@ import { MenuTileType } from "@/types/hero-types";
 
 export const heroImage: ImageDataType = {
 	name: "home-hero-image",
+	pathKey: "home-hero",
 	sources: [
 		{
-			url: "https://placehold.co/1920x1467",
 			minScreenWidth: 1440,
-			width: 1920,
-			height: 1467,
+			imageWidth: 1920,
 		},
 		{
-			url: "https://placehold.co/1440x1100",
 			minScreenWidth: 1024,
-			width: 1440,
-			height: 1100,
+			imageWidth: 1440,
 		},
 		{
-			url: "https://placehold.co/1024x1800",
 			minScreenWidth: 640,
-			width: 1024,
-			height: 1800,
+			imageWidth: 1024,
 		},
 	],
-	mobileSource: "https://placehold.co/640x1436",
-	alt: "Photo of Kyle Jorve",
-	width: 640,
-	height: 1436,
+	mobileSource: {
+		imageWidth: 640,
+	},
+	alt: "Photo of Kyle Jorve wearing headphones, smiling, and looking toward the upper-right corner",
 };
 export const supertitle = "Designer, Developer, Illustrator, Writer";
 export const title = "Kyle Jorve";
@@ -45,18 +40,19 @@ export const menuTiles: MenuTileType[] = [
 		buttonText: menuTileButtonText,
 		image: {
 			name: "design-illustration-menu-tile-image",
+			pathKey: "pendrakes-chamber",
 			sources: [
 				{
-					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
-					width: 390,
-					height: 316,
+					imageWidth: 480,
+					imageHeight: 389,
 				},
 			],
-			mobileSource: "https://placehold.co/768x461",
-			alt: `Image representing Kyle Jorve's design and illustration capabilities`,
-			width: 768,
-			height: 461,
+			mobileSource: {
+				imageWidth: 768,
+				imageHeight: 461,
+			},
+			alt: `A dioramic illustration of a castle bedchamber in isometric perspective`,
 		},
 	},
 	{
@@ -68,18 +64,19 @@ export const menuTiles: MenuTileType[] = [
 		buttonText: menuTileButtonText,
 		image: {
 			name: "development-menu-tile-image",
+			pathKey: "theater-toolkit-design-phase",
 			sources: [
 				{
-					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
-					width: 390,
-					height: 316,
+					imageWidth: 480,
+					imageHeight: 389,
 				},
 			],
-			mobileSource: "https://placehold.co/768x461",
-			alt: `Image representing Kyle Jorve's development capabilities`,
-			width: 768,
-			height: 461,
+			mobileSource: {
+				imageWidth: 768,
+				imageHeight: 461,
+			},
+			alt: `A dioramic, stylized illustration of a theater owner working with a developer to build the theater owner's website, in isometric perspective`,
 		},
 	},
 	{
@@ -91,18 +88,19 @@ export const menuTiles: MenuTileType[] = [
 		buttonText: menuTileButtonText,
 		image: {
 			name: "writing-menu-tile-image",
+			pathKey: "the-herbalist",
 			sources: [
 				{
-					url: "https://placehold.co/390x316",
 					minScreenWidth: 768,
-					width: 390,
-					height: 316,
+					imageWidth: 480,
+					imageHeight: 389,
 				},
 			],
-			mobileSource: "https://placehold.co/768x461",
-			alt: `Image representing Kyle Jorve's writing capabilities`,
-			width: 768,
-			height: 461,
+			mobileSource: {
+				imageWidth: 768,
+				imageHeight: 461,
+			},
+			alt: `An original character, Belryanne, stands in her greenhouse garden, leaning toward a pot of flowers to inspect them`,
 		},
 	},
 	{

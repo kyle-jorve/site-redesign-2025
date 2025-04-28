@@ -1,5 +1,5 @@
 import * as homeData from "@/data/home-data";
-import { bio } from "@/data/cv-data";
+import { bio, bioBodyImage } from "@/data/cv-data";
 import { featuredProjectsFeatureType } from "@/data/gallery-data";
 import HomeHero from "@/components/hero/home-hero";
 import FeatureGrid from "@/components/gallery/feature-grid";
@@ -21,7 +21,10 @@ export default function HomePage() {
 				)}
 				url="/projects/"
 			/>
-			<Bio {...bio} />
+			<Bio
+				{...bio}
+				image={bioBodyImage}
+			/>
 		</>
 	);
 }

@@ -1,5 +1,6 @@
 import { socialMedia } from "@/data/global-data";
 import { BioType, ResumeType } from "@/types/cv-types";
+import { ImageDataType } from "@/types/global-types";
 
 export const featuredWorkTitle = "Featured Work";
 export const featuredWorkUrl = "/projects/";
@@ -37,27 +38,50 @@ export const bio: BioType = {
 	),
 	url: "/cv#resume",
 	buttonText: <>See R&eacute;sum&eacute;</>,
-	image: {
-		name: "bio-image",
-		sources: [
-			{
-				url: "https://placehold.co/664x790",
-				minScreenWidth: 1024,
-				width: 664,
-				height: 790,
-			},
-			{
-				url: "https://placehold.co/1024x680",
-				minScreenWidth: 640,
-				width: 1024,
-				height: 680,
-			},
-		],
-		mobileSource: "https://placehold.co/640x730",
-		alt: "a portrait of Kyle Jorve",
-		width: 640,
-		height: 730,
+};
+
+export const bioBodyImage: ImageDataType = {
+	name: "bio-body",
+	pathKey: "bio-image-body",
+	sources: [
+		{
+			minScreenWidth: 1024,
+			imageWidth: 768,
+			imageHeight: 914,
+		},
+		{
+			minScreenWidth: 640,
+			imageWidth: 1024,
+			imageHeight: 680,
+		},
+	],
+	mobileSource: {
+		imageWidth: 640,
+		imageHeight: 730,
 	},
+	alt: "a portrait of Kyle Jorve, holding a coffee mug with a Game Boy graphic, sitting against a wall, with books and LEGO sets scattered around him",
+};
+
+export const bioHeroImage: ImageDataType = {
+	name: "bio-hero",
+	pathKey: "bio-image-hero",
+	sources: [
+		{
+			minScreenWidth: 1024,
+			imageWidth: 768,
+			imageHeight: 914,
+		},
+		{
+			minScreenWidth: 640,
+			imageWidth: 1024,
+			imageHeight: 680,
+		},
+	],
+	mobileSource: {
+		imageWidth: 640,
+		imageHeight: 730,
+	},
+	alt: "a portrait of Kyle Jorve wearing headphones",
 };
 
 export const resume: ResumeType = {

@@ -36,12 +36,11 @@
 		position: relative;
 		z-index: 2;
 		background: var(--top-icon-background), var(--top-gradient-background);
-		transition: opacity var(--transition), filter var(--transition);
+		transition: opacity var(--transition);
 	}
 
 	main.out {
 		opacity: 0;
-		filter: blur(40px);
 	}
 
 	*,

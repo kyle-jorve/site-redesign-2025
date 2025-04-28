@@ -1,5 +1,5 @@
 import * as galleryData from "@/data/gallery-data";
-import { bio } from "@/data/cv-data";
+import { bio, bioBodyImage } from "@/data/cv-data";
 import InteriorHero from "@/components/hero/interior-hero";
 import ProjectGrid from "@/components/gallery/project-grid";
 import Bio from "@/components/cv/bio";
@@ -14,7 +14,10 @@ export default function ProjectsPage() {
 				}
 			/>
 			<ProjectGrid projects={galleryData.projectsSorted} />
-			<Bio {...bio} />
+			<Bio
+				{...bio}
+				image={bioBodyImage}
+			/>
 		</>
 	);
 }

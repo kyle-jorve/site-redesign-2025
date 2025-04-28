@@ -3,7 +3,6 @@ import { ImageDataType } from "@/types/global-types";
 export type BioType = {
 	title: string;
 	body: React.ReactElement;
-	image: ImageDataType;
 	url?: string;
 	buttonText?: React.ReactElement | string;
 };

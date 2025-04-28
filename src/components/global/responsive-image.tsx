@@ -26,6 +26,9 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 			loaded ? "loaded" : "",
 			className,
 		]);
+		const formats = ["avif", "webp", "jpg"] as const;
+		const baseImageUrl = `/images/output/${image.pathKey}/${image.pathKey}`;
+		const mobileURL = `${baseImageUrl}-${image.mobileSource.imageWidth}.jpg`;
 
 		// if for whatever reason the load event fails to trigger
 		useEffect(() => {
@@ -42,26 +45,48 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 		return (
 			<picture>
 				{image.sources.map((src) => {
-					return (
-						<source
-							key={`${image.name}-${src.minScreenWidth}`}
-							srcSet={src.url}
-							media={`(min-width: ${src.minScreenWidth}px)`}
-							width={src.width}
-							height={src.height}
-						/>
-					);
+					return formats.map((format) => {
+						const url = `${baseImageUrl}-${src.imageWidth}.${format}`;
+						const imageFormat = format === "jpg" ? "jpeg" : format;
+
+						return (
+							<source
+								key={`${image.name}-${format}-${src.imageWidth}-${src.minScreenWidth}`}
+								srcSet={url}
+								media={`(min-width: ${src.minScreenWidth}px)`}
+								type={`image/${imageFormat}`}
+								width={src.imageWidth}
+								height={src.imageHeight}
+							/>
+						);
+					});
 				})}
+
+				{formats
+					.filter((format) => format !== "jpg")
+					.map((format) => {
+						const url = `${baseImageUrl}-${image.mobileSource.imageWidth}.${format}`;
+
+						return (
+							<source
+								key={`${image.name}-${format}-${image.mobileSource.imageWidth}-mobile`}
+								srcSet={url}
+								type={`image/${format}`}
+								width={image.mobileSource.imageWidth}
+								height={image.mobileSource.imageHeight}
+							/>
+						);
+					})}
 
 				<img
 					ref={ref}
 					className={classes}
-					src={image.mobileSource}
+					src={mobileURL}
 					alt={image.alt}
 					loading={loading}
 					fetchPriority={fetchPriority}
-					width={image.width}
-					height={image.height}
+					width={image.mobileSource.imageWidth}
+					height={image.mobileSource.imageHeight}
 					onLoad={handleLoad}
 					{...otherProps}
 				/>

@@ -9,6 +9,7 @@ export default function CV() {
 		<>
 			<Bio
 				{...cvData.bio}
+				image={cvData.bioHeroImage}
 				placement="hero"
 				heading="h1"
 			/>
