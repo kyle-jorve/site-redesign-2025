@@ -82,6 +82,10 @@
 		}
 	}
 
+	&.single-image .slides {
+		overflow: hidden;
+	}
+
 	@media (min-width: 64em) {
 		--side-padding: 7.5rem;
 

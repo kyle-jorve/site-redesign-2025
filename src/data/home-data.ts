@@ -1,29 +1,14 @@
-import { ImageDataType } from "@/types/global-types";
+import { ImageMetaType } from "@/types/global-types";
 import { categories } from "@/data/gallery-data";
+import {
+	homeHeroImage,
+	pendrakesChamber,
+	herbalist,
+	theaterToolkitDesignPhase,
+} from "@/data/images";
 import { MenuTileType } from "@/types/hero-types";
 
-export const heroImage: ImageDataType = {
-	name: "home-hero-image",
-	pathKey: "home-hero",
-	sources: [
-		{
-			minScreenWidth: 1440,
-			imageWidth: 1920,
-		},
-		{
-			minScreenWidth: 1024,
-			imageWidth: 1440,
-		},
-		{
-			minScreenWidth: 640,
-			imageWidth: 1024,
-		},
-	],
-	mobileSource: {
-		imageWidth: 640,
-	},
-	alt: "Photo of Kyle Jorve wearing headphones, smiling, and looking toward the upper-right corner",
-};
+export const heroImage: ImageMetaType = homeHeroImage;
 export const supertitle = "Designer, Developer, Illustrator, Writer";
 export const title = "Kyle Jorve";
 export const featuredLimit = 3;
@@ -38,22 +23,7 @@ export const menuTiles: MenuTileType[] = [
 			categories.illustration.name,
 		])}`,
 		buttonText: menuTileButtonText,
-		image: {
-			name: "design-illustration-menu-tile-image",
-			pathKey: "pendrakes-chamber",
-			sources: [
-				{
-					minScreenWidth: 768,
-					imageWidth: 480,
-					imageHeight: 389,
-				},
-			],
-			mobileSource: {
-				imageWidth: 768,
-				imageHeight: 461,
-			},
-			alt: `A dioramic illustration of a castle bedchamber in isometric perspective`,
-		},
+		image: pendrakesChamber,
 	},
 	{
 		name: "development",
@@ -62,22 +32,7 @@ export const menuTiles: MenuTileType[] = [
 			categories.development.name,
 		])}`,
 		buttonText: menuTileButtonText,
-		image: {
-			name: "development-menu-tile-image",
-			pathKey: "theater-toolkit-design-phase",
-			sources: [
-				{
-					minScreenWidth: 768,
-					imageWidth: 480,
-					imageHeight: 389,
-				},
-			],
-			mobileSource: {
-				imageWidth: 768,
-				imageHeight: 461,
-			},
-			alt: `A dioramic, stylized illustration of a theater owner working with a developer to build the theater owner's website, in isometric perspective`,
-		},
+		image: theaterToolkitDesignPhase,
 	},
 	{
 		name: "writing",
@@ -86,22 +41,7 @@ export const menuTiles: MenuTileType[] = [
 			categories.writing.name,
 		])}`,
 		buttonText: menuTileButtonText,
-		image: {
-			name: "writing-menu-tile-image",
-			pathKey: "the-herbalist",
-			sources: [
-				{
-					minScreenWidth: 768,
-					imageWidth: 480,
-					imageHeight: 389,
-				},
-			],
-			mobileSource: {
-				imageWidth: 768,
-				imageHeight: 461,
-			},
-			alt: `An original character, Belryanne, stands in her greenhouse garden, leaning toward a pot of flowers to inspect them`,
-		},
+		image: herbalist,
 	},
 	{
 		name: "all-projects",

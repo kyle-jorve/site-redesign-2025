@@ -3,8 +3,8 @@ import fs from "fs/promises";
 import path from "path";
 
 async function processImages(inputDir) {
-	const sizes = [1920, 1440, 1024, 768, 640, 480, 320];
-	const formats = ["avif", "webp", "jpg"];
+	const sizes = [1920, 1440, 1024, 960, 768, 720, 640, 512, 480, 320];
+	const commonFormats = ["avif", "webp"];
 
 	try {
 		const files = await fs.readdir(inputDir);
@@ -13,8 +13,9 @@ async function processImages(inputDir) {
 			const ext = path.extname(file);
 			const base = path.basename(file, ext);
 			const inputPath = path.join(inputDir, file);
+			const formats = [...commonFormats, ext === ".gif" ? "gif" : "jpg"];
 
-			await fs.mkdir(`./public/images/output/${base}/`, {
+			await fs.mkdir(`./public/images/${base}/`, {
 				recursive: true,
 			});
 
@@ -41,4 +42,4 @@ async function processImages(inputDir) {
 	}
 }
 
-processImages("./public/images/input/");
+processImages("./src/images/");

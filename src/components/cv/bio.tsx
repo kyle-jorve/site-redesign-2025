@@ -2,7 +2,11 @@
 
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { HeadingType, ImageDataType } from "@/types/global-types";
+import {
+	HeadingType,
+	ImageMetaType,
+	ImageDataType,
+} from "@/types/global-types";
 import { BioType } from "@/types/cv-types";
 import { printClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -13,7 +17,7 @@ import styles from "@/styles/components/cv/bio.module.css";
 import socialStyles from "@/styles/components/global/social-icons.module.css";
 
 export type BioProps = BioType & {
-	image: ImageDataType;
+	image: ImageMetaType;
 	placement?: "hero" | "body";
 	heading?: HeadingType;
 } & React.HTMLAttributes<HTMLElement>;

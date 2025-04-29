@@ -1,4 +1,4 @@
-import { ImageDataType } from "@/types/global-types";
+import { ImageMetaType } from "@/types/global-types";
 
 export type CategoryType = {
 	name: string;
@@ -16,7 +16,7 @@ export type FeatureType = {
 	name: string;
 	title: string;
 	description: React.ReactElement;
-	image: ImageDataType;
+	image: ImageMetaType | ImageMetaType[];
 	url?: string;
 	buttonText?: string;
 	alignment?: "image-left" | "image-right";
@@ -29,17 +29,12 @@ export type ProjectTileType = {
 	name: string;
 	title: string;
 	categories: CategoryType[];
-	thumbImage: {
-		square: ImageDataType;
-		long: ImageDataType;
-		small: ImageDataType;
-		feature: ImageDataType;
-	};
+	thumbImage: ImageMetaType;
 	featured?: boolean;
 };
 
 export type ProjectType = ProjectTileType & {
-	slideshow: ImageDataType[];
+	slideshow: ImageMetaType[];
 	summary: string;
 	problemText?: string;
 	solutionText?: string;
@@ -52,5 +47,5 @@ export type ProjectType = ProjectTileType & {
 	descriptionSupertitle?: string;
 	descriptionTitle?: string;
 	descriptionBody?: React.ReactElement;
-	imageGrid?: ImageDataType[];
+	imageGrid?: ImageMetaType[];
 };

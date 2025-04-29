@@ -3,13 +3,13 @@
 import { useState, useRef, createRef, useEffect } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
-import { ImageDataType } from "@/types/global-types";
+import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import CircleButton from "@/components/global/circle-button";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/slideshow.module.css";
 
 export type ProjectSlideshowProps = {
-	images: ImageDataType[];
+	images: ImageMetaType[];
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function ProjectSlideshow({
@@ -17,6 +17,7 @@ export default function ProjectSlideshow({
 	className = "",
 	...otherProps
 }: ProjectSlideshowProps) {
+	const notASlideshow = images.length <= 1;
 	const sectionRef = useRef<HTMLElement>(null);
 	const slideContainerRef = useRef<HTMLDivElement>(null);
 	const slideRefs = images.map((_, index) => ({
@@ -25,7 +26,11 @@ export default function ProjectSlideshow({
 	}));
 	const intersected = useIntersectionObserver(sectionRef);
 	const [activeSlide, setActiveSlide] = useState<number>(0);
-	const classes = printClassNames([styles.slideshow, className]);
+	const classes = printClassNames([
+		styles.slideshow,
+		notASlideshow ? styles["single-image"] : "",
+		className,
+	]);
 
 	function getSlideOffset(slideIndex: number) {
 		const componentRef = sectionRef.current;
@@ -98,6 +103,8 @@ export default function ProjectSlideshow({
 	}
 
 	useEffect(() => {
+		if (notASlideshow) return;
+
 		const slidesContainer = slideContainerRef?.current;
 		const slides = slideRefs.filter((slide) => slide.ref.current);
 
@@ -130,7 +137,9 @@ export default function ProjectSlideshow({
 			io?.disconnect();
 			io = null;
 		};
-	}, [activeSlide, slideRefs]);
+	}, [activeSlide, slideRefs, notASlideshow]);
+
+	if (!images.length) return null;
 
 	return (
 		<section
@@ -144,21 +153,24 @@ export default function ProjectSlideshow({
 			}}
 		>
 			<div className={styles["slide-track"]}>
-				<div className={styles.arrows}>
-					<CircleButton
-						className={`${styles["arrow"]} ${styles["prev"]}`}
-						icon="arrow-left"
-						aria-label="go to previous slide"
-						onClick={() => handleArrowClick("backward")}
-					/>
+				{!notASlideshow && (
+					<div className={styles.arrows}>
+						<CircleButton
+							className={`${styles["arrow"]} ${styles["prev"]}`}
+							icon="arrow-left"
+							aria-label="go to previous slide"
+							onClick={() => handleArrowClick("backward")}
+						/>
 
-					<CircleButton
-						className={`${styles["arrow"]} ${styles["next"]}`}
-						icon="arrow-right"
-						aria-label="go to next slide"
-						onClick={() => handleArrowClick("forward")}
-					/>
-				</div>
+						<CircleButton
+							className={`${styles["arrow"]} ${styles["next"]}`}
+							icon="arrow-right"
+							aria-label="go to next slide"
+							onClick={() => handleArrowClick("forward")}
+						/>
+					</div>
+				)}
+
 				<div
 					ref={slideContainerRef}
 					className={styles.slides}

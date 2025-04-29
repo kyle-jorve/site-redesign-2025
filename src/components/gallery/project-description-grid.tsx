@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
-import { ImageDataType } from "@/types/global-types";
+import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
@@ -16,7 +16,7 @@ export type ProjectDescriptionGridProps = {
 	supertitle?: ProjectType["descriptionSupertitle"];
 	url?: string;
 	buttonText?: string;
-	images?: ImageDataType[];
+	images?: ImageMetaType[];
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function ProjectDescriptionGrid({

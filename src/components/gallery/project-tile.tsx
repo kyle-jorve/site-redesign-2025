@@ -1,5 +1,9 @@
 import { ProjectTileType } from "@/types/gallery-types";
-import { HeadingType, ImageDataType } from "@/types/global-types";
+import {
+	HeadingType,
+	ImageDataType,
+	ImageMetaType,
+} from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import CustomLink from "@/components/global/custom-link";
@@ -9,7 +13,7 @@ import FeaturedFlag from "@/components/gallery/featured-flag";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectTileProps = Omit<ProjectTileType, "thumbImage"> & {
-	thumbnail: ImageDataType;
+	thumbnail: ImageMetaType;
 	heading?: HeadingType;
 	variant?: "standard" | "long" | "small";
 } & React.HTMLAttributes<HTMLElement>;

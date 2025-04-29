@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { ImageDataType } from "@/types/global-types";
+import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
 import { printClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -10,7 +10,7 @@ import styles from "@/styles/components/hero/home-hero.module.css";
 
 export type HomeHeroProps = {
 	title: string;
-	heroImage: ImageDataType;
+	heroImage: ImageMetaType;
 	supertitle?: string;
 	menuTiles?: MenuTileType[];
 } & React.HTMLAttributes<HTMLElement>;

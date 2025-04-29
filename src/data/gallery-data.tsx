@@ -4,6 +4,7 @@ import {
 	FeatureType,
 	ProjectType,
 } from "@/types/gallery-types";
+import * as imageMetaData from "@/data/images";
 
 export const pageTitle = "Projects";
 export const pageSummary = (
@@ -68,174 +69,17 @@ export const projects: ProjectType[] = [
 			categories.writing,
 			categories.personalWork,
 		],
-		thumbImage: {
-			square: {
-				name: "ignoble-blood-vignettes-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 384,
-				height: 427,
-			},
-			long: {
-				name: "ignoble-blood-vignettes-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 768,
-				height: 416,
-			},
-			feature: {
-				name: "ignoble-blood-vignettes-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "ignoble-blood-vignettes-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of an illustration from the in-progress art book Ignoble Blood Vignettes",
-				width: 768,
-				height: 415,
-			},
-		},
+		thumbImage: imageMetaData.herbalist,
 		slideshow: [
-			{
-				name: "ignoble-blood-vignettes-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "ignoble-blood-vignettes-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "ignoble-blood-vignettes-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.ignobleBloodVignettesSpreadPendrake,
+			imageMetaData.ignobleBloodVignettesSpreadTalis,
+			imageMetaData.ignobleBloodVignettesSpreadAndel,
+			imageMetaData.ignobleBloodVignettesSpreadBelryanne,
+			imageMetaData.ignobleBloodVignettesSpreadToval,
+			imageMetaData.ignobleBloodVignettesSpreadKyra,
+			imageMetaData.ignobleBloodVignettesSpreadSamil,
+			imageMetaData.ignobleBloodVignettesSpreadCapor,
+			imageMetaData.ignobleBloodVignettesSpreadCargha,
 		],
 		summary: `An art book project meant to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		features: [
@@ -257,27 +101,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "ignoble-blood-vignettes-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Ignoble Blood Vignettes progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.ignobileBloodVignettesPageLayout,
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-2",
@@ -298,27 +122,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "ignoble-blood-vignettes-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Ignoble Blood Vignettes progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.ignobleBloodVignettesTypography,
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-3",
@@ -340,27 +144,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "ignoble-blood-vignettes-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Ignoble Blood Vignettes progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.ignobleBloodVignettesPageCargha,
 			},
 		],
 		descriptionTitle: "Illustrating Ignoble Blood",
@@ -389,114 +173,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "ignoble-blood-vignettes-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "ignoble-blood-vignettes-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Ignoble Blood Vignettes image grid image 2",
-				width: 320,
-				height: 320,
-			},
-			{
-				name: "ignoble-blood-vignettes-image-grid-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Ignoble Blood Vignettes image grid image 3",
-				width: 320,
-				height: 320,
-			},
-			{
-				name: "ignoble-blood-vignettes-image-grid-image-4",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Ignoble Blood Vignettes image grid image 4",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.pendrakesChamber,
+			imageMetaData.herbalist,
+			imageMetaData.becomingRuna,
+			imageMetaData.berned,
 		],
 	},
 	{
@@ -512,174 +192,11 @@ export const projects: ProjectType[] = [
 			categories.illustration,
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "theater-toolkit-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of an illustration from the Theater Toolkit website",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "theater-toolkit-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of an illustration from the Theater Toolkit website",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "theater-toolkit-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of an illustration from the Theater Toolkit website",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "theater-toolkit-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of an illustration from the Theater Toolkit website",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.theaterToolkitHowItWorks,
 		slideshow: [
-			{
-				name: "theater-toolkit-vignettes-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Theater Toolkit slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "theater-toolkit-vignettes-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Theater Toolkit slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "theater-toolkit-vignettes-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Theater Toolkit slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.theaterToolkitHowItWorks,
+			imageMetaData.theaterToolkitDesignPhase,
+			imageMetaData.theaterToolkitPosIntegration,
 		],
 		summary: `A simple website solution for independent movie theaters.`,
 		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
@@ -704,27 +221,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "theater-toolkit-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Theater Toolkit progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.theaterToolkitSeamlessUx,
 			},
 			{
 				name: "theater-toolkit-progress-step-2",
@@ -750,27 +247,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "theater-toolkit-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Theater Toolkit progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.theaterToolkitWebsiteHome,
 			},
 			{
 				name: "theater-toolkit-progress-step-3",
@@ -794,27 +271,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "theater-toolkit-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Theater Toolkit progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.theaterToolkitLoyaltyAppFlyer,
 			},
 		],
 		descriptionTitle: "Creating an Eye-Catching Brand",
@@ -838,60 +295,13 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "theater-toolkit-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Theater Toolkit image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "theater-toolkit-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Theater Toolkit image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.theaterToolkitCheckout,
+			imageMetaData.theaterToolkitProductionSupport,
+			imageMetaData.theaterToolkitFeatures,
+			imageMetaData.theaterToolkitSeamlessUx,
+			imageMetaData.theaterToolkitWebsiteHome,
+			imageMetaData.theaterToolkitWebsiteContent,
+			imageMetaData.theaterToolkitWebsiteLanding,
 		],
 	},
 	{
@@ -905,174 +315,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "visit-irving-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of the Visit Irving website",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "visit-irving-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of the Visit Irving website",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "visit-irving-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of the Visit Irving website",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "visit-irving-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of the Visit Irving website",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.visitIrvingScrollingEditorial,
 		slideshow: [
-			{
-				name: "visit-irving-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Irving slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "visit-irving-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Irving slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "visit-irving-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Irving slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.visitIrvingScrollingEditorial,
+			imageMetaData.visitIrvingHome,
+			imageMetaData.visitIrvingPreviewSlider,
 		],
 		summary: `A website to market a very musical Texas tourist destination.`,
 		overviewText: (
@@ -1107,27 +354,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-irving-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Irving progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitIrvingHomeHero,
 			},
 			{
 				name: "visit-irving-progress-step-2",
@@ -1148,27 +375,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-irving-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Irving progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitIrvingScrollingEditorialAnimated,
 			},
 			{
 				name: "visit-irving-progress-step-3",
@@ -1189,27 +396,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-irving-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Irving progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitIrvingPreviewSliderAnimated,
 			},
 		],
 		descriptionTitle: "A Web Developer's Dream",
@@ -1229,60 +416,9 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "visit-irving-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Irving image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "visit-irving-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Visit Irving image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.visitIrvingHome,
+			imageMetaData.visitIrvingScrollingEditorial,
+			imageMetaData.visitIrvingPreviewSlider,
 		],
 	},
 	{
@@ -1295,174 +431,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "showplace-cinemas-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of the Showplace Cinemas website",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "showplace-cinemas-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of the Showplace Cinemas website",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "showplace-cinemas-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of the Showplace Cinemas website",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "showplace-cinemas-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of the Showplace Cinemas website",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.showplaceCinemasHome,
 		slideshow: [
-			{
-				name: "showplace-cinemas-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Showplace Cinemas slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "showplace-cinemas-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Showplace Cinemas slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "showplace-cinemas-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Showplace Cinemas slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.showplaceCinemasHome,
+			imageMetaData.showplaceCinemasMovie,
+			imageMetaData.showplaceCinemasMobile,
 		],
 		summary: `A website design for a one-of-a-kind indie movie theater.`,
 		problemText: `Showplace Cinemas was among the first theaters to adopt the Theater Toolkit product. In order to bring them up to speed with the modern web, we were tasked with giving their site a modern makeover.`,
@@ -1488,27 +461,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "showplace-cinemas-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Showplace Cinemas progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.showplaceCinemasMobile,
 			},
 			{
 				name: "showplace-cinemas-progress-step-2",
@@ -1531,27 +484,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "showplace-cinemas-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Showplace Cinemas progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.showplaceCinemasHome,
 			},
 			{
 				name: "showplace-cinemas-progress-step-3",
@@ -1571,27 +504,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "showplace-cinemas-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Showplace Cinemas progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.showplaceCinemasMovie,
 			},
 			{
 				name: "showplace-cinemas-progress-step-4",
@@ -1611,27 +524,12 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "showplace-cinemas-progress-image-4",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Showplace Cinemas progress image 4",
-					width: 640,
-					height: 480,
-				},
+				image: [
+					imageMetaData.showplaceCinemasSeatSelect,
+					imageMetaData.showplaceCinemasTicketSelect,
+					imageMetaData.showplaceCinemasPayment,
+					imageMetaData.showplaceCinemasReceipt,
+				],
 			},
 		],
 		descriptionSupertitle: "Small Theater",
@@ -1660,60 +558,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "showplace-cinemas-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Showplace Cinemas image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "showplace-cinemas-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Showplace Cinemas image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.showplaceCinemasContact,
+			imageMetaData.showplaceCinemasHome,
+			imageMetaData.showplaceCinemasMovie,
+			imageMetaData.showplaceCinemasMenu,
 		],
 	},
 	{
@@ -1728,175 +576,8 @@ export const projects: ProjectType[] = [
 			categories.development,
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "captive-content-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of the Captive Content website",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "captive-content-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of the Captive Content website",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "captive-content-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of the Captive Content website",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "captive-content-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of the Captive Content website",
-				width: 444,
-				height: 320,
-			},
-		},
-		slideshow: [
-			{
-				name: "captive-content-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Captive Content slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "captive-content-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Captive Content slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "captive-content-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Captive Content slideshow image 3",
-				width: 640,
-				height: 480,
-			},
-		],
+		thumbImage: imageMetaData.captiveContentHome,
+		slideshow: [imageMetaData.captiveContentHome],
 		summary: `A product that bridges the gap between advertisers and captive audiences.`,
 		problemText: `All over the world, people are waiting. Waiting for the bus, waiting for an appointment to begin, waiting to connect to a Wi-Fi hotspot. Captive Content is the affordable ad-serving solution for capitalizing on all that waiting potential.`,
 		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the mood of the website, and its illustrations, were extrapolated from there.`,
@@ -1919,27 +600,11 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "captive-content-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Captive Content progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: [
+					imageMetaData.captiveContentLogo1,
+					imageMetaData.captiveContentLogo2,
+					imageMetaData.captiveContentLogo3,
+				],
 			},
 			{
 				name: "captive-content-progress-step-2",
@@ -1958,27 +623,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "captive-content-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Captive Content progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.captiveContentHome,
 			},
 		],
 		descriptionSupertitle: "An Ad Server for a Captive Audience",
@@ -2001,60 +646,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "captive-content-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Captive Content image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "captive-content-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Captive Content image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.captiveContentHome,
+			imageMetaData.captiveContentLogo1,
+			imageMetaData.captiveContentLogo2,
+			imageMetaData.captiveContentLogo3,
 		],
 	},
 	{

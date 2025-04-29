@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect, forwardRef } from "react";
-import { ImageDataType } from "@/types/global-types";
+import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
 
 export type ResponsiveImageProps = {
 	image: ImageDataType;
+} & {
+	isAnimated?: ImageMetaType["isAnimated"];
+	verticalOrientation?: ImageMetaType["verticalOrientation"];
 } & React.ImgHTMLAttributes<HTMLImageElement>;
 
 const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
@@ -14,6 +17,8 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 			image,
 			loading = "lazy",
 			fetchPriority = "low",
+			isAnimated = false,
+			verticalOrientation = "center",
 			className = "",
 			onLoad = () => {},
 			...otherProps
@@ -26,9 +31,29 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 			loaded ? "loaded" : "",
 			className,
 		]);
-		const formats = ["avif", "webp", "jpg"] as const;
+		const formats = (() => {
+			const returnArray = ["avif", "webp"];
+
+			if (isAnimated) returnArray.push("gif");
+			else returnArray.push("jpg");
+
+			return returnArray;
+		})();
 		const baseImageUrl = `/images/output/${image.pathKey}/${image.pathKey}`;
-		const mobileURL = `${baseImageUrl}-${image.mobileSource.imageWidth}.jpg`;
+		const mobileURL = `${baseImageUrl}-${image.mobileSource.imageWidth}.${
+			isAnimated ? "gif" : "jpg"
+		}`;
+		const style = (() => {
+			const returnObj = {
+				...otherProps.style,
+			};
+
+			if (verticalOrientation !== "center") {
+				returnObj.objectPosition = `center ${verticalOrientation}`;
+			}
+
+			return returnObj;
+		})();
 
 		// if for whatever reason the load event fails to trigger
 		useEffect(() => {
@@ -53,7 +78,7 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 							<source
 								key={`${image.name}-${format}-${src.imageWidth}-${src.minScreenWidth}`}
 								srcSet={url}
-								media={`(min-width: ${src.minScreenWidth}px)`}
+								media={`(min-width: ${src.minScreenWidth})`}
 								type={`image/${imageFormat}`}
 								width={src.imageWidth}
 								height={src.imageHeight}
@@ -63,7 +88,7 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 				})}
 
 				{formats
-					.filter((format) => format !== "jpg")
+					.filter((format) => format !== "jpg" && format !== "gif")
 					.map((format) => {
 						const url = `${baseImageUrl}-${image.mobileSource.imageWidth}.${format}`;
 
@@ -88,6 +113,7 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 					width={image.mobileSource.imageWidth}
 					height={image.mobileSource.imageHeight}
 					onLoad={handleLoad}
+					style={style}
 					{...otherProps}
 				/>
 			</picture>

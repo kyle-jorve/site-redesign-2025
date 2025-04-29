@@ -1,10 +1,16 @@
 export type HeadingType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export type ImageDataType = {
+export type ImageMetaType = {
 	name: string;
 	pathKey: string;
+	alt: string;
+	isAnimated?: boolean;
+	verticalOrientation?: "top" | "center" | "bottom";
+};
+
+export type ImageDataType = {
 	sources: {
-		minScreenWidth: number;
+		minScreenWidth: string;
 		imageWidth: number;
 		imageHeight?: number;
 	}[];
@@ -12,8 +18,7 @@ export type ImageDataType = {
 		imageWidth: number;
 		imageHeight?: number;
 	};
-	alt: string;
-};
+} & ImageMetaType;
 
 export type SocialMediaType = {
 	url: string;

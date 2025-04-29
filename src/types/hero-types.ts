@@ -1,10 +1,10 @@
-import { ImageDataType } from "@/types/global-types";
+import { ImageMetaType } from "@/types/global-types";
 
 export type MenuTileType = {
 	name: string;
 	title: string;
 	url: string;
 	buttonText?: string;
-	image?: ImageDataType;
+	image?: ImageMetaType;
 	type?: "square" | "long";
 };
