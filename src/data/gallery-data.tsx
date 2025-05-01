@@ -662,174 +662,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "visit-las-vegas-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of the Visit Las Vegas website",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "visit-las-vegas-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of the Visit Las Vegas website",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "visit-las-vegas-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of the Visit Las Vegas website",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "visit-las-vegas-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of the Visit Las Vegas website",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.visitLasVegasRestaurants,
 		slideshow: [
-			{
-				name: "visit-las-vegas-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Las Vegas slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "visit-las-vegas-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Las Vegas slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "visit-las-vegas-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Las Vegas slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.visitLasVegasRestaurants,
+			imageMetaData.visitLasVegasMarquee,
+			imageMetaData.visitLasVegasHome,
 		],
 		summary: `A website to market the world's most unique destination.`,
 		overviewText: (
@@ -867,27 +704,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-las-vegas-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Las Vegas progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitLasVegasNavAnimated,
 			},
 			{
 				name: "visit-las-vegas-progress-step-2",
@@ -906,27 +723,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-las-vegas-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Las Vegas progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitLasVegasEventsSliderAnimated,
 			},
 			{
 				name: "visit-las-vegas-progress-step-3",
@@ -947,27 +744,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "visit-las-vegas-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Visit Las Vegas progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.visitLasVegasMarqueeAnimated,
 			},
 		],
 		descriptionSupertitle: `Business on the Back End`,
@@ -1001,60 +778,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "visit-las-vegas-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Visit Las Vegas image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "visit-las-vegas-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Visit Las Vegas image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.visitLasVegasHome,
+			imageMetaData.visitLasVegasRestaurants,
+			imageMetaData.visitLasVegasEventsSlider,
+			imageMetaData.visitLasVegasMarquee,
 		],
 	},
 	{
@@ -1068,177 +795,14 @@ export const projects: ProjectType[] = [
 			categories.design,
 			categories.clientWork,
 		],
-		thumbImage: {
-			square: {
-				name: "zarpara-labels-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of a Zarpara wine label",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "zarpara-labels-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of a Zarpara wine label",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "zarpara-labels-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of a Zarpara wine label",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "zarpara-labels-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of a Zarpara wine label",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.zarparaRedBottle,
 		slideshow: [
-			{
-				name: "zarpara-labels-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Zarpara labels slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "zarpara-labels-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Zarpara labels slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "zarpara-labels-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Zarpara labels slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.zarparaRedBottle,
+			imageMetaData.zarparaRoseBottle,
+			imageMetaData.zarparaWhiteBottle,
 		],
 		summary: `A brand refresh for Zarpara Vineyard's wine labels using painterly illustrations.`,
-		problemText: `Zarpara Vineyard was in need of a design refresh. They'd lost their previous designer, and were searching for another who could evolve their brand.`,
+		problemText: `Zarpara Vineyard was in need of a design refresh. They'd lost their previous designer and were searching for another who could evolve their brand.`,
 		solutionText: `I designed labels that had a touch of modernity along with some unique background illustrations that would help them stand out in a crowd.`,
 		features: [
 			{
@@ -1269,27 +833,11 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "zarpara-labels-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Zarpara labels progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: [
+					imageMetaData.zarparaWhiteLabel,
+					imageMetaData.zarparaRedLabel,
+					imageMetaData.zarparaRoseLabel,
+				],
 			},
 			{
 				name: "zarpara-labels-progress-step-2",
@@ -1304,32 +852,12 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "zarpara-labels-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Zarpara labels progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.zarparaBackLabels,
 			},
 			{
 				name: "zarpara-labels-progress-step-3",
-				supertitle: "Aurora and Luna de Sangre",
-				title: "Port and Dessert Wine Labels",
+				supertitle: "Luna de Sangre and Aurora",
+				title: "Dessert and Port Wine Labels",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1338,41 +866,23 @@ export const projects: ProjectType[] = [
 							some additional labels designed.
 						</p>
 						<p>
-							These would be for their port and dessert
-							wines&mdash;Aurora and Luna de Sangre, respectively.
-							I stuck with the impressionistic style of the
-							previous labels and painted a couple backgrounds I
-							thought would capture the essence of these new
-							variants.
+							These would be for their port and dessert wines:
+							Aurora and Luna de Sangre, respectively. I stuck
+							with the impressionistic style of the previous
+							labels and painted a couple backgrounds I thought
+							would capture the essence of these new variants.
 						</p>
 						<p>
 							For the Aurora, a sunrise bursts over a cloud-laden
 							mountain. For the Luna de Sangre, a blood moon limns
-							the same mountai&apos;s peak in vibrant red hues.
+							the same mountain&apos;s peak in vibrant red hues.
 						</p>
 					</>
 				),
-				image: {
-					name: "zarpara-labels-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Zarpara labels progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: [
+					imageMetaData.zarparaLunaDeSangreLabel,
+					imageMetaData.zarparaAuroraLabel,
+				],
 			},
 		],
 		descriptionTitle: `An Illustrative Brand Refresh`,
@@ -1396,60 +906,11 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "zarpara-labels-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Zarpara labels image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "zarpara-labels-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Zarpara labels image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.zarparaAuroraIllustration,
+			imageMetaData.zarparaLunaDeSangreIllustration,
+			imageMetaData.zarparaRedIllustration,
+			imageMetaData.zarparaWhiteIllustration,
+			imageMetaData.zarparaRoseIllustration,
 		],
 	},
 	{

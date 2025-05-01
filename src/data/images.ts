@@ -324,40 +324,183 @@ export const theaterToolkitLoyaltyAppFlyer: ImageMetaType = {
 export const visitIrvingHome: ImageMetaType = {
 	name: "visit-irving-home",
 	pathKey: "visit-irving-home",
-	alt: `A screenshot of the intro section of Visit Irving's home page`,
+	alt: `A screenshot of the intro section of the Visit Irving website's home page`,
 	verticalOrientation: "top",
 };
 
 export const visitIrvingHomeHero: ImageMetaType = {
 	name: "visit-irving-home-hero",
 	pathKey: "visit-irving-home-hero",
-	alt: `An animated demonstration of Visit Irving's home page's hero's scroll effects: a curtain of images parts to reveal a screen-spanning video`,
+	alt: `An animated demonstration of the Visit Irving website's home page hero's scroll effects: a curtain of images parts to reveal a screen-spanning video`,
 	isAnimated: true,
 };
 
 export const visitIrvingPreviewSlider: ImageMetaType = {
 	name: "visit-irving-preview-slider",
 	pathKey: "visit-irving-preview-slider",
-	alt: `A screenshot of Visit Irving's preview slideshow`,
+	alt: `A screenshot of the Visit Irving website's preview slideshow`,
 };
 
 export const visitIrvingPreviewSliderAnimated: ImageMetaType = {
 	name: "visit-irving-preview-slider-animated",
 	pathKey: "visit-irving-preview-slider-animated",
-	alt: `An animated demonstration of Visit Irving's preview slideshow`,
+	alt: `An animated demonstration of the Visit Irving website's preview slideshow`,
 	isAnimated: true,
 };
 
 export const visitIrvingScrollingEditorial: ImageMetaType = {
 	name: "visit-irving-scrolling-editorial",
 	pathKey: "visit-irving-scrolling-editorial",
-	alt: `A screenshot of Visit Irving's side-scrolling editorial widget`,
+	alt: `A screenshot of the Visit Irving website's side-scrolling editorial widget`,
 	verticalOrientation: "top",
 };
 
 export const visitIrvingScrollingEditorialAnimated: ImageMetaType = {
 	name: "visit-irving-scrolling-editorial-animated",
 	pathKey: "visit-irving-scrolling-editorial-animated",
-	alt: `An animated demonstration of Visit Irving's side-scrolling editorial widget`,
+	alt: `An animated demonstration of the Visit Irving website's side-scrolling editorial widget`,
 	isAnimated: true,
+};
+
+//=====================================//
+//=====----- VISIT LAS VEGAS -----=====//
+//=====================================//
+
+export const visitLasVegasEventsSlider: ImageMetaType = {
+	name: "visit-las-vegas-events-slider",
+	pathKey: "visit-las-vegas-events-slider",
+	alt: `A screenshot of the events slideshow of Visit Las Vegas's website`,
+};
+
+export const visitLasVegasEventsSliderAnimated: ImageMetaType = {
+	name: "visit-las-vegas-events-slider-animated",
+	pathKey: "visit-las-vegas-events-slider-animated",
+	alt: `An animated demonstration of the events slideshow of Visit Las Vegas's website`,
+	isAnimated: true,
+};
+
+export const visitLasVegasHome: ImageMetaType = {
+	name: "visit-las-vegas-home",
+	pathKey: "visit-las-vegas-home",
+	alt: `A screenshot of the home page hero of Visit Las Vegas's website`,
+};
+
+export const visitLasVegasMarquee: ImageMetaType = {
+	name: "visit-las-vegas-marquee",
+	pathKey: "visit-las-vegas-marquee",
+	alt: `A screenshot of the marquee widget of Visit Las Vegas's website`,
+};
+
+export const visitLasVegasMarqueeAnimated: ImageMetaType = {
+	name: "visit-las-vegas-marquee-animated",
+	pathKey: "visit-las-vegas-marquee-animated",
+	alt: `An animated demonstration of the marquee widget of Visit Las Vegas's website`,
+	isAnimated: true,
+};
+
+export const visitLasVegasNav: ImageMetaType = {
+	name: "visit-las-vegas-nav",
+	pathKey: "visit-las-vegas-nav",
+	alt: `A screenshot of the takeover navigation of Visit Las Vegas's website`,
+};
+
+export const visitLasVegasNavAnimated: ImageMetaType = {
+	name: "visit-las-vegas-nav-animated",
+	pathKey: "visit-las-vegas-nav-animated",
+	alt: `An animated demonstration of the takeover navigation of Visit Las Vegas's website`,
+	isAnimated: true,
+};
+
+export const visitLasVegasRestaurants: ImageMetaType = {
+	name: "visit-las-vegas-restaurants",
+	pathKey: "visit-las-vegas-restaurants",
+	alt: `A screenshot of the Restaurants page of Visit Las Vegas's website`,
+};
+
+//=============================//
+//=====----- ZARPARA -----=====//
+//=============================//
+
+export const zarparaAuroraIllustration: ImageMetaType = {
+	name: "zarpara-aurora-illustration",
+	pathKey: "zarpara-aurora-illustration",
+	alt: `The background illustration for Zarpara's Aurora wine label`,
+};
+
+export const zarparaAuroraLabel: ImageMetaType = {
+	name: "zarpara-aurora-label",
+	pathKey: "zarpara-aurora-label",
+	alt: `Zarpara's Aurora wine label design`,
+};
+
+export const zarparaBackLabels: ImageMetaType = {
+	name: "zarpara-back-labels",
+	pathKey: "zarpara-back-labels",
+	alt: `A grid of Zarpara's back wine labels`,
+};
+
+export const zarparaLunaDeSangreIllustration: ImageMetaType = {
+	name: "zarpara-luna-de-sangre-illustration",
+	pathKey: "zarpara-luna-de-sangre-illustration",
+	alt: `The background illustration for Zarpara's Luna de Sangre wine label`,
+};
+
+export const zarparaLunaDeSangreLabel: ImageMetaType = {
+	name: "zarpara-luna-de-sangre-label",
+	pathKey: "zarpara-luna-de-sangre-label",
+	alt: `Zarpara's Luna de Sangre wine label design`,
+};
+
+export const zarparaRedBottle: ImageMetaType = {
+	name: "zarpara-red-bottle",
+	pathKey: "zarpara-red-bottle",
+	alt: `A mockup of Zarpara's red wine bottle and its label design; the bottle sits on a bed of corks`,
+};
+
+export const zarparaRedIllustration: ImageMetaType = {
+	name: "zarpara-red-illustration",
+	pathKey: "zarpara-red-illustration",
+	alt: `The background illustration for Zarpara's red wine label`,
+};
+
+export const zarparaRedLabel: ImageMetaType = {
+	name: "zarpara-red-label",
+	pathKey: "zarpara-red-label",
+	alt: `Zarpara's red wine label design`,
+};
+
+export const zarparaRoseBottle: ImageMetaType = {
+	name: "zarpara-rose-bottle",
+	pathKey: "zarpara-rose-bottle",
+	alt: `A mockup of Zarpara's rosé wine bottle and its label design; the bottle sits on a bed of corks`,
+};
+
+export const zarparaRoseIllustration: ImageMetaType = {
+	name: "zarpara-rose-illustration",
+	pathKey: "zarpara-rose-illustration",
+	alt: `The background illustration for Zarpara's rosé wine label`,
+};
+
+export const zarparaRoseLabel: ImageMetaType = {
+	name: "zarpara-rose-label",
+	pathKey: "zarpara-rose-label",
+	alt: `Zarpara's rosé wine label design`,
+};
+
+export const zarparaWhiteBottle: ImageMetaType = {
+	name: "zarpara-white-bottle",
+	pathKey: "zarpara-white-bottle",
+	alt: `A mockup of Zarpara's white wine bottle and its label design; the bottle sits on a bed of corks`,
+};
+
+export const zarparaWhiteIllustration: ImageMetaType = {
+	name: "zarpara-white-illustration",
+	pathKey: "zarpara-white-illustration",
+	alt: `The background illustration for Zarpara's white wine label`,
+};
+
+export const zarparaWhiteLabel: ImageMetaType = {
+	name: "zarpara-white-label",
+	pathKey: "zarpara-white-label",
+	alt: `Zarpara's white wine label design`,
 };
