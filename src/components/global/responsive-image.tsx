@@ -39,7 +39,7 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 
 			return returnArray;
 		})();
-		const baseImageUrl = `/images/output/${image.pathKey}/${image.pathKey}`;
+		const baseImageUrl = `/images/output/${image.pathKey}/${image.pathKey}-kyle-jorve`;
 		const mobileURL = `${baseImageUrl}-${image.mobileSource.imageWidth}.${
 			isAnimated ? "gif" : "jpg"
 		}`;

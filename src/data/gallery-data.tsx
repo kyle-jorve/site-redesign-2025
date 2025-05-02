@@ -923,175 +923,8 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: {
-			square: {
-				name: "kingdom-hearts-fan-art-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of an illustration based on Kingdom Hearts",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "kingdom-hearts-fan-art-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of an illustration based on Kingdom Hearts",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "kingdom-hearts-fan-art-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of an illustration based on Kingdom Hearts",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "kingdom-hearts-fan-art-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of an illustration based on Kingdom Hearts",
-				width: 444,
-				height: 320,
-			},
-		},
-		slideshow: [
-			{
-				name: "kingdom-hearts-fan-art-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Kingdom Hearts fan art slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "kingdom-hearts-fan-art-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Kingdom Hearts fan art slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "kingdom-hearts-fan-art-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Kingdom Hearts fan art slideshow image 3",
-				width: 640,
-				height: 480,
-			},
-		],
+		thumbImage: imageMetaData.kingdomHearts2,
+		slideshow: [imageMetaData.kingdomHearts1, imageMetaData.kingdomHearts2],
 		summary: `The future doesn't scare me where fears and lies melt away.`,
 		overviewText: (
 			<>
@@ -1120,27 +953,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "kingdom-hearts-fan-art-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Kingdom Hearts fan art progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.kingdomHearts1,
 			},
 			{
 				name: "kingdom-hearts-fan-art-progress-step-2",
@@ -1161,27 +974,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "kingdom-hearts-fan-art-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Kingdom Hearts fan art progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.kingdomHearts2,
 			},
 		],
 		descriptionTitle: `A Duology of Destiny and Fate`,
@@ -1204,62 +997,7 @@ export const projects: ProjectType[] = [
 				</p>
 			</>
 		),
-		imageGrid: [
-			{
-				name: "kingdom-hearts-fan-art-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Kingdom Hearts fan art image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "kingdom-hearts-fan-art-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Kingdom Hearts fan art image grid image 2",
-				width: 640,
-				height: 480,
-			},
-		],
+		imageGrid: [imageMetaData.kingdomHearts1, imageMetaData.kingdomHearts2],
 	},
 	{
 		name: "figure-studies",
@@ -1271,174 +1009,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: {
-			square: {
-				name: "figure-studies-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of a drawing of a nude model",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "figure-studies-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of a drawing of a nude model",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "figure-studies-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of a drawing of a nude model",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "figure-studies-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of a drawing of a nude model",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: imageMetaData.figureStudies,
 		slideshow: [
-			{
-				name: "figure-studies-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Figure studies slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "figure-studies-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Figure studies slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "figure-studies-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Figure studies slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.figureStudies2,
+			imageMetaData.figureStudies1,
+			imageMetaData.figureStudies3,
 		],
 		summary: `A curated collection of two years' worth of figure studies.`,
 		overviewText: (
@@ -1478,27 +1053,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "figure-studies-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Figure studies progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.figureStudies10,
 			},
 			{
 				name: "figure-studies-progress-step-2",
@@ -1529,27 +1084,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "figure-studies-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Figure studies progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: imageMetaData.figureStudies,
 			},
 		],
 		descriptionSupertitle: `The Art of Anatomy`,
@@ -1575,60 +1110,12 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "figure-studies-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Figure studies image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "figure-studies-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Figure studies image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			imageMetaData.figureStudies4,
+			imageMetaData.figureStudies5,
+			imageMetaData.figureStudies6,
+			imageMetaData.figureStudies7,
+			imageMetaData.figureStudies8,
+			imageMetaData.figureStudies9,
 		],
 	},
 	{
@@ -1641,174 +1128,9 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: {
-			square: {
-				name: "post-autumn-thumb-image-square",
-				sources: [
-					{
-						url: "https://placehold.co/720x480",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 480,
-					},
-					{
-						url: "https://placehold.co/512x410",
-						minScreenWidth: 768,
-						width: 512,
-						height: 410,
-					},
-				],
-				mobileSource: "https://placehold.co/384x427",
-				alt: "a preview of an illustration of an original character",
-				width: 670,
-				height: 460,
-			},
-			long: {
-				name: "post-autumn-thumb-image-long",
-				sources: [
-					{
-						url: "https://placehold.co/1440x540",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 540,
-					},
-					{
-						url: "https://placehold.co/1024x471",
-						minScreenWidth: 768,
-						width: 1024,
-						height: 471,
-					},
-				],
-				mobileSource: "https://placehold.co/768x416",
-				alt: "a preview of an illustration of an original character",
-				width: 1356,
-				height: 320,
-			},
-			feature: {
-				name: "post-autumn-thumb-image-feature",
-				sources: [
-					{
-						url: "https://placehold.co/540x570",
-						minScreenWidth: 1024,
-						width: 540,
-						height: 570,
-					},
-					{
-						url: "https://placehold.co/1024x512",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 512,
-					},
-				],
-				mobileSource: "https://placehold.co/640",
-				alt: "a preview of an illustration of an original character",
-				width: 640,
-				height: 640,
-			},
-			small: {
-				name: "post-autumn-thumb-image-small",
-				sources: [
-					{
-						url: "https://placehold.co/480x343",
-						minScreenWidth: 1024,
-						width: 480,
-						height: 343,
-					},
-					{
-						url: "https://placehold.co/342x380",
-						minScreenWidth: 768,
-						width: 342,
-						height: 380,
-					},
-				],
-				mobileSource: "https://placehold.co/768x415",
-				alt: "a preview of an illustration of an original character",
-				width: 444,
-				height: 320,
-			},
-		},
+		thumbImage: ,
 		slideshow: [
-			{
-				name: "post-autumn-slideshow-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Post-Autumn slideshow image 1",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "post-autumn-slideshow-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Post-Autumn slideshow image 2",
-				width: 640,
-				height: 480,
-			},
-			{
-				name: "post-autumn-slideshow-image-3",
-				sources: [
-					{
-						url: "https://placehold.co/1920x968",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 968,
-					},
-					{
-						url: "https://placehold.co/1440x726",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 726,
-					},
-					{
-						url: "https://placehold.co/1024x516",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 516,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Post-Autumn slideshow image 3",
-				width: 640,
-				height: 480,
-			},
+			
 		],
 		summary: `A uniquely powerful technology arises, along with a uniquely terrifying despot, after a planetary apocalypse.`,
 		overviewText: (
@@ -1851,27 +1173,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "post-autumn-progress-image-1",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Post-Autumn progress image 1",
-					width: 640,
-					height: 480,
-				},
+				image: ,
 			},
 			{
 				name: "post-autumn-progress-step-2",
@@ -1892,27 +1194,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "post-autumn-progress-image-2",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Post-Autumn progress image 2",
-					width: 640,
-					height: 480,
-				},
+				image: ,
 			},
 			{
 				name: "post-autumn-progress-step-3",
@@ -1940,27 +1222,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: {
-					name: "post-autumn-progress-image-3",
-					sources: [
-						{
-							url: "https://placehold.co/540x570",
-							minScreenWidth: 1024,
-							width: 540,
-							height: 570,
-						},
-						{
-							url: "https://placehold.co/1024x512",
-							minScreenWidth: 640,
-							width: 1024,
-							height: 512,
-						},
-					],
-					mobileSource: "https://placehold.co/640",
-					alt: "Post-Autumn progress image 3",
-					width: 640,
-					height: 480,
-				},
+				image: ,
 			},
 		],
 		descriptionSupertitle: `An Ages-Old Mystery on`,
@@ -1993,60 +1255,7 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			{
-				name: "post-autumn-image-grid-image-1",
-				sources: [
-					{
-						url: "https://placehold.co/960x803",
-						minScreenWidth: 1440,
-						width: 960,
-						height: 803,
-					},
-					{
-						url: "https://placehold.co/720x600",
-						minScreenWidth: 1024,
-						width: 720,
-						height: 600,
-					},
-					{
-						url: "https://placehold.co/1024x576",
-						minScreenWidth: 640,
-						width: 1024,
-						height: 576,
-					},
-				],
-				mobileSource: "https://placehold.co/640x480",
-				alt: "Post-Autumn image grid image 1",
-				width: 640,
-				height: 512,
-			},
-			{
-				name: "post-autumn-image-grid-image-2",
-				sources: [
-					{
-						url: "https://placehold.co/1920x1080",
-						minScreenWidth: 1440,
-						width: 1920,
-						height: 1080,
-					},
-					{
-						url: "https://placehold.co/1440x810",
-						minScreenWidth: 1024,
-						width: 1440,
-						height: 810,
-					},
-					{
-						url: "https://placehold.co/512x427",
-						minScreenWidth: 640,
-						width: 512,
-						height: 427,
-					},
-				],
-				mobileSource: "https://placehold.co/320x320",
-				alt: "Post-Autumn image grid image 2",
-				width: 640,
-				height: 480,
-			},
+			
 		],
 	},
 ];

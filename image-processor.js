@@ -27,7 +27,7 @@ async function processImages(inputDir) {
 				for (let size of sizes) {
 					const extChange = ext.replace(".", "") !== format;
 					const newExt = !extChange ? ext : `.${format}`;
-					const newFileName = `${base}-${size}${newExt}`;
+					const newFileName = `${base}-kyle-jorve-${size}${newExt}`;
 					const outputPath = path.join(
 						`./public/images/output/${base}/`,
 						newFileName,

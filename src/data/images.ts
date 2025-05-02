@@ -44,6 +44,76 @@ export const captiveContentLogo3: ImageMetaType = {
 	alt: `The final design of Captive Content's logo`,
 };
 
+//====================================//
+//=====----- FIGURE STUDIES -----=====//
+//====================================//
+
+export const figureStudies: ImageMetaType = {
+	name: "figure-studies",
+	pathKey: "figure-studies",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies1: ImageMetaType = {
+	name: "figure-studies-1",
+	pathKey: "figure-studies-1",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies2: ImageMetaType = {
+	name: "figure-studies-2",
+	pathKey: "figure-studies-2",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies3: ImageMetaType = {
+	name: "figure-studies-3",
+	pathKey: "figure-studies-3",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies4: ImageMetaType = {
+	name: "figure-studies-4",
+	pathKey: "figure-studies-4",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies5: ImageMetaType = {
+	name: "figure-studies-5",
+	pathKey: "figure-studies-5",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies6: ImageMetaType = {
+	name: "figure-studies-6",
+	pathKey: "figure-studies-6",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies7: ImageMetaType = {
+	name: "figure-studies-7",
+	pathKey: "figure-studies-7",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies8: ImageMetaType = {
+	name: "figure-studies-8",
+	pathKey: "figure-studies-8",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies9: ImageMetaType = {
+	name: "figure-studies-9",
+	pathKey: "figure-studies-9",
+	alt: `A sketch of a nude model`,
+};
+
+export const figureStudies10: ImageMetaType = {
+	name: "figure-studies-10",
+	pathKey: "figure-studies-10",
+	alt: `A sketch of a nude model`,
+};
+
 //===============================//
 //=====----- HOME HERO -----=====//
 //===============================//
@@ -152,6 +222,22 @@ export const herbalist: ImageMetaType = {
 	name: "the-herbalist",
 	pathKey: "the-herbalist",
 	alt: `An original character, Belryanne, stands in her greenhouse garden, leaning over a pot of flowers to inspect them`,
+};
+
+//====================================//
+//=====----- KINGDOM HEARTS -----=====//
+//====================================//
+
+export const kingdomHearts1: ImageMetaType = {
+	name: "kingdom-hearts-1",
+	pathKey: "kingdom-hearts-1",
+	alt: `Sora, Riku, and Kairi stand on a sandy beach on Destiny Island`,
+};
+
+export const kingdomHearts2: ImageMetaType = {
+	name: "kingdom-hearts-2",
+	pathKey: "kingdom-hearts-2",
+	alt: `Riku, Namine, and Roxas stand on a dark, destroyed beach on Destiny Island; fissures crack the landscape; Mickey stands hidden in the distance; a heart-shaped moon glows overhead`,
 };
 
 //=======================================//
