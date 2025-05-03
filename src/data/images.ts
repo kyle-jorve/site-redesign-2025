@@ -24,6 +24,7 @@ export const captiveContentHome: ImageMetaType = {
 	name: "captive-content-home",
 	pathKey: "captive-content-home",
 	alt: `A design of the home page of Captive Content's website`,
+	verticalOrientation: "top",
 };
 
 export const captiveContentLogo1: ImageMetaType = {
@@ -52,66 +53,77 @@ export const figureStudies: ImageMetaType = {
 	name: "figure-studies",
 	pathKey: "figure-studies",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies1: ImageMetaType = {
 	name: "figure-studies-1",
 	pathKey: "figure-studies-1",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies2: ImageMetaType = {
 	name: "figure-studies-2",
 	pathKey: "figure-studies-2",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies3: ImageMetaType = {
 	name: "figure-studies-3",
 	pathKey: "figure-studies-3",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies4: ImageMetaType = {
 	name: "figure-studies-4",
 	pathKey: "figure-studies-4",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies5: ImageMetaType = {
 	name: "figure-studies-5",
 	pathKey: "figure-studies-5",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies6: ImageMetaType = {
 	name: "figure-studies-6",
 	pathKey: "figure-studies-6",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies7: ImageMetaType = {
 	name: "figure-studies-7",
 	pathKey: "figure-studies-7",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies8: ImageMetaType = {
 	name: "figure-studies-8",
 	pathKey: "figure-studies-8",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies9: ImageMetaType = {
 	name: "figure-studies-9",
 	pathKey: "figure-studies-9",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 export const figureStudies10: ImageMetaType = {
 	name: "figure-studies-10",
 	pathKey: "figure-studies-10",
 	alt: `A sketch of a nude model`,
+	verticalOrientation: "top",
 };
 
 //===============================//
@@ -238,6 +250,37 @@ export const kingdomHearts2: ImageMetaType = {
 	name: "kingdom-hearts-2",
 	pathKey: "kingdom-hearts-2",
 	alt: `Riku, Namine, and Roxas stand on a dark, destroyed beach on Destiny Island; fissures crack the landscape; Mickey stands hidden in the distance; a heart-shaped moon glows overhead`,
+};
+
+//=================================//
+//=====----- POST-AUTUMN -----=====//
+//=================================//
+
+export const crow1: ImageMetaType = {
+	name: "crow-1",
+	pathKey: "crow-1",
+	alt: `A preliminary design for Crow, an original character by Kyle Jorve`,
+	verticalOrientation: "top",
+};
+
+export const crow2: ImageMetaType = {
+	name: "crow-2",
+	pathKey: "crow-2",
+	alt: `An illustration of Crow, an original character by Kyle Jorve, holding a sci-fi gun and a sword`,
+};
+
+export const crow3: ImageMetaType = {
+	name: "crow-3",
+	pathKey: "crow-3",
+	alt: `An illustration of Crow, an original character by Kyle Jorve, standing before a cluster of dead ravens as more fall from the sky; a dead white raven rests at his feet`,
+	verticalOrientation: "top",
+};
+
+export const crow4: ImageMetaType = {
+	name: "crow-4",
+	pathKey: "crow-4",
+	alt: `An illustration of Crow, an original character by Kyle Jorve, standing against a wall smoking an e-cigarette, his mechanical right eye glowing green`,
+	verticalOrientation: "top",
 };
 
 //=======================================//
@@ -469,6 +512,7 @@ export const visitLasVegasHome: ImageMetaType = {
 	name: "visit-las-vegas-home",
 	pathKey: "visit-las-vegas-home",
 	alt: `A screenshot of the home page hero of Visit Las Vegas's website`,
+	verticalOrientation: "top",
 };
 
 export const visitLasVegasMarquee: ImageMetaType = {
@@ -488,6 +532,7 @@ export const visitLasVegasNav: ImageMetaType = {
 	name: "visit-las-vegas-nav",
 	pathKey: "visit-las-vegas-nav",
 	alt: `A screenshot of the takeover navigation of Visit Las Vegas's website`,
+	verticalOrientation: "top",
 };
 
 export const visitLasVegasNavAnimated: ImageMetaType = {
@@ -501,6 +546,7 @@ export const visitLasVegasRestaurants: ImageMetaType = {
 	name: "visit-las-vegas-restaurants",
 	pathKey: "visit-las-vegas-restaurants",
 	alt: `A screenshot of the Restaurants page of Visit Las Vegas's website`,
+	verticalOrientation: "top",
 };
 
 //=============================//

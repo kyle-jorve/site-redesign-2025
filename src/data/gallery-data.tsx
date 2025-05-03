@@ -1128,9 +1128,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: ,
+		thumbImage: imageMetaData.crow3,
 		slideshow: [
-			
+			imageMetaData.crow3,
+			imageMetaData.crow4,
+			imageMetaData.crow2,
 		],
 		summary: `A uniquely powerful technology arises, along with a uniquely terrifying despot, after a planetary apocalypse.`,
 		overviewText: (
@@ -1173,7 +1175,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: ,
+				image: imageMetaData.crow1,
 			},
 			{
 				name: "post-autumn-progress-step-2",
@@ -1194,7 +1196,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: ,
+				image: imageMetaData.crow3,
 			},
 			{
 				name: "post-autumn-progress-step-3",
@@ -1222,7 +1224,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: ,
+				image: imageMetaData.crow4,
 			},
 		],
 		descriptionSupertitle: `An Ages-Old Mystery on`,
@@ -1255,7 +1257,9 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			
+			imageMetaData.crow2,
+			imageMetaData.crow3,
+			imageMetaData.crow4,
 		],
 	},
 ];
