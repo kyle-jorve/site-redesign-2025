@@ -20,14 +20,16 @@ export type ProjectDetailPageProps = {
 	params: Promise<{ projectID: string }>;
 };
 
-export async function generateMetadata(
-	{ params }: ProjectDetailPageProps,
-	parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+	params,
+}: ProjectDetailPageProps): Promise<Metadata> {
 	const { projectID } = await params;
 	const data = projectsByName[projectID];
 	const title = data?.title;
 	const description = data?.summary;
+	const image = data
+		? `/images/${data.thumbImage}/${data.thumbImage}-kyle-jorve-640.jpg`
+		: null;
 	const returnObj: Metadata = {
 		openGraph: {},
 	};
@@ -39,6 +41,15 @@ export async function generateMetadata(
 	if (description) {
 		returnObj.description = description;
 		returnObj.openGraph!.description = description;
+	}
+	if (image) {
+		returnObj.openGraph!.images = [
+			{
+				url: image,
+				width: 640,
+				height: 640,
+			},
+		];
 	}
 
 	return returnObj;
