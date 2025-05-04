@@ -1,14 +1,16 @@
 import { ImageMetaType } from "@/types/global-types";
 import { categories } from "@/data/gallery-data";
 import {
-	homeHeroImage,
+	homeHeroImageDesktop,
+	homeHeroImageMobile,
 	pendrakesChamber,
 	herbalist,
 	theaterToolkitDesignPhase,
 } from "@/data/images";
 import { MenuTileType } from "@/types/hero-types";
 
-export const heroImage: ImageMetaType = homeHeroImage;
+export const heroImageDesktop: ImageMetaType = homeHeroImageDesktop;
+export const heroImageMobile: ImageMetaType = homeHeroImageMobile;
 export const supertitle = "Designer, Developer, Illustrator, Writer";
 export const title = "Kyle Jorve";
 export const featuredLimit = 3;

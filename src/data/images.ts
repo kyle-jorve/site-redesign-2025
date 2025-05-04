@@ -130,15 +130,25 @@ export const figureStudies10: ImageMetaType = {
 //=====----- HOME HERO -----=====//
 //===============================//
 
-export const homeHeroImage: ImageMetaType = {
-	name: "home-hero-image",
-	pathKey: "home-hero",
-	alt: "Photo of Kyle Jorve wearing headphones, smiling, and looking toward the upper-right corner",
+export const homeHeroImageDesktop: ImageMetaType = {
+	name: "home-hero-image-desktop",
+	pathKey: "home-hero-desktop",
+	alt: "A photo of Kyle Jorve",
+	verticalOrientation: "top",
+};
+
+export const homeHeroImageMobile: ImageMetaType = {
+	name: "home-hero-image-mobile",
+	pathKey: "home-hero-mobile",
+	alt: "A photo of Kyle Jorve",
+	verticalOrientation: "bottom",
 };
 
 //===================================//
 //=====----- IGNOBLE BLOOD -----=====//
 //===================================//
+
+/*----- illustrations -----*/
 
 export const becomingRuna: ImageMetaType = {
 	name: "becoming-runa",
@@ -152,6 +162,95 @@ export const berned: ImageMetaType = {
 	alt: `Berned, an original character, stands in front of the circular red door to his house, his arms crossed`,
 };
 
+export const herbalist: ImageMetaType = {
+	name: "the-herbalist",
+	pathKey: "the-herbalist",
+	alt: `An original character, Belryanne, stands in her greenhouse garden, leaning over a pot of flowers to inspect them`,
+};
+
+export const ignobleBloodVignettesAndel: ImageMetaType = {
+	name: "ignoble-blood-vignettes-andel",
+	pathKey: "ignoble-blood-vignettes-andel",
+	alt: `Duke Andel Sommer, an original character by Kyle Jorve, stands holding a sword and a book, his cape billowing behind him`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesCapor: ImageMetaType = {
+	name: "ignoble-blood-vignettes-capor",
+	pathKey: "ignoble-blood-vignettes-capor",
+	alt: `Captain Capor Nils, an original character by Kyle Jorve, wears his captain's uniform and holds an unsheathed saber`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesCargha: ImageMetaType = {
+	name: "ignoble-blood-vignettes-cargha",
+	pathKey: "ignoble-blood-vignettes-cargha",
+	alt: `Cargha Bezamik, an original character by Kyle Jorve, stands holding a khopesh and dagger`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesCarghaPortrait: ImageMetaType = {
+	name: "ignoble-blood-vignettes-cargha-portrait",
+	pathKey: "ignoble-blood-vignettes-cargha-portrait",
+	alt: `A portrait of Cargha Bezamik, an original character by Kyle Jorve`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesKyra: ImageMetaType = {
+	name: "ignoble-blood-vignettes-kyra",
+	pathKey: "ignoble-blood-vignettes-kyra",
+	alt: `Kyra Luckleav, an original character by Kyle Jorve, laughs at something out of frame`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesKyraPortrait: ImageMetaType = {
+	name: "ignoble-blood-vignettes-kyra-portrait",
+	pathKey: "ignoble-blood-vignettes-kyra-portrait",
+	alt: `A portrait of Kyra Luckleav, an original character by Kyle Jorve`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesPendrake: ImageMetaType = {
+	name: "ignoble-blood-vignettes-pendrake",
+	pathKey: "ignoble-blood-vignettes-pendrake",
+	alt: `Lord Pendrake Sommer, an original character by Kyle Jorve, looks back with a puzzled expression while gripping the handle of his saber`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesSamil: ImageMetaType = {
+	name: "ignoble-blood-vignettes-samil",
+	pathKey: "ignoble-blood-vignettes-samil",
+	alt: `Captain Samil Sealee, an original character by Kyle Jorve, looks apprehensively out of frame while gripping the handle of her saber`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesTalis: ImageMetaType = {
+	name: "ignoble-blood-vignettes-talis",
+	pathKey: "ignoble-blood-vignettes-talis",
+	alt: `Lady Talis Sommer, an original character by Kyle Jorve, stands wearing a military uniform and an amused expression, her hand resting on the pommel of the saber strapped to her belt`,
+	verticalOrientation: "top",
+};
+
+export const ignobleBloodVignettesToval: ImageMetaType = {
+	name: "ignoble-blood-vignettes-toval",
+	pathKey: "ignoble-blood-vignettes-toval",
+	alt: `Lieutenant Toval Caslen, an original character by Kyle Jorve, looks menacingly toward the viewer while pointing a sword toward the ground`,
+};
+
+export const ignobleBloodVignettesTovalPortrait: ImageMetaType = {
+	name: "ignoble-blood-vignettes-toval-portrait",
+	pathKey: "ignoble-blood-vignettes-toval-portrait",
+	alt: `A portrait of Lieutenant Toval Caslen, an original character by Kyle Jorve`,
+};
+
+export const pendrakesChamber: ImageMetaType = {
+	name: "pendrakes-chamber",
+	pathKey: "pendrakes-chamber",
+	alt: `A dioramic illustration of a firelit castle bedchamber at night`,
+};
+
+/*----- pages -----*/
+
 export const ignobleBloodVignettesPageCargha: ImageMetaType = {
 	name: "ignoble-blood-vignettes-page-cargha",
 	pathKey: "ignoble-blood-vignettes-page-cargha",
@@ -163,7 +262,6 @@ export const ignobileBloodVignettesPageLayout: ImageMetaType = {
 	pathKey: "ignoble-blood-vignettes-page-layout",
 	alt: `A book page layout design, with a circle at the top for a portrait to fill and stylized lines to enforce margins and page title placement`,
 };
-
 export const ignobleBloodVignettesSpreadPendrake: ImageMetaType = {
 	name: "ignoble-blood-vignettes-spread-pendrake",
 	pathKey: "ignoble-blood-vignettes-spread-1-pendrake",
@@ -222,18 +320,6 @@ export const ignobleBloodVignettesTypography: ImageMetaType = {
 	name: "ignoble-blood-vignettes-typography",
 	pathKey: "ignoble-blood-vignettes-typography",
 	alt: `A page of a book in which the typographical design is displayed`,
-};
-
-export const pendrakesChamber: ImageMetaType = {
-	name: "pendrakes-chamber",
-	pathKey: "pendrakes-chamber",
-	alt: `A dioramic illustration of a firelit castle bedchamber at night`,
-};
-
-export const herbalist: ImageMetaType = {
-	name: "the-herbalist",
-	pathKey: "the-herbalist",
-	alt: `An original character, Belryanne, stands in her greenhouse garden, leaning over a pot of flowers to inspect them`,
 };
 
 //====================================//
@@ -378,8 +464,8 @@ export const theaterToolkitFeatures: ImageMetaType = {
 };
 
 export const theaterToolkitHowItWorks: ImageMetaType = {
-	name: "theaer-toolkit-how-it-works",
-	pathKey: "theaer-toolkit-how-it-works",
+	name: "theater-toolkit-how-it-works",
+	pathKey: "theater-toolkit-how-it-works",
 	alt: `A dioramic, stylized illustration of a theater owner integrating Theater Toolkit with his website and watching a customer interact with it`,
 };
 
@@ -421,13 +507,6 @@ export const theaterToolkitWebsiteHome: ImageMetaType = {
 	name: "theater-toolkit-website-home",
 	pathKey: "theater-toolkit-website-home",
 	alt: `A design of the home page of Theater Toolkit's website`,
-	verticalOrientation: "top",
-};
-
-export const theaterToolkitWebsiteHomeMobile: ImageMetaType = {
-	name: "theater-toolkit-website-home-mobile",
-	pathKey: "theater-toolkit-website-home-mobile",
-	alt: `A design of the mobile version of the home page of Theater Toolkit's website`,
 	verticalOrientation: "top",
 };
 
@@ -481,6 +560,7 @@ export const visitIrvingScrollingEditorial: ImageMetaType = {
 	name: "visit-irving-scrolling-editorial",
 	pathKey: "visit-irving-scrolling-editorial",
 	alt: `A screenshot of the Visit Irving website's side-scrolling editorial widget`,
+	horizontalOrientation: "left",
 	verticalOrientation: "top",
 };
 

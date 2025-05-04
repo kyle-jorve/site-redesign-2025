@@ -252,7 +252,8 @@
 		}
 	}
 
-	*:focus-visible {
+	.nav-item:focus-visible,
+	.dropdown-toggle:focus-visible {
 		outline-color: var(--blue);
 	}
 
@@ -342,6 +343,11 @@
 
 	.nav-parent.expanded .dropdown-menu {
 		translate: 0 1rem;
+	}
+
+	.nav-item:focus-visible,
+	.dropdown-toggle:focus-visible {
+		outline-color: var(--gold);
 	}
 
 	@media (hover: hover) {

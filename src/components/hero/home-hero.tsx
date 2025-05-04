@@ -3,14 +3,15 @@
 import { useRef, useEffect, useState } from "react";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils/utils";
+import { printClassNames, mergeImageData } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import MenuTiles from "@/components/hero/menu-tiles";
 import styles from "@/styles/components/hero/home-hero.module.css";
 
 export type HomeHeroProps = {
 	title: string;
-	heroImage: ImageMetaType;
+	image: ImageMetaType;
+	mobileImage?: ImageMetaType;
 	supertitle?: string;
 	menuTiles?: MenuTileType[];
 } & React.HTMLAttributes<HTMLElement>;
@@ -19,7 +20,8 @@ let timeout: ReturnType<typeof setTimeout> | null = null;
 
 export default function HomeHero({
 	title,
-	heroImage,
+	image,
+	mobileImage = undefined,
 	supertitle = undefined,
 	menuTiles = undefined,
 	className = "",
@@ -34,6 +36,51 @@ export default function HomeHero({
 	const imageRef = useRef<HTMLImageElement>(null);
 	const classes = printClassNames([styles["home-hero"], className]);
 	const breakpoint = 1024;
+	const commonImageConfig = {
+		sources: [
+			{
+				minScreenWidth: "48em",
+				imageWidth: 1024,
+				imageHeight: 1240,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 1100,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+			imageHeight: 875,
+		},
+	};
+	const defaultImageConfig = {
+		...image,
+		sources: [
+			{
+				minScreenWidth: "90em",
+				imageWidth: 1920,
+				imageHeight: 1467,
+			},
+			{
+				minScreenWidth: "64em",
+				imageWidth: 1440,
+				imageHeight: 1100,
+			},
+			...commonImageConfig.sources,
+		],
+		mobileSource: commonImageConfig.mobileSource,
+	};
+	const mobileImageConfig = mobileImage
+		? {
+				...mobileImage,
+				...commonImageConfig,
+		  }
+		: undefined;
+	const mergedImageData = mergeImageData(
+		defaultImageConfig,
+		mobileImageConfig,
+	);
 
 	// parallax effect for title and image
 	useEffect(() => {
@@ -153,7 +200,7 @@ export default function HomeHero({
 				<ResponsiveImage
 					ref={imageRef}
 					className={styles.image}
-					image={heroImage}
+					image={mergedImageData}
 					loading="eager"
 					fetchPriority="high"
 				/>

@@ -73,11 +73,7 @@ export default function ProjectGrid({
 							title={proj.title}
 							categories={proj.categories}
 							featured={proj.featured}
-							thumbnail={
-								isLong
-									? proj.thumbImage.long
-									: proj.thumbImage.square
-							}
+							image={proj.thumbImage}
 							variant={isLong ? "long" : "standard"}
 						/>
 					);

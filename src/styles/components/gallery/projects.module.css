@@ -103,6 +103,13 @@
 		}
 	}
 
+	&.long,
+	&.small {
+		.image-wrapper {
+			aspect-ratio: 37 / 20;
+		}
+	}
+
 	.fave-button {
 		position: absolute;
 		inset: 0.5rem 0.5rem auto auto;
@@ -134,13 +141,6 @@
 		border-radius: var(--border-radius-x-small);
 		box-shadow: var(--hard-shadow);
 		pointer-events: none;
-	}
-
-	&.long,
-	&.small {
-		.image-wrapper {
-			aspect-ratio: 37 / 20;
-		}
 	}
 
 	&:has(a:focus-visible) {

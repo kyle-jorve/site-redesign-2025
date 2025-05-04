@@ -32,6 +32,30 @@ export default function ProjectDescriptionGrid({
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["description-grid"], className]);
+	const imageConfigs: ImageDataType[] = images.map((image) => ({
+		...image,
+		sources: [
+			{
+				minScreenWidth: "90em",
+				imageWidth: 1920,
+				imageHeight: 1080,
+			},
+			{
+				minScreenWidth: "64em",
+				imageWidth: 1440,
+				imageHeight: 810,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 576,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+			imageHeight: 512,
+		},
+	}));
 
 	return (
 		<section
@@ -62,10 +86,10 @@ export default function ProjectDescriptionGrid({
 
 			{!!images.length && (
 				<div className={styles["image-grid"]}>
-					{images.map((image) => {
+					{imageConfigs.map((image) => {
 						return (
 							<div
-								key={`project-image-grid-${image.name}`}
+								key={image.name}
 								className={styles["image-wrapper"]}
 							>
 								<ResponsiveImage

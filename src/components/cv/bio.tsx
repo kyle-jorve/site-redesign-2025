@@ -38,6 +38,25 @@ export default function Bio({
 	const classes = printClassNames([styles.bio, styles[placement], className]);
 	const isHero = placement === "hero";
 	const Heading = heading as React.ElementType;
+	const imageConfig: ImageDataType = {
+		...image,
+		sources: [
+			{
+				minScreenWidth: "64em",
+				imageWidth: 768,
+				imageHeight: 914,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 680,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+			imageHeight: 730,
+		},
+	};
 
 	return (
 		<section
@@ -70,7 +89,7 @@ export default function Bio({
 				<div className={styles["image-col"]}>
 					<ResponsiveImage
 						className={styles.image}
-						image={image}
+						image={imageConfig}
 						loading={placement === "hero" ? "eager" : "lazy"}
 						fetchPriority={placement === "hero" ? "high" : "low"}
 					/>

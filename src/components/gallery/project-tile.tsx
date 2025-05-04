@@ -13,7 +13,7 @@ import FeaturedFlag from "@/components/gallery/featured-flag";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectTileProps = Omit<ProjectTileType, "thumbImage"> & {
-	thumbnail: ImageMetaType;
+	image: ImageMetaType;
 	heading?: HeadingType;
 	variant?: "standard" | "long" | "small";
 } & React.HTMLAttributes<HTMLElement>;
@@ -22,7 +22,7 @@ export default function ProjectTile({
 	name,
 	title,
 	categories,
-	thumbnail,
+	image,
 	featured = false,
 	heading = "h2",
 	variant = "standard",
@@ -38,6 +38,70 @@ export default function ProjectTile({
 	const url = `/projects/${name}/`;
 	const primaryCategory =
 		categories.find((cat) => cat.primary) || categories[0];
+	const imageConfig: ImageDataType = {
+		...image,
+		sources: (() => {
+			// long
+			if (variant === "long") {
+				return [
+					{
+						minScreenWidth: "64em",
+						imageWidth: 1440,
+						imageHeight: 540,
+					},
+					{
+						minScreenWidth: "48em",
+						imageWidth: 1024,
+						imageHeight: 471,
+					},
+				];
+			}
+			// small
+			if (variant === "small") {
+				return [
+					{
+						minScreenWidth: "64em",
+						imageWidth: 480,
+						imageHeight: 343,
+					},
+					{
+						minScreenWidth: "48em",
+						imageWidth: 480,
+						imageHeight: 534,
+					},
+				];
+			}
+
+			// standard
+			return [
+				{
+					minScreenWidth: "64em",
+					imageWidth: 720,
+					imageHeight: 480,
+				},
+				{
+					minScreenWidth: "48em",
+					imageWidth: 512,
+					imageHeight: 410,
+				},
+			];
+		})(),
+		mobileSource: (() => {
+			// standard
+			if (variant === "standard") {
+				return {
+					imageWidth: 480,
+					imageHeight: 534,
+				};
+			}
+
+			// long and small
+			return {
+				imageWidth: 768,
+				imageHeight: 416,
+			};
+		})(),
+	};
 
 	return (
 		<article
@@ -72,7 +136,7 @@ export default function ProjectTile({
 
 				<ResponsiveImage
 					className={styles.image}
-					image={thumbnail}
+					image={imageConfig}
 				/>
 			</div>
 		</article>

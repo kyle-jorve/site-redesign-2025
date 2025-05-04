@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
+import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
@@ -33,6 +34,35 @@ export default function Feature({
 		styles[alignment],
 		className,
 	]);
+	const imagesData = Array.isArray(image) ? image : [image];
+	const imageConfig: ImageDataType[] = imagesData.map((image) => ({
+		...image,
+		sources: [
+			{
+				minScreenWidth: "64em",
+				imageWidth: 640,
+				imageHeight: 676,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 512,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+			imageHeight: 640,
+		},
+	}));
+	const Images = imageConfig.map((image) => {
+		return (
+			<ResponsiveImage
+				key={image.name}
+				className={styles.image}
+				image={image}
+			/>
+		);
+	});
 
 	return (
 		<article
@@ -83,16 +113,10 @@ export default function Feature({
 						to={url}
 						className={styles["image-link"]}
 					>
-						<ResponsiveImage
-							className={styles.image}
-							image={image}
-						/>
+						{Images}
 					</CustomLink>
 				) : (
-					<ResponsiveImage
-						className={styles.image}
-						image={image}
-					/>
+					Images
 				)}
 			</div>
 		</article>

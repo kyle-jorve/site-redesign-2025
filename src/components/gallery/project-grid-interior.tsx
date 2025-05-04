@@ -61,7 +61,7 @@ export default function ProjectGridInterior({
 							title={proj.title}
 							categories={proj.categories}
 							featured={proj.featured}
-							thumbnail={proj.thumbImage.small}
+							image={proj.thumbImage}
 							variant="small"
 							heading="h3"
 						/>

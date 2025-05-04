@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from "next";
 import {
 	projectsSorted,
 	projectsByName,
@@ -18,6 +19,30 @@ import styles from "@/styles/components/gallery/project-detail.module.css";
 export type ProjectDetailPageProps = {
 	params: Promise<{ projectID: string }>;
 };
+
+export async function generateMetadata(
+	{ params }: ProjectDetailPageProps,
+	parent: ResolvingMetadata,
+): Promise<Metadata> {
+	const { projectID } = await params;
+	const data = projectsByName[projectID];
+	const title = data?.title;
+	const description = data?.summary;
+	const returnObj: Metadata = {
+		openGraph: {},
+	};
+
+	if (title) {
+		returnObj.title = title;
+		returnObj.openGraph!.title = title;
+	}
+	if (description) {
+		returnObj.description = description;
+		returnObj.openGraph!.description = description;
+	}
+
+	return returnObj;
+}
 
 export default async function ProjectDetailPage({
 	params,

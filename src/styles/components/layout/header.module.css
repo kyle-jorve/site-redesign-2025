@@ -31,14 +31,14 @@
 	.logo {
 		display: block;
 		text-decoration: none;
+
+		&:focus-visible {
+			outline-color: var(--gold);
+		}
 	}
 
 	.logo-img {
 		width: 3rem;
-	}
-
-	*:focus-visible {
-		outline-color: var(--gold);
 	}
 
 	@media (min-width: 40em) {

@@ -17,10 +17,10 @@
 	.copyright {
 		margin: 0;
 		color: inherit;
+	}
 
-		a {
-			color: var(--gold);
-		}
+	.copyright a {
+		color: var(--gold);
 	}
 
 	.footer-icons {

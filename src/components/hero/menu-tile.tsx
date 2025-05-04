@@ -1,3 +1,4 @@
+import { ImageDataType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
 import { printClassNames } from "@/utils/utils";
 import ButtonLink from "@/components/global/button-link";
@@ -25,6 +26,27 @@ export default function MenuTile({
 		type !== "long" ? "underline underline-light underline-center" : "",
 		styles.header,
 	]);
+	const imageConfig: ImageDataType | undefined = image
+		? {
+				...image,
+				sources: [
+					{
+						minScreenWidth: "48em",
+						imageWidth: 480,
+						imageHeight: 480,
+					},
+					{
+						minScreenWidth: "40em",
+						imageWidth: 768,
+						imageHeight: 384,
+					},
+				],
+				mobileSource: {
+					imageWidth: 640,
+					imageHeight: 384,
+				},
+		  }
+		: undefined;
 
 	return (
 		<article
@@ -49,10 +71,10 @@ export default function MenuTile({
 				className={styles.background}
 				aria-hidden={!image}
 			>
-				{!!image && (
+				{!!imageConfig && (
 					<ResponsiveImage
 						className={styles["image"]}
-						image={image}
+						image={imageConfig}
 					/>
 				)}
 			</div>

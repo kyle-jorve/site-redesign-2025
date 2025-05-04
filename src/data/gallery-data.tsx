@@ -71,10 +71,10 @@ export const projects: ProjectType[] = [
 		],
 		thumbImage: imageMetaData.herbalist,
 		slideshow: [
+			imageMetaData.ignobleBloodVignettesSpreadBelryanne,
 			imageMetaData.ignobleBloodVignettesSpreadPendrake,
 			imageMetaData.ignobleBloodVignettesSpreadTalis,
 			imageMetaData.ignobleBloodVignettesSpreadAndel,
-			imageMetaData.ignobleBloodVignettesSpreadBelryanne,
 			imageMetaData.ignobleBloodVignettesSpreadToval,
 			imageMetaData.ignobleBloodVignettesSpreadKyra,
 			imageMetaData.ignobleBloodVignettesSpreadSamil,
@@ -173,8 +173,18 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.pendrakesChamber,
+			imageMetaData.ignobleBloodVignettesAndel,
 			imageMetaData.herbalist,
+			imageMetaData.ignobleBloodVignettesCargha,
+			imageMetaData.ignobleBloodVignettesCarghaPortrait,
+			imageMetaData.ignobleBloodVignettesKyra,
+			imageMetaData.ignobleBloodVignettesKyraPortrait,
+			imageMetaData.ignobleBloodVignettesPendrake,
+			imageMetaData.ignobleBloodVignettesSamil,
+			imageMetaData.ignobleBloodVignettesTalis,
+			imageMetaData.ignobleBloodVignettesToval,
+			imageMetaData.ignobleBloodVignettesTovalPortrait,
+			imageMetaData.pendrakesChamber,
 			imageMetaData.becomingRuna,
 			imageMetaData.berned,
 		],
@@ -1161,11 +1171,14 @@ export const projects: ProjectType[] = [
 							remained the same.
 						</p>
 						<p>
-							<b>Crow is a sociopath.</b> At a young age, he was
-							recognized for his unique gifts and given a chance
-							at a life that would both indulge and reward his
-							murderous tendencies. And so a state-sponsored
-							assassin was born.
+							<b>Crow is a sociopath</b> who was severely
+							traumatized at a young age and, as a result,
+							developed a predilection for killing as a coping
+							impulse. After his first arrest, he was recognized
+							for his unique gifts and given a chance at a life
+							that would both indulge and reward his murderous
+							tendencies. And so a state-sponsored assassin was
+							born.
 						</p>
 						<p>
 							From his home city of Valkyrie, Crow is sent on
@@ -1311,7 +1324,7 @@ export const featuredProjectsFeatureType: FeatureType[] = featuredProjects.map(
 		name: proj.name,
 		title: proj.title,
 		description: <p className="body-text large">{proj.summary}</p>,
-		image: proj.thumbImage.feature,
+		image: proj.thumbImage,
 		url: `/projects/${proj.name}`,
 		category: proj.categories.find((cat) => cat.primary),
 	}),

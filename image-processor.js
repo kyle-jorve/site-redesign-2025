@@ -1,9 +1,15 @@
 import sharp from "sharp";
 import fs from "fs/promises";
+import { existsSync } from "fs";
 import path from "path";
 
+const settings = {
+	skipExistingDirectories: true,
+};
+
 async function processImages(inputDir) {
-	const commonSizes = [960, 768, 720, 640, 512, 480, 320];
+	const commonSizes = [1024, 960, 768, 720, 640, 512, 480, 320];
+	const desktopSizes = [1920, 1440];
 	const commonFormats = ["avif", "webp"];
 
 	try {
@@ -13,13 +19,19 @@ async function processImages(inputDir) {
 			const ext = path.extname(file);
 			const base = path.basename(file, ext);
 			const inputPath = path.join(inputDir, file);
-			const sizes =
-				ext === ".gif"
-					? commonSizes
-					: [1920, 1440, 1024, ...commonSizes];
+			const sizes = (() => {
+				if (ext === ".gif" || base.endsWith("-mobile"))
+					return commonSizes;
+				if (base.endsWith("-desktop")) return desktopSizes;
+				return [...desktopSizes, ...commonSizes];
+			})();
 			const formats = [...commonFormats, ext === ".gif" ? "gif" : "jpg"];
+			const newDirectory = `./public/images/${base}/`;
 
-			await fs.mkdir(`./public/images/${base}/`, {
+			if (settings.skipExistingDirectories && existsSync(newDirectory))
+				continue;
+
+			await fs.mkdir(newDirectory, {
 				recursive: true,
 			});
 
@@ -28,10 +40,7 @@ async function processImages(inputDir) {
 					const extChange = ext.replace(".", "") !== format;
 					const newExt = !extChange ? ext : `.${format}`;
 					const newFileName = `${base}-kyle-jorve-${size}${newExt}`;
-					const outputPath = path.join(
-						`./public/images/output/${base}/`,
-						newFileName,
-					);
+					const outputPath = path.join(newDirectory, newFileName);
 					const image = sharp(inputPath).resize(size);
 
 					if (extChange) image.toFormat(format);

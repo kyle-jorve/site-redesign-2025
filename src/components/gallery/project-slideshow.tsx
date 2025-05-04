@@ -31,6 +31,30 @@ export default function ProjectSlideshow({
 		notASlideshow ? styles["single-image"] : "",
 		className,
 	]);
+	const imageConfigs: ImageDataType[] = images.map((image) => ({
+		...image,
+		sources: [
+			{
+				minScreenWidth: "90em",
+				imageWidth: 1920,
+				imageHeight: 968,
+			},
+			{
+				minScreenWidth: "64em",
+				imageWidth: 1440,
+				imageHeight: 726,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 516,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+			imageHeight: 480,
+		},
+	}));
 
 	function getSlideOffset(slideIndex: number) {
 		const componentRef = sectionRef.current;
@@ -175,7 +199,7 @@ export default function ProjectSlideshow({
 					ref={slideContainerRef}
 					className={styles.slides}
 				>
-					{images.map((image, index) => {
+					{imageConfigs.map((image, index) => {
 						const isActiveSlide = activeSlide === index;
 
 						return (

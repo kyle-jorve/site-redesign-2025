@@ -5,19 +5,22 @@ export type ImageMetaType = {
 	pathKey: string;
 	alt: string;
 	isAnimated?: boolean;
+	horizontalOrientation?: "left" | "center" | "right";
 	verticalOrientation?: "top" | "center" | "bottom";
 };
 
 export type ImageDataType = {
-	sources: {
-		minScreenWidth: string;
-		imageWidth: number;
-		imageHeight?: number;
-	}[];
 	mobileSource: {
 		imageWidth: number;
 		imageHeight?: number;
+		pathKey?: string;
 	};
+	sources?: {
+		minScreenWidth: string;
+		imageWidth: number;
+		imageHeight?: number;
+		pathKey?: string;
+	}[];
 } & ImageMetaType;
 
 export type SocialMediaType = {
