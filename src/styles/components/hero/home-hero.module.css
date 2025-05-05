@@ -85,7 +85,7 @@
 		margin-bottom: 0;
 
 		.image {
-			height: 77.5rem;
+			height: 84rem;
 		}
 	}
 
@@ -100,12 +100,22 @@
 		.supertitle {
 			margin-left: 3.25rem;
 		}
+
+		.image {
+			height: 60rem;
+			object-position: 25% bottom !important;
+		}
 	}
 
 	@media (min-width: 90em) {
 		.content {
 			top: 20%;
 			right: 5%;
+		}
+
+		.image {
+			height: auto;
+			object-position: left bottom !important;
 		}
 	}
 

@@ -92,7 +92,7 @@
 			--box-shadow-hover: var(--hard-shadow);
 
 			border: var(--border-cream);
-			backdrop-filter: var(--backrop-blur);
+			backdrop-filter: var(--backdrop-blur);
 		}
 
 		&.dark {

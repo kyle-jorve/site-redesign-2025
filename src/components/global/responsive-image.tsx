@@ -1,26 +1,19 @@
 "use client";
 
-import { useState, useEffect, forwardRef } from "react";
-import { ImageDataType, ImageMetaType } from "@/types/global-types";
-import { printClassNames, mergeImageData } from "@/utils/utils";
+import { useState, forwardRef } from "react";
+import { ImageDataType, ImageSourceType } from "@/types/global-types";
+import { printClassNames, getThumbnailUrl } from "@/utils/utils";
 
 export type ResponsiveImageProps = {
 	image: ImageDataType;
-	mobileImage?: ImageDataType;
-} & {
-	isAnimated?: ImageMetaType["isAnimated"];
-	horizontalOrientation?: ImageMetaType["horizontalOrientation"];
-	verticalOrientation?: ImageMetaType["verticalOrientation"];
 } & React.ImgHTMLAttributes<HTMLImageElement>;
 
 const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 	function ResponsiveImage(
 		{
 			image,
-			mobileImage = undefined,
 			loading = "lazy",
 			fetchPriority = "low",
-			isAnimated = false,
 			className = "",
 			onLoad = () => {},
 			style = undefined,
@@ -34,39 +27,28 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 			loaded ? "loaded" : "",
 			className,
 		]);
-		const formats = (() => {
-			const returnArray = ["avif", "webp"];
-
-			if (isAnimated) returnArray.push("gif");
-			else returnArray.push("jpg");
-
-			return returnArray;
-		})();
-		const baseImageUrl = getBaseUrl(image.pathKey);
-		const mobileBaseUrl = mobileImage
-			? getBaseUrl(mobileImage.pathKey)
-			: baseImageUrl;
-		const mobileURL = `${mobileBaseUrl}-${image.mobileSource.imageWidth}.${
-			isAnimated ? "gif" : "jpg"
-		}`;
+		const formats = ["avif", "webp", "jpg"];
+		const mobileURL = getThumbnailUrl({
+			pathKey: image.mobileSource.pathKey || image.pathKey,
+			imageWidth: image.mobileSource.imageWidth,
+			format: "jpg",
+		});
 		const appliedStyle = {
 			...style,
-			objectPosition: `${image.horizontalOrientation || "center"} ${
-				image.verticalOrientation || "center"
-			}`,
+			...getObjectPositionStyles(image),
 		};
-		const mergedImageData = mergeImageData(image, mobileImage);
 
-		function getBaseUrl(pathKey: string) {
-			return `/images/${pathKey}/${pathKey}-kyle-jorve`;
+		function getObjectPositionStyles(
+			src: ImageSourceType | ImageDataType | undefined,
+		): React.CSSProperties {
+			if (!src) return {};
+
+			return {
+				objectPosition: `${src.horizontalOrientation || "center"} ${
+					src.verticalOrientation || "center"
+				}`,
+			};
 		}
-
-		// if for whatever reason the load event fails to trigger
-		useEffect(() => {
-			setTimeout(() => {
-				setLoaded(true);
-			}, 1000);
-		}, []);
 
 		function handleLoad(event: React.SyntheticEvent<HTMLImageElement>) {
 			setLoaded(true);
@@ -75,13 +57,14 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 
 		return (
 			<picture>
-				{mergedImageData.sources?.length &&
-					mergedImageData.sources.map((src) => {
+				{image.sources?.length &&
+					image.sources.map((src) => {
 						return formats.map((format) => {
-							const baseUrl = src.pathKey
-								? getBaseUrl(src.pathKey)
-								: baseImageUrl;
-							const url = `${baseUrl}-${src.imageWidth}.${format}`;
+							const url = getThumbnailUrl({
+								pathKey: src.pathKey || image.pathKey,
+								imageWidth: src.imageWidth,
+								format,
+							});
 							const imageFormat =
 								format === "jpg" ? "jpeg" : format;
 
@@ -101,17 +84,20 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 				{formats
 					.filter((format) => format !== "jpg" && format !== "gif")
 					.map((format) => {
-						const url = `${mobileBaseUrl}-${mergedImageData.mobileSource.imageWidth}.${format}`;
+						const url = getThumbnailUrl({
+							pathKey:
+								image.mobileSource.pathKey || image.pathKey,
+							imageWidth: image.mobileSource.imageWidth,
+							format,
+						});
 
 						return (
 							<source
-								key={`${mergedImageData.name}-${format}-${mergedImageData.mobileSource.imageWidth}-mobile`}
+								key={`${image.name}-${format}-${image.mobileSource.imageWidth}-mobile`}
 								srcSet={url}
 								type={`image/${format}`}
-								width={mergedImageData.mobileSource.imageWidth}
-								height={
-									mergedImageData.mobileSource.imageHeight
-								}
+								width={image.mobileSource.imageWidth}
+								height={image.mobileSource.imageHeight}
 							/>
 						);
 					})}
@@ -120,13 +106,13 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 					ref={ref}
 					className={classes}
 					src={mobileURL}
-					alt={mergedImageData.alt}
+					alt={image.alt}
 					loading={loading}
 					fetchPriority={fetchPriority}
-					width={mergedImageData.mobileSource.imageWidth}
-					height={mergedImageData.mobileSource.imageHeight}
-					onLoad={handleLoad}
+					width={image.mobileSource.imageWidth}
+					height={image.mobileSource.imageHeight}
 					style={appliedStyle}
+					onLoad={handleLoad}
 					{...otherProps}
 				/>
 			</picture>

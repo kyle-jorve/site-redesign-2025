@@ -1,4 +1,6 @@
 .bio {
+	--image-aspect: 64 / 73;
+
 	position: relative;
 	width: 100%;
 	max-width: var(--width-wider);
@@ -17,7 +19,7 @@
 			inset: -0.5rem 1rem auto 2rem;
 			z-index: 6;
 			display: block;
-			aspect-ratio: 64 / 73;
+			aspect-ratio: var(--image-aspect);
 			content: "";
 			border: var(--border-gold-dotted);
 			border-radius: var(--border-radius);
@@ -39,6 +41,7 @@
 		position: relative;
 		order: -1;
 		width: calc(100% - 3rem);
+		aspect-ratio: var(--image-aspect);
 		margin: 0 auto;
 		border-radius: var(--border-radius);
 		box-shadow: var(--hard-shadow-gold-long);
@@ -58,6 +61,8 @@
 
 	.image {
 		width: 100%;
+		height: 100%;
+		border-radius: var(--border-radius);
 	}
 
 	&.hero {
@@ -81,12 +86,12 @@
 	}
 
 	@media (min-width: 40em) {
-		.inner::before {
-			aspect-ratio: 128 / 85;
-		}
+		--image-aspect: 64 / 55;
 	}
 
 	@media (min-width: 64em) {
+		--image-aspect: 384 / 457;
+
 		.inner {
 			grid-template-columns: 54.48% minmax(0, 1fr);
 			align-items: start;

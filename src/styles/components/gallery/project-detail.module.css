@@ -42,6 +42,7 @@
 	}
 
 	.image-wrapper {
+		aspect-ratio: 5 / 4;
 		overflow: hidden;
 
 		&:nth-child(3n - 2) {
@@ -59,12 +60,17 @@
 
 	.image {
 		width: 100%;
+		height: 100%;
 	}
 }
 
 @media (min-width: 40em) {
 	.problem-solution-row {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.description-grid .image-wrapper:nth-child(3n - 2) {
+		aspect-ratio: 16 / 9;
 	}
 }
 
@@ -99,21 +105,32 @@
 		}
 
 		.image-wrapper {
+			&:first-child,
+			&:nth-child(3n - 2) {
+				aspect-ratio: 1;
+			}
+
+			&:first-child,
+			&:nth-child(3n + 1):not(:first-child) {
+				grid-column: unset;
+			}
+
 			&:first-child {
 				align-self: end;
 			}
 
-			&:nth-child(3n + 1) {
-				grid-column: unset;
+			&:nth-child(3n + 1):not(:first-child) {
+				aspect-ratio: 5 / 4;
 			}
 
 			&:first-child,
-			&:nth-child(3n + 1) {
+			&:nth-child(3n + 1):not(:first-child) {
 				border-radius: var(--border-radius) 0 0 var(--border-radius);
 			}
 
-			&:nth-child(3n -1) {
+			&:nth-child(3n - 1) {
 				grid-column: span 2;
+				aspect-ratio: 2 / 1;
 				border-radius: 0;
 			}
 

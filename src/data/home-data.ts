@@ -6,7 +6,7 @@ import {
 	pendrakesChamber,
 	herbalist,
 	theaterToolkitDesignPhase,
-} from "@/data/images";
+} from "@/data/media-data";
 import { MenuTileType } from "@/types/hero-types";
 
 export const heroImageDesktop: ImageMetaType = homeHeroImageDesktop;

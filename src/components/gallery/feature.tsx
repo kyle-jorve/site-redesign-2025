@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+import { getThumbnailUrl } from "@/utils/utils";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
@@ -14,10 +15,14 @@ import styles from "@/styles/components/gallery/feature-grid.module.css";
 export type FeatureProps = Omit<FeatureType, "name"> &
 	React.HTMLAttributes<HTMLElement>;
 
+let interval: ReturnType<typeof setInterval> | null = null;
+
 export default function Feature({
 	title,
 	description,
 	image,
+	videoSrc = undefined,
+	imageAspect = "standard",
 	url = undefined,
 	buttonText = "See More",
 	alignment = "image-right",
@@ -29,12 +34,18 @@ export default function Feature({
 }: FeatureProps) {
 	const articleRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(articleRef);
+	const [activeImage, setActiveImage] = useState<number>(0);
+	const imagesData = Array.isArray(image) ? image : [image];
 	const classes = printClassNames([
 		styles.feature,
 		styles[alignment],
+		imagesData.length > 1 ? styles["multiple-images"] : "",
 		className,
 	]);
-	const imagesData = Array.isArray(image) ? image : [image];
+	const mobileSource = {
+		imageWidth: 640,
+		imageHeight: 640,
+	};
 	const imageConfig: ImageDataType[] = imagesData.map((image) => ({
 		...image,
 		sources: [
@@ -49,20 +60,61 @@ export default function Feature({
 				imageHeight: 512,
 			},
 		],
-		mobileSource: {
-			imageWidth: 640,
-			imageHeight: 640,
-		},
+		mobileSource,
 	}));
-	const Images = imageConfig.map((image) => {
-		return (
-			<ResponsiveImage
-				key={image.name}
-				className={styles.image}
-				image={image}
+	const Images = videoSrc ? (
+		<video
+			className={styles.video}
+			autoPlay
+			loop
+			muted
+			playsInline
+			poster={getThumbnailUrl({
+				pathKey: imagesData[0].pathKey,
+				imageWidth: mobileSource.imageWidth,
+				format: "jpg",
+			})}
+		>
+			<source
+				src={videoSrc}
+				type="video/mp4"
 			/>
-		);
-	});
+		</video>
+	) : (
+		imageConfig.map((image, index) => {
+			const classes = printClassNames([
+				styles.image,
+				imagesData.length > 1 && activeImage !== index
+					? styles.hide
+					: "",
+			]);
+
+			return (
+				<ResponsiveImage
+					key={image.name}
+					className={classes}
+					image={image}
+				/>
+			);
+		})
+	);
+
+	useEffect(() => {
+		if (imagesData.length <= 1) return;
+
+		if (interval) clearInterval(interval);
+
+		interval = setInterval(() => {
+			setActiveImage((prev) => {
+				if (prev === imagesData.length - 1) return 0;
+				return prev + 1;
+			});
+		}, 2250);
+
+		return () => {
+			if (interval) clearInterval(interval);
+		};
+	}, [imagesData.length]);
 
 	return (
 		<article
@@ -107,7 +159,7 @@ export default function Feature({
 				)}
 			</div>
 
-			<div className={styles["image-col"]}>
+			<div className={`${styles["image-col"]} ${styles[imageAspect]}`}>
 				{!!url ? (
 					<CustomLink
 						to={url}

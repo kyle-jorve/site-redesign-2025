@@ -21,47 +21,14 @@ export function deriveButtonShadowColor(
 	if (color === "light") return undefined;
 }
 
-export function mergeImageData(
-	image: ImageDataType,
-	mobileImage: ImageDataType | undefined = undefined,
-) {
-	if (!mobileImage) return image;
-	if (!image.sources?.length) return mobileImage;
-
-	const returnObj = { ...mobileImage };
-
-	if (returnObj.sources) {
-		returnObj.sources = returnObj.sources.map((src) => ({
-			...src,
-			pathKey: mobileImage.pathKey,
-		}));
-		returnObj.mobileSource.pathKey = mobileImage.pathKey;
-	}
-
-	for (const source of image.sources) {
-		if (
-			returnObj.sources?.some(
-				(src) => src.minScreenWidth === source.minScreenWidth,
-			)
-		)
-			continue;
-
-		if (!returnObj.sources?.length) {
-			returnObj.sources = [source];
-			continue;
-		}
-
-		returnObj.sources.push(source);
-	}
-
-	returnObj.sources?.sort((a, b) => {
-		const widthA = parseInt(a.minScreenWidth);
-		const widthB = parseInt(b.minScreenWidth);
-
-		if (widthA < widthB) return 1;
-		if (widthA > widthB) return -1;
-		return 0;
-	});
-
-	return returnObj;
+export function getThumbnailUrl({
+	pathKey,
+	imageWidth,
+	format,
+}: {
+	pathKey: string;
+	imageWidth: number;
+	format: string;
+}) {
+	return `/images/${pathKey}/${pathKey}-kyle-jorve-${imageWidth}.${format}`;
 }

@@ -224,20 +224,24 @@ export default function ProjectSlideshow({
 				</div>
 			</div>
 
-			<div className={styles.dots}>
-				{images.map((image, index) => {
-					return (
-						<button
-							key={`${image.name}-dot`}
-							className={`${styles.dot}${
-								index === activeSlide ? ` ${styles.active}` : ""
-							}`}
-							onClick={() => handleDotClick(index)}
-							aria-label={`Go to slide ${index + 1}`}
-						></button>
-					);
-				})}
-			</div>
+			{!notASlideshow && (
+				<div className={styles.dots}>
+					{images.map((image, index) => {
+						return (
+							<button
+								key={`${image.name}-dot`}
+								className={`${styles.dot}${
+									index === activeSlide
+										? ` ${styles.active}`
+										: ""
+								}`}
+								onClick={() => handleDotClick(index)}
+								aria-label={`Go to slide ${index + 1}`}
+							></button>
+						);
+					})}
+				</div>
+			)}
 		</section>
 	);
 }

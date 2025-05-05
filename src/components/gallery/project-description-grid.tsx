@@ -38,12 +38,12 @@ export default function ProjectDescriptionGrid({
 			{
 				minScreenWidth: "90em",
 				imageWidth: 1920,
-				imageHeight: 1080,
+				imageHeight: 1920,
 			},
 			{
 				minScreenWidth: "64em",
 				imageWidth: 1440,
-				imageHeight: 810,
+				imageHeight: 1440,
 			},
 			{
 				minScreenWidth: "40em",

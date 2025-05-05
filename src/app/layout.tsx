@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { SiteContextProvider } from "@/utils/site-context";
-import { bioImageBody } from "@/data/images";
+import { bioImageBody } from "@/data/media-data";
 import Main from "@/components/layout/main";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";

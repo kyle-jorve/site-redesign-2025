@@ -4,7 +4,7 @@ import {
 	FeatureType,
 	ProjectType,
 } from "@/types/gallery-types";
-import * as imageMetaData from "@/data/images";
+import * as mediaData from "@/data/media-data";
 
 export const pageTitle = "Projects";
 export const pageSummary = (
@@ -69,17 +69,17 @@ export const projects: ProjectType[] = [
 			categories.writing,
 			categories.personalWork,
 		],
-		thumbImage: imageMetaData.herbalist,
+		thumbImage: mediaData.herbalist,
 		slideshow: [
-			imageMetaData.ignobleBloodVignettesSpreadBelryanne,
-			imageMetaData.ignobleBloodVignettesSpreadPendrake,
-			imageMetaData.ignobleBloodVignettesSpreadTalis,
-			imageMetaData.ignobleBloodVignettesSpreadAndel,
-			imageMetaData.ignobleBloodVignettesSpreadToval,
-			imageMetaData.ignobleBloodVignettesSpreadKyra,
-			imageMetaData.ignobleBloodVignettesSpreadSamil,
-			imageMetaData.ignobleBloodVignettesSpreadCapor,
-			imageMetaData.ignobleBloodVignettesSpreadCargha,
+			mediaData.ignobleBloodVignettesSpreadBelryanne,
+			mediaData.ignobleBloodVignettesSpreadPendrake,
+			mediaData.ignobleBloodVignettesSpreadTalis,
+			mediaData.ignobleBloodVignettesSpreadAndel,
+			mediaData.ignobleBloodVignettesSpreadToval,
+			mediaData.ignobleBloodVignettesSpreadKyra,
+			mediaData.ignobleBloodVignettesSpreadSamil,
+			mediaData.ignobleBloodVignettesSpreadCapor,
+			mediaData.ignobleBloodVignettesSpreadCargha,
 		],
 		summary: `An art book project meant to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		features: [
@@ -94,14 +94,14 @@ export const projects: ProjectType[] = [
 							both my design and illustrative talents.
 						</p>
 						<p>
-							I wanted to create a page layout that spoke of
+							I wanted to create a book design that spoke of
 							Ignoble Blood&apos;s hard fantasy roots without
 							looking overly historical. The Ignoble Blood
 							universe is a fictional one, after all.
 						</p>
 					</>
 				),
-				image: imageMetaData.ignobileBloodVignettesPageLayout,
+				image: mediaData.ignobileBloodVignettesPageLayout,
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-2",
@@ -122,7 +122,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.ignobleBloodVignettesTypography,
+				image: mediaData.ignobleBloodVignettesTypography,
 			},
 			{
 				name: "ignoble-blood-vignettes-progress-step-3",
@@ -144,7 +144,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.ignobleBloodVignettesPageCargha,
+				image: mediaData.ignobleBloodVignettesPageCargha,
 			},
 		],
 		descriptionTitle: "Illustrating Ignoble Blood",
@@ -173,20 +173,19 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.ignobleBloodVignettesAndel,
-			imageMetaData.herbalist,
-			imageMetaData.ignobleBloodVignettesCargha,
-			imageMetaData.ignobleBloodVignettesCarghaPortrait,
-			imageMetaData.ignobleBloodVignettesKyra,
-			imageMetaData.ignobleBloodVignettesKyraPortrait,
-			imageMetaData.ignobleBloodVignettesPendrake,
-			imageMetaData.ignobleBloodVignettesSamil,
-			imageMetaData.ignobleBloodVignettesTalis,
-			imageMetaData.ignobleBloodVignettesToval,
-			imageMetaData.ignobleBloodVignettesTovalPortrait,
-			imageMetaData.pendrakesChamber,
-			imageMetaData.becomingRuna,
-			imageMetaData.berned,
+			mediaData.herbalist,
+			mediaData.ignobleBloodVignettesAndel,
+			mediaData.ignobleBloodVignettesCargha,
+			mediaData.ignobleBloodVignettesCarghaPortrait,
+			mediaData.ignobleBloodVignettesKyra,
+			mediaData.ignobleBloodVignettesPendrake,
+			mediaData.ignobleBloodVignettesKyraPortrait,
+			mediaData.ignobleBloodVignettesSamil,
+			mediaData.ignobleBloodVignettesTalis,
+			mediaData.ignobleBloodVignettesToval,
+			mediaData.ignobleBloodVignettesTovalPortrait,
+			mediaData.berned,
+			mediaData.becomingRuna,
 		],
 	},
 	{
@@ -202,11 +201,11 @@ export const projects: ProjectType[] = [
 			categories.illustration,
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.theaterToolkitHowItWorks,
+		thumbImage: mediaData.theaterToolkitHowItWorks,
 		slideshow: [
-			imageMetaData.theaterToolkitHowItWorks,
-			imageMetaData.theaterToolkitDesignPhase,
-			imageMetaData.theaterToolkitPosIntegration,
+			mediaData.theaterToolkitHowItWorks,
+			mediaData.theaterToolkitDesignPhase,
+			mediaData.theaterToolkitPosIntegration,
 		],
 		summary: `A simple website solution for independent movie theaters.`,
 		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
@@ -231,7 +230,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.theaterToolkitSeamlessUx,
+				image: mediaData.theaterToolkitSeamlessUx,
 			},
 			{
 				name: "theater-toolkit-progress-step-2",
@@ -257,7 +256,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.theaterToolkitWebsiteHome,
+				image: mediaData.theaterToolkitWebsiteHome,
 			},
 			{
 				name: "theater-toolkit-progress-step-3",
@@ -281,7 +280,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.theaterToolkitLoyaltyAppFlyer,
+				image: mediaData.theaterToolkitLoyaltyAppFlyer,
 			},
 		],
 		descriptionTitle: "Creating an Eye-Catching Brand",
@@ -305,13 +304,13 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.theaterToolkitCheckout,
-			imageMetaData.theaterToolkitProductionSupport,
-			imageMetaData.theaterToolkitFeatures,
-			imageMetaData.theaterToolkitSeamlessUx,
-			imageMetaData.theaterToolkitWebsiteHome,
-			imageMetaData.theaterToolkitWebsiteContent,
-			imageMetaData.theaterToolkitWebsiteLanding,
+			mediaData.theaterToolkitProductionSupport,
+			mediaData.theaterToolkitFeatures,
+			mediaData.theaterToolkitCheckout,
+			mediaData.theaterToolkitSeamlessUx,
+			mediaData.theaterToolkitWebsiteHome,
+			mediaData.theaterToolkitWebsiteContent,
+			mediaData.theaterToolkitWebsiteLanding,
 		],
 	},
 	{
@@ -325,11 +324,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.visitIrvingScrollingEditorial,
+		thumbImage: mediaData.visitIrvingScrollingEditorial,
 		slideshow: [
-			imageMetaData.visitIrvingScrollingEditorial,
-			imageMetaData.visitIrvingHome,
-			imageMetaData.visitIrvingPreviewSlider,
+			mediaData.visitIrvingScrollingEditorial,
+			mediaData.visitIrvingHome,
+			mediaData.visitIrvingPreviewSlider,
 		],
 		summary: `A website to market a very musical Texas tourist destination.`,
 		overviewText: (
@@ -364,7 +363,8 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.visitIrvingHomeHero,
+				image: mediaData.visitIrvingHomeHero,
+				videoSrc: mediaData.visitIrvingHomeHeroVideo,
 			},
 			{
 				name: "visit-irving-progress-step-2",
@@ -380,12 +380,13 @@ export const projects: ProjectType[] = [
 						<p>
 							For that reason, this horizonally scrolling blog
 							grid was an absolute joy to build. It consumes the
-							screen and pulls you in with its old typography and
+							screen and pulls you in with its bold typography and
 							colorful odes to Irving&apos;s rich music culture.
 						</p>
 					</>
 				),
-				image: imageMetaData.visitIrvingScrollingEditorialAnimated,
+				image: mediaData.visitIrvingScrollingEditorial,
+				videoSrc: mediaData.visitIrvingScrollingEditorialVideo,
 			},
 			{
 				name: "visit-irving-progress-step-3",
@@ -406,7 +407,8 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.visitIrvingPreviewSliderAnimated,
+				image: mediaData.visitIrvingPreviewSlider,
+				videoSrc: mediaData.visitIrvingPreviewSliderVideo,
 			},
 		],
 		descriptionTitle: "A Web Developer's Dream",
@@ -426,9 +428,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.visitIrvingHome,
-			imageMetaData.visitIrvingScrollingEditorial,
-			imageMetaData.visitIrvingPreviewSlider,
+			mediaData.visitIrvingHomeHero,
+			mediaData.visitIrvingHome,
+			mediaData.visitIrvingScrollingEditorial,
+			mediaData.visitIrvingPreviewSlider,
 		],
 	},
 	{
@@ -441,11 +444,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.showplaceCinemasHome,
+		thumbImage: mediaData.showplaceCinemasHome,
 		slideshow: [
-			imageMetaData.showplaceCinemasHome,
-			imageMetaData.showplaceCinemasMovie,
-			imageMetaData.showplaceCinemasMobile,
+			mediaData.showplaceCinemasHome,
+			mediaData.showplaceCinemasMovie,
+			mediaData.showplaceCinemasMobile,
 		],
 		summary: `A website design for a one-of-a-kind indie movie theater.`,
 		problemText: `Showplace Cinemas was among the first theaters to adopt the Theater Toolkit product. In order to bring them up to speed with the modern web, we were tasked with giving their site a modern makeover.`,
@@ -471,7 +474,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.showplaceCinemasMobile,
+				image: mediaData.showplaceCinemasMobile,
 			},
 			{
 				name: "showplace-cinemas-progress-step-2",
@@ -494,7 +497,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.showplaceCinemasHome,
+				image: mediaData.showplaceCinemasHome,
 			},
 			{
 				name: "showplace-cinemas-progress-step-3",
@@ -514,17 +517,19 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.showplaceCinemasMovie,
+				image: mediaData.showplaceCinemasMovie,
 			},
 			{
 				name: "showplace-cinemas-progress-step-4",
 				supertitle: "A Seamless",
 				title: "Checkout Process",
+				imageAspect: "wide",
 				description: (
 					<>
 						<p className="body-text large">
-							What good are all those showtimes if you can&apos;
-							make your booking faster than a movie trailer?
+							What good are all those showtimes if you can&apos;t
+							make your booking faster than you can finish a movie
+							trailer?
 						</p>
 						<p>
 							An easy, intuitive design guides users through the
@@ -535,10 +540,10 @@ export const projects: ProjectType[] = [
 					</>
 				),
 				image: [
-					imageMetaData.showplaceCinemasSeatSelect,
-					imageMetaData.showplaceCinemasTicketSelect,
-					imageMetaData.showplaceCinemasPayment,
-					imageMetaData.showplaceCinemasReceipt,
+					mediaData.showplaceCinemasSeatSelect,
+					mediaData.showplaceCinemasTicketSelect,
+					mediaData.showplaceCinemasPayment,
+					mediaData.showplaceCinemasReceipt,
 				],
 			},
 		],
@@ -568,10 +573,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.showplaceCinemasContact,
-			imageMetaData.showplaceCinemasHome,
-			imageMetaData.showplaceCinemasMovie,
-			imageMetaData.showplaceCinemasMenu,
+			mediaData.showplaceCinemasContact,
+			mediaData.showplaceCinemasHome,
+			mediaData.showplaceCinemasMovie,
+			mediaData.showplaceCinemasMenu,
 		],
 	},
 	{
@@ -586,8 +591,8 @@ export const projects: ProjectType[] = [
 			categories.development,
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.captiveContentHome,
-		slideshow: [imageMetaData.captiveContentHome],
+		thumbImage: mediaData.captiveContentHome,
+		slideshow: [mediaData.captiveContentHome],
 		summary: `A product that bridges the gap between advertisers and captive audiences.`,
 		problemText: `All over the world, people are waiting. Waiting for the bus, waiting for an appointment to begin, waiting to connect to a Wi-Fi hotspot. Captive Content is the affordable ad-serving solution for capitalizing on all that waiting potential.`,
 		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the mood of the website, and its illustrations, were extrapolated from there.`,
@@ -611,9 +616,9 @@ export const projects: ProjectType[] = [
 					</>
 				),
 				image: [
-					imageMetaData.captiveContentLogo1,
-					imageMetaData.captiveContentLogo2,
-					imageMetaData.captiveContentLogo3,
+					mediaData.captiveContentLogo1,
+					mediaData.captiveContentLogo2,
+					mediaData.captiveContentLogo3,
 				],
 			},
 			{
@@ -633,7 +638,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.captiveContentHome,
+				image: mediaData.captiveContentHome,
 			},
 		],
 		descriptionSupertitle: "An Ad Server for a Captive Audience",
@@ -656,10 +661,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.captiveContentHome,
-			imageMetaData.captiveContentLogo1,
-			imageMetaData.captiveContentLogo2,
-			imageMetaData.captiveContentLogo3,
+			mediaData.captiveContentHome,
+			mediaData.captiveContentLogo1,
+			mediaData.captiveContentLogo2,
+			mediaData.captiveContentLogo3,
 		],
 	},
 	{
@@ -672,11 +677,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.visitLasVegasRestaurants,
+		thumbImage: mediaData.visitLasVegasRestaurants,
 		slideshow: [
-			imageMetaData.visitLasVegasRestaurants,
-			imageMetaData.visitLasVegasMarquee,
-			imageMetaData.visitLasVegasHome,
+			mediaData.visitLasVegasRestaurants,
+			mediaData.visitLasVegasMarquee,
+			mediaData.visitLasVegasHome,
 		],
 		summary: `A website to market the world's most unique destination.`,
 		overviewText: (
@@ -714,7 +719,8 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.visitLasVegasNavAnimated,
+				image: mediaData.visitLasVegasNav,
+				videoSrc: mediaData.visitLasVegasNavVideo,
 			},
 			{
 				name: "visit-las-vegas-progress-step-2",
@@ -733,7 +739,8 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.visitLasVegasEventsSliderAnimated,
+				image: mediaData.visitLasVegasEventsSlider,
+				videoSrc: mediaData.visitLasVegasEventsSliderVideo,
 			},
 			{
 				name: "visit-las-vegas-progress-step-3",
@@ -754,7 +761,8 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.visitLasVegasMarqueeAnimated,
+				image: mediaData.visitLasVegasMarquee,
+				videoSrc: mediaData.visitLasVegasMarqueeVideo,
 			},
 		],
 		descriptionSupertitle: `Business on the Back End`,
@@ -788,10 +796,10 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.visitLasVegasHome,
-			imageMetaData.visitLasVegasRestaurants,
-			imageMetaData.visitLasVegasEventsSlider,
-			imageMetaData.visitLasVegasMarquee,
+			mediaData.visitLasVegasHome,
+			mediaData.visitLasVegasRestaurants,
+			mediaData.visitLasVegasEventsSlider,
+			mediaData.visitLasVegasMarquee,
 		],
 	},
 	{
@@ -805,11 +813,11 @@ export const projects: ProjectType[] = [
 			categories.design,
 			categories.clientWork,
 		],
-		thumbImage: imageMetaData.zarparaRedBottle,
+		thumbImage: mediaData.zarparaRedBottle,
 		slideshow: [
-			imageMetaData.zarparaRedBottle,
-			imageMetaData.zarparaRoseBottle,
-			imageMetaData.zarparaWhiteBottle,
+			mediaData.zarparaRedBottle,
+			mediaData.zarparaRoseBottle,
+			mediaData.zarparaWhiteBottle,
 		],
 		summary: `A brand refresh for Zarpara Vineyard's wine labels using painterly illustrations.`,
 		problemText: `Zarpara Vineyard was in need of a design refresh. They'd lost their previous designer and were searching for another who could evolve their brand.`,
@@ -819,6 +827,7 @@ export const projects: ProjectType[] = [
 				name: "zarpara-labels-progress-step-1",
 				supertitle: "Red, White, and Rosé",
 				title: "The Primary Front Labels",
+				imageAspect: "tall",
 				description: (
 					<>
 						<p className="body-text large">
@@ -844,9 +853,9 @@ export const projects: ProjectType[] = [
 					</>
 				),
 				image: [
-					imageMetaData.zarparaWhiteLabel,
-					imageMetaData.zarparaRedLabel,
-					imageMetaData.zarparaRoseLabel,
+					mediaData.zarparaWhiteLabel,
+					mediaData.zarparaRedLabel,
+					mediaData.zarparaRoseLabel,
 				],
 			},
 			{
@@ -862,12 +871,13 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.zarparaBackLabels,
+				image: mediaData.zarparaBackLabels,
 			},
 			{
 				name: "zarpara-labels-progress-step-3",
 				supertitle: "Luna de Sangre and Aurora",
 				title: "Dessert and Port Wine Labels",
+				imageAspect: "tall",
 				description: (
 					<>
 						<p className="body-text large">
@@ -890,8 +900,8 @@ export const projects: ProjectType[] = [
 					</>
 				),
 				image: [
-					imageMetaData.zarparaLunaDeSangreLabel,
-					imageMetaData.zarparaAuroraLabel,
+					mediaData.zarparaLunaDeSangreLabel,
+					mediaData.zarparaAuroraLabel,
 				],
 			},
 		],
@@ -916,11 +926,11 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.zarparaAuroraIllustration,
-			imageMetaData.zarparaLunaDeSangreIllustration,
-			imageMetaData.zarparaRedIllustration,
-			imageMetaData.zarparaWhiteIllustration,
-			imageMetaData.zarparaRoseIllustration,
+			mediaData.zarparaAuroraIllustration,
+			mediaData.zarparaLunaDeSangreIllustration,
+			mediaData.zarparaRedIllustration,
+			mediaData.zarparaWhiteIllustration,
+			mediaData.zarparaRoseIllustration,
 		],
 	},
 	{
@@ -933,8 +943,8 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: imageMetaData.kingdomHearts2,
-		slideshow: [imageMetaData.kingdomHearts1, imageMetaData.kingdomHearts2],
+		thumbImage: mediaData.kingdomHearts2,
+		slideshow: [mediaData.kingdomHearts1, mediaData.kingdomHearts2],
 		summary: `The future doesn't scare me where fears and lies melt away.`,
 		overviewText: (
 			<>
@@ -963,7 +973,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.kingdomHearts1,
+				image: mediaData.kingdomHearts1,
 			},
 			{
 				name: "kingdom-hearts-fan-art-progress-step-2",
@@ -984,7 +994,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.kingdomHearts2,
+				image: mediaData.kingdomHearts2,
 			},
 		],
 		descriptionTitle: `A Duology of Destiny and Fate`,
@@ -1007,7 +1017,7 @@ export const projects: ProjectType[] = [
 				</p>
 			</>
 		),
-		imageGrid: [imageMetaData.kingdomHearts1, imageMetaData.kingdomHearts2],
+		imageGrid: [mediaData.kingdomHearts1, mediaData.kingdomHearts2],
 	},
 	{
 		name: "figure-studies",
@@ -1019,11 +1029,11 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: imageMetaData.figureStudies,
+		thumbImage: mediaData.figureStudies,
 		slideshow: [
-			imageMetaData.figureStudies2,
-			imageMetaData.figureStudies1,
-			imageMetaData.figureStudies3,
+			mediaData.figureStudies2,
+			mediaData.figureStudies1,
+			mediaData.figureStudies3,
 		],
 		summary: `A curated collection of two years' worth of figure studies.`,
 		overviewText: (
@@ -1039,6 +1049,7 @@ export const projects: ProjectType[] = [
 				name: "figure-studies-progress-step-1",
 				supertitle: "Studio Grafit",
 				title: "An Invaluable Resource",
+				imageAspect: "tall",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1063,12 +1074,13 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.figureStudies10,
+				image: mediaData.figureStudies10,
 			},
 			{
 				name: "figure-studies-progress-step-2",
 				supertitle: "The Flexibility of",
 				title: "Digital Media",
+				imageAspect: "tall",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1094,7 +1106,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.figureStudies,
+				image: mediaData.figureStudies,
 			},
 		],
 		descriptionSupertitle: `The Art of Anatomy`,
@@ -1120,12 +1132,16 @@ export const projects: ProjectType[] = [
 			</>
 		),
 		imageGrid: [
-			imageMetaData.figureStudies4,
-			imageMetaData.figureStudies5,
-			imageMetaData.figureStudies6,
-			imageMetaData.figureStudies7,
-			imageMetaData.figureStudies8,
-			imageMetaData.figureStudies9,
+			mediaData.figureStudies2,
+			mediaData.figureStudies7,
+			mediaData.figureStudies3,
+			mediaData.figureStudies4,
+			mediaData.figureStudies8,
+			mediaData.figureStudies5,
+			mediaData.figureStudies6,
+			mediaData.figureStudies12,
+			mediaData.figureStudies9,
+			mediaData.figureStudies11,
 		],
 	},
 	{
@@ -1138,12 +1154,8 @@ export const projects: ProjectType[] = [
 			},
 			categories.personalWork,
 		],
-		thumbImage: imageMetaData.crow3,
-		slideshow: [
-			imageMetaData.crow3,
-			imageMetaData.crow4,
-			imageMetaData.crow2,
-		],
+		thumbImage: mediaData.crow3,
+		slideshow: [mediaData.crow3, mediaData.crow4, mediaData.crow2],
 		summary: `A uniquely powerful technology arises, along with a uniquely terrifying despot, after a planetary apocalypse.`,
 		overviewText: (
 			<>
@@ -1162,6 +1174,7 @@ export const projects: ProjectType[] = [
 				name: "post-autumn-progress-step-1",
 				supertitle: "Designing Crow",
 				title: "An Anti-Hero Is Born",
+				imageAspect: "tall",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1188,7 +1201,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.crow1,
+				image: mediaData.crow1,
 			},
 			{
 				name: "post-autumn-progress-step-2",
@@ -1209,7 +1222,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.crow3,
+				image: mediaData.crow3,
 			},
 			{
 				name: "post-autumn-progress-step-3",
@@ -1237,7 +1250,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: imageMetaData.crow4,
+				image: mediaData.crow4,
 			},
 		],
 		descriptionSupertitle: `An Ages-Old Mystery on`,
@@ -1269,11 +1282,7 @@ export const projects: ProjectType[] = [
 				</p>
 			</>
 		),
-		imageGrid: [
-			imageMetaData.crow2,
-			imageMetaData.crow3,
-			imageMetaData.crow4,
-		],
+		imageGrid: [mediaData.crow2, mediaData.crow3, mediaData.crow4],
 	},
 ];
 

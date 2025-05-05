@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames, mergeImageData } from "@/utils/utils";
+import { printClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import MenuTiles from "@/components/hero/menu-tiles";
 import styles from "@/styles/components/hero/home-hero.module.css";
@@ -36,27 +36,8 @@ export default function HomeHero({
 	const imageRef = useRef<HTMLImageElement>(null);
 	const classes = printClassNames([styles["home-hero"], className]);
 	const breakpoint = 1024;
-	const commonImageConfig = {
-		sources: [
-			{
-				minScreenWidth: "48em",
-				imageWidth: 1024,
-				imageHeight: 1240,
-			},
-			{
-				minScreenWidth: "40em",
-				imageWidth: 1024,
-				imageHeight: 1100,
-			},
-		],
-		mobileSource: {
-			imageWidth: 640,
-			imageHeight: 875,
-		},
-	};
-	const defaultImageConfig = {
-		...image,
-		sources: [
+	const imageConfig: ImageDataType = (() => {
+		const desktopSources = [
 			{
 				minScreenWidth: "90em",
 				imageWidth: 1920,
@@ -67,20 +48,50 @@ export default function HomeHero({
 				imageWidth: 1440,
 				imageHeight: 1100,
 			},
-			...commonImageConfig.sources,
-		],
-		mobileSource: commonImageConfig.mobileSource,
-	};
-	const mobileImageConfig = mobileImage
-		? {
-				...mobileImage,
-				...commonImageConfig,
-		  }
-		: undefined;
-	const mergedImageData = mergeImageData(
-		defaultImageConfig,
-		mobileImageConfig,
-	);
+		];
+		const mobileSources = [
+			{
+				minScreenWidth: "48em",
+				imageWidth: 1024,
+				imageHeight: 1240,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+				imageHeight: 1100,
+			},
+		];
+		const mobileSource = {
+			imageWidth: 640,
+			imageHeight: 875,
+		};
+
+		if (mobileImage) {
+			return {
+				...image,
+				alt: mobileImage.alt,
+				sources: [
+					...desktopSources,
+					...mobileSources.map((src) => ({
+						...src,
+						pathKey: mobileImage.pathKey,
+					})),
+				],
+				mobileSource: {
+					...mobileSource,
+					pathKey: mobileImage.pathKey,
+					horizontalOrientation: mobileImage.horizontalOrientation,
+					verticalOrientation: mobileImage.verticalOrientation,
+				},
+			};
+		} else {
+			return {
+				...image,
+				sources: [...desktopSources, ...mobileSources],
+				mobileSource,
+			};
+		}
+	})();
 
 	// parallax effect for title and image
 	useEffect(() => {
@@ -200,7 +211,7 @@ export default function HomeHero({
 				<ResponsiveImage
 					ref={imageRef}
 					className={styles.image}
-					image={mergedImageData}
+					image={imageConfig}
 					loading="eager"
 					fetchPriority="high"
 				/>

@@ -71,9 +71,6 @@ export default async function ProjectDetailPage({
 				(projCat) => projCat.name === primaryCategory.name,
 			) && proj.name !== data.name,
 	);
-	const categoryUrl = `/projects?categories=${JSON.stringify([
-		primaryCategory.name,
-	])}`;
 	const topBarMarkup = (
 		<>
 			<ButtonLink
@@ -125,7 +122,7 @@ export default async function ProjectDetailPage({
 			{!!relatedProjects.length && (
 				<ProjectGridInterior
 					title={relatedProjectsTitle || "See Also"}
-					url={relatedProjects.length > 3 ? categoryUrl : undefined}
+					url="/projects"
 					projects={relatedProjects}
 					buttonText={relatedProjectsButtonText || "See More"}
 				/>

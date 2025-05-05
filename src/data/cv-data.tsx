@@ -1,5 +1,5 @@
 import { socialMedia } from "@/data/global-data";
-import { bioImageBody, bioImageHero } from "@/data/images";
+import { bioImageBody, bioImageHero } from "@/data/media-data";
 import { BioType, ResumeType } from "@/types/cv-types";
 import { ImageMetaType } from "@/types/global-types";
 
