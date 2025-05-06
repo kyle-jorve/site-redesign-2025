@@ -111,15 +111,16 @@
 			pointer-events: none;
 		}
 
-		&.tall {
+		&.tall-aspect {
 			aspect-ratio: 5 / 7;
 		}
 
-		&.wide {
+		&.wide-aspect {
 			aspect-ratio: 5 / 3;
 		}
 	}
 
+	.image-col.image-aspect,
 	&:has(.video) .image-col {
 		aspect-ratio: unset;
 	}
@@ -135,7 +136,8 @@
 	.image {
 		position: relative;
 		z-index: 2;
-		transition: opacity var(--transition), visibility var(--transition);
+		transition: opacity var(--long-transition),
+			visibility var(--long-transition);
 
 		&.hide {
 			opacity: 0;
@@ -227,7 +229,7 @@
 				transition: translate var(--transition);
 			}
 
-			&.wide {
+			&.wide-aspect {
 				aspect-ratio: 16 / 10;
 			}
 		}

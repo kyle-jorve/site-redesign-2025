@@ -1,5 +1,5 @@
 .header {
-	position: absolute;
+	position: fixed;
 	inset: 10px auto auto 10px;
 	z-index: 100;
 
@@ -18,16 +18,6 @@
 		translate: 0 calc(-100% - 20px);
 	}
 
-	&.fixed .inner {
-		position: fixed;
-		inset: auto auto calc(100% + 10px) 10px;
-	}
-
-	&.fixed:not(.hide).reveal .inner,
-	&.fixed:not(.hide):has(*:focus-visible) .inner {
-		translate: 0 calc(100% + 20px);
-	}
-
 	.logo {
 		display: block;
 		text-decoration: none;
@@ -42,15 +32,8 @@
 	}
 
 	@media (min-width: 40em) {
-		&,
-		&.fixed .inner {
-			right: var(--padding-body-edge);
-			left: var(--padding-body-edge);
-		}
-
-		&.fixed:not(.hide).dropdown-open .inner {
-			translate: 0 calc(100% + 20px);
-		}
+		right: var(--padding-body-edge);
+		left: var(--padding-body-edge);
 
 		.inner {
 			display: flex;

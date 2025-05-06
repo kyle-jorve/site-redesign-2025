@@ -16,8 +16,6 @@ export type HomeHeroProps = {
 	menuTiles?: MenuTileType[];
 } & React.HTMLAttributes<HTMLElement>;
 
-let timeout: ReturnType<typeof setTimeout> | null = null;
-
 export default function HomeHero({
 	title,
 	image,
@@ -127,6 +125,8 @@ export default function HomeHero({
 		}
 
 		function handleResize() {
+			let timeout: ReturnType<typeof setTimeout> | null = null;
+
 			if (timeout) clearTimeout(timeout);
 
 			// debounce

@@ -2,6 +2,7 @@ import { socialMedia } from "@/data/global-data";
 import { bioImageBody, bioImageHero } from "@/data/media-data";
 import { BioType, ResumeType } from "@/types/cv-types";
 import { ImageMetaType } from "@/types/global-types";
+import CustomLink from "@/components/global/custom-link";
 
 export const featuredWorkTitle = "Featured Work";
 export const featuredWorkUrl = "/projects/";
@@ -12,28 +13,34 @@ export const bio: BioType = {
 	body: (
 		<>
 			<p className="body-text large">
-				My name is Kyle Jorve, and I have too many creative passions. It
-				would be fair to say I&apos;m a jack of all trades.
+				My name is Kyle Jorve, and it would be fair to say I&apos;m a
+				jack of all trades.
 			</p>
 			<p>
+				It would also be fair to say I have too many creative passions.
 				It&apos;s hardly a surprise, then, that I&apos;ve had such a
-				meandering career path. I graduated summa cum laude from the
-				University of Arizona with a bachelor&apos;s of fine art,
-				emphasis in visual communication. It was there I planted the
-				seeds of the stories I&apos;m presently writing.
+				meandering career path. In 2013, I graduated summa cum laude
+				from the University of Arizona with a bachelor&apos;s of fine
+				art, emphasis in visual communication. It was there I planted
+				the seeds of the{" "}
+				<CustomLink
+					to={`/projects?categories=${JSON.stringify(["writing"])}`}
+				>
+					stories I&apos;m presently writing
+				</CustomLink>
+				.
 			</p>
 			<p>
-				In 2015, I landed my first job doing web design and development,
-				and fell in love with both, thus adding to my already outsized
-				stack of creative pursuits.
+				In 2015, I landed my first job as a web designer and developer.
+				I quickly fell in love with both disciplines, thus adding to my
+				already outsized stack of creative pursuits.
 			</p>
 			<p>
-				Today, I&apos;m a professional front end web developer and
-				halfway decent designer with {yearsOfExperience} years of
-				experience. By day, I help build websites for a destination
-				marketing company. By night, I keep my other passions
-				alive&mdash;which is to say I write lots of nerdy fiction,
-				mostly fantasy and sci-fi.
+				Today, I&apos;m a professional web developer and halfway decent
+				designer with {yearsOfExperience} years of experience. By day, I
+				help build websites for a destination marketing company. By
+				night, I keep my other passions alive&mdash;which is to say I
+				write lots of nerdy fiction, mostly fantasy and sci-fi.
 			</p>
 		</>
 	),
@@ -60,13 +67,19 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								At Simpleview/Granicus, I have built front end
-								components for a wide variety of destination
-								marketing websites. I write performant,
-								sustainable code and undergo regular peer
-								review. I work with libraries like React and
-								Vue, and write code in JavaScript, TypeScript,
-								HTML, and CSS.
+								At Simpleview/Granicus, I have built{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify([
+										"development",
+									])}`}
+								>
+									front end components
+								</CustomLink>{" "}
+								for a wide variety of destination marketing
+								websites. I write performant, sustainable code
+								and undergo regular peer review. I work with
+								libraries like React and Vue, and languages like
+								JavaScript, TypeScript, HTML, and CSS.
 							</p>
 							<p>In 2024, Simpleview was acquired by Granicus.</p>
 						</>
@@ -96,22 +109,26 @@ export const resume: ResumeType = {
 									I created print, web, and virtual marketing
 									materials for Simply Bits/Desert Lab Studio,
 									their clients, and their various software
-									products
+									products.
 								</li>
 								<li>
 									I designed and built websites using the
-									Umbraco CMS and a myriad of web languages,
-									including HTML, CSS, SCSS, and JavaScript
+									Umbraco CMS and a variety of web languages,
+									including HTML, CSS, SCSS, and JavaScript.
 								</li>
 								<li>
 									I created custom graphic and illustration
 									work for the purposes of marketing, web
-									design, advertising, and product development
+									design, advertising, and product
+									development.
 								</li>
 								<li>
-									I attended trade shows to promote Theater
-									Toolkit, a software product for independent
-									movie theaters.
+									I attended trade shows to promote{" "}
+									<CustomLink to="/projects/theater-toolkit">
+										Theater Toolkit
+									</CustomLink>
+									, a software product for independent movie
+									theaters.
 								</li>
 							</ul>
 							<p>
@@ -129,9 +146,9 @@ export const resume: ResumeType = {
 					title: "Writer, Illustrator",
 					description: (
 						<p>
-							I wrote and illustrated an original story titled
-							&quot;Ivory and Sinew&quot; for the comic book
-							anthology &quot;New Nebula Volume 1&quot;
+							I wrote and illustrated an original story titled{" "}
+							<i>Ivory and Sinew</i> for the comic book anthology{" "}
+							<i>New Nebula Volume 1</i>.
 						</p>
 					),
 					year: "2015",
@@ -142,8 +159,11 @@ export const resume: ResumeType = {
 					title: "Designer, Illustrator",
 					description: (
 						<p>
-							I designed print marketing materials and wine
-							labels, and created custom illustrations.
+							I designed print marketing materials and{" "}
+							<CustomLink to="/projects/zarpara-vineyard">
+								wine labels
+							</CustomLink>
+							, and created custom illustrations.
 						</p>
 					),
 					year: "2013 - 2019",
@@ -176,9 +196,10 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								I have years of experience in a variety of web
-								languages, libraries, and frameworks, including,
-								but not limited to, the following:
+								I have {yearsOfExperience} years of experience
+								in a variety of web languages, libraries, and
+								frameworks, including, but not limited to, the
+								following:
 							</p>
 							<ul>
 								<li>HTML</li>
@@ -201,9 +222,12 @@ export const resume: ResumeType = {
 							<p>
 								Thanks to the wide range of experience my
 								education and career have afforded me, I have
-								amassed a comprehensive and multidisciplined
-								body of work in the areas of print media, web
-								design, and virtual marketing.
+								amassed a comprehensive and multidisciplined{" "}
+								<CustomLink to="/projects">
+									body of work
+								</CustomLink>{" "}
+								in the areas of print media, web design, and
+								virtual marketing.
 							</p>
 						</>
 					),
@@ -214,13 +238,36 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								The primary focus of my education was
-								illustration, and I excelled at nothing more
-								than digital illustration.
+								The primary focus of my education was{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify([
+										"illustration",
+									])}`}
+								>
+									illustration
+								</CustomLink>
+								, and in particular I excelled at digital
+								illustration.
 							</p>
 							<p>
 								Presently, I use this background to enhance my
-								other skills, like design and writing.
+								other skills, like{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify([
+										"design",
+									])}`}
+								>
+									design
+								</CustomLink>{" "}
+								and{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify([
+										"writing",
+									])}`}
+								>
+									writing
+								</CustomLink>
+								.
 							</p>
 						</>
 					),
@@ -261,10 +308,19 @@ export const resume: ResumeType = {
 					title: "Bachelor's of Fine Art, Emphasis in Visual Communication",
 					description: (
 						<p>
-							I graduated summa cum laude from the University of
-							Arizona in 2013, earning a Bachelor&apos;s of Fine
-							Art with an emphasis in visual communication and a
-							concentration in illustration.
+							I graduated summa cum laude from the{" "}
+							<strong>University of Arizona</strong> in 2013,
+							earning a Bachelor&apos;s of Fine Art with an
+							emphasis in visual communication and a concentration
+							in{" "}
+							<CustomLink
+								to={`/projects?categories=${JSON.stringify([
+									"illustration",
+								])}`}
+							>
+								illustration
+							</CustomLink>
+							.
 						</p>
 					),
 					year: "2013",
@@ -275,11 +331,11 @@ export const resume: ResumeType = {
 					description: (
 						<p>
 							In 2012 I embarked on a summer study abroad program
-							through the University of Arizona. I stayed in
-							Orvieto, Italy for 5 weeks, mingling with the
-							locals, practicing my Italian, and completing a
-							small, illustrated book for the end-of-term
-							exhibition.
+							through the University of Arizona. I stayed in{" "}
+							<strong>Orvieto, Italy</strong> for 5 weeks,
+							mingling with the locals, practicing my Italian, and
+							completing a small, illustrated book for the
+							end-of-term exhibition.
 						</p>
 					),
 					year: "2012",
@@ -289,10 +345,15 @@ export const resume: ResumeType = {
 					title: "Associates of Fine Art",
 					description: (
 						<p>
-							In 2009 I graduated from Mesa Community College with
-							an associate&apos;s degree in fine art. My education
+							In 2009 I graduated from{" "}
+							<strong>Mesa Community College</strong> with an
+							associate&apos;s degree in fine art. My education
 							there focused most especially on the detailed study
-							of the human figure.
+							of the{" "}
+							<CustomLink to="/projects/figure-studies">
+								human figure
+							</CustomLink>
+							.
 						</p>
 					),
 					year: "2009",

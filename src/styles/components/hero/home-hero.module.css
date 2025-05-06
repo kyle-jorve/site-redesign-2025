@@ -35,6 +35,7 @@
 	}
 
 	.supertitle {
+		max-width: 28ch;
 		text-shadow: none;
 	}
 

@@ -51,9 +51,6 @@ export default function InteriorHero({
 
 				{!!description && (
 					<div className={styles.desc}>{description}</div>
-					// <p className={`body-text large ${styles.desc}`}>
-					// 	{description}
-					// </p>
 				)}
 			</div>
 		</section>

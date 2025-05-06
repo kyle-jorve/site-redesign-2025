@@ -11,7 +11,7 @@ import { MenuTileType } from "@/types/hero-types";
 
 export const heroImageDesktop: ImageMetaType = homeHeroImageDesktop;
 export const heroImageMobile: ImageMetaType = homeHeroImageMobile;
-export const supertitle = "Designer, Developer, Illustrator, Writer";
+export const supertitle = "Designer, Developer, Writer, Illustrator";
 export const title = "Kyle Jorve";
 export const featuredLimit = 3;
 

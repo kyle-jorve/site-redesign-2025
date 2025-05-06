@@ -1,7 +1,8 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import {
 	projectsSorted,
 	projectsByName,
+	backToProjectsButtonText,
 	relatedProjectsTitle,
 	relatedProjectsButtonText,
 } from "@/data/gallery-data";
@@ -28,7 +29,7 @@ export async function generateMetadata({
 	const title = data?.title;
 	const description = data?.summary;
 	const image = data
-		? `/images/${data.thumbImage}/${data.thumbImage}-kyle-jorve-640.jpg`
+		? `/images/${data.thumbImage.name}/${data.thumbImage.name}-kyle-jorve-640.jpg`
 		: null;
 	const returnObj: Metadata = {
 		openGraph: {},
@@ -79,7 +80,7 @@ export default async function ProjectDetailPage({
 				shadowColor="red"
 				type="back"
 			>
-				Back to Projects
+				{backToProjectsButtonText}
 			</ButtonLink>
 
 			<FavButton

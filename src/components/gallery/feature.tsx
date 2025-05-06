@@ -15,8 +15,6 @@ import styles from "@/styles/components/gallery/feature-grid.module.css";
 export type FeatureProps = Omit<FeatureType, "name"> &
 	React.HTMLAttributes<HTMLElement>;
 
-let interval: ReturnType<typeof setInterval> | null = null;
-
 export default function Feature({
 	title,
 	description,
@@ -39,7 +37,6 @@ export default function Feature({
 	const classes = printClassNames([
 		styles.feature,
 		styles[alignment],
-		imagesData.length > 1 ? styles["multiple-images"] : "",
 		className,
 	]);
 	const mobileSource = {
@@ -102,6 +99,8 @@ export default function Feature({
 	useEffect(() => {
 		if (imagesData.length <= 1) return;
 
+		let interval: ReturnType<typeof setInterval> | null = null;
+
 		if (interval) clearInterval(interval);
 
 		interval = setInterval(() => {
@@ -143,7 +142,7 @@ export default function Feature({
 					</span>
 				)}
 
-				<h2 className={`heading-3 ${styles.title}`}>{title}</h2>
+				<h2 className="heading-3">{title}</h2>
 
 				{description}
 
@@ -159,7 +158,11 @@ export default function Feature({
 				)}
 			</div>
 
-			<div className={`${styles["image-col"]} ${styles[imageAspect]}`}>
+			<div
+				className={`${styles["image-col"]} ${
+					styles[`${imageAspect}-aspect`]
+				}`}
+			>
 				{!!url ? (
 					<CustomLink
 						to={url}

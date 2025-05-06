@@ -62,14 +62,12 @@ export const figureStudies1: ImageMetaType = {
 	name: "figure-studies-1",
 	pathKey: "figure-studies-1",
 	alt: `A sketch of a nude model`,
-	verticalOrientation: "top",
 };
 
 export const figureStudies2: ImageMetaType = {
 	name: "figure-studies-2",
 	pathKey: "figure-studies-2",
 	alt: `A sketch of a nude model`,
-	verticalOrientation: "top",
 };
 
 export const figureStudies3: ImageMetaType = {
@@ -123,7 +121,7 @@ export const figureStudies10: ImageMetaType = {
 	name: "figure-studies-10",
 	pathKey: "figure-studies-10",
 	alt: `A sketch of a nude model`,
-	verticalOrientation: "top",
+	verticalOrientation: "4%",
 };
 
 export const figureStudies11: ImageMetaType = {
@@ -137,7 +135,7 @@ export const figureStudies12: ImageMetaType = {
 	name: "figure-studies-12",
 	pathKey: "figure-studies-12",
 	alt: `A sketch of a nude model`,
-	verticalOrientation: "top",
+	verticalOrientation: "3%",
 };
 
 //===============================//
@@ -427,6 +425,7 @@ export const showplaceCinemasMobile: ImageMetaType = {
 	name: "showplace-cinemas-mobile",
 	pathKey: "showplace-cinemas-mobile",
 	alt: `A design for the mobile version of Showplace Cinemas' website`,
+	verticalOrientation: "65%",
 };
 
 export const showplaceCinemasMovie: ImageMetaType = {
@@ -683,6 +682,7 @@ export const zarparaRedIllustration: ImageMetaType = {
 	name: "zarpara-red-illustration",
 	pathKey: "zarpara-red-illustration",
 	alt: `The background illustration for Zarpara's red wine label`,
+	verticalOrientation: "25%",
 };
 
 export const zarparaRedLabel: ImageMetaType = {
@@ -720,6 +720,7 @@ export const zarparaWhiteIllustration: ImageMetaType = {
 	name: "zarpara-white-illustration",
 	pathKey: "zarpara-white-illustration",
 	alt: `The background illustration for Zarpara's white wine label`,
+	verticalOrientation: "25%",
 };
 
 export const zarparaWhiteLabel: ImageMetaType = {

@@ -16,6 +16,10 @@
 		padding: var(--long-shadow-offset) var(--side-padding);
 		overflow-x: auto;
 		overflow-y: hidden;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 
 	.slide {

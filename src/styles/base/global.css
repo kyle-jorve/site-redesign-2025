@@ -26,8 +26,8 @@
 		width: 100%;
 		min-height: 100vh;
 		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
-		background: var(--bottom-icon-background),
-			var(--bottom-gradient-background);
+		background: var(--top-icon-background), var(--top-gradient-background),
+			var(--bottom-icon-background), var(--bottom-gradient-background);
 		background-color: var(--body-bg);
 		overflow-x: hidden;
 	}
@@ -35,7 +35,6 @@
 	main {
 		position: relative;
 		z-index: 2;
-		background: var(--top-icon-background), var(--top-gradient-background);
 		transition: opacity var(--transition);
 	}
 
@@ -74,11 +73,6 @@
 	img,
 	svg {
 		height: auto;
-	}
-
-	.image {
-		&.loaded {
-		}
 	}
 
 	.underline {
@@ -179,7 +173,7 @@
 
 	@media (min-width: 64em) {
 		body {
-			background-size: auto 30rem, 100% 24rem;
+			background-size: auto 43.25rem, 100% 45rem, auto 30rem, 100% 24rem;
 		}
 
 		.content-box.small {

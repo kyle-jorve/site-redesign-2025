@@ -13,6 +13,7 @@ export const pageSummary = (
 		them with others is a close second.
 	</>
 );
+export const backToProjectsButtonText = "See All Projects";
 export const relatedProjectsTitle = "See Also";
 export const relatedProjectsButtonText = "See More";
 
@@ -61,11 +62,11 @@ export const projects: ProjectType[] = [
 		title: "Ignoble Blood Vignettes",
 		featured: true,
 		categories: [
-			categories.design,
 			{
 				...categories.illustration,
 				primary: true,
 			},
+			categories.design,
 			categories.writing,
 			categories.personalWork,
 		],
@@ -81,17 +82,18 @@ export const projects: ProjectType[] = [
 			mediaData.ignobleBloodVignettesSpreadCapor,
 			mediaData.ignobleBloodVignettesSpreadCargha,
 		],
-		summary: `An art book project meant to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
+		summary: `An art book project to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		features: [
 			{
 				name: "ignoble-blood-vignettes-progress-step-1",
 				supertitle: "Step 1",
 				title: "The Design Phase",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
 							In planning this project, it was my goal to showcase
-							both my design and illustrative talents.
+							my design, illustration, and writing talents.
 						</p>
 						<p>
 							I wanted to create a book design that spoke of
@@ -107,6 +109,7 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-progress-step-2",
 				supertitle: "Step 2",
 				title: "Typography",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -128,19 +131,21 @@ export const projects: ProjectType[] = [
 				name: "ignoble-blood-vignettes-progress-step-3",
 				supertitle: "Step 3",
 				title: "Character Vignettes",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
 							My intention was to start slow, to create simple
-							illustrations whose sole focus was to showcase each
-							character&apos;s unique flavor and design.
+							illustrations whose sole purpose was to showcase
+							each character&apos;s unique flavor and design.
 						</p>
 						<p>
 							One of my favorite bonus features of modern video
 							games is the ability to view detailed character
-							models. Often these models are posed on a sort of
-							cross-sectioned platform. This was my inspiration
-							for these character vignettes.
+							models, and often these models are isolated on a
+							sort of cross-sectioned platform. This became my
+							inspiration for the format of these character
+							vignettes.
 						</p>
 					</>
 				),
@@ -157,18 +162,11 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					The first in this series of novels is titled{" "}
-					<strong>The Ashes of Hope</strong>. In it, a young noble
-					must reckon with a dangerous foreign adversary, navigate his
-					fraught relationship with his father, and navigate all the
-					pitfalls of growing into a responsible adult&mdash;all while
-					an ancient, much larger threat looms on the horizon.
-				</p>
-				<p>
-					For the character illustrations, I drew, colored, and
-					applied lighting to each character in Procreate on an iPad
-					Pro before moving to Photoshop to complete the painting. For
-					the design of the book and pages, I used Adobe Illustrator
-					and InDesign.
+					<i>The Ashes of Hope</i>. In it, a young noble must reckon
+					with a dangerous foreign adversary, navigate his fraught
+					relationship with his father, and negotiate all the pitfalls
+					of growing into a responsible adult&mdash;all while an
+					ancient and existential threat looms on the horizon.
 				</p>
 			</>
 		),
@@ -208,8 +206,8 @@ export const projects: ProjectType[] = [
 			mediaData.theaterToolkitPosIntegration,
 		],
 		summary: `A simple website solution for independent movie theaters.`,
-		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
-		solutionText: `In order to help Theater Toolkit stand out from the crowd, I designed an eye-catching website with colorful illustrations. As an added bonus, these illustrations could also be used in marketing materials.`,
+		problemText: `For indie movie theaters, there aren't many good options for creating a website that syncs with points of sale and allows users to book tickets online quickly and easily on any device. Enter Theater Toolkit, a fledgling software product that needed a strong brand.`,
+		solutionText: `In order to help Theater Toolkit stand out from the crowd, I designed an eye-catching website with colorful illustrations. As an added bonus, these illustrations were also used in printed marketing materials.`,
 		features: [
 			{
 				name: "theater-toolkit-progress-step-1",
@@ -244,9 +242,9 @@ export const projects: ProjectType[] = [
 						</p>
 						<p>
 							I designed Theater Toolkit&apos;s website with the
-							aim of highlighting its user-friendliness and ease
-							of use. Its warm, inviting palette is evocative of
-							the colors one might see in an actual movie theater.
+							aim of highlighting its user-friendliness. Its warm,
+							inviting palette is evocative of the colors one
+							might see in an actual movie theater.
 						</p>
 						<p>
 							I created simple, uncluttered layouts that would
@@ -262,6 +260,7 @@ export const projects: ProjectType[] = [
 				name: "theater-toolkit-progress-step-3",
 				supertitle: "Marketing the Toolkit",
 				title: "Printed Promotional Materials",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -352,7 +351,7 @@ export const projects: ProjectType[] = [
 						<p className="body-text large">
 							I was tasked with building many components of
 							Irving&apos;s website, but I am thrilled to have
-							been the one to build the scroll-animated home page
+							been the one who built the scroll-animated home page
 							hero.
 						</p>
 						<p>
@@ -381,7 +380,8 @@ export const projects: ProjectType[] = [
 							For that reason, this horizonally scrolling blog
 							grid was an absolute joy to build. It consumes the
 							screen and pulls you in with its bold typography and
-							colorful odes to Irving&apos;s rich music culture.
+							colorful odes to Irving&apos;s rich and musical
+							culture.
 						</p>
 					</>
 				),
@@ -395,15 +395,15 @@ export const projects: ProjectType[] = [
 				description: (
 					<>
 						<p className="body-text large">
-							There is so much to love about this design, but this
-							is one of my favorite elements.
+							There is so much to love about the design of this
+							website, but this is one of my favorite elements.
 						</p>
 						<p>
 							This screen-spanning slideshow literally captivates
 							the user, daring them to scroll past without
 							clicking through at least a couple of its gorgeous
 							slides. The hover effects are minimal and elegant,
-							drawing the user in even further.
+							enticing the user even further.
 						</p>
 					</>
 				),
@@ -416,14 +416,16 @@ export const projects: ProjectType[] = [
 			<>
 				<p className="body-text large">
 					I love making good design come to life, and I am privileged
-					to work for a company that outputs so many strong designs.
+					to have worked for a company that has delivered so many
+					strong designs.
 				</p>
 				<p>
-					Visit Irving is just one among a very large pile of
-					excellent website designs that I have had the joy of helping
-					build. While I did not design the Visit Irving website, and
-					while building it was a collaborative effort, I am proud of
-					the part I played in making this design a reality.
+					<strong>Visit Irving</strong> is just one among a massive
+					pile of excellent website designs that I have had the joy of
+					helping build. While I did not design the Visit Irving
+					website, and while building it was a collaborative effort, I
+					am proud of the part I played in making this website a
+					reality.
 				</p>
 			</>
 		),
@@ -458,12 +460,13 @@ export const projects: ProjectType[] = [
 				name: "showplace-cinemas-progress-step-1",
 				supertitle: "Design for",
 				title: "Mobile First",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
 							One of the points we emphasized most when selling a
 							new client on the Theater Toolkit platform was how
-							much web traffic occurred on mobile devices these
+							much web traffic occurs on mobile devices these
 							days.
 						</p>
 						<p>
@@ -484,8 +487,9 @@ export const projects: ProjectType[] = [
 					<>
 						<p className="body-text large">
 							When you&apos;re an indie theater rubbing shoulders
-							with big chains, a strong first impression is a
-							must.
+							with the big chains, a strong first impression
+							isn&apos;t just a perk&mdash;it&apos;s a
+							requirement.
 						</p>
 						<p>
 							A slideshow of movies coming soon is the perfect
@@ -512,8 +516,7 @@ export const projects: ProjectType[] = [
 						<p>
 							The movie detail page has everything you need to
 							make your decision: movie synopses and details,
-							trailers, and upcoming showtimes are all at your
-							fingertips.
+							trailers, and upcoming showtimes.
 						</p>
 					</>
 				),
@@ -523,7 +526,7 @@ export const projects: ProjectType[] = [
 				name: "showplace-cinemas-progress-step-4",
 				supertitle: "A Seamless",
 				title: "Checkout Process",
-				imageAspect: "wide",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -532,10 +535,9 @@ export const projects: ProjectType[] = [
 							trailer?
 						</p>
 						<p>
-							An easy, intuitive design guides users through the
+							A simple, intuitive design guides users through the
 							ticket purchasing process, so they can get to
-							planning the rest of their outing as quickly as
-							possible.
+							planning the rest of their outing in just minutes.
 						</p>
 					</>
 				),
@@ -553,22 +555,25 @@ export const projects: ProjectType[] = [
 			<>
 				<p className="body-text large">
 					It&apos;s important to make a splash when you&apos;re
-					competing with big theaters like AMC and Harkins.
+					competing with big theater chains like AMC and Harkins.
 				</p>
 				<p>
-					Just because a theater is small doesn&apos;t mean it
+					Just because a business is small doesn&apos;t mean it
 					can&apos;t be given the luxe treatment. In the world of
-					indie movie theaters, design will take you far, and Theater
-					Toolkit has proven that time and time again.
+					indie movie theaters, design will take you far, and{" "}
+					<CustomLink to="/projects/theater-toolkit">
+						Theater Toolkit
+					</CustomLink>{" "}
+					has proven that time and time again.
 				</p>
 				<p>
-					I designed Showplace Cinemas&apos; site with the user in
-					mind, allowing them to focus on what drove them to the site
-					in the first place, while also enticing them to return for
-					future bookings. Though I gave Showplace&apos;s movie
-					theater the bulk of the attention, I also designed avenues
-					to generate interest in their other amenities and modes of
-					entertainment.
+					I designed Showplace Cinemas&apos; site with the user&apos;s
+					top concerns in mind, allowing them to focus on what drove
+					them to the site in the first place while enticing them to
+					return for future bookings. Though I gave Showplace&apos;s
+					movie theater the bulk of the attention, I also designed
+					avenues to funnel users toward their other amenities and
+					modes of entertainment.
 				</p>
 			</>
 		),
@@ -595,23 +600,23 @@ export const projects: ProjectType[] = [
 		slideshow: [mediaData.captiveContentHome],
 		summary: `A product that bridges the gap between advertisers and captive audiences.`,
 		problemText: `All over the world, people are waiting. Waiting for the bus, waiting for an appointment to begin, waiting to connect to a Wi-Fi hotspot. Captive Content is the affordable ad-serving solution for capitalizing on all that waiting potential.`,
-		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the mood of the website, and its illustrations, were extrapolated from there.`,
+		solutionText: `Captive Content's branding needed to visually communicate its fundamental function: serving content, or ads, to a captive audience. Once the challenge of the logo was solved, the website's design was extrapolated from there.`,
 		features: [
 			{
 				name: "captive-content-progress-step-1",
 				supertitle: "Step 1",
-				title: "A Logo",
+				title: "A Captivating Logo",
 				description: (
 					<>
 						<p className="body-text large">
 							From the initial sketch phase, I envisioned a nested
-							box as the Captive Content&apos;s logo&apos; focal
-							point.
+							box as the Captive Content logo&apos;s focal point.
 						</p>
 						<p>
 							The visual of both containing and releasing this box
 							perfectly symbolized, to me, what Captive Content
-							was about.
+							was about: holding content for advertisers and
+							releasing it to a waiting audience.
 						</p>
 					</>
 				),
@@ -632,9 +637,11 @@ export const projects: ProjectType[] = [
 							vision for the website rapidly fell into place.
 						</p>
 						<p>
-							Using stylized diamonds and arrows, I illustrated
-							the concept of Captive Content without getting
-							bogged down in technical details.
+							Using stylized diamonds and arrows, I created simple
+							illustrations to depict Captive Content&apos;s core
+							concept. My goal was towfold: quickly communicate
+							the benefits of the product while avoiding bogging
+							the potiential client down in technical details.
 						</p>
 					</>
 				),
@@ -646,17 +653,16 @@ export const projects: ProjectType[] = [
 		descriptionBody: (
 			<>
 				<p className="body-text large">
-					After designing the Captive Content website, I then built it
-					from the ground up using the Umbraco CMS. It and other
-					promotional materials were used to gain lucrative business
-					for Desert Lab Studio.
+					After designing the Captive Content website, I built it from
+					the ground up using the Umbraco CMS. It was then used to
+					advertise the product and gain lucrative business for Desert
+					Lab Studio.
 				</p>
 				<p>
-					The site is sadly no longer live, as the Captive Content
-					product was sold following my departure from Desert Lab
-					Studio. Still, its simple yet elegant design remains a
-					strong part of my portfolio, and a prime example of my
-					diverse talents.
+					The site is sadly no longer live, as Captive Content was
+					sold following my departure from Desert Lab Studio. Still,
+					its simple yet elegant design remains a strong part of my
+					portfolio, and a prime example of my diverse talents.
 				</p>
 			</>
 		),
@@ -683,12 +689,12 @@ export const projects: ProjectType[] = [
 			mediaData.visitLasVegasMarquee,
 			mediaData.visitLasVegasHome,
 		],
-		summary: `A website to market the world's most unique destination.`,
+		summary: `A website to market the entertainment capital of the world.`,
 		overviewText: (
 			<>
 				I helped build the Visit Las Vegas website alongside my
 				teammates at Simpleview. Following are some curated examples of
-				the worl I contributed.
+				the work I contributed.
 			</>
 		),
 		link: {
@@ -735,7 +741,7 @@ export const projects: ProjectType[] = [
 						<p>
 							The events slideshow invites the user to browse Las
 							Vegas&apos;s hottest events at a glance, and to take
-							a deeper dive if need be.
+							a deeper dive if more information is needed.
 						</p>
 					</>
 				),
@@ -750,14 +756,14 @@ export const projects: ProjectType[] = [
 					<>
 						<p className="body-text large">
 							Simpleview&apos;s tailored site designs often
-							include these moments of delightful interactivity.
+							include small moments of delightful interactivity.
 						</p>
 						<p>
-							They&apos;re fun for the user, and even more fun for
-							me, the developer, to build. As you can imagine, as
-							I come from a background of illustration and design,
-							building complex animations from scratch is one of
-							my job&apos;s greatest joys.
+							These are probably even more fun for me to build
+							than they are for the user to interact with. As you
+							can imagine, as I come from a background of
+							illustration and design, building complex animations
+							from scratch is one of my job&apos;s greatest joys.
 						</p>
 					</>
 				),
@@ -782,9 +788,9 @@ export const projects: ProjectType[] = [
 					<CustomLink to="/projects/visit-irving">
 						Visit Irving
 					</CustomLink>
-					; or deceptively simple, like Visit Las Vegas, I always find
-					something to enjoy about building what great designers have
-					imagined.
+					; or deceptively simple, like{" "}
+					<strong>Visit Las Vegas</strong>, I always find something to
+					enjoy about building what great designers have dreamed up.
 				</p>
 				<p>
 					I did not design the Visit Las Vegas website, and building
@@ -803,7 +809,7 @@ export const projects: ProjectType[] = [
 		],
 	},
 	{
-		name: "zarpara-labels",
+		name: "zarpara-vineyard",
 		title: "Zarpara Vineyard",
 		categories: [
 			{
@@ -827,7 +833,7 @@ export const projects: ProjectType[] = [
 				name: "zarpara-labels-progress-step-1",
 				supertitle: "Red, White, and Rosé",
 				title: "The Primary Front Labels",
-				imageAspect: "tall",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -838,7 +844,7 @@ export const projects: ProjectType[] = [
 						<p>
 							I began with the white label&apos;s illustration,
 							whose look and feel would inform the others. I
-							decided on an impressionist style of loose
+							decided on an impressionistic style of loose
 							brushstrokes and a flat value scale, which gave the
 							label a distinct color palette without competing
 							with the typography.
@@ -846,9 +852,10 @@ export const projects: ProjectType[] = [
 						<p>
 							After the white label&apos;s illustration style was
 							established, I moved on to paint the backgrounds for
-							the red and ros&eacute; labels. I chose darker hues
-							for the red, and a pleasant pink-and-purple palette
-							for the ros&eacute;.
+							the red and ros&eacute; labels. For the red I chose
+							hues evocative of a cloudy dawn, and for the
+							ros&eacute; a stormy but pleasant pink-and-purple
+							palette.
 						</p>
 					</>
 				),
@@ -877,7 +884,7 @@ export const projects: ProjectType[] = [
 				name: "zarpara-labels-progress-step-3",
 				supertitle: "Luna de Sangre and Aurora",
 				title: "Dessert and Port Wine Labels",
-				imageAspect: "tall",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -921,7 +928,7 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					These labels are still used today, and Zarpara&apos;s
-					business continues to be strong.
+					business continues to thrive.
 				</p>
 			</>
 		),
@@ -959,11 +966,12 @@ export const projects: ProjectType[] = [
 				name: "kingdom-hearts-fan-art-progress-step-1",
 				supertitle: "Glimpsing Destiny",
 				title: "The Future Doesn't Scare Me",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
 							This piece features Sora, Kairi, and Riku looking
-							out at a sunset from a beach on Destiny Island.
+							out at a sunset from the beach on Destiny Island.
 						</p>
 						<p>
 							I filled this piece with small details from the
@@ -979,6 +987,7 @@ export const projects: ProjectType[] = [
 				name: "kingdom-hearts-fan-art-progress-step-2",
 				supertitle: "A Dark Mirror",
 				title: "Where Fears and Lies Melt Away",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -987,10 +996,10 @@ export const projects: ProjectType[] = [
 							Riku of Organization XIII.
 						</p>
 						<p>
-							Once again, I filled the background with detail that
-							fans of the games would recognize. There are yet
-							more keyblades, a King Mickey, and even Kingdom
-							Hearts itself.
+							Once again, I filled the background with details
+							that fans of the games would recognize. There are
+							yet more keyblades, a King Mickey, and even Kingdom
+							Hearts itself!
 						</p>
 					</>
 				),
@@ -1008,12 +1017,14 @@ export const projects: ProjectType[] = [
 					While it has been many years since I&apos;ve used Corel
 					Painter, I appreciated its commitment to emulating physical
 					media on a digital canvas. I mainly used the oil pastels, as
-					I found they easy to blend with and great for letting the
-					painting surface&apos;s underlying texture show through.
+					I found them easy to blend with and great for letting the
+					underlying texture of the painting surface show through.
 				</p>
 				<p>
-					Kingdom Hearts is owned and copyrighted by Disney and Square
-					Enix.
+					<strong>
+						Kingdom Hearts is owned and copyrighted by Disney and
+						Square Enix.
+					</strong>
 				</p>
 			</>
 		),
@@ -1031,6 +1042,7 @@ export const projects: ProjectType[] = [
 		],
 		thumbImage: mediaData.figureStudies,
 		slideshow: [
+			mediaData.figureStudies5,
 			mediaData.figureStudies2,
 			mediaData.figureStudies1,
 			mediaData.figureStudies3,
@@ -1039,7 +1051,7 @@ export const projects: ProjectType[] = [
 		overviewText: (
 			<>
 				As mentioned in my <CustomLink to="/cv#resume">CV</CustomLink>,
-				a major focus in my college education was on drawing the human
+				a major focus of my college education was drawing the human
 				figure. People are still my favorite subject to draw, and I have
 				made a regular practice of doing so in recent years.
 			</>
@@ -1049,7 +1061,7 @@ export const projects: ProjectType[] = [
 				name: "figure-studies-progress-step-1",
 				supertitle: "Studio Grafit",
 				title: "An Invaluable Resource",
-				imageAspect: "tall",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1066,11 +1078,8 @@ export const projects: ProjectType[] = [
 							excellent reference photos of a diverse set of
 							models that are expertly lit, these packs are an
 							indispensable resource for those who don&apos;t have
-							access to live models.
-						</p>
-						<p>
-							These photo packs form the foundation for my regular
-							figure studies.
+							access to live models, and form the foundation for
+							my regular figure studies.
 						</p>
 					</>
 				),
@@ -1080,7 +1089,7 @@ export const projects: ProjectType[] = [
 				name: "figure-studies-progress-step-2",
 				supertitle: "The Flexibility of",
 				title: "Digital Media",
-				imageAspect: "tall",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1134,7 +1143,7 @@ export const projects: ProjectType[] = [
 		imageGrid: [
 			mediaData.figureStudies2,
 			mediaData.figureStudies7,
-			mediaData.figureStudies3,
+			mediaData.figureStudies10,
 			mediaData.figureStudies4,
 			mediaData.figureStudies8,
 			mediaData.figureStudies5,
@@ -1142,6 +1151,8 @@ export const projects: ProjectType[] = [
 			mediaData.figureStudies12,
 			mediaData.figureStudies9,
 			mediaData.figureStudies11,
+			mediaData.figureStudies1,
+			mediaData.figureStudies3,
 		],
 	},
 	{
@@ -1152,6 +1163,7 @@ export const projects: ProjectType[] = [
 				...categories.illustration,
 				primary: true,
 			},
+			categories.writing,
 			categories.personalWork,
 		],
 		thumbImage: mediaData.crow3,
@@ -1162,11 +1174,10 @@ export const projects: ProjectType[] = [
 				In 2009, I finished an illustration that was in need of a story.
 				A would-be assassin plummets from a skyscraper window, his
 				adversary soaring after him, seemingly unconcerned that both are
-				ostensibly falling toward their deaths. I envisioned that the
-				latter was somehow immortal, while the former was about to find
-				out that he was, too. After asking myself why this would be the
-				case, reasons gave way to narrative, and Post-Autumn was thereby
-				born.
+				falling toward their deaths. I envisioned that the latter was
+				somehow immortal, while the former was about to find out that he
+				was, too. After asking myself why this would be, reasons gave
+				way to narrative, and <i>Post-Autumn</i> was thereby born.
 			</>
 		),
 		features: [
@@ -1174,7 +1185,7 @@ export const projects: ProjectType[] = [
 				name: "post-autumn-progress-step-1",
 				supertitle: "Designing Crow",
 				title: "An Anti-Hero Is Born",
-				imageAspect: "tall",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1191,7 +1202,7 @@ export const projects: ProjectType[] = [
 							for his unique gifts and given a chance at a life
 							that would both indulge and reward his murderous
 							tendencies. And so a state-sponsored assassin was
-							born.
+							made.
 						</p>
 						<p>
 							From his home city of Valkyrie, Crow is sent on
@@ -1207,6 +1218,7 @@ export const projects: ProjectType[] = [
 				name: "post-autumn-progress-step-2",
 				supertitle: "Deceased Gods",
 				title: "The Ravens",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1226,8 +1238,9 @@ export const projects: ProjectType[] = [
 			},
 			{
 				name: "post-autumn-progress-step-3",
-				supertitle: "The Bionic Assassin",
+				supertitle: "A Bionic Assassin in",
 				title: "A Cybernetic Future",
+				imageAspect: "image",
 				description: (
 					<>
 						<p className="body-text large">
@@ -1269,10 +1282,10 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					What caused this cataclysm and who is ultimately to blame
-					are central mysteries to this world. Before the protagonists
-					can uncover those mysteries, however, they are faced with a
-					new threat&mdash;one that promises to finish the job that
-					the cataclysm could not.
+					are central mysteries to this world. Before Crow can uncover
+					those mysteries, however, he is faced with a new
+					threat&mdash;one that promises to finish the job that the
+					cataclysm could not.
 				</p>
 				<p>
 					The illustration that inspired the world of Post-Autumn is

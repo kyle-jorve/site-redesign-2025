@@ -18,7 +18,7 @@ export type FeatureType = {
 	description: React.ReactElement;
 	image: ImageMetaType | ImageMetaType[];
 	videoSrc?: string;
-	imageAspect?: "tall" | "wide" | "standard";
+	imageAspect?: "tall" | "wide" | "image" | "standard";
 	url?: string;
 	buttonText?: string;
 	alignment?: "image-left" | "image-right";
