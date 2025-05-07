@@ -11,15 +11,10 @@ import navStyles from "@/styles/components/layout/navigation.module.css";
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const { loadStatus, visited, hideShell } = useContext(SiteContext);
+	const { hideShell } = useContext(SiteContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
-	const [componentLoaded, setComponentLoaded] = useState<boolean>(false);
-	const classes = printClassNames([
-		styles.header,
-		!componentLoaded ? styles.hide : "",
-		className,
-	]);
+	const classes = printClassNames([styles.header, className]);
 	const breakpoint = 640;
 
 	// set mobile nav hidden state on scroll
@@ -42,18 +37,6 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
-
-	// set component loaded state on page load
-	useEffect(() => {
-		if (!visited) {
-			setComponentLoaded(false);
-			return;
-		}
-
-		setComponentLoaded(false);
-
-		if (loadStatus === "idle") setComponentLoaded(true);
-	}, [loadStatus, visited]);
 
 	if (hideShell) return null;
 

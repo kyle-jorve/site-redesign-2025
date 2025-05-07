@@ -1,407 +1,402 @@
-@layer buttons {
-	/*=====================================*/
-	/*=====----- BUTTON LINK ROW -----=====*/
-	/*=====================================*/
+/*=====================================*/
+/*=====----- BUTTON LINK ROW -----=====*/
+/*=====================================*/
 
-	.link-row {
-		display: flex;
-		align-items: center;
-		width: 100%;
-		gap: 1.25rem;
-
-		.button {
-			flex-shrink: 0;
-		}
-
-		.lines {
-			display: flex;
-			flex-direction: column;
-			gap: 0.25rem;
-			flex-grow: 1;
-
-			&::before,
-			&::after {
-				display: block;
-				height: var(--border-width);
-				background: var(--red);
-				border-radius: var(--border-width);
-				content: "";
-				pointer-events: none;
-			}
-
-			&::before {
-				width: 100%;
-			}
-
-			&::after {
-				width: 70%;
-			}
-
-			&.left {
-				align-items: end;
-			}
-
-			&.right {
-				align-items: start;
-			}
-		}
-
-		&.lines-blue .lines {
-			&::before,
-			&::after {
-				background: var(--blue-light);
-			}
-		}
-	}
-
-	/*==========================================*/
-	/*=====----- SHARED BUTTON STYLES -----=====*/
-	/*==========================================*/
-
-	.button,
-	.filter-chip,
-	.clear-filters-button {
-		display: inline-flex;
-		align-items: center;
-		flex-shrink: 0;
-		margin: 0;
-		font-family: var(--font-body);
-		font-weight: var(--font-weight-black);
-		line-height: var(--leading-none);
-		text-align: left;
-		text-decoration: none;
-		color: var(--text-color);
-		background-color: var(--background-color);
-		border: none;
-		border-radius: var(--border-radius-rounded);
-
-		.button-text {
-			transition: translate var(--transition),
-				text-shadow var(--transition);
-		}
-	}
-
-	.button,
-	.circle-button {
-		&.light {
-			--background-color: rgba(42, 46, 75, 0.3);
-			--box-shadow: none;
-
-			--background-color-hover: var(--red);
-			--border-color-hover: transparent;
-			--box-shadow-hover: var(--hard-shadow);
-
-			border: var(--border-cream);
-			backdrop-filter: var(--backdrop-blur);
-		}
-
-		&.dark {
-			--text-color: var(--gold-light);
-			--background-color: var(--blue);
-			--box-shadow: var(--hard-shadow-light);
-
-			--text-color-hover: var(--cream);
-			--background-color-hover: var(--blue-light);
-			--box-shadow-hover: var(--hard-shadow-light-long);
-		}
-	}
-
-	/*======================================*/
-	/*=====----- STANDARD BUTTONS -----=====*/
-	/*======================================*/
+.link-row {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: 1.25rem;
 
 	.button {
-		--text-color: var(--cream);
-		--background-color: var(--red);
-		--box-shadow: var(--hard-shadow);
-
-		--text-color-hover: var(--cream);
-		--background-color-hover: var(--red-light);
-		--box-shadow-hover: var(--hard-shadow-long);
-
-		gap: 0.625rem;
-		padding: 0.5rem 0.5rem 0.5rem 1.25rem;
-		font-size: var(--font-size-small);
-		letter-spacing: var(--kerning-large);
-		text-transform: uppercase;
-		box-shadow: var(--box-shadow);
-		transition: color var(--transition), background-color var(--transition),
-			box-shadow var(--transition);
-
-		&::after {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 1.75rem;
-			aspect-ratio: 1;
-			flex-shrink: 0;
-			font: var(--fa-font-solid);
-			font-size: var(--font-size-small);
-			content: "\f061";
-			border: var(--border-cream);
-			border-radius: 50%;
-			transition: translate var(--transition),
-				box-shadow var(--transition);
-		}
-
-		&.filter,
-		&.back,
-		&.contact {
-			padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-
-			&::after {
-				order: -1;
-			}
-		}
-
-		&.filter::after,
-		&.contact::after {
-			padding-left: 0.125rem;
-		}
-
-		&.filter::after {
-			content: "\f1de";
-		}
-
-		&.back::after {
-			content: "\f060";
-		}
-
-		&.contact::after {
-			content: "\40";
-		}
-
-		&.shadow-light {
-			--box-shadow: var(--hard-shadow-light);
-			--box-shadow-hover: var(--hard-shadow-light-long);
-		}
-
-		&.shadow-red {
-			--box-shadow: var(--hard-shadow-red);
-			--box-shadow-hover: var(--hard-shadow-red-long);
-		}
-
-		&.shadow-dark {
-			--box-shadow: var(--hard-shadow);
-			--box-shadow-hover: var(--hard-shadow-long);
-		}
+		flex-shrink: 0;
 	}
 
-	/*==================================*/
-	/*=====----- FILTER CHIPS -----=====*/
-	/*==================================*/
+	.lines {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		flex-grow: 1;
 
-	.filter-chip,
-	.clear-filters-button {
-		gap: 0.375rem;
-		padding: 0.375rem 1rem 0.375rem 0.375rem;
-		font-size: var(--font-size-small);
-		letter-spacing: var(--kerning-small);
-		transition: color var(--transition), background-color var(--transition);
+		&::before,
+		&::after {
+			display: block;
+			height: var(--border-width);
+			background: var(--red);
+			border-radius: var(--border-width);
+			content: "";
+			pointer-events: none;
+		}
 
 		&::before {
-			font-family: var(--fa-style-family-classic);
-			font-size: 1.375rem;
-			content: "\f057";
+			width: 100%;
+		}
+
+		&::after {
+			width: 70%;
+		}
+
+		&.left {
+			align-items: end;
+		}
+
+		&.right {
+			align-items: start;
 		}
 	}
 
-	.filter-chip {
+	&.lines-blue .lines {
+		&::before,
+		&::after {
+			background: var(--blue-light);
+		}
+	}
+}
+
+/*==========================================*/
+/*=====----- SHARED BUTTON STYLES -----=====*/
+/*==========================================*/
+
+.button,
+.filter-chip,
+.clear-filters-button {
+	display: inline-flex;
+	align-items: center;
+	flex-shrink: 0;
+	margin: 0;
+	font-family: var(--font-body);
+	font-weight: var(--font-weight-black);
+	line-height: var(--leading-none);
+	text-align: left;
+	text-decoration: none;
+	color: var(--text-color);
+	background-color: var(--background-color);
+	border: none;
+	border-radius: var(--border-radius-rounded);
+
+	.button-text {
+		transition: translate var(--transition), text-shadow var(--transition);
+	}
+}
+
+.button,
+.circle-button {
+	&.light {
+		--background-color: rgba(42, 46, 75, 0.3);
+		--box-shadow: none;
+
+		--background-color-hover: var(--red);
+		--border-color-hover: transparent;
+		--box-shadow-hover: var(--hard-shadow);
+
+		border: var(--border-cream);
+		backdrop-filter: var(--backdrop-blur);
+	}
+
+	&.dark {
 		--text-color: var(--gold-light);
 		--background-color: var(--blue);
+		--box-shadow: var(--hard-shadow-light);
 
 		--text-color-hover: var(--cream);
 		--background-color-hover: var(--blue-light);
-
-		&::before {
-			font-weight: 900;
-		}
+		--box-shadow-hover: var(--hard-shadow-light-long);
 	}
+}
 
-	.clear-filters-button {
-		--text-color: var(--blue);
-		--background-color: transparent;
+/*======================================*/
+/*=====----- STANDARD BUTTONS -----=====*/
+/*======================================*/
 
-		--text-color-hover: var(--gold-light);
-		--background-color-hover: var(--blue);
+.button {
+	--text-color: var(--cream);
+	--background-color: var(--red);
+	--box-shadow: var(--hard-shadow);
 
-		border: var(--border-blue);
+	--text-color-hover: var(--cream);
+	--background-color-hover: var(--red-light);
+	--box-shadow-hover: var(--hard-shadow-long);
 
-		&::before {
-			font-weight: 400;
-		}
-	}
+	gap: 0.625rem;
+	padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+	font-size: var(--font-size-small);
+	letter-spacing: var(--kerning-large);
+	text-transform: uppercase;
+	box-shadow: var(--box-shadow);
+	transition: color var(--transition), background-color var(--transition),
+		box-shadow var(--transition);
 
-	/*====================================*/
-	/*=====----- CIRCLE BUTTONS -----=====*/
-	/*====================================*/
-
-	.circle-button {
-		--text-color: var(--cream);
-		--background-color: var(--red);
-		--box-shadow: var(--hard-shadow);
-
-		--text-color-hover: var(--cream);
-		--background-color-hover: var(--red-light);
-		--box-shadow-hover: var(--hard-shadow-long);
-
-		position: relative;
+	&::after {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: var(--circle-button-width);
+		width: 1.75rem;
 		aspect-ratio: 1;
 		flex-shrink: 0;
-		padding: 0;
-		margin: 0;
-		font-size: calc((var(--circle-button-width) / 2) + 0.125rem);
-		line-height: 1;
-		text-align: center;
-		text-decoration: none;
-		color: var(--text-color);
-		background-color: var(--background-color);
-		border: none;
+		font: var(--fa-font-solid);
+		font-size: var(--font-size-small);
+		content: "\f061";
+		border: var(--border-cream);
 		border-radius: 50%;
-		box-shadow: var(--box-shadow);
-		transition: color var(--transition), background-color var(--transition),
-			border-color var(--transition), box-shadow var(--transition);
+		transition: translate var(--transition), box-shadow var(--transition);
+	}
 
-		&::before {
-			transition: translate var(--transition);
-		}
+	&.filter,
+	&.back,
+	&.contact {
+		padding: 0.5rem 1.25rem 0.5rem 0.5rem;
 
-		&.solid::before {
-			font: var(--fa-font-solid);
-		}
-
-		&.regular::before {
-			font: var(--fa-font-regular);
-		}
-
-		&.shadow-light {
-			--box-shadow: var(--hard-shadow-light);
-			--box-shadow-hover: var(--hard-shadow-light-long);
-		}
-
-		&.shadow-red {
-			--box-shadow: var(--hard-shadow-red);
-			--box-shadow-hover: var(--hard-shadow-red-long);
-		}
-
-		&.shadow-dark {
-			--box-shadow: var(--hard-shadow);
-			--box-shadow-hover: var(--hard-shadow-long);
-		}
-
-		&.heart {
-			&::before,
-			&::after {
-				content: "\f004";
-				transition: translate var(--transition),
-					opacity var(--transition);
-			}
-
-			&::before {
-				font: var(--fa-font-regular);
-			}
-
-			&::after {
-				position: absolute;
-				inset: 50% auto auto 50%;
-				translate: -50% -50%;
-				font: var(--fa-font-solid);
-			}
-
-			&.regular {
-				&::before {
-					opacity: 1;
-				}
-
-				&::after {
-					opacity: 0;
-				}
-			}
-
-			&.solid {
-				--text-color: var(--cream);
-				--background-color: var(--red);
-				--box-shadow: var(--hard-shadow);
-
-				--text-color-hover: var(--cream);
-				--background-color-hover: var(--red-light);
-				--box-shadow-hover: var(--hard-shadow-long);
-
-				border-color: var(--red);
-
-				&::before {
-					opacity: 0;
-				}
-
-				&::after {
-					opacity: 1;
-				}
-			}
-		}
-
-		&.arrow-left::before {
-			content: "\f060";
-		}
-
-		&.arrow-right::before {
-			content: "\f061";
+		&::after {
+			order: -1;
 		}
 	}
 
-	/*===================================*/
-	/*=====----- MEDIA QUERIES -----=====*/
-	/*===================================*/
+	&.filter::after,
+	&.contact::after {
+		padding-left: 0.125rem;
+	}
 
-	@media (hover: hover) {
-		/*----- shared hover styles -----*/
+	&.filter::after {
+		content: "\f1de";
+	}
 
-		.button:hover,
-		.circle-button:hover {
-			color: var(--text-color-hover);
-			background-color: var(--background-color-hover);
-			border-color: var(--border-color-hover);
-			box-shadow: var(--box-shadow-hover, var(--box-shadow));
+	&.back::after {
+		content: "\f060";
+	}
+
+	&.contact::after {
+		content: "\40";
+	}
+
+	&.shadow-light {
+		--box-shadow: var(--hard-shadow-light);
+		--box-shadow-hover: var(--hard-shadow-light-long);
+	}
+
+	&.shadow-red {
+		--box-shadow: var(--hard-shadow-red);
+		--box-shadow-hover: var(--hard-shadow-red-long);
+	}
+
+	&.shadow-dark {
+		--box-shadow: var(--hard-shadow);
+		--box-shadow-hover: var(--hard-shadow-long);
+	}
+}
+
+/*==================================*/
+/*=====----- FILTER CHIPS -----=====*/
+/*==================================*/
+
+.filter-chip,
+.clear-filters-button {
+	gap: 0.375rem;
+	padding: 0.375rem 1rem 0.375rem 0.375rem;
+	font-size: var(--font-size-small);
+	letter-spacing: var(--kerning-small);
+	transition: color var(--transition), background-color var(--transition);
+
+	&::before {
+		font-family: var(--fa-style-family-classic);
+		font-size: 1.375rem;
+		content: "\f057";
+	}
+}
+
+.filter-chip {
+	--text-color: var(--gold-light);
+	--background-color: var(--blue);
+
+	--text-color-hover: var(--cream);
+	--background-color-hover: var(--blue-light);
+
+	&::before {
+		font-weight: 900;
+	}
+}
+
+.clear-filters-button {
+	--text-color: var(--blue);
+	--background-color: transparent;
+
+	--text-color-hover: var(--gold-light);
+	--background-color-hover: var(--blue);
+
+	border: var(--border-blue);
+
+	&::before {
+		font-weight: 400;
+	}
+}
+
+/*====================================*/
+/*=====----- CIRCLE BUTTONS -----=====*/
+/*====================================*/
+
+.circle-button {
+	--text-color: var(--cream);
+	--background-color: var(--red);
+	--box-shadow: var(--hard-shadow);
+
+	--text-color-hover: var(--cream);
+	--background-color-hover: var(--red-light);
+	--box-shadow-hover: var(--hard-shadow-long);
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--circle-button-width);
+	aspect-ratio: 1;
+	flex-shrink: 0;
+	padding: 0;
+	margin: 0;
+	font-size: calc((var(--circle-button-width) / 2) + 0.125rem);
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text-color);
+	background-color: var(--background-color);
+	border: none;
+	border-radius: 50%;
+	box-shadow: var(--box-shadow);
+	transition: color var(--transition), background-color var(--transition),
+		border-color var(--transition), box-shadow var(--transition);
+
+	&::before {
+		transition: translate var(--transition);
+	}
+
+	&.solid::before {
+		font: var(--fa-font-solid);
+	}
+
+	&.regular::before {
+		font: var(--fa-font-regular);
+	}
+
+	&.shadow-light {
+		--box-shadow: var(--hard-shadow-light);
+		--box-shadow-hover: var(--hard-shadow-light-long);
+	}
+
+	&.shadow-red {
+		--box-shadow: var(--hard-shadow-red);
+		--box-shadow-hover: var(--hard-shadow-red-long);
+	}
+
+	&.shadow-dark {
+		--box-shadow: var(--hard-shadow);
+		--box-shadow-hover: var(--hard-shadow-long);
+	}
+
+	&.heart {
+		&::before,
+		&::after {
+			content: "\f004";
+			transition: translate var(--transition), opacity var(--transition);
 		}
 
-		/*----- standard buttons -----*/
+		&::before {
+			font: var(--fa-font-regular);
+		}
 
-		.button:hover {
-			&::after,
-			.button-text {
-				translate: 0.25rem -0.25rem;
+		&::after {
+			position: absolute;
+			inset: 50% auto auto 50%;
+			translate: -50% -50%;
+			font: var(--fa-font-solid);
+		}
+
+		&.regular {
+			&::before {
+				opacity: 1;
 			}
 
 			&::after {
-				box-shadow: var(--hard-shadow);
-			}
-
-			.button-text {
-				text-shadow: var(--hard-shadow);
+				opacity: 0;
 			}
 		}
 
-		/*----- filter chips -----*/
+		&.solid {
+			--text-color: var(--cream);
+			--background-color: var(--red);
+			--box-shadow: var(--hard-shadow);
 
-		.filter-chip:hover,
-		.clear-filters-button:hover {
-			color: var(--text-color-hover);
-			background-color: var(--background-color-hover);
-		}
+			--text-color-hover: var(--cream);
+			--background-color-hover: var(--red-light);
+			--box-shadow-hover: var(--hard-shadow-long);
 
-		/*----- circle buttons -----*/
+			border-color: var(--red);
 
-		.circle-button:hover {
 			&::before {
-				translate: 0.25rem -0.25rem;
+				opacity: 0;
 			}
 
-			&.heart::after {
-				translate: calc(-50% + 0.25rem) calc(-50% - 0.25rem);
+			&::after {
+				opacity: 1;
 			}
+		}
+	}
+
+	&.arrow-left::before {
+		content: "\f060";
+	}
+
+	&.arrow-right::before {
+		content: "\f061";
+	}
+}
+
+/*===================================*/
+/*=====----- MEDIA QUERIES -----=====*/
+/*===================================*/
+
+@media (hover: hover) {
+	/*----- shared hover styles -----*/
+
+	.button:hover,
+	.circle-button:hover {
+		color: var(--text-color-hover);
+		background-color: var(--background-color-hover);
+		border-color: var(--border-color-hover);
+		box-shadow: var(--box-shadow-hover, var(--box-shadow));
+	}
+
+	/*----- standard buttons -----*/
+
+	.button:hover {
+		&::after,
+		.button-text {
+			translate: 0.25rem -0.25rem;
+		}
+
+		&::after {
+			box-shadow: var(--hard-shadow);
+		}
+
+		.button-text {
+			text-shadow: var(--hard-shadow);
+		}
+	}
+
+	/*----- filter chips -----*/
+
+	.filter-chip:hover,
+	.clear-filters-button:hover {
+		color: var(--text-color-hover);
+		background-color: var(--background-color-hover);
+	}
+
+	/*----- circle buttons -----*/
+
+	.circle-button:hover {
+		&::before {
+			translate: 0.25rem -0.25rem;
+		}
+
+		&.heart::after {
+			translate: calc(-50% + 0.25rem) calc(-50% - 0.25rem);
 		}
 	}
 }
