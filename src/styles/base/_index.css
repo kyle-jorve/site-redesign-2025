@@ -1,3 +1,5 @@
+@layer reset, theme, typography, global, buttons;
+
 @import url("./normalize.css");
 @import url("./theme.css");
 @import url("./typography.css");
