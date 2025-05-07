@@ -147,7 +147,7 @@ export default function Feature({
 				{description}
 
 				{!!url && (
-					<div className={styles["button-row"]}>
+					<div className="button-row">
 						<ButtonLink
 							className={styles.button}
 							url={url}

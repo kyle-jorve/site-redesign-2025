@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
 		],
 	},
 	experimental: {
-		cssChunking: "strict",
+		cssChunking: false,
 	},
-};
+} satisfies NextConfig;
 
 export default nextConfig;

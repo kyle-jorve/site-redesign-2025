@@ -78,7 +78,7 @@ export default function ProjectDescriptionGrid({
 				<div className={styles.desc}>{bodyText}</div>
 
 				{url !== undefined && (
-					<div className={styles["button-row"]}>
+					<div className="button-row">
 						<ButtonLink url={url}>{buttonText}</ButtonLink>
 					</div>
 				)}

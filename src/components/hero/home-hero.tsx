@@ -138,10 +138,7 @@ export default function HomeHero({
 			}, 200);
 		}
 
-		function ioCallback(
-			entries: IntersectionObserverEntry[],
-			_: IntersectionObserver,
-		) {
+		function ioCallback(entries: IntersectionObserverEntry[]) {
 			entries.forEach((entry) => {
 				const targetIsContent = entry.target === content;
 

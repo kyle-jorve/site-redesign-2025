@@ -57,6 +57,10 @@
 /*=====----- SHARED BUTTON STYLES -----=====*/
 /*==========================================*/
 
+.button-row {
+	margin: 2rem 0 1rem;
+}
+
 .button,
 .filter-chip,
 .clear-filters-button {

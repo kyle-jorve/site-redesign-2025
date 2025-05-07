@@ -74,6 +74,7 @@
 	@media (min-width: 40em) {
 		.content {
 			top: 12rem;
+			padding: 0 4rem;
 		}
 
 		.image {

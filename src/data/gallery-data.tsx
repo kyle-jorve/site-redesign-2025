@@ -13,9 +13,10 @@ export const pageSummary = (
 		them with others is a close second.
 	</>
 );
-export const backToProjectsButtonText = "See All Projects";
+export const backToProjectsButtonText = "All Projects";
 export const relatedProjectsTitle = "See Also";
 export const relatedProjectsButtonText = "See More";
+export const noResultsMessage = `The search returned nothing. Try using different filters.`;
 
 export const categories: CategoriesType = {
 	design: {
@@ -1043,6 +1044,7 @@ export const projects: ProjectType[] = [
 		thumbImage: mediaData.figureStudies,
 		slideshow: [
 			mediaData.figureStudies5,
+			mediaData.figureStudies4,
 			mediaData.figureStudies2,
 			mediaData.figureStudies1,
 			mediaData.figureStudies3,

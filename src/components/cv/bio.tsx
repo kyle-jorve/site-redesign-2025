@@ -80,7 +80,7 @@ export default function Bio({
 					{isHero ? (
 						<SocialIcons className={socialStyles["bio-icons"]} />
 					) : (
-						<div className={styles["button-row"]}>
+						<div className="button-row">
 							<ButtonLink url={url}>{buttonText}</ButtonLink>
 						</div>
 					)}

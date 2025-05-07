@@ -18,7 +18,10 @@ export default function ProjectsPage() {
 					<p className="body-text large">{galleryData.pageSummary}</p>
 				}
 			/>
-			<ProjectGrid projects={galleryData.projectsSorted} />
+			<ProjectGrid
+				projects={galleryData.projectsSorted}
+				noResultsMessage={galleryData.noResultsMessage}
+			/>
 			<Bio
 				{...bio}
 				image={bioBodyImage}

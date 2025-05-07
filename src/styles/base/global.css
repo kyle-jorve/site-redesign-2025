@@ -172,7 +172,7 @@ a {
 
 @media (min-width: 64em) {
 	body {
-		background-size: auto 43.25rem, 100% 45rem, auto 30rem, 100% 24rem;
+		background-size: auto 30rem, 100% 24rem, auto 43.25rem, 100% 45rem;
 	}
 
 	.content-box.small {

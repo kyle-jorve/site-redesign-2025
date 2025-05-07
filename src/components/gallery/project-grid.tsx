@@ -11,10 +11,12 @@ import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectGridProps = {
 	projects: ProjectTileType[];
+	noResultsMessage: string;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function ProjectGrid({
 	projects,
+	noResultsMessage,
 	className = "",
 	...otherProps
 }: ProjectGridProps) {
@@ -59,26 +61,34 @@ export default function ProjectGrid({
 				<Filters />
 			</Suspense>
 
-			<div className={styles.projects}>
-				{filteredProjects.map((proj, index) => {
-					const isLong =
-						(index === 0 && proj.featured) ||
-						(index === filteredProjects.length - 1 &&
-							(index + 1) % 2 === 0);
+			{!filteredProjects.length ? (
+				<p
+					className={`body-text large ${styles["no-results-message"]}`}
+				>
+					{noResultsMessage}
+				</p>
+			) : (
+				<div className={styles.projects}>
+					{filteredProjects.map((proj, index) => {
+						const isLong =
+							(index === 0 && proj.featured) ||
+							(index === filteredProjects.length - 1 &&
+								(index + 1) % 2 === 0);
 
-					return (
-						<ProjectTile
-							key={proj.name}
-							name={proj.name}
-							title={proj.title}
-							categories={proj.categories}
-							featured={proj.featured}
-							image={proj.thumbImage}
-							variant={isLong ? "long" : "standard"}
-						/>
-					);
-				})}
-			</div>
+						return (
+							<ProjectTile
+								key={proj.name}
+								name={proj.name}
+								title={proj.title}
+								categories={proj.categories}
+								featured={proj.featured}
+								image={proj.thumbImage}
+								variant={isLong ? "long" : "standard"}
+							/>
+						);
+					})}
+				</div>
+			)}
 		</section>
 	);
 }
