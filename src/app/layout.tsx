@@ -30,8 +30,6 @@ export const metadata: Metadata = {
 		images: [
 			{
 				url: `/images/${bioImageBody.pathKey}/${bioImageBody.pathKey}-kyle-jorve-640.jpg`,
-				width: 640,
-				height: 960,
 			},
 		],
 		locale: "en_US",

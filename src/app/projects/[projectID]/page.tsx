@@ -47,8 +47,6 @@ export async function generateMetadata({
 		returnObj.openGraph!.images = [
 			{
 				url: image,
-				width: 640,
-				height: 640,
 			},
 		];
 	}

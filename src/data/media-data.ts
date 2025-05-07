@@ -15,7 +15,7 @@ export const bioImageHero: ImageMetaType = {
 	name: "bio-image-hero",
 	pathKey: "bio-image-hero",
 	alt: "a portrait of Kyle Jorve wearing headphones",
-	verticalOrientation: "32%",
+	verticalOrientation: "25%",
 };
 
 //=====================================//
