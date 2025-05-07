@@ -15,7 +15,7 @@
 		--top-gradient-background: var(--gradient-gold-vertical) no-repeat
 			center top / 100% 45rem;
 		--bottom-icon-background: url("/images/icon-pattern-sunset.svg")
-			repeat-x left bottom / auto 36.75rem;
+			repeat-x left bottom / auto 30rem;
 		--bottom-gradient-background: var(--gradient-peach-vertical) no-repeat
 			center bottom / 100% 26.75rem;
 
@@ -26,8 +26,9 @@
 		width: 100%;
 		min-height: 100vh;
 		padding-bottom: 6.75rem; /* leaves room for the mobile nav */
-		background: var(--top-icon-background), var(--top-gradient-background),
-			var(--bottom-icon-background), var(--bottom-gradient-background);
+		background: var(--bottom-icon-background),
+			var(--bottom-gradient-background), var(--top-icon-background),
+			var(--top-gradient-background);
 		background-color: var(--body-bg);
 		overflow-x: hidden;
 	}

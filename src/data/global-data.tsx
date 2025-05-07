@@ -1,4 +1,9 @@
-import { SocialMediaType, NavType, NavItemType } from "@/types/global-types";
+import {
+	SocialMediaType,
+	NavType,
+	NavItemType,
+	SocialMediaObjectType,
+} from "@/types/global-types";
 import CustomLink from "@/components/global/custom-link";
 
 export const pageNotFoundTitle = "Page Not Found";

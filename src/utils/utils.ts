@@ -1,4 +1,3 @@
-import { ImageDataType } from "@/types/global-types";
 import { ButtonLinkProps } from "@/components/global/button-link";
 
 export function printClassNames(classes: string[]) {

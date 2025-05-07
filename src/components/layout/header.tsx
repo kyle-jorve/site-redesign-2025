@@ -11,7 +11,7 @@ import navStyles from "@/styles/components/layout/navigation.module.css";
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const { loadStatus, visited } = useContext(SiteContext);
+	const { loadStatus, visited, hideShell } = useContext(SiteContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
 	const [componentLoaded, setComponentLoaded] = useState<boolean>(false);
@@ -54,6 +54,8 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 
 		if (loadStatus === "idle") setComponentLoaded(true);
 	}, [loadStatus, visited]);
+
+	if (hideShell) return null;
 
 	return (
 		<>

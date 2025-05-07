@@ -24,19 +24,17 @@ export default function Main({ children, ...otherProps }: MainProps) {
 
 		const main = mainRef?.current;
 
-		function handleTransition() {
-			setLoadStatus("idle");
-		}
-
-		main?.addEventListener("transitionend", handleTransition, {
-			once: true,
-		});
+		main?.addEventListener(
+			"transitionend",
+			() => {
+				setLoadStatus("idle");
+			},
+			{
+				once: true,
+			},
+		);
 
 		setLoadStatus("page-in");
-
-		return () => {
-			main?.removeEventListener("transitionend", handleTransition);
-		};
 	}, [path, visited]);
 
 	return (

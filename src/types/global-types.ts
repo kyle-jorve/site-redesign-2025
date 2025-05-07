@@ -26,8 +26,12 @@ export type ImageDataType = {
 export type SocialMediaType = {
 	url: string;
 	type: "standard" | "commerce";
+	label: string;
 	icon?: React.ReactElement;
-	label?: string;
+};
+
+export type SocialMediaObjectType = SocialMediaType & {
+	name: string;
 };
 
 export type NavItemType = {

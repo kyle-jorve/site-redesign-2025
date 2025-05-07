@@ -345,7 +345,7 @@
 		--gradient-gold-vertical: linear-gradient(
 			to bottom,
 			rgba(231, 177, 89, 0.6),
-			rgba(253, 233, 206, 0.6)
+			rgba(253, 233, 206, 0)
 		);
 		--gradient-gold-diagonal: linear-gradient(
 			45deg,
@@ -354,7 +354,7 @@
 		);
 		--gradient-peach-vertical: linear-gradient(
 			to bottom,
-			var(--cream),
+			rgba(253, 233, 206, 0),
 			var(--peach)
 		);
 		--gradient-retro-horizontal: linear-gradient(

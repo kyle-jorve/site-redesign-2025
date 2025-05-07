@@ -1,10 +1,17 @@
 import { printClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
+import LogoImage from "./logo-image";
 import styles from "@/styles/components/layout/header.module.css";
 
-export type LogoProps = React.HTMLAttributes<HTMLAnchorElement>;
+export type LogoProps = {
+	color?: "standard" | "dark";
+} & React.HTMLAttributes<HTMLAnchorElement>;
 
-export default function Logo({ className = "", ...otherProps }: LogoProps) {
+export default function Logo({
+	color = "standard",
+	className = "",
+	...otherProps
+}: LogoProps) {
 	const classes = printClassNames([styles.logo, className]);
 
 	return (
@@ -14,13 +21,7 @@ export default function Logo({ className = "", ...otherProps }: LogoProps) {
 			aria-label="go to home page"
 			{...otherProps}
 		>
-			<img
-				className={styles["logo-img"]}
-				src="/images/logo.svg"
-				alt="Kyle Jorve monogram"
-				loading="eager"
-				fetchPriority="high"
-			/>
+			<LogoImage color={color} />
 		</CustomLink>
 	);
 }

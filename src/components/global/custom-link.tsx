@@ -25,7 +25,11 @@ export default function CustomLink({
 	const { mainRef, setLoadStatus } = useContext(SiteContext);
 	const classes = printClassNames([className]);
 	const linkIsExternal =
-		to.includes("http") || target !== "_self" || !!otherProps.download;
+		to.includes("http") ||
+		to.includes("mailto:") ||
+		to.includes("tel:") ||
+		target !== "_self" ||
+		!!otherProps.download;
 
 	function pageTransition(event: React.MouseEvent) {
 		event.preventDefault();

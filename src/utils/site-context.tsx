@@ -7,6 +7,7 @@ import { projectFilters } from "@/data/gallery-data";
 export type SiteContextType = {
 	favedProjects: string[];
 	filters: CategoryType[];
+	hideShell: boolean;
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
 	visited: boolean;
@@ -14,6 +15,7 @@ export type SiteContextType = {
 	resetFilters: Function;
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
 	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
+	setHideShell: React.Dispatch<React.SetStateAction<boolean>>;
 	setLoadStatus: React.Dispatch<
 		React.SetStateAction<"idle" | "page-out" | "page-in">
 	>;
@@ -24,6 +26,7 @@ export type SiteContextType = {
 const SiteContext = createContext<SiteContextType>({
 	favedProjects: [],
 	filters: [],
+	hideShell: false,
 	loadStatus: "idle",
 	mainRef: null,
 	visited: false,
@@ -31,6 +34,7 @@ const SiteContext = createContext<SiteContextType>({
 	resetFilters: () => {},
 	setFavedProjects: () => {},
 	setFilters: () => {},
+	setHideShell: () => {},
 	setLoadStatus: () => {},
 	setVisited: () => {},
 	updateFilters: () => {},
@@ -40,6 +44,7 @@ export default SiteContext;
 
 export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	const [favedProjects, setFavedProjects] = useState<string[]>([]);
+	const [hideShell, setHideShell] = useState<boolean>(false);
 	const [loadStatus, setLoadStatus] =
 		useState<SiteContextType["loadStatus"]>("idle");
 	const [visited, setVisited] = useState<SiteContextType["visited"]>(false);
@@ -129,6 +134,7 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 			value={{
 				favedProjects,
 				filters,
+				hideShell,
 				loadStatus,
 				mainRef,
 				visited,
@@ -136,6 +142,7 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				resetFilters,
 				setFavedProjects,
 				setFilters,
+				setHideShell,
 				setLoadStatus,
 				setVisited,
 				updateFilters,

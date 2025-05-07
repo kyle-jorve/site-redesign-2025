@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { SiteContextProvider } from "@/utils/site-context";
 import { bioImageBody } from "@/data/media-data";
+import PreconnectResources from "@/components/layout/preconnect-resources";
 import Main from "@/components/layout/main";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
@@ -53,6 +54,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<SiteContextProvider>
+					<PreconnectResources />
 					<Header />
 					<Main>{children}</Main>
 					<Footer />
