@@ -6,7 +6,11 @@ import PreconnectResources from "@/components/layout/preconnect-resources";
 import Main from "@/components/layout/main";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
-import "@/styles/base/_index.css";
+import "@/styles/base/normalize.css";
+import "@/styles/base/theme.css";
+import "@/styles/base/typography.css";
+import "@/styles/base/global.css";
+import "@/styles/base/buttons.css";
 
 const defaultTitle =
 	"Kyle Jorve | Design, Development, Illustration, and Writing";
