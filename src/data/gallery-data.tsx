@@ -331,13 +331,9 @@ export const projects: ProjectType[] = [
 			mediaData.visitIrvingPreviewSlider,
 		],
 		summary: `A website to market a very musical Texas tourist destination.`,
-		overviewText: (
-			<>
-				I helped build the Visit Irving website alongside my teammates
+		overviewText: `I helped build the Visit Irving website alongside my teammates
 				at Simpleview. Following are some curated examples of the work I
-				contributed.
-			</>
-		),
+				contributed.`,
 		link: {
 			url: "https://www.irvingtexas.com/",
 			text: "Visit Website",
@@ -691,13 +687,9 @@ export const projects: ProjectType[] = [
 			mediaData.visitLasVegasHome,
 		],
 		summary: `A website to market the entertainment capital of the world.`,
-		overviewText: (
-			<>
-				I helped build the Visit Las Vegas website alongside my
+		overviewText: `I helped build the Visit Las Vegas website alongside my
 				teammates at Simpleview. Following are some curated examples of
-				the work I contributed.
-			</>
-		),
+				the work I contributed.`,
 		link: {
 			url: "https://www.visitlasvegas.com/",
 			text: "Visit Website",
@@ -823,8 +815,8 @@ export const projects: ProjectType[] = [
 		thumbImage: mediaData.zarparaRedBottle,
 		slideshow: [
 			mediaData.zarparaRedBottle,
-			mediaData.zarparaRoseBottle,
 			mediaData.zarparaWhiteBottle,
+			mediaData.zarparaRoseBottle,
 		],
 		summary: `A brand refresh for Zarpara Vineyard's wine labels using painterly illustrations.`,
 		problemText: `Zarpara Vineyard was in need of a design refresh. They'd lost their previous designer and were searching for another who could evolve their brand.`,
@@ -861,8 +853,8 @@ export const projects: ProjectType[] = [
 					</>
 				),
 				image: [
-					mediaData.zarparaWhiteLabel,
 					mediaData.zarparaRedLabel,
+					mediaData.zarparaWhiteLabel,
 					mediaData.zarparaRoseLabel,
 				],
 			},
@@ -954,14 +946,10 @@ export const projects: ProjectType[] = [
 		thumbImage: mediaData.kingdomHearts2,
 		slideshow: [mediaData.kingdomHearts1, mediaData.kingdomHearts2],
 		summary: `The future doesn't scare me where fears and lies melt away.`,
-		overviewText: (
-			<>
-				I made these twin illustrations in preparation for several
+		overviewText: `I made these twin illustrations in preparation for several
 				conventions in 2011. My intent was to compose them in such a way
 				that the characters of the first piece would mirror those on the
-				right.
-			</>
-		),
+				right.`,
 		features: [
 			{
 				name: "kingdom-hearts-fan-art-progress-step-1",

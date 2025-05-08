@@ -40,7 +40,7 @@ export type ProjectType = ProjectTileType & {
 	summary: string;
 	problemText?: string;
 	solutionText?: string;
-	overviewText?: React.ReactElement;
+	overviewText?: React.ReactElement | string;
 	link?: {
 		url: string;
 		text: string;
