@@ -62,7 +62,7 @@ export default function Filters({
 			  )}`
 			: path;
 
-		router.replace(newURL);
+		router.replace(newURL, { scroll: false });
 	}, [filters]);
 
 	useEffect(() => {

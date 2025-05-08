@@ -67,7 +67,7 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								At Simpleview/Granicus, I have built{" "}
+								At Simpleview/Granicus, I build{" "}
 								<CustomLink
 									to={`/projects?categories=${JSON.stringify([
 										"development",
@@ -282,8 +282,10 @@ export const resume: ResumeType = {
 								<strong>Adobe Creative Cloud</strong> software,
 								most especially in <strong>Photoshop</strong>,{" "}
 								<strong>Illustrator</strong>, and{" "}
-								<strong>InDesign</strong>. For drawing and
-								painting I tend to use{" "}
+								<strong>InDesign</strong>.
+							</p>
+							<p>
+								For drawing and painting I tend to use{" "}
 								<strong>Procreate</strong> on an iPad Pro.
 							</p>
 							<p>
@@ -310,7 +312,7 @@ export const resume: ResumeType = {
 						<p>
 							I graduated summa cum laude from the{" "}
 							<strong>University of Arizona</strong> in 2013,
-							earning a Bachelor&apos;s of Fine Art with an
+							earning a bachelor&apos;s degree in fine art with an
 							emphasis in visual communication and a concentration
 							in{" "}
 							<CustomLink

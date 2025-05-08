@@ -65,7 +65,6 @@ export default function CustomLink({
 			href={to}
 			target={target}
 			onClick={pageTransition}
-			data-custom-link="true"
 			{...otherProps}
 		>
 			{children}

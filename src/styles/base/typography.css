@@ -189,7 +189,9 @@ ul {
 a,
 .link {
 	font-weight: var(--font-weight-black);
-	text-decoration: underline var(--red) 2px;
+	text-decoration-line: underline;
+	text-decoration-color: var(--red);
+	text-decoration-thickness: 2px;
 	text-underline-offset: 18%;
 	color: var(--blue-light);
 	transition: color var(--transition);
