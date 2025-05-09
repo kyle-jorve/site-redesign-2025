@@ -67,7 +67,7 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								At Simpleview/Granicus, I build{" "}
+								At Simpleview/Granicus I build{" "}
 								<CustomLink
 									to={`/projects?categories=${JSON.stringify([
 										"development",
@@ -89,7 +89,7 @@ export const resume: ResumeType = {
 				},
 				{
 					name: "desert-lab-studio",
-					title: "Web Designer + Developer",
+					title: "Designer + Developer",
 					description: (
 						<>
 							<p>
@@ -159,11 +159,12 @@ export const resume: ResumeType = {
 					title: "Designer, Illustrator",
 					description: (
 						<p>
-							I designed print marketing materials and{" "}
+							I created custom illustrations and designed print
+							marketing materials and{" "}
 							<CustomLink to="/projects/zarpara-vineyard">
 								wine labels
 							</CustomLink>
-							, and created custom illustrations.
+							.
 						</p>
 					),
 					year: "2013 - 2019",
