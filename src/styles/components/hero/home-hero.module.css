@@ -12,8 +12,8 @@
 		z-index: 2;
 		display: block;
 		height: 42rem;
-		background: url("/images/icon-pattern-gold.png") repeat-x center bottom /
-			auto 100%;
+		background: url("/images/icon-pattern-gold-hero.svg") repeat-x center
+			bottom / auto 100%;
 		content: "";
 		pointer-events: none;
 	}

@@ -13,8 +13,8 @@ body {
 		repeat-x left top / auto 43.25rem;
 	--top-gradient-background: var(--gradient-gold-vertical) no-repeat center
 		top / 100% 45rem;
-	--bottom-icon-background: url("/images/icon-pattern-sunset.svg") repeat-x
-		left bottom / auto 30rem;
+	--bottom-icon-background: url("/images/icon-pattern-sunset-vertical.svg")
+		repeat-x left bottom / auto 30rem;
 	--bottom-gradient-background: var(--gradient-peach-vertical) no-repeat
 		center bottom / 100% 26.75rem;
 
@@ -34,11 +34,12 @@ body {
 main {
 	position: relative;
 	z-index: 2;
-	transition: opacity var(--transition);
+	transition: opacity var(--transition), visibility var(--transition);
 }
 
 main.out {
 	opacity: 0;
+	visibility: hidden;
 }
 
 *,
@@ -72,6 +73,20 @@ iframe {
 img,
 svg {
 	height: auto;
+}
+
+.image {
+	background-color: var(--cream);
+
+	&:not(.loaded) {
+		--gradient-color: var(--blue);
+
+		background: linear-gradient(to right, var(--gradient-color));
+		background-repeat: no-repeat;
+		background-size: 75% 100%;
+		background-position: -300% 0;
+		animation: gradient-wipe 5s ease infinite;
+	}
 }
 
 .underline {
@@ -177,5 +192,60 @@ a {
 
 	.content-box.small {
 		padding: calc(1.5rem + var(--border-width-wide)) 1.5rem 1.5rem;
+	}
+}
+
+@keyframes gradient-wipe {
+	0% {
+		--gradient-color: var(--blue);
+		background-position: -300% center;
+	}
+	16.66% {
+		--gradient-color: var(--blue);
+		background-position: 400% center;
+	}
+	16.67% {
+		--gradient-color: var(--blue-light);
+		background-position: 400% center;
+	}
+	33.32% {
+		--gradient-color: var(--blue-light);
+		background-position: -300% center;
+	}
+	33.33% {
+		--gradient-color: var(--gold);
+		background-position: -300% center;
+	}
+	49.9% {
+		--gradient-color: var(--gold);
+		background-position: 400% center;
+	}
+	50% {
+		--gradient-color: var(--red);
+		background-position: 400% center;
+	}
+	66.66% {
+		--gradient-color: var(--red);
+		background-position: -300% center;
+	}
+	66.67% {
+		--gradient-color: var(--sunset);
+		background-position: -300% center;
+	}
+	83.32% {
+		--gradient-color: var(--sunset);
+		background-position: 400% center;
+	}
+	83.33% {
+		--gradient-color: var(--violet);
+		background-position: 400% center;
+	}
+	99.9% {
+		--gradient-color: var(--violet);
+		background-position: -300% center;
+	}
+	100% {
+		--gradient-color: var(--blue);
+		background-position: -300% center;
 	}
 }

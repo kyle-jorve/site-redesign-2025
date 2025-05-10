@@ -27,6 +27,12 @@ export const standardLinks: SocialMediaObjectType[] = [
 		label: "LinkedIn",
 	},
 	{
+		name: "github",
+		url: socialMedia.github.url,
+		type: "standard",
+		label: "GitHub",
+	},
+	{
 		name: "youtube",
 		url: socialMedia.youtube.url,
 		type: "standard",

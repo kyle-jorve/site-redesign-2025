@@ -1,11 +1,11 @@
 "use client";
 
-import styles from "@/styles/components/hero/links.module.css";
 import { useEffect, useContext } from "react";
 import { printClassNames } from "@/utils/utils";
 import { SocialMediaObjectType } from "@/types/global-types";
 import SiteContext from "@/utils/site-context";
 import ButtonLink from "@/components/global/button-link";
+import styles from "@/styles/components/hero/links.module.css";
 
 export type LinksProps = {
 	socialLinks: SocialMediaObjectType[];

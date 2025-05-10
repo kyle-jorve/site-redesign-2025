@@ -73,6 +73,7 @@
 	&.instagram::before,
 	&.bluesky::before,
 	&.linkedin::before,
+	&.github::before,
 	&.youtube::before {
 		font: var(--fa-font-brands);
 	}
@@ -92,6 +93,10 @@
 
 	&.linkedin::before {
 		content: "\f0e1";
+	}
+
+	&.github::before {
+		content: "\f09b";
 	}
 
 	&.youtube::before {

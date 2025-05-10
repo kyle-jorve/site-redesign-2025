@@ -295,11 +295,12 @@
 	--cream: #fde9ce; /* rgb(253, 233, 206) */
 	--gold: #e7b159; /* rgb(231, 177, 89) */
 	--gold-light: #f2e1ae; /* rgb(242, 225, 174) */
-	--peach: #f28d88;
+	--peach: #f28d88; /* rgb(242, 141, 136) */
 	--red: #f75551; /* rgb(247, 85, 81) */
 	--red-dark: #c94341; /* rgb(201, 67, 65) */
 	--red-light: #ff7370;
 	--sunset: #d85887; /* rgb(216, 88, 135) */
+	--violet: #6e577b; /* rgb(110, 87, 123) */
 	--mint: #91cab1; /* rgb(145, 202, 177) */
 
 	--body-bg: var(--cream);

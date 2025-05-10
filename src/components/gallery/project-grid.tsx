@@ -1,9 +1,9 @@
 "use client";
 
-import { useContext, useRef, Suspense } from "react";
+import { useContext, useRef, useState, useEffect, Suspense } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { ProjectTileType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { ProjectTileType, CategoryType } from "@/types/gallery-types";
+import { getElementTransition, printClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
@@ -21,10 +21,25 @@ export default function ProjectGrid({
 	...otherProps
 }: ProjectGridProps) {
 	const sectionRef = useRef<HTMLElement>(null);
+	const projectsRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const { filters, favedProjects } = useContext(SiteContext);
+	const [filteredProjects, setFilteredProjects] = useState<ProjectTileType[]>(
+		getFilteredProjects(),
+	);
+	const [hideGrid, setHideGrid] = useState<boolean>(false);
 	const classes = printClassNames([styles["project-grid"], className]);
-	const filteredProjects = (() => {
+	const projectsClasses = printClassNames([
+		styles.projects,
+		hideGrid ? styles.hide : "",
+	]);
+	const noResultsMessageClasses = printClassNames([
+		"body-text",
+		"large",
+		styles["no-results-message"],
+	]);
+
+	function getFilteredProjects() {
 		const activeFilters = filters.filter((filter) => filter.active);
 		const featuredFilterActive = activeFilters.some(
 			(filter) => filter.name === "featured",
@@ -44,7 +59,22 @@ export default function ProjectGrid({
 				activeFilters.some((af) => af.name === cat.name),
 			);
 		});
-	})();
+	}
+
+	useEffect(() => {
+		if (!filteredProjects.length) {
+			setFilteredProjects(getFilteredProjects());
+			return;
+		}
+
+		const transition = getElementTransition(projectsRef?.current);
+
+		setHideGrid(true);
+		setTimeout(() => {
+			setFilteredProjects(getFilteredProjects());
+			setHideGrid(false);
+		}, transition);
+	}, [filters]);
 
 	return (
 		<section
@@ -62,13 +92,12 @@ export default function ProjectGrid({
 			</Suspense>
 
 			{!filteredProjects.length ? (
-				<p
-					className={`body-text large ${styles["no-results-message"]}`}
-				>
-					{noResultsMessage}
-				</p>
+				<p className={noResultsMessageClasses}>{noResultsMessage}</p>
 			) : (
-				<div className={styles.projects}>
+				<div
+					ref={projectsRef}
+					className={projectsClasses}
+				>
 					{filteredProjects.map((proj, index) => {
 						const isLong =
 							(index === 0 && proj.featured) ||

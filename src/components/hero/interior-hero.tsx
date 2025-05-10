@@ -42,6 +42,11 @@ export default function InteriorHero({
 										key={cat.name}
 										className={styles.category}
 										category={cat}
+										color={
+											cat.name === "featured"
+												? "yellow"
+												: "green"
+										}
 									/>
 								);
 							})}

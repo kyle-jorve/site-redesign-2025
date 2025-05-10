@@ -89,6 +89,15 @@ export default async function ProjectDetailPage({
 			/>
 		</>
 	);
+	const categories = data.featured
+		? [
+				{
+					name: "featured",
+					label: "Featured",
+				},
+				...data.categories,
+		  ]
+		: data.categories;
 
 	return (
 		<>
@@ -97,7 +106,7 @@ export default async function ProjectDetailPage({
 				title={data.title}
 				description={<p className="body-text large">{data.summary}</p>}
 				topBar={topBarMarkup}
-				categories={data.categories}
+				categories={categories}
 			/>
 			<ProjectSlideshow images={data.slideshow} />
 			<DesignSummarySection

@@ -3,6 +3,7 @@
 import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import SiteContext from "@/utils/site-context";
+import { getElementTransition } from "@/utils/utils";
 
 export type MainProps = React.PropsWithChildren<
 	React.HTMLAttributes<HTMLElement>
@@ -23,18 +24,12 @@ export default function Main({ children, ...otherProps }: MainProps) {
 		if (!visited) return;
 
 		const main = mainRef?.current;
-
-		main?.addEventListener(
-			"transitionend",
-			() => {
-				setLoadStatus("idle");
-			},
-			{
-				once: true,
-			},
-		);
+		const transition = getElementTransition(main);
 
 		setLoadStatus("page-in");
+		setTimeout(() => {
+			setLoadStatus("idle");
+		}, transition);
 	}, [path, visited]);
 
 	return (

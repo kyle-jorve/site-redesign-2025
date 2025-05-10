@@ -7,11 +7,11 @@
 	.social-icon {
 		--text-color: var(--cream);
 		--background-color: var(--red);
-		--box-shadow: var(--hard-shadow-blue);
+		--box-shadow: var(--hard-shadow-gold);
 
 		--text-color-hover: var(--cream);
 		--background-color-hover: var(--red-light);
-		--box-shadow-hover: var(--hard-shadow-blue-long);
+		--box-shadow-hover: var(--hard-shadow-gold-long);
 
 		display: flex;
 		align-items: center;
@@ -46,11 +46,17 @@
 		&.commerce {
 			--text-color: var(--red);
 			--background-color: var(--cream);
+			--box-shadow: var(--hard-shadow-red);
+
+			--text-color-hover: var(--red);
+			--background-color-hover: var(--egg);
+			--box-shadow-hover: var(--hard-shadow-red-long);
 		}
 
 		&.instagram::before,
 		&.bluesky::before,
 		&.linkedin::before,
+		&.github::before,
 		&.youtube::before {
 			font: var(--fa-font-brands);
 		}
@@ -72,6 +78,10 @@
 			content: "\f0e1";
 		}
 
+		&.github::before {
+			content: "\f09b";
+		}
+
 		&.youtube::before {
 			content: "\f167";
 		}
@@ -89,14 +99,20 @@
 	&.bio-icons {
 		margin: 2rem 0 1rem;
 
+		.social-icon {
+			--box-shadow: var(--hard-shadow-blue);
+
+			--box-shadow-hover: var(--hard-shadow-blue-long);
+		}
+
 		.social-icon.commerce {
 			--text-color: var(--cream);
 			--background-color: var(--blue-light);
 			--box-shadow: var(--hard-shadow-red);
 
 			--text-color-hover: var(--cream);
-			--background-color-hover: var(--red);
-			--box-shadow-hover: var(--hard-shadow-blue-long);
+			--background-color-hover: var(--blue);
+			--box-shadow-hover: var(--hard-shadow-red-long);
 		}
 	}
 

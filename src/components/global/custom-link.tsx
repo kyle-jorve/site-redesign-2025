@@ -1,8 +1,8 @@
 "use client";
 
-import { printClassNames } from "@/utils/utils";
 import { useRouter, usePathname } from "next/navigation";
 import { useContext } from "react";
+import { printClassNames, getElementTransition } from "@/utils/utils";
 import Link from "next/link";
 import SiteContext from "@/utils/site-context";
 
@@ -36,15 +36,13 @@ export default function CustomLink({
 
 		if (to === path) return;
 
-		mainRef?.current?.addEventListener(
-			"transitionend",
-			() => {
-				router.push(to);
-			},
-			{ once: true },
-		);
+		const main = mainRef?.current;
+		const transition = getElementTransition(main);
 
 		setLoadStatus("page-out");
+		setTimeout(() => {
+			router.push(to);
+		}, transition);
 		onClick(event);
 	}
 

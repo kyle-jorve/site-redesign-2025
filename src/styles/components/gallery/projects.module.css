@@ -323,6 +323,12 @@
 
 	.projects {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
+		transition: opacity var(--transition), visibility var(--transition);
+
+		&.hide {
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
 
 	.project-tile.long {

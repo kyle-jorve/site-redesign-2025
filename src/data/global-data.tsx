@@ -32,6 +32,11 @@ export const socialMedia: {
 		type: "standard",
 		label: "LinkedIn",
 	},
+	github: {
+		url: "https://github.com/kyle-jorve",
+		type: "standard",
+		label: "GitHub",
+	},
 	youtube: {
 		url: "https://www.youtube.com/@KyleJorve/videos",
 		type: "standard",

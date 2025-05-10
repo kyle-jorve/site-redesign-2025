@@ -31,3 +31,11 @@ export function getThumbnailUrl({
 }) {
 	return `/images/${pathKey}/${pathKey}-kyle-jorve-${imageWidth}.${format}`;
 }
+
+export function getElementTransition(element: HTMLElement | null | undefined) {
+	const transitionProperty =
+		!!element &&
+		getComputedStyle(element).getPropertyValue("transition-duration");
+
+	return transitionProperty ? parseFloat(transitionProperty) * 1000 : 300;
+}
