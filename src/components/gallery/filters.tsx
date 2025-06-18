@@ -52,7 +52,7 @@ export default function Filters({
 				active: urlCategories.some((cat) => cat === filter.name),
 			}));
 		});
-	}, []);
+	}, [params]);
 
 	useEffect(() => {
 		const activeFilters = filters.filter((cat) => cat.active);

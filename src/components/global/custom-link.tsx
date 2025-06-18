@@ -36,6 +36,13 @@ export default function CustomLink({
 
 		if (to === path) return;
 
+		const toPath = to.split("?")[0];
+
+		if (toPath === path) {
+			router.replace(to);
+			return;
+		}
+
 		const main = mainRef?.current;
 		const transition = getElementTransition(main);
 
