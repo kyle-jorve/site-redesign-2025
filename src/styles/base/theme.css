@@ -24,12 +24,12 @@
 	--leading-medium: 1.3;
 	--leading-large: 1.5;
 
-	--kerning-2x-small: 0.02em;
-	--kerning-x-small: 0.04em;
-	--kerning-small: 0.06em;
-	--kerning-medium: 0.16em;
-	--kerning-large: 0.2em;
-	--kerning-x-large: 0.24em;
+	--tracking-2x-small: 0.02em;
+	--tracking-x-small: 0.04em;
+	--tracking-small: 0.06em;
+	--tracking-medium: 0.16em;
+	--tracking-large: 0.2em;
+	--tracking-x-large: 0.24em;
 
 	--font-size-2x-small: 0.625rem;
 	--font-size-x-small: 0.75rem;

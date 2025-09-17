@@ -138,7 +138,7 @@
 		font-weight: var(--font-weight-black);
 		font-size: var(--font-size-2x-small);
 		line-height: var(--leading-none);
-		letter-spacing: var(--kerning-medium);
+		letter-spacing: var(--tracking-medium);
 		text-transform: uppercase;
 		color: var(--blue);
 		background: var(--gold);

@@ -68,7 +68,7 @@
 		font-weight: var(--font-weight-black);
 		font-size: var(--font-size-base);
 		line-height: var(--leading-small);
-		letter-spacing: var(--kerning-x-small);
+		letter-spacing: var(--tracking-x-small);
 		text-align: left;
 		color: var(--cream);
 		background: none;

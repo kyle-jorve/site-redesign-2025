@@ -73,7 +73,7 @@
 			margin-bottom: 1.75rem;
 			font-family: var(--font-heading);
 			font-size: var(--font-size-heading-2);
-			letter-spacing: var(--kerning-small);
+			letter-spacing: var(--tracking-small);
 		}
 
 		.image-col {

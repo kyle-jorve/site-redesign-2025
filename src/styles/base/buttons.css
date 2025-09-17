@@ -124,7 +124,7 @@
 	gap: 0.625rem;
 	padding: 0.5rem 0.5rem 0.5rem 1.25rem;
 	font-size: var(--font-size-small);
-	letter-spacing: var(--kerning-large);
+	letter-spacing: var(--tracking-large);
 	text-transform: uppercase;
 	box-shadow: var(--box-shadow);
 	transition: color var(--transition), background-color var(--transition),
@@ -197,7 +197,7 @@
 	gap: 0.375rem;
 	padding: 0.375rem 1rem 0.375rem 0.375rem;
 	font-size: var(--font-size-small);
-	letter-spacing: var(--kerning-small);
+	letter-spacing: var(--tracking-small);
 	transition: color var(--transition), background-color var(--transition);
 
 	&::before {

@@ -55,7 +55,7 @@
 
 	.item-title {
 		margin: 0 0 0 -0.5rem;
-		letter-spacing: var(--kerning-medium);
+		letter-spacing: var(--tracking-medium);
 		line-height: var(--leading-small);
 		color: var(--cream);
 	}

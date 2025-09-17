@@ -57,7 +57,7 @@
 	font-weight: var(--font-weight-black);
 	font-size: var(--font-size-base);
 	line-height: var(--leading-small);
-	letter-spacing: var(--kerning-x-small);
+	letter-spacing: var(--tracking-x-small);
 	text-decoration: none;
 	text-transform: none;
 	text-align: left;
@@ -166,7 +166,7 @@
 		font-weight: var(--font-weight-black);
 		font-size: var(--font-size-2x-small);
 		line-height: var(--leading-none);
-		letter-spacing: var(--kerning-large);
+		letter-spacing: var(--tracking-large);
 		text-transform: uppercase;
 		text-decoration: none;
 		text-align: center;
@@ -299,7 +299,7 @@
 		font-weight: var(--font-weight-black);
 		font-size: var(--font-size-base);
 		line-height: var(--leading-none);
-		letter-spacing: var(--kerning-large);
+		letter-spacing: var(--tracking-large);
 		text-decoration: none;
 		text-transform: uppercase;
 		background: none;
