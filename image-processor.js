@@ -41,7 +41,7 @@ async function processImages(inputDir) {
 
 					if (extChange) image.toFormat(format);
 
-					await image.toFile(outputPath);
+					await image.resize(size).toFile(outputPath);
 					console.log(`Processed ${newFileName}`);
 				}
 			}
