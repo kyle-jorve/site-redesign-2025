@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import SiteContext from "@/utils/site-context";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
@@ -29,6 +30,7 @@ export default function ProjectDescriptionGrid({
 	className = "",
 	...otherProps
 }: ProjectDescriptionGridProps) {
+	const { lightboxId, lightboxOpen, openLightbox } = useContext(SiteContext);
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["description-grid"], className]);
@@ -86,7 +88,7 @@ export default function ProjectDescriptionGrid({
 
 			{!!images.length && (
 				<div className={styles["image-grid"]}>
-					{imageConfigs.map((image) => {
+					{imageConfigs.map((image, index) => {
 						return (
 							<div
 								key={image.name}
@@ -96,6 +98,13 @@ export default function ProjectDescriptionGrid({
 									className={styles.image}
 									image={image}
 								/>
+								<button
+									className={styles["lightbox-trigger"]}
+									onClick={() => openLightbox(index)}
+									aria-label="open lightbox slideshow"
+									aria-controls={lightboxId}
+									aria-expanded={lightboxOpen}
+								></button>
 							</div>
 						);
 					})}

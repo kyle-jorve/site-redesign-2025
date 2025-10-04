@@ -1,29 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
+import { createPortal } from "react-dom";
+import SiteContext from "@/utils/site-context";
 import { ImageMetaType } from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
+import LightboxSlideshow from "@/components/gallery/lightbox-slideshow";
+import CircleButton from "@/components/global/circle-button";
 import styles from "@/styles/components/gallery/lightbox.module.css";
 
 export type LightboxProps = {
 	images: ImageMetaType[];
-	activeSlide: number;
-	open?: boolean;
 } & React.HTMLAttributes<HTMLDialogElement>;
 
 export default function Lightbox({
 	images,
-	activeSlide,
-	open = false,
 	className = "",
 	...otherProps
 }: LightboxProps) {
-	const classes = printClassNames([styles.lightbox, className]);
+	const {
+		lightboxId,
+		lightboxInitialSlideIndex,
+		lightboxOpen,
+		closeLightbox,
+	} = useContext(SiteContext);
+	const classes = printClassNames([
+		styles.lightbox,
+		lightboxOpen ? styles.open : "",
+		className,
+	]);
 
-	return (
+	return createPortal(
 		<dialog
 			className={classes}
+			id={lightboxId}
+			open={lightboxOpen}
 			{...otherProps}
-		></dialog>
+		>
+			<CircleButton
+				icon="cross"
+				aria-label="close lightbox"
+				shadowColor="light"
+				className={styles["close-button"]}
+				onClick={() => closeLightbox()}
+			/>
+			<LightboxSlideshow
+				images={images}
+				activeSlide={lightboxInitialSlideIndex}
+			/>
+		</dialog>,
+		document.body,
 	);
 }

@@ -1,7 +1,7 @@
 import { deriveButtonShadowColor, printClassNames } from "@/utils/utils";
 
 export type CircleButtonProps = {
-	icon: "heart" | "arrow-left" | "arrow-right";
+	icon: "heart" | "arrow-left" | "arrow-right" | "cross";
 	"aria-label": string;
 	weight?: "regular" | "solid";
 	color?: "light" | "red" | "dark";

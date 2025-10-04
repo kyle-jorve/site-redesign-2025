@@ -1,14 +1,14 @@
 "use client";
 
 import { printClassNames } from "@/utils/utils";
-import { ImageMetaType, ImageDataType } from "@/types/global-types";
+import { ImageDataType } from "@/types/global-types";
 import { LightboxProps } from "@/components/gallery/lightbox";
-import ResponsiveImage from "@/components/global/responsive-image";
+import Slideshow from "@/components/global/slideshow";
 import styles from "@/styles/components/gallery/lightbox.module.css";
 
 export type LightboxSlideshowProps = {
 	images: LightboxProps["images"];
-	activeSlide: LightboxProps["activeSlide"];
+	activeSlide: number;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function LightboxSlideshow({
@@ -17,9 +17,8 @@ export default function LightboxSlideshow({
 	className = "",
 	...otherProps
 }: LightboxSlideshowProps) {
-	const notASlideshow = images.length <= 1;
-	const classes = printClassNames([styles["lightbox-slideshow"], className]);
-	const imageConfigs: ImageMetaType[] = images.map((image) => ({
+	const classes = printClassNames([styles.slideshow, className]);
+	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [
 			{
@@ -41,9 +40,14 @@ export default function LightboxSlideshow({
 	}));
 
 	return (
-		<section
+		<Slideshow
 			className={classes}
+			images={imageConfigs}
+			currentSlide={activeSlide}
+			useFadeIn={false}
+			useLightMode={true}
+			controlSlideHeights={false}
 			{...otherProps}
-		></section>
+		/>
 	);
 }
