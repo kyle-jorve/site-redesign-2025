@@ -1279,7 +1279,7 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					The illustration that inspired the world of Post-Autumn is
-					very old (and very bad), at this point, so I won&apos;t be
+					very old (and very bad) at this point, so I won&apos;t be
 					sharing it. The world it spawned, however, continues to live
 					and grow in my imagination.
 				</p>
