@@ -62,12 +62,12 @@ export const resume: ResumeType = {
 			title: "Experience",
 			items: [
 				{
-					name: "simpleview",
-					title: "Web Developer",
+					name: "granicus",
+					title: "Senior Web Developer",
 					description: (
 						<>
 							<p>
-								At Simpleview/Granicus I build{" "}
+								At Granicus I build{" "}
 								<CustomLink
 									to={`/projects?categories=${JSON.stringify([
 										"development",
@@ -81,11 +81,10 @@ export const resume: ResumeType = {
 								libraries like React and Vue, and languages like
 								JavaScript, TypeScript, HTML, and CSS.
 							</p>
-							<p>In 2024, Simpleview was acquired by Granicus.</p>
 						</>
 					),
 					year: "2021 - Present",
-					company: "Simpleview / Granicus",
+					company: "Granicus (formerly Simpleview)",
 				},
 				{
 					name: "desert-lab-studio",
@@ -93,22 +92,21 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								At Simply Bits/Desert Lab Studio, I enjoyed a
-								broad range of responsibilities. My primary
-								roles were as a web designer and front end
-								developer, but my job covered a myriad of other
-								disciplines, like graphic design, marketing, and
-								sales.
+								At Desert Lab Studio, I enjoyed a broad range of
+								responsibilities. My primary roles were as a web
+								designer and front end developer, but my job
+								covered a myriad of other disciplines, like
+								graphic design, marketing, and sales.
 							</p>
 							<p>
-								In summary, my experience at Simply Bits/Desert
-								Lab Studio encompassed the following:
+								In summary, my experience at Desert Lab Studio
+								encompassed the following:
 							</p>
 							<ul>
 								<li>
 									I created print, web, and virtual marketing
-									materials for Simply Bits/Desert Lab Studio,
-									their clients, and their various software
+									materials for Desert Lab Studio, their
+									clients, and their various software
 									products.
 								</li>
 								<li>
@@ -131,15 +129,11 @@ export const resume: ResumeType = {
 									theaters.
 								</li>
 							</ul>
-							<p>
-								In 2019, the Enterprise Services department of
-								Simply Bits split off into its own company,
-								becoming Desert Lab Studio.
-							</p>
 						</>
 					),
 					year: "2015 - 2021",
-					company: "Simply Bits / Desert Lab Studio",
+					company:
+						"Desert Lab Studio (formerly Simply Bits Enterprise Services)",
 				},
 				{
 					name: "new-nebula",
