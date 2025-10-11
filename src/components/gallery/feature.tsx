@@ -10,10 +10,12 @@ import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
+import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import styles from "@/styles/components/gallery/feature-grid.module.css";
 
-export type FeatureProps = Omit<FeatureType, "name"> &
-	React.HTMLAttributes<HTMLElement>;
+export type FeatureProps = Omit<FeatureType, "name"> & {
+	useLightbox?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
 
 export default function Feature({
 	title,
@@ -27,6 +29,7 @@ export default function Feature({
 	number = undefined,
 	category = undefined,
 	supertitle = undefined,
+	useLightbox = false,
 	className = "",
 	...otherProps
 }: FeatureProps) {
@@ -86,7 +89,22 @@ export default function Feature({
 					: "",
 			]);
 
-			return (
+			return useLightbox ? (
+				<LightboxImageTrigger
+					key={image.name}
+					lightboxImage={{
+						name: image.name,
+						pathKey: image.pathKey,
+						alt: image.alt,
+					}}
+					className={styles["image-container"]}
+				>
+					<ResponsiveImage
+						className={classes}
+						image={image}
+					/>
+				</LightboxImageTrigger>
+			) : (
 				<ResponsiveImage
 					key={image.name}
 					className={classes}

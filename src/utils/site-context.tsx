@@ -8,21 +8,24 @@ export type SiteContextType = {
 	favedProjects: string[];
 	filters: CategoryType[];
 	hideShell: boolean;
+	lightboxChildren: React.ReactElement;
 	lightboxId: string;
-	lightboxInitialSlideIndex: number;
 	lightboxOpen: boolean;
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
 	visited: boolean;
 
 	closeLightbox: Function;
-	openLightbox: (slideIndex: number) => void;
+	openLightbox: (contents: SiteContextType["lightboxChildren"]) => void;
 	resetFilters: Function;
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
 	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	setHideShell: React.Dispatch<React.SetStateAction<boolean>>;
+	setLightboxChildren: React.Dispatch<
+		React.SetStateAction<SiteContextType["lightboxChildren"]>
+	>;
 	setLoadStatus: React.Dispatch<
-		React.SetStateAction<"idle" | "page-out" | "page-in">
+		React.SetStateAction<SiteContextType["loadStatus"]>
 	>;
 	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
 	updateFilters: (ids: string[]) => void;
@@ -32,8 +35,8 @@ const defaults: SiteContextType = {
 	favedProjects: [],
 	filters: [],
 	hideShell: false,
+	lightboxChildren: <></>,
 	lightboxId: "project-lightbox",
-	lightboxInitialSlideIndex: 0,
 	lightboxOpen: false,
 	loadStatus: "idle",
 	mainRef: null,
@@ -45,6 +48,7 @@ const defaults: SiteContextType = {
 	setFavedProjects: () => {},
 	setFilters: () => {},
 	setHideShell: () => {},
+	setLightboxChildren: () => {},
 	setLoadStatus: () => {},
 	setVisited: () => {},
 	updateFilters: () => {},
@@ -55,12 +59,13 @@ const SiteContext = createContext<SiteContextType>(defaults);
 export default SiteContext;
 
 export function SiteContextProvider({ children }: React.PropsWithChildren) {
-	const [favedProjects, setFavedProjects] = useState<string[]>(
-		defaults.favedProjects,
-	);
+	const [favedProjects, setFavedProjects] = useState<
+		SiteContextType["favedProjects"]
+	>(defaults.favedProjects);
 	const [hideShell, setHideShell] = useState<boolean>(defaults.hideShell);
-	const [lightboxInitialSlideIndex, setLightboxInitialSlideIndex] =
-		useState<number>(defaults.lightboxInitialSlideIndex);
+	const [lightboxChildren, setLightboxChildren] = useState<
+		SiteContextType["lightboxChildren"]
+	>(<></>);
 	const [lightboxOpen, setLightboxOpen] = useState<boolean>(
 		defaults.lightboxOpen,
 	);
@@ -80,13 +85,12 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	const mainRef = useRef<HTMLElement>(null);
 	const favoritesStorageKey = "favorites";
 
-	function openLightbox(slideIndex: number) {
-		setLightboxInitialSlideIndex(slideIndex);
+	function openLightbox(contents: SiteContextType["lightboxChildren"]) {
+		setLightboxChildren(contents);
 		setLightboxOpen(true);
 	}
 
 	function closeLightbox() {
-		setLightboxInitialSlideIndex(defaults.lightboxInitialSlideIndex);
 		setLightboxOpen(false);
 	}
 
@@ -167,7 +171,7 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				favedProjects,
 				filters,
 				hideShell,
-				lightboxInitialSlideIndex,
+				lightboxChildren,
 				lightboxId: defaults.lightboxId,
 				lightboxOpen,
 				loadStatus,
@@ -180,6 +184,7 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				setFavedProjects,
 				setFilters,
 				setHideShell,
+				setLightboxChildren,
 				setLoadStatus,
 				setVisited,
 				updateFilters,

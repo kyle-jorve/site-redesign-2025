@@ -1,15 +1,16 @@
 "use client";
 
-import { useRef, useContext } from "react";
-import SiteContext from "@/utils/site-context";
+import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { printClassNames } from "@/utils/utils";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
+import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/project-detail.module.css";
+import lightboxStyles from "@/styles/components/global/lightbox.module.css";
 
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];
@@ -30,7 +31,6 @@ export default function ProjectDescriptionGrid({
 	className = "",
 	...otherProps
 }: ProjectDescriptionGridProps) {
-	const { lightboxId, lightboxOpen, openLightbox } = useContext(SiteContext);
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = printClassNames([styles["description-grid"], className]);
@@ -90,22 +90,16 @@ export default function ProjectDescriptionGrid({
 				<div className={styles["image-grid"]}>
 					{imageConfigs.map((image, index) => {
 						return (
-							<div
+							<LightboxImageTrigger
 								key={image.name}
+								lightboxImage={images[index]}
 								className={styles["image-wrapper"]}
 							>
 								<ResponsiveImage
 									className={styles.image}
 									image={image}
 								/>
-								<button
-									className={styles["lightbox-trigger"]}
-									onClick={() => openLightbox(index)}
-									aria-label="open lightbox slideshow"
-									aria-controls={lightboxId}
-									aria-expanded={lightboxOpen}
-								></button>
-							</div>
+							</LightboxImageTrigger>
 						);
 					})}
 				</div>

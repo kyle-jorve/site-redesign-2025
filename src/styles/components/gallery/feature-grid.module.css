@@ -126,6 +126,7 @@
 	}
 
 	.image-link,
+	.image-container,
 	.image,
 	.video {
 		display: block;
@@ -133,7 +134,7 @@
 		height: 100%;
 	}
 
-	.image {
+	.image-container {
 		position: relative;
 		z-index: 2;
 		transition: opacity var(--long-transition),

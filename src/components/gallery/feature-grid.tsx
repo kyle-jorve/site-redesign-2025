@@ -12,6 +12,7 @@ export type FeatureGridProps = {
 	url?: string;
 	headingBarButtonText?: string;
 	slideButtonText?: string;
+	useLightbox?: boolean;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function FeatureGrid({
@@ -21,6 +22,7 @@ export default function FeatureGrid({
 	url = undefined,
 	headingBarButtonText = "See All",
 	slideButtonText = "See More",
+	useLightbox = false,
 	className = "",
 	...otherProps
 }: FeatureGridProps) {
@@ -53,6 +55,7 @@ export default function FeatureGrid({
 							alignment={isOdd ? "image-right" : "image-left"}
 							buttonText={slideButtonText}
 							number={String(index + 1).padStart(2, "0")}
+							useLightbox={useLightbox}
 						/>
 					);
 				})}
