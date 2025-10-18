@@ -146,7 +146,7 @@
 		}
 	}
 
-	picture + picture .image {
+	.image-container + .image-container {
 		position: absolute;
 		z-index: 1;
 		inset: 0;

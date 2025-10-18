@@ -83,30 +83,32 @@ export default function Feature({
 	) : (
 		imageConfig.map((image, index) => {
 			const classes = printClassNames([
-				styles.image,
 				imagesData.length > 1 && activeImage !== index
 					? styles.hide
 					: "",
+				styles["image-container"],
 			]);
 
-			return useLightbox ? (
+			return useLightbox && !url ? (
 				<LightboxImageTrigger
 					key={image.name}
 					lightboxImages={imagesData}
 					index={index}
-					className={styles["image-container"]}
+					className={classes}
 				>
 					<ResponsiveImage
-						className={classes}
+						className={styles.image}
 						image={image}
 					/>
 				</LightboxImageTrigger>
 			) : (
-				<ResponsiveImage
-					key={image.name}
-					className={classes}
-					image={image}
-				/>
+				<div className={classes}>
+					<ResponsiveImage
+						key={image.name}
+						className={styles.image}
+						image={image}
+					/>
+				</div>
 			);
 		})
 	);
