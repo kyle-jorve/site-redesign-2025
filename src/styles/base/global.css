@@ -83,11 +83,33 @@ svg {
 	position: absolute;
 	inset: 0;
 	z-index: 4;
-	padding: 0;
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	padding: 0.5rem;
 	margin: 0;
 	background: none;
 	border: none;
 	border-radius: 0;
+
+	&::before {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.5rem;
+		aspect-ratio: 1;
+		font: var(--fa-font-solid);
+		font-size: var(--font-size-x-small);
+		line-height: var(--leading-none);
+		text-align: center;
+		color: var(--blue);
+		content: "\f00e";
+		background-color: rgba(253, 233, 206, 0.6);
+		border: var(--border-width) solid transparent;
+		border-radius: 50%;
+		backdrop-filter: var(--backdrop-blur);
+		transition: color var(--transition), background-color var(--transition);
+	}
 }
 
 .image {
@@ -194,9 +216,25 @@ a {
 	}
 }
 
+@media (hover: hover) {
+	.lightbox-trigger-button:hover::before {
+		color: var(--cream);
+		background-color: var(--blue);
+	}
+}
+
 @media (min-width: 40em) {
 	body {
 		padding-bottom: 0;
+	}
+
+	.lightbox-trigger-button {
+		padding: 1rem;
+
+		&::before {
+			width: 2rem;
+			font-size: var(--font-size-base);
+		}
 	}
 }
 

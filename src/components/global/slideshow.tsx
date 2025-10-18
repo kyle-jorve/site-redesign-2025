@@ -1,7 +1,7 @@
 import { useState, useRef, createRef, useEffect } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { ImageDataType } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
+import { ImageDataType, ImageMetaType } from "@/types/global-types";
+import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -33,6 +33,13 @@ export default function Slideshow({
 	}));
 	const [activeSlide, setActiveSlide] = useState<number>(0);
 	const intersected = useIntersectionObserver(sectionRef);
+	const lightboxImages: ImageMetaType[] = images.map((image) => ({
+		name: image.name,
+		pathKey: image.pathKey,
+		alt: image.alt,
+		horizontalOrientation: image.horizontalOrientation,
+		verticalOrientation: image.verticalOrientation,
+	}));
 	const classes = printClassNames([
 		styles.slideshow,
 		notASlideshow ? styles["single-image"] : "",
@@ -98,17 +105,11 @@ export default function Slideshow({
 
 		if (!slidesRef) return;
 
-		const destinationIndex = (() => {
-			if (direction === "forward" && activeSlide === images.length - 1)
-				return 0;
-			else if (direction === "forward") return activeSlide + 1;
-
-			if (direction === "backward" && activeSlide === 0)
-				return images.length - 1;
-			else if (direction === "backward") return activeSlide - 1;
-
-			return 0;
-		})();
+		const destinationIndex = getDestinationSlideIndex(
+			direction,
+			activeSlide,
+			images.length,
+		);
 		const destinationOffset = getSlideOffset(destinationIndex);
 
 		if (!destinationOffset) return;
@@ -207,11 +208,8 @@ export default function Slideshow({
 							>
 								<LightboxImageTrigger
 									className={styles["image-wrapper"]}
-									lightboxImage={{
-										name: image.name,
-										pathKey: image.pathKey,
-										alt: image.alt,
-									}}
+									lightboxImages={lightboxImages}
+									index={index}
 								>
 									<ResponsiveImage
 										className={styles["slide-image"]}

@@ -92,11 +92,8 @@ export default function Feature({
 			return useLightbox ? (
 				<LightboxImageTrigger
 					key={image.name}
-					lightboxImage={{
-						name: image.name,
-						pathKey: image.pathKey,
-						alt: image.alt,
-					}}
+					lightboxImages={imagesData}
+					index={index}
 					className={styles["image-container"]}
 				>
 					<ResponsiveImage

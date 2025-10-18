@@ -1,10 +1,11 @@
 "use client";
 
-import { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import SiteContext from "@/utils/site-context";
-import { printClassNames } from "@/utils/utils";
+import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
 import styles from "@/styles/components/global/lightbox.module.css";
+import LightboxImage, { LightboxImageProps } from "./lightbox-image";
 
 export type LightboxProps = React.HTMLAttributes<HTMLDialogElement>;
 
@@ -13,21 +14,57 @@ export default function Lightbox({
 	...otherProps
 }: LightboxProps) {
 	const {
-		lightboxChildren,
+		lightboxActiveIndex,
+		lightboxImages,
 		lightboxId,
 		lightboxOpen,
 		closeLightbox,
-		setLightboxChildren,
+		setLightboxActiveIndex,
+		setlightboxImages,
 	} = useContext(SiteContext);
 	const [status, setStatus] = useState<"in" | "out" | "open" | "closed">(
 		"closed",
 	);
+	const [imageStatus, setImageStatus] = useState<"active" | "hidden">(
+		"active",
+	);
 	const lightboxRef = useRef<HTMLDialogElement | null>(null);
+	const imageRef = useRef<HTMLImageElement | null>(null);
 	const classes = printClassNames([
 		styles.lightbox,
 		styles[status],
 		className,
 	]);
+
+	/*
+		when clicking to next image:
+		1. hide image
+		2. change image index
+		3. wait for new image to load
+		4. reveal new image
+	*/
+
+	function handleImageLoad(_: React.SyntheticEvent<HTMLImageElement>) {
+		setImageStatus("active");
+	}
+
+	function handleArrowClick(direction: "forward" | "backward") {
+		const destinationIndex = getDestinationSlideIndex(
+			direction,
+			lightboxActiveIndex,
+			lightboxImages.length,
+		);
+
+		imageRef?.current?.addEventListener(
+			"transitionend",
+			() => {
+				setLightboxActiveIndex(destinationIndex);
+			},
+			{ once: true },
+		);
+
+		setImageStatus("hidden");
+	}
 
 	useEffect(() => {
 		const lightboxEl = lightboxRef?.current;
@@ -36,7 +73,10 @@ export default function Lightbox({
 
 		function handleAnimationEnd() {
 			setStatus(lightboxOpen ? "open" : "closed");
-			if (!lightboxOpen) setLightboxChildren(<></>);
+			if (!lightboxOpen) {
+				setLightboxActiveIndex(0);
+				setlightboxImages([]);
+			}
 		}
 
 		lightboxEl.addEventListener("animationend", handleAnimationEnd, {
@@ -65,7 +105,31 @@ export default function Lightbox({
 				className={styles["close-button"]}
 				onClick={() => closeLightbox()}
 			/>
-			{lightboxChildren}
+			{lightboxImages.length > 1 && (
+				<div className={styles.arrows}>
+					<CircleButton
+						className={styles["arrow-button"]}
+						icon="arrow-left"
+						shadowColor="light"
+						aria-label="go to previous slide"
+						onClick={() => handleArrowClick("backward")}
+					/>
+					<CircleButton
+						className={styles["arrow-button"]}
+						icon="arrow-right"
+						shadowColor="light"
+						aria-label="go to next slide"
+						onClick={() => handleArrowClick("forward")}
+					/>
+				</div>
+			)}
+
+			<LightboxImage
+				ref={imageRef}
+				className={styles[imageStatus]}
+				image={lightboxImages[lightboxActiveIndex]}
+				onLoad={handleImageLoad}
+			/>
 		</dialog>
 	);
 }

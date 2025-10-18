@@ -1,17 +1,18 @@
 import { useContext } from "react";
 import { ImageMetaType } from "@/types/global-types";
-import LightboxImage from "@/components/global/lightbox-image";
 import SiteContext from "@/utils/site-context";
 import { printClassNames } from "@/utils/utils";
 
 export type LightboxImageTriggerProps = {
-	lightboxImage: ImageMetaType;
+	lightboxImages: ImageMetaType[];
+	index: number;
 } & React.HTMLAttributes<HTMLDivElement> &
 	React.PropsWithChildren;
 
 export default function LightboxImageTrigger({
 	children,
-	lightboxImage,
+	lightboxImages,
+	index,
 	className = "",
 	...otherProps
 }: LightboxImageTriggerProps) {
@@ -26,10 +27,8 @@ export default function LightboxImageTrigger({
 			{children}
 			<button
 				className="lightbox-trigger-button"
-				onClick={() =>
-					openLightbox(<LightboxImage image={lightboxImage} />)
-				}
-				aria-label="open lightbox slideshow"
+				onClick={() => openLightbox(lightboxImages, index)}
+				aria-label={`open image in lightbox`}
 				aria-controls={lightboxId}
 				aria-expanded={lightboxOpen}
 			></button>
