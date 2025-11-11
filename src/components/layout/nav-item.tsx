@@ -17,12 +17,10 @@ export default function NavItem({
 	...otherProps
 }: NavItemProps) {
 	const path = usePathname();
-	const classes = printClassNames([
-		styles["nav-item"],
-		styles[name],
-		path.startsWith(url) ? styles.current : "",
-		className,
-	]);
+	const classes = printClassNames(
+		["nav-item", name, path.startsWith(url) ? "current" : "", className],
+		[styles],
+	);
 
 	return (
 		<CustomLink

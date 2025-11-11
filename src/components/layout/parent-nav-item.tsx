@@ -21,17 +21,14 @@ export default function ParentNavItem({
 }: ParentNavItemProps) {
 	const rootRef = useRef<HTMLDivElement>(null);
 	const [expanded, setExpanded] = useState<boolean>(false);
-	const classes = printClassNames([
-		styles["nav-parent"],
-		styles[name],
-		expanded ? styles.expanded : "",
-		className,
-	]);
-	const dropdownToggleClasses = printClassNames([
-		styles["dropdown-toggle"],
-		styles[name],
-		expanded ? styles.expanded : "",
-	]);
+	const classes = printClassNames(
+		["nav-parent", name, expanded ? "expanded" : "", className],
+		[styles],
+	);
+	const dropdownToggleClasses = printClassNames(
+		["dropdown-toggle", name, expanded ? "expanded" : ""],
+		[styles],
+	);
 
 	useEffect(() => {
 		function handleDocumentClick(event: MouseEvent) {

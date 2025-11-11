@@ -29,11 +29,10 @@ export default function ProjectTile({
 	className = "",
 	...otherProps
 }: ProjectTileProps) {
-	const classes = printClassNames([
-		styles["project-tile"],
-		styles[variant],
-		className,
-	]);
+	const classes = printClassNames(
+		["project-tile", variant, className],
+		[styles],
+	);
 	const Heading = heading as React.ElementType;
 	const url = `/projects/${name}/`;
 	const primaryCategory =

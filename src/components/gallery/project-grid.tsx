@@ -28,16 +28,15 @@ export default function ProjectGrid({
 		getFilteredProjects(),
 	);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
-	const classes = printClassNames([styles["project-grid"], className]);
-	const projectsClasses = printClassNames([
-		styles.projects,
-		hideGrid ? styles.hide : "",
-	]);
-	const noResultsMessageClasses = printClassNames([
-		"body-text",
-		"large",
-		styles["no-results-message"],
-	]);
+	const classes = printClassNames(["project-grid", className], [styles]);
+	const projectsClasses = printClassNames(
+		["projects", hideGrid ? "hide" : ""],
+		[styles],
+	);
+	const noResultsMessageClasses = printClassNames(
+		["body-text", "large", "no-results-message"],
+		[styles],
+	);
 
 	function getFilteredProjects() {
 		const activeFilters = filters.filter((filter) => filter.active);

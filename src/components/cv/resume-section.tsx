@@ -21,7 +21,7 @@ export default function ResumeSection({
 }: ResumeSectionProps) {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["resume-section"], className]);
+	const classes = printClassNames(["resume-section", className], [styles]);
 	const Heading = heading as React.ElementType;
 
 	return (

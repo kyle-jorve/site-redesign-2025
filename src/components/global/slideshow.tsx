@@ -40,13 +40,16 @@ export default function Slideshow({
 		horizontalOrientation: image.horizontalOrientation,
 		verticalOrientation: image.verticalOrientation,
 	}));
-	const classes = printClassNames([
-		styles.slideshow,
-		notASlideshow ? styles["single-image"] : "",
-		useLightMode ? styles["light-mode"] : "",
-		controlSlideHeights ? styles["controlled-slide-heights"] : "",
-		className,
-	]);
+	const classes = printClassNames(
+		[
+			"slideshow",
+			notASlideshow ? "single-image" : "",
+			useLightMode ? "light-mode" : "",
+			controlSlideHeights ? "controlled-slide-heights" : "",
+			className,
+		],
+		[styles],
+	);
 	const sectionStyles: React.CSSProperties | undefined = (() => {
 		if (!useFadeIn) return otherProps.style;
 

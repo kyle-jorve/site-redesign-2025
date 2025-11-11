@@ -16,7 +16,7 @@ export default function Filters({
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 	const { filters, resetFilters, updateFilters, setFilters } =
 		useContext(SiteContext);
-	const classes = printClassNames([styles.filters, className]);
+	const classes = printClassNames(["filters", className], [styles]);
 	const filterMenuID = "filter-menu";
 	const activeFilters = filters.filter((cat) => cat.active);
 	const params = useSearchParams();
@@ -110,10 +110,13 @@ export default function Filters({
 					aria-hidden={!menuOpen}
 				>
 					{filters.map((filter) => {
-						const filterButtonClasses = printClassNames([
-							styles["add-filter-button"],
-							filter.active ? styles.active : "",
-						]);
+						const filterButtonClasses = printClassNames(
+							[
+								"add-filter-button",
+								filter.active ? "active" : "",
+							],
+							[styles],
+						);
 
 						return (
 							<div

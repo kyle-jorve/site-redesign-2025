@@ -5,7 +5,7 @@ import SiteContext from "@/utils/site-context";
 import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
 import styles from "@/styles/components/global/lightbox.module.css";
-import LightboxImage, { LightboxImageProps } from "./lightbox-image";
+import LightboxImage from "./lightbox-image";
 
 export type LightboxProps = React.HTMLAttributes<HTMLDialogElement>;
 
@@ -30,19 +30,7 @@ export default function Lightbox({
 	);
 	const lightboxRef = useRef<HTMLDialogElement | null>(null);
 	const imageRef = useRef<HTMLImageElement | null>(null);
-	const classes = printClassNames([
-		styles.lightbox,
-		styles[status],
-		className,
-	]);
-
-	/*
-		when clicking to next image:
-		1. hide image
-		2. change image index
-		3. wait for new image to load
-		4. reveal new image
-	*/
+	const classes = printClassNames(["lightbox", status, className], [styles]);
 
 	function handleImageLoad(_: React.SyntheticEvent<HTMLImageElement>) {
 		setImageStatus("active");
@@ -69,7 +57,7 @@ export default function Lightbox({
 	useEffect(() => {
 		const lightboxEl = lightboxRef?.current;
 
-		if (!lightboxEl) return;
+		if (!lightboxEl || !lightboxImages.length) return;
 
 		function handleAnimationEnd() {
 			setStatus(lightboxOpen ? "open" : "closed");
@@ -124,12 +112,20 @@ export default function Lightbox({
 				</div>
 			)}
 
-			<LightboxImage
-				ref={imageRef}
-				className={styles[imageStatus]}
-				image={lightboxImages[lightboxActiveIndex]}
-				onLoad={handleImageLoad}
-			/>
+			{!!lightboxImages.length && (
+				<LightboxImage
+					ref={imageRef}
+					className={styles[imageStatus]}
+					image={lightboxImages[lightboxActiveIndex]}
+					onLoad={handleImageLoad}
+				/>
+			)}
+
+			{lightboxImages.length > 1 && (
+				<span className={styles["slide-counter"]}>
+					{lightboxActiveIndex + 1} / {lightboxImages.length}
+				</span>
+			)}
 		</dialog>
 	);
 }

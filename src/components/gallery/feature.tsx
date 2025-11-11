@@ -37,11 +37,10 @@ export default function Feature({
 	const intersected = useIntersectionObserver(articleRef);
 	const [activeImage, setActiveImage] = useState<number>(0);
 	const imagesData = Array.isArray(image) ? image : [image];
-	const classes = printClassNames([
-		styles.feature,
-		styles[alignment],
-		className,
-	]);
+	const classes = printClassNames(
+		["feature", alignment, className],
+		[styles],
+	);
 	const mobileSource = {
 		imageWidth: 640,
 		imageHeight: 640,
@@ -82,12 +81,15 @@ export default function Feature({
 		</video>
 	) : (
 		imageConfig.map((image, index) => {
-			const classes = printClassNames([
-				imagesData.length > 1 && activeImage !== index
-					? styles.hide
-					: "",
-				styles["image-container"],
-			]);
+			const classes = printClassNames(
+				[
+					imagesData.length > 1 && activeImage !== index
+						? "hide"
+						: "",
+					"image-container",
+				],
+				[styles],
+			);
 
 			return useLightbox && !url ? (
 				<LightboxImageTrigger
@@ -102,7 +104,10 @@ export default function Feature({
 					/>
 				</LightboxImageTrigger>
 			) : (
-				<div className={classes}>
+				<div
+					className={classes}
+					key={image.name}
+				>
 					<ResponsiveImage
 						key={image.name}
 						className={styles.image}

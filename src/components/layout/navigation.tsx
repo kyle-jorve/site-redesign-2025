@@ -13,10 +13,10 @@ export default function Navigation({
 	className = "",
 	...otherProps
 }: NavigationProps) {
-	const classes = printClassNames([
-		isMobileNav ? styles["mobile-navigation"] : styles.navigation,
-		className,
-	]);
+	const classes = printClassNames(
+		[isMobileNav ? "mobile-navigation" : "navigation", className],
+		[styles],
+	);
 
 	return (
 		<nav

@@ -14,10 +14,10 @@ export default function ProblemSolution({
 	className = "",
 	...otherProps
 }: ProblemSolutionProps) {
-	const classes = printClassNames([
-		styles["problem-solution-row"],
-		className,
-	]);
+	const classes = printClassNames(
+		["problem-solution-row", className],
+		[styles],
+	);
 	const data = [
 		{
 			name: "problem",

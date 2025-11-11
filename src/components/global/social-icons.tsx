@@ -12,7 +12,7 @@ export default function SocialIcons({
 	className = "",
 	...otherProps
 }: SocialIconsProps) {
-	const classes = printClassNames([styles.social, className]);
+	const classes = printClassNames(["social", className], [styles]);
 
 	return (
 		<div

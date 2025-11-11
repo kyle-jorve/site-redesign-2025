@@ -10,11 +10,10 @@ export default function FeaturedFlag({
 	className = "",
 	...otherProps
 }: FeaturedFlagProps) {
-	const classes = printClassNames([
-		styles["featured-flag"],
-		styles[size],
-		className,
-	]);
+	const classes = printClassNames(
+		["featured-flag", size, className],
+		[styles],
+	);
 
 	return (
 		<span

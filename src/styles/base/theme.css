@@ -384,6 +384,7 @@
 
 	--border-dark-color: var(--navy);
 	--border-blue-color: var(--blue);
+	--border-blue-light-color: var(--blue-light);
 	--border-red-color: var(--red);
 	--border-gold-color: var(--gold);
 	--border-light-color: rgba(242, 225, 174, 0.75);
@@ -391,6 +392,8 @@
 
 	--border-dark: var(--border-width) solid var(--border-dark-color);
 	--border-blue: var(--border-width) solid var(--border-blue-color);
+	--border-blue-light: var(--border-width) solid
+		var(--border-blue-light-color);
 	--border-red: var(--border-width) solid var(--border-red-color);
 	--border-red-dotted: var(--border-width) dotted var(--border-red-color);
 	--border-gold: var(--border-width) solid var(--border-gold-color);

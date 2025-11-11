@@ -37,16 +37,14 @@ export default function HeadingBar({
 }: HeadingBarProps) {
 	const headerRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(headerRef);
-	const classes = printClassNames([
-		styles["heading-bar"],
-		styles[width],
-		"underline underline-center",
-		className,
-	]);
-	const titleClasses = printClassNames([
-		styles.title,
-		underlineTitle ? "underline underline-center" : "",
-	]);
+	const classes = printClassNames(
+		["heading-bar", width, "underline underline-center", className],
+		[styles],
+	);
+	const titleClasses = printClassNames(
+		["title", underlineTitle ? "underline underline-center" : ""],
+		[styles],
+	);
 	const Heading = heading as React.ElementType;
 
 	return (

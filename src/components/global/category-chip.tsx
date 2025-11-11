@@ -19,12 +19,10 @@ export default function CategoryChip({
 	className = "",
 	...otherProps
 }: CategoryChipProps) {
-	const classes = printClassNames([
-		styles["category-chip"],
-		styles[size],
-		styles[color],
-		className,
-	]);
+	const classes = printClassNames(
+		["category-chip", size, color, className],
+		[styles],
+	);
 	const url = `/projects?categories=${JSON.stringify([category.name])}`;
 
 	return addLink ? (

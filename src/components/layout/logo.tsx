@@ -12,7 +12,7 @@ export default function Logo({
 	className = "",
 	...otherProps
 }: LogoProps) {
-	const classes = printClassNames([styles.logo, className]);
+	const classes = printClassNames(["logo", className], [styles]);
 
 	return (
 		<CustomLink

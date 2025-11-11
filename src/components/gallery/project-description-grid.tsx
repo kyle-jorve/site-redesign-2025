@@ -10,7 +10,6 @@ import ButtonLink from "@/components/global/button-link";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/project-detail.module.css";
-import lightboxStyles from "@/styles/components/global/lightbox.module.css";
 
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];
@@ -33,7 +32,7 @@ export default function ProjectDescriptionGrid({
 }: ProjectDescriptionGridProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["description-grid"], className]);
+	const classes = printClassNames(["description-grid", className], [styles]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [

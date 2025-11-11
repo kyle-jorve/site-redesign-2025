@@ -15,7 +15,6 @@ import DesignSummarySection from "@/components/gallery/design-summary-section";
 import FeatureGrid from "@/components/gallery/feature-grid";
 import ProjectDescriptionGrid from "@/components/gallery/project-description-grid";
 import ProjectGridInterior from "@/components/gallery/project-grid-interior";
-import Lightbox from "@/components/global/lightbox";
 import styles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectDetailPageProps = {
@@ -141,7 +140,6 @@ export default async function ProjectDetailPage({
 					buttonText={relatedProjectsButtonText || "See More"}
 				/>
 			)}
-			{!!data.imageGrid && <Lightbox images={data.imageGrid} />}
 		</>
 	);
 }

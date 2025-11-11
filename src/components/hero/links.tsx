@@ -21,7 +21,7 @@ export function LinkList({
 	className = "",
 	...otherProps
 }: LinkListProps) {
-	const classes = printClassNames([styles["link-list"], className]);
+	const classes = printClassNames(["link-list", className], [styles]);
 	const { setHideShell } = useContext(SiteContext);
 
 	useEffect(() => {
@@ -63,7 +63,7 @@ export default function Links({
 	className = "",
 	...otherProps
 }: LinksProps) {
-	const classes = printClassNames([styles.links, className]);
+	const classes = printClassNames(["links", className], [styles]);
 
 	return (
 		<div

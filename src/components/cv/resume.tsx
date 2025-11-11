@@ -18,7 +18,7 @@ export default function Resume({
 	className = "",
 	...otherProps
 }: ResumeProps) {
-	const classes = printClassNames([styles.resume, className]);
+	const classes = printClassNames(["resume", className], [styles]);
 
 	return (
 		<section

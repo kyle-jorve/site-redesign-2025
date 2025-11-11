@@ -18,7 +18,7 @@ export default function MenuTiles({
 }: MenuTilesProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(containerRef);
-	const classes = printClassNames([styles["menu-tiles"], className]);
+	const classes = printClassNames(["menu-tiles", className], [styles]);
 
 	return (
 		<div

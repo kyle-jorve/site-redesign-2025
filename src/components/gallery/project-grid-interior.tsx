@@ -28,10 +28,10 @@ export default function ProjectGridInterior({
 }: ProjectGridInteriorProps) {
 	const gridRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(gridRef);
-	const classes = printClassNames([
-		styles["project-grid-interior"],
-		className,
-	]);
+	const classes = printClassNames(
+		["project-grid-interior", className],
+		[styles],
+	);
 
 	return (
 		<section

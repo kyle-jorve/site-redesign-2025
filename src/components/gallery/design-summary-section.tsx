@@ -27,7 +27,7 @@ export default function DesignSummarySection({
 }: DesignSummerySectionProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["design-summary"], className]);
+	const classes = printClassNames(["design-summary", className], [styles]);
 
 	if (!problemText && !solutionText && !overviewText && !url) return null;
 

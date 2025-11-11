@@ -27,7 +27,7 @@ export default function FavButton({
 	const derivedShadowColor = deriveButtonShadowColor(color, shadowColor);
 	const { favedProjects, setFavedProjects } = useContext(SiteContext);
 	const isFaved = favedProjects.includes(projectID);
-	const classes = printClassNames([styles["fave-button"], className]);
+	const classes = printClassNames(["fave-button", className], [styles]);
 
 	function updateFaves(
 		id: string,

@@ -18,7 +18,7 @@ export default function InteriorHero({
 	className = "",
 	...otherProps
 }: InteriorHeroProps) {
-	const classes = printClassNames([styles["interior-hero"], className]);
+	const classes = printClassNames(["interior-hero", className], [styles]);
 
 	return (
 		<section

@@ -10,7 +10,7 @@ export type LightboxImageProps = {
 
 const LightboxImage = forwardRef<HTMLImageElement, LightboxImageProps>(
 	function LightboxImage({ image, className = "", ...otherProps }, ref) {
-		const classes = printClassNames([styles.image, className]);
+		const classes = printClassNames(["image", className], [styles]);
 		const imageConfig: ImageDataType = {
 			...image,
 			sources: [

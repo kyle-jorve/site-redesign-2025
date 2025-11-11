@@ -32,7 +32,7 @@ export default function HomeHero({
 	const [parallaxImage, setParallaxImage] = useState<boolean>(false);
 	const contentRef = useRef<HTMLDivElement>(null);
 	const imageRef = useRef<HTMLImageElement>(null);
-	const classes = printClassNames([styles["home-hero"], className]);
+	const classes = printClassNames(["home-hero", className], [styles]);
 	const breakpoint = 1024;
 	const imageConfig: ImageDataType = (() => {
 		const desktopSources = [

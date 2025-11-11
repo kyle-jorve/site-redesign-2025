@@ -11,7 +11,7 @@ export default function LogoImage({
 	className = "",
 	...otherProps
 }: LogoImageProps) {
-	const classes = printClassNames([styles["logo-img"], className]);
+	const classes = printClassNames(["logo-img", className], [styles]);
 	const srcUrl =
 		color === "standard" ? "/images/logo.svg" : "/images/logo-dark.svg";
 

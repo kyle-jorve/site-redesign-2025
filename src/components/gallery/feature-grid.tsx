@@ -26,7 +26,7 @@ export default function FeatureGrid({
 	className = "",
 	...otherProps
 }: FeatureGridProps) {
-	const classes = printClassNames([styles["feature-grid"], className]);
+	const classes = printClassNames(["feature-grid", className], [styles]);
 	const hasHeadingBar = title !== undefined && url !== undefined;
 
 	return (

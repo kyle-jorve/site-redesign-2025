@@ -17,7 +17,7 @@ export default function ResumeItem({
 	className = "",
 	...otherProps
 }: ResumeItemProps) {
-	const classes = printClassNames([styles["resume-item"], className]);
+	const classes = printClassNames(["resume-item", className], [styles]);
 	const Heading = heading as React.ElementType;
 
 	return (

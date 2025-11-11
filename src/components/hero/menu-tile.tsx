@@ -17,15 +17,14 @@ export default function MenuTile({
 	className = "",
 	...otherProps
 }: MenuTileProps) {
-	const classes = printClassNames([
-		styles["menu-tile"],
-		styles[type],
-		className,
-	]);
-	const headerClasses = printClassNames([
-		type !== "long" ? "underline underline-light underline-center" : "",
-		styles.header,
-	]);
+	const classes = printClassNames(["menu-tile", type, className], [styles]);
+	const headerClasses = printClassNames(
+		[
+			type !== "long" ? "underline underline-light underline-center" : "",
+			"header",
+		],
+		[styles],
+	);
 	const imageConfig: ImageDataType | undefined = image
 		? {
 				...image,
