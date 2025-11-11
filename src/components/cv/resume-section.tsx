@@ -6,7 +6,7 @@ import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
 import { printClassNames } from "@/utils/utils";
 import ResumeItem from "@/components/cv/resume-item";
-import styles from "@/styles/components/cv/resume.module.css";
+import "@/styles/components/cv/resume.css";
 
 export type ResumeSectionProps = Omit<ResumeSectionType, "name"> & {
 	heading?: HeadingType;
@@ -21,7 +21,7 @@ export default function ResumeSection({
 }: ResumeSectionProps) {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames(["resume-section", className], [styles]);
+	const classes = printClassNames(["resume-section", className]);
 	const Heading = heading as React.ElementType;
 
 	return (
@@ -35,9 +35,9 @@ export default function ResumeSection({
 				transition: "opacity 1s ease",
 			}}
 		>
-			<Heading className={styles.title}>{title}</Heading>
+			<Heading className="title">{title}</Heading>
 
-			<ul className={styles["items-list"]}>
+			<ul className="items-list">
 				{items.map((item) => {
 					return (
 						<ResumeItem

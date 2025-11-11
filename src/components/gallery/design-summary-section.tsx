@@ -6,7 +6,7 @@ import { printClassNames } from "@/utils/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
 import ButtonLinkRow from "@/components/global/button-link-row";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import "@/styles/components/gallery/project-detail.css";
 
 export type DesignSummerySectionProps = {
 	problemText?: ProjectType["problemText"];
@@ -27,7 +27,7 @@ export default function DesignSummarySection({
 }: DesignSummerySectionProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames(["design-summary", className], [styles]);
+	const classes = printClassNames(["design-summary", className]);
 
 	if (!problemText && !solutionText && !overviewText && !url) return null;
 
@@ -50,13 +50,9 @@ export default function DesignSummarySection({
 			)}
 
 			{overviewText !== undefined && (
-				<div
-					className={`content-box small ${styles["design-overview"]}`}
-				>
-					<h2 className={`heading-5 ${styles.title}`}>Overview</h2>
-					<p className={`body-text small ${styles.desc}`}>
-						{overviewText}
-					</p>
+				<div className="content-box small design-overview">
+					<h2 className="heading-5 title">Overview</h2>
+					<p className="body-text small desc">{overviewText}</p>
 				</div>
 			)}
 

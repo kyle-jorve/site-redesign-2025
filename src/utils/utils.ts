@@ -1,27 +1,12 @@
 import { ButtonLinkProps } from "@/components/global/button-link";
 
-function returnCleanClassesArray(array: string[]) {
-	return array
+export function printClassNames(classes: string[]) {
+	const cleanClasses = classes
 		.filter((str) => str)
 		.map((str) => str.trim().split(" "))
 		.flat();
-}
 
-export function printClassNames(
-	classes: string[],
-	modules?: {
-		readonly [key: string]: string;
-	}[],
-) {
-	const cleanClasses = returnCleanClassesArray(classes);
-	const moduleClasses = modules
-		? returnCleanClassesArray(
-				cleanClasses.map((c) => modules.map((mod) => mod[c])).flat(),
-		  )
-		: [];
-	const joinedClasses = [...cleanClasses, ...moduleClasses];
-
-	return joinedClasses.join(" ");
+	return cleanClasses.join(" ");
 }
 
 export function deriveButtonShadowColor(

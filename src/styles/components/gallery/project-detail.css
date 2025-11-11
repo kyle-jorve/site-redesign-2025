@@ -1,8 +1,8 @@
-.hero {
+.project-detail-hero {
 	margin-bottom: 2rem;
 }
 
-.slideshow {
+.project-detail-slideshow {
 	margin-bottom: 5rem;
 }
 
@@ -91,11 +91,11 @@
 }
 
 @media (min-width: 64em) {
-	.hero {
+	.project-detail-hero {
 		margin-bottom: 3.375rem;
 	}
 
-	.slideshow {
+	.project-detail-slideshow {
 		margin-bottom: 4rem;
 	}
 

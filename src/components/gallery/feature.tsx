@@ -11,7 +11,7 @@ import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
-import styles from "@/styles/components/gallery/feature-grid.module.css";
+import "@/styles/components/gallery/feature-grid.css";
 
 export type FeatureProps = Omit<FeatureType, "name"> & {
 	useLightbox?: boolean;
@@ -37,10 +37,7 @@ export default function Feature({
 	const intersected = useIntersectionObserver(articleRef);
 	const [activeImage, setActiveImage] = useState<number>(0);
 	const imagesData = Array.isArray(image) ? image : [image];
-	const classes = printClassNames(
-		["feature", alignment, className],
-		[styles],
-	);
+	const classes = printClassNames(["feature", alignment, className]);
 	const mobileSource = {
 		imageWidth: 640,
 		imageHeight: 640,
@@ -63,7 +60,7 @@ export default function Feature({
 	}));
 	const Images = videoSrc ? (
 		<video
-			className={styles.video}
+			className="video"
 			autoPlay
 			loop
 			muted
@@ -81,15 +78,10 @@ export default function Feature({
 		</video>
 	) : (
 		imageConfig.map((image, index) => {
-			const classes = printClassNames(
-				[
-					imagesData.length > 1 && activeImage !== index
-						? "hide"
-						: "",
-					"image-container",
-				],
-				[styles],
-			);
+			const classes = printClassNames([
+				imagesData.length > 1 && activeImage !== index ? "hide" : "",
+				"image-container",
+			]);
 
 			return useLightbox && !url ? (
 				<LightboxImageTrigger
@@ -99,7 +91,7 @@ export default function Feature({
 					className={classes}
 				>
 					<ResponsiveImage
-						className={styles.image}
+						className="image"
 						image={image}
 					/>
 				</LightboxImageTrigger>
@@ -110,7 +102,7 @@ export default function Feature({
 				>
 					<ResponsiveImage
 						key={image.name}
-						className={styles.image}
+						className="image"
 						image={image}
 					/>
 				</div>
@@ -148,18 +140,18 @@ export default function Feature({
 				transition: "opacity 1s ease",
 			}}
 		>
-			<div className={styles["content-col"]}>
-				{!!number && <span className={styles.number}>{number}</span>}
+			<div className="content-col">
+				{!!number && <span className="number">{number}</span>}
 
 				{!!category && (
 					<CategoryChip
-						className={styles.category}
+						className="category"
 						category={category}
 					/>
 				)}
 
 				{!!supertitle && (
-					<span className={`superheading ${styles.supertitle}`}>
+					<span className="superheading supertitle">
 						{supertitle}
 					</span>
 				)}
@@ -171,7 +163,7 @@ export default function Feature({
 				{!!url && (
 					<div className="button-row">
 						<ButtonLink
-							className={styles.button}
+							className="button"
 							url={url}
 						>
 							{buttonText}
@@ -180,15 +172,11 @@ export default function Feature({
 				)}
 			</div>
 
-			<div
-				className={`${styles["image-col"]} ${
-					styles[`${imageAspect}-aspect`]
-				}`}
-			>
+			<div className={`image-col ${imageAspect}-aspect`}>
 				{!!url ? (
 					<CustomLink
 						to={url}
-						className={styles["image-link"]}
+						className="image-link"
 					>
 						{Images}
 					</CustomLink>

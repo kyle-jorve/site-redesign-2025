@@ -14,7 +14,7 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 	const { hideShell } = useContext(SiteContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
-	const classes = printClassNames(["header", className], [styles]);
+	const classes = printClassNames(["page-header", className], [styles]);
 	const breakpoint = 640;
 
 	// set mobile nav hidden state on scroll

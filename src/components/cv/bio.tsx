@@ -13,8 +13,8 @@ import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/cv/bio.module.css";
-import socialStyles from "@/styles/components/global/social-icons.module.css";
+import "@/styles/components/cv/bio.css";
+import "@/styles/components/global/social-icons.css";
 
 export type BioProps = BioType & {
 	image: ImageMetaType;
@@ -35,7 +35,7 @@ export default function Bio({
 }: BioProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames(["bio", placement, className], [styles]);
+	const classes = printClassNames(["bio", placement, className]);
 	const isHero = placement === "hero";
 	const Heading = heading as React.ElementType;
 	const imageConfig: ImageDataType = {
@@ -69,16 +69,14 @@ export default function Bio({
 				transition: "opacity 1s ease",
 			}}
 		>
-			<article className={styles.inner}>
-				<ContentBox className={styles["content-col"]}>
-					<Heading className={`underline ${styles.title}`}>
-						{title}
-					</Heading>
+			<article className="inner">
+				<ContentBox className="content-col">
+					<Heading className="underline title">{title}</Heading>
 
 					{body}
 
 					{isHero ? (
-						<SocialIcons className={socialStyles["bio-icons"]} />
+						<SocialIcons className="bio-icons" />
 					) : (
 						<div className="button-row">
 							<ButtonLink url={url}>{buttonText}</ButtonLink>
@@ -86,9 +84,9 @@ export default function Bio({
 					)}
 				</ContentBox>
 
-				<div className={styles["image-col"]}>
+				<div className="image-col">
 					<ResponsiveImage
-						className={styles.image}
+						className="image"
 						image={imageConfig}
 						loading={placement === "hero" ? "eager" : "lazy"}
 						fetchPriority={placement === "hero" ? "high" : "low"}

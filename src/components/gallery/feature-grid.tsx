@@ -3,7 +3,7 @@ import { FeatureType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import Feature from "@/components/gallery/feature";
 import HeadingBar from "@/components/global/heading-bar";
-import styles from "@/styles/components/gallery/feature-grid.module.css";
+import "@/styles/components/gallery/feature-grid.css";
 
 export type FeatureGridProps = {
 	slides: FeatureType[];
@@ -26,7 +26,7 @@ export default function FeatureGrid({
 	className = "",
 	...otherProps
 }: FeatureGridProps) {
-	const classes = printClassNames(["feature-grid", className], [styles]);
+	const classes = printClassNames(["feature-grid", className]);
 	const hasHeadingBar = title !== undefined && url !== undefined;
 
 	return (
@@ -36,7 +36,7 @@ export default function FeatureGrid({
 		>
 			{hasHeadingBar && (
 				<HeadingBar
-					className={styles.header}
+					className="header"
 					title={title}
 					heading={heading}
 					url={url}
@@ -44,7 +44,7 @@ export default function FeatureGrid({
 				/>
 			)}
 
-			<div className={styles.features}>
+			<div className="features">
 				{slides.map((slide, index) => {
 					const isOdd = (index + 1) % 2 !== 0;
 

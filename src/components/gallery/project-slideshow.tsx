@@ -14,7 +14,10 @@ export default function ProjectSlideshow({
 	className = "",
 	...otherProps
 }: ProjectSlideshowProps) {
-	const classes = printClassNames(["slideshow", className], [styles]);
+	const classes = printClassNames(
+		["project-detail-slideshow", className],
+		[styles],
+	);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [

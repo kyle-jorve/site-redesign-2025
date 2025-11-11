@@ -6,7 +6,7 @@ import SiteContext from "@/utils/site-context";
 import CircleButton, {
 	CircleButtonProps,
 } from "@/components/global/circle-button";
-import styles from "@/styles/components/gallery/projects.module.css";
+import "@/styles/components/gallery/projects.css";
 
 export type FavButtonProps = {
 	projectID: string;
@@ -27,7 +27,7 @@ export default function FavButton({
 	const derivedShadowColor = deriveButtonShadowColor(color, shadowColor);
 	const { favedProjects, setFavedProjects } = useContext(SiteContext);
 	const isFaved = favedProjects.includes(projectID);
-	const classes = printClassNames(["fave-button", className], [styles]);
+	const classes = printClassNames(["fave-button", className]);
 
 	function updateFaves(
 		id: string,

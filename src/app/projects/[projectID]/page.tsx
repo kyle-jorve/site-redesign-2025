@@ -15,7 +15,7 @@ import DesignSummarySection from "@/components/gallery/design-summary-section";
 import FeatureGrid from "@/components/gallery/feature-grid";
 import ProjectDescriptionGrid from "@/components/gallery/project-description-grid";
 import ProjectGridInterior from "@/components/gallery/project-grid-interior";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import "@/styles/components/gallery/project-detail.css";
 
 export type ProjectDetailPageProps = {
 	params: Promise<{ projectID: string }>;
@@ -102,7 +102,7 @@ export default async function ProjectDetailPage({
 	return (
 		<>
 			<InteriorHero
-				className={styles.hero}
+				className={"project-detail-hero"}
 				title={data.title}
 				description={<p className="body-text large">{data.summary}</p>}
 				topBar={topBarMarkup}

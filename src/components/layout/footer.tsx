@@ -10,7 +10,7 @@ import styles from "@/styles/components/layout/footer.module.css";
 export type FooterProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Footer({ className = "", ...otherProps }: FooterProps) {
-	const classes = printClassNames(["footer", className], [styles]);
+	const classes = printClassNames(["page-footer", className], [styles]);
 	const { hideShell } = useContext(SiteContext);
 
 	if (hideShell) return null;

@@ -44,7 +44,7 @@ export function LinkList({
 						className={styles["link-item"]}
 					>
 						<ButtonLink
-							className={`${styles.link} ${styles[link.name]}`}
+							className={`hero-link ${styles[link.name]}`}
 							url={link.url}
 							target="_blank"
 						>
@@ -72,12 +72,12 @@ export default function Links({
 		>
 			{!!commerceLinks && (
 				<>
-					<h2 className={styles["list-heading"]}>Shop</h2>
+					<h2 className={"links-list-heading"}>Shop</h2>
 					<LinkList links={commerceLinks} />
 				</>
 			)}
 
-			<h2 className={styles["list-heading"]}>Explore</h2>
+			<h2 className={"links-list-heading"}>Explore</h2>
 			<LinkList links={socialLinks} />
 		</div>
 	);

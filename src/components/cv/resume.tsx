@@ -3,7 +3,7 @@ import { ResumeType } from "@/types/cv-types";
 import { printClassNames } from "@/utils/utils";
 import HeadingBar from "@/components/global/heading-bar";
 import ResumeSection from "@/components/cv/resume-section";
-import styles from "@/styles/components/cv/resume.module.css";
+import "@/styles/components/cv/resume.css";
 
 export type ResumeProps = ResumeType & {
 	heading?: HeadingType;
@@ -18,7 +18,7 @@ export default function Resume({
 	className = "",
 	...otherProps
 }: ResumeProps) {
-	const classes = printClassNames(["resume", className], [styles]);
+	const classes = printClassNames(["resume", className]);
 
 	return (
 		<section
@@ -27,7 +27,7 @@ export default function Resume({
 			{...otherProps}
 		>
 			<HeadingBar
-				className={styles.header}
+				className="header"
 				title={title}
 				url={url}
 				underlineTitle={false}
@@ -38,7 +38,7 @@ export default function Resume({
 				width="narrow"
 			/>
 
-			<div className={styles.sections}>
+			<div className="sections">
 				{sections.map((section) => {
 					return (
 						<ResumeSection

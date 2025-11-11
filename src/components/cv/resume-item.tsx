@@ -2,7 +2,7 @@ import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
 import { printClassNames } from "@/utils/utils";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/cv/resume.module.css";
+import "@/styles/components/cv/resume.css";
 
 export type ResumeItemProps = Omit<ResumeItemType, "name"> & {
 	heading?: HeadingType;
@@ -17,7 +17,7 @@ export default function ResumeItem({
 	className = "",
 	...otherProps
 }: ResumeItemProps) {
-	const classes = printClassNames(["resume-item", className], [styles]);
+	const classes = printClassNames(["resume-item", className]);
 	const Heading = heading as React.ElementType;
 
 	return (
@@ -27,29 +27,23 @@ export default function ResumeItem({
 		>
 			<ContentBox
 				size="small"
-				className={styles.content}
+				className="content"
 			>
-				<header className={styles["item-header"]}>
+				<header className={"item-header"}>
 					{year !== undefined && (
-						<span className={`heading-5 ${styles.year}`}>
-							{year}
-						</span>
+						<span className="heading-5 year">{year}</span>
 					)}
 
-					<Heading className={styles["item-title"]}>
-						<span className={styles["item-title-text"]}>
-							{title}
-						</span>
+					<Heading className="item-title">
+						<span className="item-title-text">{title}</span>
 					</Heading>
 
 					{company !== undefined && (
-						<span className={`heading-5 ${styles.company}`}>
-							{company}
-						</span>
+						<span className="heading-5 company">{company}</span>
 					)}
 				</header>
 
-				<div className={styles.desc}>{description}</div>
+				<div className="desc">{description}</div>
 			</ContentBox>
 		</li>
 	);
