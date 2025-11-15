@@ -19,7 +19,7 @@
 		width: 2.75rem;
 		aspect-ratio: 1;
 		flex-shrink: 0;
-		font-size: var(--font-size-2x-large);
+		font-size: var(--font-size-24);
 		line-height: var(--leading-none);
 		text-align: center;
 		text-decoration: none;
@@ -91,7 +91,7 @@
 		}
 
 		&.gumroad::before {
-			font-size: var(--font-size-x-large);
+			font-size: var(--font-size-20);
 			content: "\f07a";
 		}
 	}

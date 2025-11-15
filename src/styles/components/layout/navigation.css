@@ -55,7 +55,7 @@
 	padding: 0;
 	font-family: var(--font-body);
 	font-weight: var(--font-weight-black);
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-16);
 	line-height: var(--leading-small);
 	letter-spacing: var(--tracking-x-small);
 	text-decoration: none;
@@ -164,7 +164,7 @@
 		padding: 0.5rem;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
-		font-size: var(--font-size-2x-small);
+		font-size: var(--font-size-10);
 		line-height: var(--leading-none);
 		letter-spacing: var(--tracking-large);
 		text-transform: uppercase;
@@ -179,7 +179,7 @@
 		&.projects::before,
 		&.cv::before {
 			font: var(--fa-font-regular);
-			font-size: var(--font-size-2x-large);
+			font-size: var(--font-size-24);
 		}
 
 		&.projects::before {
@@ -192,7 +192,7 @@
 
 		&.social::before {
 			font: var(--fa-font-solid);
-			font-size: var(--font-size-2x-large);
+			font-size: var(--font-size-24);
 			content: "\23";
 		}
 	}
@@ -297,7 +297,7 @@
 		margin: 0;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
-		font-size: var(--font-size-base);
+		font-size: var(--font-size-16);
 		line-height: var(--leading-none);
 		letter-spacing: var(--tracking-large);
 		text-decoration: none;
@@ -380,7 +380,7 @@
 
 		.nav-item:not(.dropdown-nav-item),
 		.dropdown-toggle {
-			font-size: var(--font-size-x-large);
+			font-size: var(--font-size-20);
 
 			&::after {
 				top: calc(100% + 0.5rem);

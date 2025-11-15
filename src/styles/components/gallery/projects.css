@@ -67,7 +67,7 @@
 	.title {
 		max-width: max-content;
 		margin: 0;
-		font-size: var(--font-size-large);
+		font-size: var(--font-size-18);
 		color: var(--cream);
 	}
 
@@ -136,7 +136,7 @@
 		padding: 0.25rem 0.375rem;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
-		font-size: var(--font-size-2x-small);
+		font-size: var(--font-size-10);
 		line-height: var(--leading-none);
 		letter-spacing: var(--tracking-medium);
 		text-transform: uppercase;
@@ -173,8 +173,9 @@
 		.category,
 		.featured-flag {
 			padding: 0.375rem 0.625rem;
-			font-size: var(--font-size-x-small);
+			font-size: var(--font-size-12);
 			border-radius: var(--border-radius-small);
+			font-size: var(--font-size-12);
 		}
 
 		.title {
@@ -191,12 +192,12 @@
 			.category,
 			.featured-flag {
 				padding: 0.25rem 0.375rem;
-				font-size: var(--font-size-2x-small);
+				font-size: var(--font-size-10);
 				border-radius: var(--border-radius-x-small);
 			}
 
 			.title {
-				font-size: var(--font-size-x-large);
+				font-size: var(--font-size-20);
 			}
 
 			.image-wrapper {
@@ -214,7 +215,7 @@
 	@media (min-width: 64em) {
 		.featured-flag:not(.small) {
 			padding: 0.375rem 0.5rem;
-			font-size: var(--font-size-x-small);
+			font-size: var(--font-size-12);
 			border-radius: var(--border-radius-small);
 		}
 
@@ -233,7 +234,7 @@
 		&.small {
 			.category {
 				padding: 0.375rem 0.625rem;
-				font-size: var(--font-size-x-small);
+				font-size: var(--font-size-12);
 				border-radius: var(--border-radius-small);
 			}
 

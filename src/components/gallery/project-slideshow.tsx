@@ -3,7 +3,7 @@
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
 import Slideshow from "@/components/global/slideshow";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import "@/styles/components/gallery/project-detail.css";
 
 export type ProjectSlideshowProps = {
 	images: ImageMetaType[];
@@ -14,10 +14,7 @@ export default function ProjectSlideshow({
 	className = "",
 	...otherProps
 }: ProjectSlideshowProps) {
-	const classes = printClassNames(
-		["project-detail-slideshow", className],
-		[styles],
-	);
+	const classes = printClassNames(["project-detail-slideshow", className]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [

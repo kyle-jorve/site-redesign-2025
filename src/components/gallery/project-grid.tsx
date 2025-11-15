@@ -7,7 +7,7 @@ import { getElementTransition, printClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
-import styles from "@/styles/components/gallery/projects.module.css";
+import "@/styles/components/gallery/projects.css";
 
 export type ProjectGridProps = {
 	projects: ProjectTileType[];
@@ -28,15 +28,16 @@ export default function ProjectGrid({
 		getFilteredProjects(),
 	);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
-	const classes = printClassNames(["project-grid", className], [styles]);
-	const projectsClasses = printClassNames(
-		["projects", hideGrid ? "hide" : ""],
-		[styles],
-	);
-	const noResultsMessageClasses = printClassNames(
-		["body-text", "large", "no-results-message"],
-		[styles],
-	);
+	const classes = printClassNames(["project-grid", className]);
+	const projectsClasses = printClassNames([
+		"projects",
+		hideGrid ? "hide" : "",
+	]);
+	const noResultsMessageClasses = printClassNames([
+		"body-text",
+		"large",
+		"no-results-message",
+	]);
 
 	function getFilteredProjects() {
 		const activeFilters = filters.filter((filter) => filter.active);

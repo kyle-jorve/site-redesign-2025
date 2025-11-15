@@ -61,7 +61,7 @@
 		}
 
 		.category {
-			font-size: var(--font-size-base);
+			font-size: var(--font-size-16);
 		}
 	}
 }

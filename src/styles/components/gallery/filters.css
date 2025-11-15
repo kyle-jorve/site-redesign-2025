@@ -66,7 +66,7 @@
 		margin: 0;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-black);
-		font-size: var(--font-size-base);
+		font-size: var(--font-size-16);
 		line-height: var(--leading-small);
 		letter-spacing: var(--tracking-x-small);
 		text-align: left;
@@ -78,7 +78,7 @@
 
 		&::before {
 			font: var(--fa-font-solid);
-			font-size: var(--font-size-large);
+			font-size: var(--font-size-18);
 			color: var(--red);
 			content: "\f055";
 			transition: rotate var(--transition), color var(--transition);

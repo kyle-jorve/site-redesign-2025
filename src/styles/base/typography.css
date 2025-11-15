@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Shade&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap");
 
 html {
-	font-size: var(--font-size-base);
+	font-size: var(--font-size-16);
 }
 
 body {

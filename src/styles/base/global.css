@@ -103,7 +103,7 @@ svg {
 		width: 1.5rem;
 		aspect-ratio: 1;
 		font: var(--fa-font-solid);
-		font-size: var(--font-size-x-small);
+		font-size: var(--font-size-12);
 		line-height: var(--leading-none);
 		text-align: center;
 		color: var(--blue);
@@ -237,7 +237,7 @@ a {
 
 		&::before {
 			width: 2rem;
-			font-size: var(--font-size-base);
+			font-size: var(--font-size-16);
 		}
 	}
 }

@@ -10,7 +10,7 @@ import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import FavButton from "@/components/gallery/fav-button";
 import FeaturedFlag from "@/components/gallery/featured-flag";
-import styles from "@/styles/components/gallery/projects.module.css";
+import "@/styles/components/gallery/projects.css";
 
 export type ProjectTileProps = Omit<ProjectTileType, "thumbImage"> & {
 	image: ImageMetaType;
@@ -29,10 +29,7 @@ export default function ProjectTile({
 	className = "",
 	...otherProps
 }: ProjectTileProps) {
-	const classes = printClassNames(
-		["project-tile", variant, className],
-		[styles],
-	);
+	const classes = printClassNames(["project-tile", variant, className]);
 	const Heading = heading as React.ElementType;
 	const url = `/projects/${name}/`;
 	const primaryCategory =
@@ -107,25 +104,25 @@ export default function ProjectTile({
 			className={classes}
 			{...otherProps}
 		>
-			<div className={styles.content}>
+			<div className="content">
 				<CategoryChip
-					className={styles.category}
+					className="category"
 					category={primaryCategory}
 					addLink={false}
 					size="extra-small"
 				/>
 
-				<Heading className={styles.title}>
+				<Heading className="title">
 					<CustomLink
-						className={styles.link}
+						className="link"
 						to={url}
 					>
-						<span className={styles["title-text"]}>{title}</span>
+						<span className="title-text">{title}</span>
 					</CustomLink>
 				</Heading>
 			</div>
 
-			<div className={styles["image-wrapper"]}>
+			<div className="image-wrapper">
 				{featured && <FeaturedFlag />}
 
 				<FavButton
@@ -134,7 +131,7 @@ export default function ProjectTile({
 				/>
 
 				<ResponsiveImage
-					className={styles.image}
+					className="image"
 					image={imageConfig}
 				/>
 			</div>

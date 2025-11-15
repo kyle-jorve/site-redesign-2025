@@ -86,7 +86,7 @@
 		padding: 0.5rem;
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-extrabold);
-		font-size: var(--font-size-small);
+		font-size: var(--font-size-14);
 		color: var(--cream);
 		background: color(from var(--blue) srgb r g b / 0.66);
 		backdrop-filter: var(--backdrop-blur);

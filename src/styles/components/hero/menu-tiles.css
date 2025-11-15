@@ -148,11 +148,11 @@
 
 		&.square {
 			.title {
-				font-size: var(--font-size-2x-large);
+				font-size: var(--font-size-24);
 			}
 
 			.button {
-				font-size: var(--font-size-x-small);
+				font-size: var(--font-size-12);
 			}
 		}
 
@@ -173,7 +173,7 @@
 
 		&.square {
 			.button {
-				font-size: var(--font-size-small);
+				font-size: var(--font-size-14);
 			}
 		}
 

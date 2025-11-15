@@ -1,7 +1,7 @@
 import { ProjectType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import "@/styles/components/gallery/project-detail.css";
 
 export type ProblemSolutionProps = {
 	problemText: ProjectType["problemText"];
@@ -14,10 +14,7 @@ export default function ProblemSolution({
 	className = "",
 	...otherProps
 }: ProblemSolutionProps) {
-	const classes = printClassNames(
-		["problem-solution-row", className],
-		[styles],
-	);
+	const classes = printClassNames(["problem-solution-row", className]);
 	const data = [
 		{
 			name: "problem",
@@ -42,13 +39,9 @@ export default function ProblemSolution({
 						key={item.name}
 						size="small"
 					>
-						<h2 className={`heading-5 ${styles.title}`}>
-							{item.title}
-						</h2>
+						<h2 className="heading-5 title">{item.title}</h2>
 
-						<p className={`body-text small ${styles.desc}`}>
-							{item.desc}
-						</p>
+						<p className="body-text small desc">{item.desc}</p>
 					</ContentBox>
 				);
 			})}

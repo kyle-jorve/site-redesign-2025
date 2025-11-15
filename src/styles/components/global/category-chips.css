@@ -6,7 +6,7 @@
 	padding: 0.375rem 0.625rem;
 	font-family: var(--font-body);
 	font-weight: var(--font-weight-black);
-	font-size: var(--font-size-x-small);
+	font-size: var(--font-size-12);
 	line-height: var(--leading-none);
 	letter-spacing: var(--tracking-medium);
 	text-transform: uppercase;
@@ -17,12 +17,12 @@
 	transition: box-shadow var(--transition);
 
 	&.large {
-		font-size: var(--font-size-base);
+		font-size: var(--font-size-16);
 	}
 
 	&.extra-small {
 		padding: 0.25rem 0.375rem;
-		font-size: var(--font-size-2x-small);
+		font-size: var(--font-size-10);
 		border-radius: var(--border-radius-x-small);
 	}
 
@@ -44,11 +44,11 @@
 	}
 
 	@media (min-width: 64em) {
-		font-size: var(--font-size-small);
+		font-size: var(--font-size-14);
 
 		&.extra-small {
 			padding: 0.375rem 0.625rem;
-			font-size: var(--font-size-x-small);
+			font-size: var(--font-size-12);
 			border-radius: var(--border-radius-small);
 		}
 	}

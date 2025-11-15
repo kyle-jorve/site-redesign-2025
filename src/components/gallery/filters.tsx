@@ -5,7 +5,7 @@ import { useState, useContext, useEffect } from "react";
 import { printClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
 import FilterChip from "@/components/gallery/filter-chip";
-import styles from "@/styles/components/gallery/filters.module.css";
+import "@/styles/components/gallery/filters.css";
 
 export type FiltersProps = React.HTMLAttributes<HTMLDivElement>;
 
@@ -16,7 +16,11 @@ export default function Filters({
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 	const { filters, resetFilters, updateFilters, setFilters } =
 		useContext(SiteContext);
-	const classes = printClassNames(["filters", className], [styles]);
+	const classes = printClassNames(["filters", className]);
+	const filterMenuClasses = printClassNames([
+		"filter-menu",
+		menuOpen ? "open" : "",
+	]);
 	const filterMenuID = "filter-menu";
 	const activeFilters = filters.filter((cat) => cat.active);
 	const params = useSearchParams();
@@ -90,11 +94,11 @@ export default function Filters({
 			{...otherProps}
 		>
 			<div
-				className={styles["filter-menu-wrapper"]}
+				className="filter-menu-wrapper"
 				data-filter-menu
 			>
 				<button
-					className={`button filter ${styles["filter-menu-button"]}`}
+					className="button filter filter-menu-button"
 					aria-controls={filterMenuID}
 					aria-expanded={menuOpen}
 					onClick={() => setMenuOpen((prev) => !prev)}
@@ -103,25 +107,20 @@ export default function Filters({
 				</button>
 
 				<div
-					className={`${styles["filter-menu"]}${
-						menuOpen ? ` ${styles.open}` : ""
-					}`}
+					className={filterMenuClasses}
 					id={filterMenuID}
 					aria-hidden={!menuOpen}
 				>
 					{filters.map((filter) => {
-						const filterButtonClasses = printClassNames(
-							[
-								"add-filter-button",
-								filter.active ? "active" : "",
-							],
-							[styles],
-						);
+						const filterButtonClasses = printClassNames([
+							"add-filter-button",
+							filter.active ? "active" : "",
+						]);
 
 						return (
 							<div
 								key={filter.name}
-								className={styles["filter-row"]}
+								className="filter-row"
 							>
 								<button
 									className={filterButtonClasses}
@@ -133,7 +132,7 @@ export default function Filters({
 								</button>
 								{filter.name === "featured" && (
 									<span
-										className={styles.divider}
+										className="divider"
 										aria-hidden="true"
 									></span>
 								)}

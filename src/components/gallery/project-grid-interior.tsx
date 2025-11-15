@@ -7,7 +7,7 @@ import { ProjectTileType } from "@/types/gallery-types";
 import { printClassNames } from "@/utils/utils";
 import ProjectTile from "@/components/gallery/project-tile";
 import HeadingBar from "@/components/global/heading-bar";
-import styles from "@/styles/components/gallery/projects.module.css";
+import "@/styles/components/gallery/projects.css";
 
 export type ProjectGridInteriorProps = {
 	title: string;
@@ -28,10 +28,7 @@ export default function ProjectGridInterior({
 }: ProjectGridInteriorProps) {
 	const gridRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(gridRef);
-	const classes = printClassNames(
-		["project-grid-interior", className],
-		[styles],
-	);
+	const classes = printClassNames(["project-grid-interior", className]);
 
 	return (
 		<section
@@ -47,7 +44,7 @@ export default function ProjectGridInterior({
 
 			<div
 				ref={gridRef}
-				className={styles.projects}
+				className="projects"
 				style={{
 					opacity: intersected ? 1 : 0,
 					transition: "opacity 1s ease",

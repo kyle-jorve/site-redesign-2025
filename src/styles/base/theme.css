@@ -31,36 +31,36 @@
 	--tracking-large: 0.2em;
 	--tracking-x-large: 0.24em;
 
-	--font-size-2x-small: 0.625rem;
-	--font-size-x-small: 0.75rem;
-	--font-size-small: 0.875rem;
-	--font-size-base: 1rem;
-	--font-size-large: 1.125rem;
-	--font-size-x-large: 1.25rem;
-	--font-size-2x-large: 1.5rem;
+	--font-size-10: 0.625rem;
+	--font-size-12: 0.75rem;
+	--font-size-14: 0.875rem;
+	--font-size-16: 1rem;
+	--font-size-18: 1.125rem;
+	--font-size-20: 1.25rem;
+	--font-size-24: 1.5rem;
 
 	--font-size-supertitle-mobile: 1.375rem;
 	--font-size-page-title-mobile: 5.125rem;
-	--font-size-superheading-mobile: var(--font-size-x-large);
+	--font-size-superheading-mobile: var(--font-size-20);
 	--font-size-heading-1-mobile: 2.75rem;
 	--font-size-heading-2-mobile: 2.25rem;
 	--font-size-heading-3-mobile: 1.875rem;
 	--font-size-heading-4-mobile: 1.625rem;
-	--font-size-heading-5-mobile: var(--font-size-large);
-	--font-size-heading-6-mobile: var(--font-size-large);
-	--font-size-body-large-mobile: var(--font-size-large);
-	--font-size-body-mobile: var(--font-size-base);
-	--font-size-body-small-mobile: var(--font-size-small);
+	--font-size-heading-5-mobile: var(--font-size-18);
+	--font-size-heading-6-mobile: var(--font-size-18);
+	--font-size-body-large-mobile: var(--font-size-18);
+	--font-size-body-mobile: var(--font-size-16);
+	--font-size-body-small-mobile: var(--font-size-14);
 
 	--font-size-supertitle-desktop: 2rem;
 	--font-size-page-title-desktop: 11.25rem;
-	--font-size-superheading-desktop: var(--font-size-2x-large);
+	--font-size-superheading-desktop: var(--font-size-24);
 	--font-size-heading-1-desktop: 6.25rem;
 	--font-size-heading-2-desktop: 4rem;
 	--font-size-heading-3-desktop: 2.5rem;
 	--font-size-heading-4-desktop: 1.875rem;
 	--font-size-body-large-desktop: 1.375rem;
-	--font-size-body-desktop: var(--font-size-large);
+	--font-size-body-desktop: var(--font-size-18);
 
 	--font-size-supertitle: var(--font-size-supertitle-mobile);
 	--font-size-page-title: var(--font-size-page-title-mobile);

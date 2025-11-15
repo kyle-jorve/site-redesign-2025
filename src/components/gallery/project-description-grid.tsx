@@ -9,7 +9,7 @@ import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import "@/styles/components/gallery/project-detail.css";
 
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];
@@ -32,7 +32,7 @@ export default function ProjectDescriptionGrid({
 }: ProjectDescriptionGridProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames(["description-grid", className], [styles]);
+	const classes = printClassNames(["description-grid", className]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [
@@ -69,14 +69,14 @@ export default function ProjectDescriptionGrid({
 				transition: "opacity 1s ease",
 			}}
 		>
-			<ContentBox className={styles["desc-box"]}>
+			<ContentBox className="desc-box">
 				{!!supertitle && (
 					<span className="superheading">{supertitle}</span>
 				)}
 
-				<h2 className={`underline ${styles.title}`}>{title}</h2>
+				<h2 className="underline title">{title}</h2>
 
-				<div className={styles.desc}>{bodyText}</div>
+				<div className="desc">{bodyText}</div>
 
 				{url !== undefined && (
 					<div className="button-row">
@@ -86,17 +86,17 @@ export default function ProjectDescriptionGrid({
 			</ContentBox>
 
 			{!!images.length && (
-				<div className={styles["image-grid"]}>
+				<div className="image-grid">
 					{imageConfigs.map((image, index) => {
 						return (
 							<LightboxImageTrigger
 								key={image.name}
 								lightboxImages={images}
 								index={index}
-								className={styles["image-wrapper"]}
+								className="image-wrapper"
 							>
 								<ResponsiveImage
-									className={styles.image}
+									className="image"
 									image={image}
 								/>
 							</LightboxImageTrigger>
