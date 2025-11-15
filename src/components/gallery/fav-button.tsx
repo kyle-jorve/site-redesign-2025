@@ -13,7 +13,7 @@ export type FavButtonProps = {
 	projectTitle: string;
 	color?: CircleButtonProps["color"];
 	shadowColor?: CircleButtonProps["shadowColor"];
-} & React.HTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function FavButton({
 	projectID,

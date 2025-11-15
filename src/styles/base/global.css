@@ -193,6 +193,11 @@ a {
 	cursor: pointer;
 }
 
+button:disabled {
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
 .content-box {
 	position: relative;
 	z-index: 2;

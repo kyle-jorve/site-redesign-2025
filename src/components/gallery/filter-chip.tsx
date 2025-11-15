@@ -5,7 +5,7 @@ import { printClassNames } from "@/utils/utils";
 export type FilterChipProps = {
 	category: CategoryType;
 	handleClick: SiteContextType["updateFilters"];
-} & React.HTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function FilterChip({
 	category,

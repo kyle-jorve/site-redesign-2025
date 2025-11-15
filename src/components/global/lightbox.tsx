@@ -28,6 +28,7 @@ export default function Lightbox({
 	const [imageStatus, setImageStatus] = useState<"active" | "hidden">(
 		"active",
 	);
+	const [arrowButtonsDisabled, setArrowButtonsDisabled] = useState(false);
 	const lightboxRef = useRef<HTMLDialogElement | null>(null);
 	const imageRef = useRef<HTMLImageElement | null>(null);
 	const classes = printClassNames(["lightbox", status, className], [styles]);
@@ -43,10 +44,13 @@ export default function Lightbox({
 			lightboxImages.length,
 		);
 
+		setArrowButtonsDisabled(true);
+
 		imageRef?.current?.addEventListener(
 			"transitionend",
 			() => {
 				setLightboxActiveIndex(destinationIndex);
+				setArrowButtonsDisabled(false);
 			},
 			{ once: true },
 		);
@@ -101,6 +105,7 @@ export default function Lightbox({
 						shadowColor="light"
 						aria-label="go to previous slide"
 						onClick={() => handleArrowClick("backward")}
+						disabled={arrowButtonsDisabled}
 					/>
 					<CircleButton
 						className={styles["arrow-button"]}
@@ -108,6 +113,7 @@ export default function Lightbox({
 						shadowColor="light"
 						aria-label="go to next slide"
 						onClick={() => handleArrowClick("forward")}
+						disabled={arrowButtonsDisabled}
 					/>
 				</div>
 			)}
