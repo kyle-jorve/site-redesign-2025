@@ -1,21 +1,37 @@
 .lightbox {
+	--vertical-padding: 1rem;
+
 	position: fixed;
 	inset: 0;
 	z-index: 1000;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 1rem;
 	width: 100%;
 	height: 100%;
-	padding: 1rem;
+	/* padding: 1rem; */
+	padding: var(--vertical-padding) 0;
 	margin: 0;
 	background: var(--navy);
 	border: none;
 	overscroll-behavior: contain;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition), visibility var(--transition);
 
-	&,
+	&:not(.active),
+	&:not(.active) * {
+		pointer-events: none;
+	}
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* &,
 	&.in {
 		opacity: 0;
 		visibility: hidden;
@@ -39,7 +55,7 @@
 
 	&.out :global {
 		animation: fade-out var(--transition) forwards;
-	}
+	} */
 
 	.close-button {
 		position: absolute;
@@ -47,7 +63,7 @@
 		z-index: 2;
 	}
 
-	.arrows {
+	/* .arrows {
 		position: absolute;
 		inset: 50% 1rem auto;
 		z-index: 2;
@@ -59,24 +75,23 @@
 
 	.arrow-button {
 		pointer-events: all;
-	}
+	} */
 
 	.image {
 		width: auto;
 		max-width: 100%;
-		max-height: calc(100vh - 4rem);
+		max-height: calc(
+			100vh - (var(--vertical-padding) * 2) -
+				(var(--long-shadow-offset) * 2) - var(--dot-width) -
+				var(--dots-margin)
+		);
+		margin: 0 auto;
 		border-radius: var(--border-radius);
 		box-shadow: var(--hard-shadow-gold-long);
 		object-fit: contain;
-		opacity: 0;
-		transition: opacity var(--transition);
-
-		&.active {
-			opacity: 1;
-		}
 	}
 
-	.slide-counter {
+	/* .slide-counter {
 		position: absolute;
 		bottom: 1rem;
 		left: 50%;
@@ -93,5 +108,9 @@
 		border: var(--border-blue-light);
 		border-radius: var(--border-radius);
 		pointer-events: none;
+	} */
+
+	@media (min-width: 64em) {
+		--vertical-padding: 2rem;
 	}
 }

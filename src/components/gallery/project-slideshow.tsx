@@ -2,8 +2,11 @@
 
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
-import Slideshow from "@/components/global/slideshow";
+import Slideshow, { SlideType } from "@/components/global/slideshow";
+import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
+import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/project-detail.module.css";
+import slideshowStyles from "@/styles/components/global/slideshow.module.css";
 
 export type ProjectSlideshowProps = {
 	images: ImageMetaType[];
@@ -39,11 +42,28 @@ export default function ProjectSlideshow({
 			imageHeight: 480,
 		},
 	}));
+	const slideshowSlides: SlideType[] = imageConfigs.map((config, index) => ({
+		id: config.name,
+		content: (
+			<LightboxImageTrigger
+				className={slideshowStyles["image-wrapper"]}
+				lightboxImages={images}
+				index={index}
+			>
+				<ResponsiveImage
+					className={slideshowStyles["slide-image"]}
+					image={config}
+					loading="eager"
+					fetchPriority="high"
+				/>
+			</LightboxImageTrigger>
+		),
+	}));
 
 	return (
 		<Slideshow
 			className={classes}
-			images={imageConfigs}
+			slides={slideshowSlides}
 			{...otherProps}
 		/>
 	);

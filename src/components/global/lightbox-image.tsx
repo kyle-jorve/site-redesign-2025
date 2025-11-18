@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import { ImageMetaType, ImageDataType } from "@/types/global-types";
 import { printClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -8,39 +7,38 @@ export type LightboxImageProps = {
 	image: ImageMetaType;
 } & React.ImgHTMLAttributes<HTMLImageElement>;
 
-const LightboxImage = forwardRef<HTMLImageElement, LightboxImageProps>(
-	function LightboxImage({ image, className = "", ...otherProps }, ref) {
-		const classes = printClassNames(["image", className], [styles]);
-		const imageConfig: ImageDataType = {
-			...image,
-			sources: [
-				{
-					minScreenWidth: "90em",
-					imageWidth: 1920,
-				},
-				{
-					minScreenWidth: "64em",
-					imageWidth: 1440,
-				},
-				{
-					minScreenWidth: "40em",
-					imageWidth: 1024,
-				},
-			],
-			mobileSource: {
-				imageWidth: 640,
+export default function LightboxImage({
+	image,
+	className = "",
+	...otherProps
+}: LightboxImageProps) {
+	const classes = printClassNames(["image", className], [styles]);
+	const imageConfig: ImageDataType = {
+		...image,
+		sources: [
+			{
+				minScreenWidth: "90em",
+				imageWidth: 1920,
 			},
-		};
+			{
+				minScreenWidth: "64em",
+				imageWidth: 1440,
+			},
+			{
+				minScreenWidth: "40em",
+				imageWidth: 1024,
+			},
+		],
+		mobileSource: {
+			imageWidth: 640,
+		},
+	};
 
-		return (
-			<ResponsiveImage
-				ref={ref}
-				className={classes}
-				image={imageConfig}
-				{...otherProps}
-			/>
-		);
-	},
-);
-
-export default LightboxImage;
+	return (
+		<ResponsiveImage
+			className={classes}
+			image={imageConfig}
+			{...otherProps}
+		/>
+	);
+}

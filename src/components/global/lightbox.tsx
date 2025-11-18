@@ -2,10 +2,11 @@
 
 import React, { useContext, useState, useEffect, useRef } from "react";
 import SiteContext from "@/utils/site-context";
-import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
+import { printClassNames /*, getDestinationSlideIndex*/ } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
+import LightboxImage from "@/components/global/lightbox-image";
+import Slideshow, { SlideType } from "@/components/global/slideshow";
 import styles from "@/styles/components/global/lightbox.module.css";
-import LightboxImage from "./lightbox-image";
 
 export type LightboxProps = React.HTMLAttributes<HTMLDialogElement>;
 
@@ -19,118 +20,61 @@ export default function Lightbox({
 		lightboxId,
 		lightboxOpen,
 		closeLightbox,
-		setLightboxActiveIndex,
+		// setLightboxActiveIndex,
 		setlightboxImages,
 	} = useContext(SiteContext);
-	const [status, setStatus] = useState<"in" | "out" | "open" | "closed">(
-		"closed",
+	// const [status, setStatus] = useState<"in" | "out" | "open" | "closed">(
+	// 	"closed",
+	// );
+	// const [imageStatus, setImageStatus] = useState<"active" | "hidden">(
+	// 	"active",
+	// );
+	// const [arrowButtonsDisabled, setArrowButtonsDisabled] = useState(false);
+	// const lightboxRef = useRef<HTMLDialogElement | null>(null);
+	// const imageRef = useRef<HTMLImageElement | null>(null);
+	const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+	const classes = printClassNames(
+		["lightbox", lightboxOpen ? "active" : "", /*status,*/ className],
+		[styles],
 	);
-	const [imageStatus, setImageStatus] = useState<"active" | "hidden">(
-		"active",
-	);
-	const [arrowButtonsDisabled, setArrowButtonsDisabled] = useState(false);
-	const lightboxRef = useRef<HTMLDialogElement | null>(null);
-	const imageRef = useRef<HTMLImageElement | null>(null);
-	const classes = printClassNames(["lightbox", status, className], [styles]);
+	const slideshowSlides: SlideType[] = lightboxImages.map((image) => ({
+		id: image.name,
+		content: <LightboxImage image={image} />,
+	}));
 
-	function handleImageLoad(_: React.SyntheticEvent<HTMLImageElement>) {
-		setImageStatus("active");
+	function handleTransitionEnd() {
+		if (!lightboxOpen) setlightboxImages([]);
+		else closeButtonRef.current?.focus();
 	}
-
-	function handleArrowClick(direction: "forward" | "backward") {
-		const destinationIndex = getDestinationSlideIndex(
-			direction,
-			lightboxActiveIndex,
-			lightboxImages.length,
-		);
-
-		setArrowButtonsDisabled(true);
-
-		imageRef?.current?.addEventListener(
-			"transitionend",
-			() => {
-				setLightboxActiveIndex(destinationIndex);
-				setArrowButtonsDisabled(false);
-			},
-			{ once: true },
-		);
-
-		setImageStatus("hidden");
-	}
-
-	useEffect(() => {
-		const lightboxEl = lightboxRef?.current;
-
-		if (!lightboxEl || !lightboxImages.length) return;
-
-		function handleAnimationEnd() {
-			setStatus(lightboxOpen ? "open" : "closed");
-			if (!lightboxOpen) {
-				setLightboxActiveIndex(0);
-				setlightboxImages([]);
-			}
-		}
-
-		lightboxEl.addEventListener("animationend", handleAnimationEnd, {
-			once: true,
-		});
-
-		setStatus(lightboxOpen ? "in" : "out");
-
-		return () => {
-			lightboxEl.removeEventListener("animationend", handleAnimationEnd);
-		};
-	}, [lightboxOpen]);
 
 	return (
 		<dialog
 			className={classes}
 			id={lightboxId}
 			open={lightboxOpen}
-			ref={lightboxRef}
+			// ref={lightboxRef}
+			onTransitionEnd={handleTransitionEnd}
 			{...otherProps}
 		>
 			<CircleButton
+				ref={closeButtonRef}
 				icon="cross"
 				aria-label="close lightbox"
 				shadowColor="light"
 				className={styles["close-button"]}
 				onClick={() => closeLightbox()}
 			/>
-			{lightboxImages.length > 1 && (
-				<div className={styles.arrows}>
-					<CircleButton
-						className={styles["arrow-button"]}
-						icon="arrow-left"
-						shadowColor="light"
-						aria-label="go to previous slide"
-						onClick={() => handleArrowClick("backward")}
-						disabled={arrowButtonsDisabled}
-					/>
-					<CircleButton
-						className={styles["arrow-button"]}
-						icon="arrow-right"
-						shadowColor="light"
-						aria-label="go to next slide"
-						onClick={() => handleArrowClick("forward")}
-						disabled={arrowButtonsDisabled}
-					/>
-				</div>
-			)}
 
 			{!!lightboxImages.length && (
-				<LightboxImage
-					ref={imageRef}
-					className={styles[imageStatus]}
-					image={lightboxImages[lightboxActiveIndex]}
-					onLoad={handleImageLoad}
+				<Slideshow
+					className={styles.slideshow}
+					slides={slideshowSlides}
+					activeSlideIndex={lightboxActiveIndex}
+					useFadeIn={false}
+					useLightMode={true}
+					controlSlideAspect={false}
+					insideLightbox={true}
 				/>
-			)}
-
-			{lightboxImages.length > 1 && (
-				<span className={styles["slide-counter"]}>
-					{lightboxActiveIndex + 1} / {lightboxImages.length}
-				</span>
 			)}
 		</dialog>
 	);

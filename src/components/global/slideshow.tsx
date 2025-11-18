@@ -1,51 +1,59 @@
 import { useState, useRef, createRef, useEffect } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
-import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
-import ResponsiveImage from "@/components/global/responsive-image";
+import SlideshowSlide from "@/components/global/slideshow-slide";
+import SlideshowDot from "@/components/global/slideshow-dot";
 import styles from "@/styles/components/global/slideshow.module.css";
 
+export type SlideType = {
+	id: string;
+	content: React.ReactElement;
+};
+
 export type SlideshowProps = {
-	images: ImageDataType[];
+	slides: SlideType[];
+	activeSlideIndex?: number;
 	useDots?: boolean;
 	useFadeIn?: boolean;
-	useLightMode?: boolean; // used for areas with dark backgrounds
-	controlSlideHeights?: boolean;
+	/**
+	 * Used for areas with dark backgrounds
+	 */
+	useLightMode?: boolean;
+	/**
+	 * Limit slide aspect ratio to 16:9
+	 */
+	controlSlideAspect?: boolean;
+	insideLightbox?: boolean;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function Slideshow({
-	images,
+	slides,
+	activeSlideIndex = 0,
 	useDots = true,
 	useFadeIn = true,
 	useLightMode = false,
-	controlSlideHeights = true,
+	controlSlideAspect = true,
+	insideLightbox = false,
 	className = "",
 	...otherProps
 }: SlideshowProps) {
-	const notASlideshow = images.length <= 1;
+	const notASlideshow = slides.length <= 1;
 	const sectionRef = useRef<HTMLElement>(null);
 	const slideContainerRef = useRef<HTMLDivElement>(null);
-	const slideRefs = images.map((_, index) => ({
+	const slideRefs = slides.map((_, index) => ({
 		ref: createRef<HTMLDivElement>(),
 		index,
 	}));
-	const [activeSlide, setActiveSlide] = useState<number>(0);
+	const [activeSlide, setActiveSlide] = useState<number>(activeSlideIndex);
 	const intersected = useIntersectionObserver(sectionRef);
-	const lightboxImages: ImageMetaType[] = images.map((image) => ({
-		name: image.name,
-		pathKey: image.pathKey,
-		alt: image.alt,
-		horizontalOrientation: image.horizontalOrientation,
-		verticalOrientation: image.verticalOrientation,
-	}));
 	const classes = printClassNames(
 		[
 			"slideshow",
-			notASlideshow ? "single-image" : "",
+			notASlideshow ? "single-slide" : "",
 			useLightMode ? "light-mode" : "",
-			controlSlideHeights ? "controlled-slide-heights" : "",
+			controlSlideAspect ? "controlled-slide-aspect" : "",
+			insideLightbox ? "inside-lightbox" : "",
 			className,
 		],
 		[styles],
@@ -74,7 +82,7 @@ export default function Slideshow({
 			) * 16;
 
 		if (slideIndex === 0) return -1;
-		if (slideIndex === images.length - 1) return slidesRef.scrollWidth;
+		if (slideIndex === slides.length - 1) return slidesRef.scrollWidth;
 
 		const slideRef = slideRefs[slideIndex].ref.current;
 
@@ -111,7 +119,7 @@ export default function Slideshow({
 		const destinationIndex = getDestinationSlideIndex(
 			direction,
 			activeSlide,
-			images.length,
+			slides.length,
 		);
 		const destinationOffset = getSlideOffset(destinationIndex);
 
@@ -166,7 +174,11 @@ export default function Slideshow({
 		};
 	}, [activeSlide, slideRefs, notASlideshow]);
 
-	if (!images.length) return null;
+	useEffect(() => {
+		// TODO: scroll to slide on slideshow render if activeSlideIndex > 0
+	}, []);
+
+	if (!slides.length) return null;
 
 	return (
 		<section
@@ -182,6 +194,7 @@ export default function Slideshow({
 							className={`${styles["arrow"]} ${styles["prev"]}`}
 							icon="arrow-left"
 							aria-label="go to previous slide"
+							shadowColor={useLightMode ? "light" : undefined}
 							onClick={() => handleArrowClick("backward")}
 						/>
 
@@ -189,6 +202,7 @@ export default function Slideshow({
 							className={`${styles["arrow"]} ${styles["next"]}`}
 							icon="arrow-right"
 							aria-label="go to next slide"
+							shadowColor={useLightMode ? "light" : undefined}
 							onClick={() => handleArrowClick("forward")}
 						/>
 					</div>
@@ -198,30 +212,17 @@ export default function Slideshow({
 					ref={slideContainerRef}
 					className={styles.slides}
 				>
-					{images.map((image, index) => {
+					{slides.map((slide, index) => {
 						const isActiveSlide = activeSlide === index;
 
 						return (
-							<div
-								key={`slideshow-slide-${image.name}`}
+							<SlideshowSlide
+								key={`slideshow-slide-${slide.id}`}
 								ref={slideRefs[index].ref}
-								className={`${styles.slide}${
-									isActiveSlide ? ` ${styles.active}` : ""
-								}`}
+								active={isActiveSlide}
 							>
-								<LightboxImageTrigger
-									className={styles["image-wrapper"]}
-									lightboxImages={lightboxImages}
-									index={index}
-								>
-									<ResponsiveImage
-										className={styles["slide-image"]}
-										image={image}
-										loading="eager"
-										fetchPriority="high"
-									/>
-								</LightboxImageTrigger>
-							</div>
+								{slide.content}
+							</SlideshowSlide>
 						);
 					})}
 				</div>
@@ -229,18 +230,16 @@ export default function Slideshow({
 
 			{!notASlideshow && useDots && (
 				<div className={styles.dots}>
-					{images.map((image, index) => {
+					{slides.map((slide, index) => {
+						const isActiveDot = activeSlide === index;
+
 						return (
-							<button
-								key={`${image.name}-dot`}
-								className={`${styles.dot}${
-									index === activeSlide
-										? ` ${styles.active}`
-										: ""
-								}`}
+							<SlideshowDot
+								key={`${slide.id}-dot`}
+								active={isActiveDot}
 								onClick={() => handleDotClick(index)}
 								aria-label={`Go to slide ${index + 1}`}
-							></button>
+							/>
 						);
 					})}
 				</div>
