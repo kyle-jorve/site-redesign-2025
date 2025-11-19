@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeType } from "@/types/cv-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import HeadingBar from "@/components/global/heading-bar";
 import ResumeSection from "@/components/cv/resume-section";
 import styles from "@/styles/components/cv/resume.module.css";
@@ -18,7 +18,7 @@ export default function Resume({
 	className = "",
 	...otherProps
 }: ResumeProps) {
-	const classes = printClassNames(["resume", className], [styles]);
+	const classes = outputClassNames(["resume", className], [styles]);
 
 	return (
 		<section

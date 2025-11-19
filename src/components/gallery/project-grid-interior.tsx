@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ProjectTileType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ProjectTile from "@/components/gallery/project-tile";
 import HeadingBar from "@/components/global/heading-bar";
 import styles from "@/styles/components/gallery/projects.module.css";
@@ -28,7 +28,7 @@ export default function ProjectGridInterior({
 }: ProjectGridInteriorProps) {
 	const gridRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(gridRef);
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		["project-grid-interior", className],
 		[styles],
 	);

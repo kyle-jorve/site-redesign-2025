@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import MenuTiles from "@/components/hero/menu-tiles";
 import styles from "@/styles/components/hero/home-hero.module.css";
@@ -32,7 +32,7 @@ export default function HomeHero({
 	const [parallaxImage, setParallaxImage] = useState<boolean>(false);
 	const contentRef = useRef<HTMLDivElement>(null);
 	const imageRef = useRef<HTMLImageElement>(null);
-	const classes = printClassNames(["home-hero", className], [styles]);
+	const classes = outputClassNames(["home-hero", className], [styles]);
 	const breakpoint = 1024;
 	const imageConfig: ImageDataType = (() => {
 		const desktopSources = [

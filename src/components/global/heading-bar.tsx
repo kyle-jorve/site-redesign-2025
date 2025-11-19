@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import { HeadingType } from "@/types/global-types";
 import { ButtonLinkRowProps } from "@/components/global/button-link-row";
 import ButtonLinkRow from "@/components/global/button-link-row";
@@ -37,11 +37,11 @@ export default function HeadingBar({
 }: HeadingBarProps) {
 	const headerRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(headerRef);
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		["heading-bar", width, "underline underline-center", className],
 		[styles],
 	);
-	const titleClasses = printClassNames(
+	const titleClasses = outputClassNames(
 		["title", underlineTitle ? "underline underline-center" : ""],
 		[styles],
 	);

@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { deriveButtonShadowColor, printClassNames } from "@/utils/utils";
+import { deriveButtonShadowColor, outputClassNames } from "@/utils/utils";
 
 export type CircleButtonProps = {
 	icon: "heart" | "arrow-left" | "arrow-right" | "cross";
@@ -22,7 +22,7 @@ const CircleButton = forwardRef<HTMLButtonElement, CircleButtonProps>(
 		ref,
 	) {
 		const derivedShadowColor = deriveButtonShadowColor(color, shadowColor);
-		const classes = printClassNames([
+		const classes = outputClassNames([
 			"circle-button",
 			derivedShadowColor ? `shadow-${derivedShadowColor}` : "",
 			icon,

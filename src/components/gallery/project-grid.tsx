@@ -3,7 +3,7 @@
 import { useContext, useRef, useState, useEffect, Suspense } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { ProjectTileType, CategoryType } from "@/types/gallery-types";
-import { getElementTransition, printClassNames } from "@/utils/utils";
+import { getElementTransition, outputClassNames } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
@@ -28,12 +28,12 @@ export default function ProjectGrid({
 		getFilteredProjects(),
 	);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
-	const classes = printClassNames(["project-grid", className], [styles]);
-	const projectsClasses = printClassNames(
+	const classes = outputClassNames(["project-grid", className], [styles]);
+	const projectsClasses = outputClassNames(
 		["projects", hideGrid ? "hide" : ""],
 		[styles],
 	);
-	const noResultsMessageClasses = printClassNames(
+	const noResultsMessageClasses = outputClassNames(
 		["body-text", "large", "no-results-message"],
 		[styles],
 	);

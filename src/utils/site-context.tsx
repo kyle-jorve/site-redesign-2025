@@ -26,7 +26,6 @@ export type SiteContextType = {
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
 	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	setHideShell: React.Dispatch<React.SetStateAction<boolean>>;
-	setLightboxActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 	setlightboxImages: React.Dispatch<
 		React.SetStateAction<SiteContextType["lightboxImages"]>
 	>;
@@ -55,7 +54,6 @@ const defaults: SiteContextType = {
 	setFavedProjects: () => {},
 	setFilters: () => {},
 	setHideShell: () => {},
-	setLightboxActiveIndex: () => {},
 	setlightboxImages: () => {},
 	setLoadStatus: () => {},
 	setVisited: () => {},
@@ -202,7 +200,6 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				setFavedProjects,
 				setFilters,
 				setHideShell,
-				setLightboxActiveIndex,
 				setlightboxImages,
 				setLoadStatus,
 				setVisited,

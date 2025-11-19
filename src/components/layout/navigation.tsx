@@ -1,5 +1,5 @@
 import { navItems } from "@/data/global-data";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import NavItem from "@/components/layout/nav-item";
 import ParentNavItem from "@/components/layout/parent-nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
@@ -13,7 +13,7 @@ export default function Navigation({
 	className = "",
 	...otherProps
 }: NavigationProps) {
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		[isMobileNav ? "mobile-navigation" : "navigation", className],
 		[styles],
 	);

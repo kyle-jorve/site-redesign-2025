@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/cv/resume.module.css";
 
@@ -17,7 +17,7 @@ export default function ResumeItem({
 	className = "",
 	...otherProps
 }: ResumeItemProps) {
-	const classes = printClassNames(["resume-item", className], [styles]);
+	const classes = outputClassNames(["resume-item", className], [styles]);
 	const Heading = heading as React.ElementType;
 
 	return (

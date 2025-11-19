@@ -31,51 +31,11 @@
 		visibility: visible;
 	}
 
-	/* &,
-	&.in {
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	&.out,
-	&.open {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&.in,
-	&.out,
-	&.open {
-		display: flex;
-	}
-
-	&.in :global {
-		animation: fade-in var(--transition) forwards;
-	}
-
-	&.out :global {
-		animation: fade-out var(--transition) forwards;
-	} */
-
 	.close-button {
 		position: absolute;
 		inset: 1rem 1rem auto auto;
 		z-index: 2;
 	}
-
-	/* .arrows {
-		position: absolute;
-		inset: 50% 1rem auto;
-		z-index: 2;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		pointer-events: none;
-	}
-
-	.arrow-button {
-		pointer-events: all;
-	} */
 
 	.image {
 		width: auto;
@@ -90,25 +50,6 @@
 		box-shadow: var(--hard-shadow-gold-long);
 		object-fit: contain;
 	}
-
-	/* .slide-counter {
-		position: absolute;
-		bottom: 1rem;
-		left: 50%;
-		z-index: 2;
-		translate: -50% 0;
-		display: block;
-		padding: 0.5rem;
-		font-family: var(--font-body);
-		font-weight: var(--font-weight-extrabold);
-		font-size: var(--font-size-small);
-		color: var(--cream);
-		background: color(from var(--blue) srgb r g b / 0.66);
-		backdrop-filter: var(--backdrop-blur);
-		border: var(--border-blue-light);
-		border-radius: var(--border-radius);
-		pointer-events: none;
-	} */
 
 	@media (min-width: 64em) {
 		--vertical-padding: 2rem;

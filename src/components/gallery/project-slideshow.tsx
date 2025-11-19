@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import Slideshow, { SlideType } from "@/components/global/slideshow";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -17,7 +17,7 @@ export default function ProjectSlideshow({
 	className = "",
 	...otherProps
 }: ProjectSlideshowProps) {
-	const classes = printClassNames(["slideshow", className], [styles]);
+	const classes = outputClassNames(["slideshow", className], [styles]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [

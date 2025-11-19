@@ -5,7 +5,7 @@ import { getThumbnailUrl } from "@/utils/utils";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";
@@ -37,7 +37,7 @@ export default function Feature({
 	const intersected = useIntersectionObserver(articleRef);
 	const [activeImage, setActiveImage] = useState<number>(0);
 	const imagesData = Array.isArray(image) ? image : [image];
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		["feature", alignment, className],
 		[styles],
 	);
@@ -81,7 +81,7 @@ export default function Feature({
 		</video>
 	) : (
 		imageConfig.map((image, index) => {
-			const classes = printClassNames(
+			const classes = outputClassNames(
 				[
 					imagesData.length > 1 && activeImage !== index
 						? "hide"

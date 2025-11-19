@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ButtonLink, { ButtonLinkProps } from "@/components/global/button-link";
 
 export type ButtonLinkRowProps = {
@@ -20,12 +20,12 @@ export default function ButtonLinkRow({
 	className = "",
 	...otherProps
 }: ButtonLinkRowProps) {
-	const classes = printClassNames([
+	const classes = outputClassNames([
 		"link-row",
 		`lines-${linesColor}`,
 		className,
 	]);
-	const linesClasses = printClassNames([
+	const linesClasses = outputClassNames([
 		linesClass !== undefined ? linesClass : "",
 		"lines",
 	]);

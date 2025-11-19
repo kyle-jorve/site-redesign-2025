@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import MenuTile from "@/components/hero/menu-tile";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
 
@@ -18,7 +18,7 @@ export default function MenuTiles({
 }: MenuTilesProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(containerRef);
-	const classes = printClassNames(["menu-tiles", className], [styles]);
+	const classes = outputClassNames(["menu-tiles", className], [styles]);
 
 	return (
 		<div

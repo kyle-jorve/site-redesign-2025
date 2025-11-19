@@ -1,5 +1,5 @@
 import CustomLink from "@/components/global/custom-link";
-import { printClassNames, deriveButtonShadowColor } from "@/utils/utils";
+import { outputClassNames, deriveButtonShadowColor } from "@/utils/utils";
 
 export type ButtonLinkProps = {
 	url: string;
@@ -19,7 +19,7 @@ export default function ButtonLink({
 	...otherProps
 }: ButtonLinkProps) {
 	const derivedShadowColor = deriveButtonShadowColor(color, shadowColor);
-	const classes = printClassNames([
+	const classes = outputClassNames([
 		"button",
 		derivedShadowColor ? `shadow-${derivedShadowColor}` : "",
 		color,

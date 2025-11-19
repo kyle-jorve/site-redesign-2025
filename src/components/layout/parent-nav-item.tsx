@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { NavItemType } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import NavItem from "@/components/layout/nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 
@@ -21,11 +21,11 @@ export default function ParentNavItem({
 }: ParentNavItemProps) {
 	const rootRef = useRef<HTMLDivElement>(null);
 	const [expanded, setExpanded] = useState<boolean>(false);
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		["nav-parent", name, expanded ? "expanded" : "", className],
 		[styles],
 	);
-	const dropdownToggleClasses = printClassNames(
+	const dropdownToggleClasses = outputClassNames(
 		["dropdown-toggle", name, expanded ? "expanded" : ""],
 		[styles],
 	);

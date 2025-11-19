@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import SiteContext from "@/utils/site-context";
-import { printClassNames /*, getDestinationSlideIndex*/ } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
 import LightboxImage from "@/components/global/lightbox-image";
 import Slideshow, { SlideType } from "@/components/global/slideshow";
@@ -20,27 +20,23 @@ export default function Lightbox({
 		lightboxId,
 		lightboxOpen,
 		closeLightbox,
-		// setLightboxActiveIndex,
 		setlightboxImages,
 	} = useContext(SiteContext);
-	// const [status, setStatus] = useState<"in" | "out" | "open" | "closed">(
-	// 	"closed",
-	// );
-	// const [imageStatus, setImageStatus] = useState<"active" | "hidden">(
-	// 	"active",
-	// );
-	// const [arrowButtonsDisabled, setArrowButtonsDisabled] = useState(false);
-	// const lightboxRef = useRef<HTMLDialogElement | null>(null);
-	// const imageRef = useRef<HTMLImageElement | null>(null);
 	const closeButtonRef = useRef<HTMLButtonElement | null>(null);
-	const classes = printClassNames(
-		["lightbox", lightboxOpen ? "active" : "", /*status,*/ className],
+	const classes = outputClassNames(
+		["lightbox", lightboxOpen ? "active" : "", className],
 		[styles],
 	);
 	const slideshowSlides: SlideType[] = lightboxImages.map((image) => ({
 		id: image.name,
 		content: <LightboxImage image={image} />,
 	}));
+	const otherPropsSansAriaHidden = (() => {
+		const otherPropsCopy = structuredClone(otherProps);
+
+		delete otherPropsCopy["aria-hidden"];
+		return otherPropsCopy;
+	})();
 
 	function handleTransitionEnd() {
 		if (!lightboxOpen) setlightboxImages([]);
@@ -52,9 +48,9 @@ export default function Lightbox({
 			className={classes}
 			id={lightboxId}
 			open={lightboxOpen}
-			// ref={lightboxRef}
 			onTransitionEnd={handleTransitionEnd}
-			{...otherProps}
+			inert={!lightboxOpen}
+			{...otherPropsSansAriaHidden}
 		>
 			<CircleButton
 				ref={closeButtonRef}
@@ -69,7 +65,8 @@ export default function Lightbox({
 				<Slideshow
 					className={styles.slideshow}
 					slides={slideshowSlides}
-					activeSlideIndex={lightboxActiveIndex}
+					initialActiveSlideIndex={lightboxActiveIndex}
+					useDots={false}
 					useFadeIn={false}
 					useLightMode={true}
 					controlSlideAspect={false}

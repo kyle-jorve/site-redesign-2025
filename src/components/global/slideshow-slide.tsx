@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import styles from "@/styles/components/global/slideshow.module.css";
 
 export type SlideshowSlideProps = {
@@ -12,7 +12,7 @@ const SlideshowSlide = forwardRef<HTMLDivElement, SlideshowSlideProps>(
 		{ active, children, className = "", ...otherProps },
 		ref,
 	) {
-		const classes = printClassNames(
+		const classes = outputClassNames(
 			["slide", active ? "active" : "", className],
 			[styles],
 		);

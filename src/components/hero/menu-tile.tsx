@@ -1,6 +1,6 @@
 import { ImageDataType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
@@ -17,8 +17,8 @@ export default function MenuTile({
 	className = "",
 	...otherProps
 }: MenuTileProps) {
-	const classes = printClassNames(["menu-tile", type, className], [styles]);
-	const headerClasses = printClassNames(
+	const classes = outputClassNames(["menu-tile", type, className], [styles]);
+	const headerClasses = outputClassNames(
 		[
 			type !== "long" ? "underline underline-light underline-center" : "",
 			"header",

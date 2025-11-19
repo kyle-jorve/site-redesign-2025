@@ -1,5 +1,5 @@
 import { ProjectType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ContentBox from "@/components/global/content-box";
 import styles from "@/styles/components/gallery/project-detail.module.css";
 
@@ -14,7 +14,7 @@ export default function ProblemSolution({
 	className = "",
 	...otherProps
 }: ProblemSolutionProps) {
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		["problem-solution-row", className],
 		[styles],
 	);

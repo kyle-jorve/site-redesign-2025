@@ -7,7 +7,7 @@ function returnCleanClassesArray(array: string[]) {
 		.flat();
 }
 
-export function printClassNames(
+export function outputClassNames(
 	classes: string[],
 	modules?: {
 		readonly [key: string]: string;

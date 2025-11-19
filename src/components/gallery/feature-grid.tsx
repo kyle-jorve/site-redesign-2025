@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import Feature from "@/components/gallery/feature";
 import HeadingBar from "@/components/global/heading-bar";
 import styles from "@/styles/components/gallery/feature-grid.module.css";
@@ -26,7 +26,7 @@ export default function FeatureGrid({
 	className = "",
 	...otherProps
 }: FeatureGridProps) {
-	const classes = printClassNames(["feature-grid", className], [styles]);
+	const classes = outputClassNames(["feature-grid", className], [styles]);
 	const hasHeadingBar = title !== undefined && url !== undefined;
 
 	return (

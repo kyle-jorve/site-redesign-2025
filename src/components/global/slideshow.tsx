@@ -1,9 +1,10 @@
-import { useState, useRef, createRef, useEffect } from "react";
+import { useState, useRef, createRef, useEffect, useCallback } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { printClassNames, getDestinationSlideIndex } from "@/utils/utils";
+import { outputClassNames, getDestinationSlideIndex } from "@/utils/utils";
 import CircleButton from "@/components/global/circle-button";
 import SlideshowSlide from "@/components/global/slideshow-slide";
-import SlideshowDot from "@/components/global/slideshow-dot";
+import SlideshowDots from "@/components/global/slideshow-dots";
+import SlideshowSlideCounter from "@/components/global/slideshow-slide-counter";
 import styles from "@/styles/components/global/slideshow.module.css";
 
 export type SlideType = {
@@ -13,7 +14,10 @@ export type SlideType = {
 
 export type SlideshowProps = {
 	slides: SlideType[];
-	activeSlideIndex?: number;
+	initialActiveSlideIndex?: number;
+	/**
+	 * If useDots is set to `false`, a slide counter will appear at the bottom of the slideshow instaed
+	 */
 	useDots?: boolean;
 	useFadeIn?: boolean;
 	/**
@@ -29,7 +33,7 @@ export type SlideshowProps = {
 
 export default function Slideshow({
 	slides,
-	activeSlideIndex = 0,
+	initialActiveSlideIndex = 0,
 	useDots = true,
 	useFadeIn = true,
 	useLightMode = false,
@@ -45,9 +49,11 @@ export default function Slideshow({
 		ref: createRef<HTMLDivElement>(),
 		index,
 	}));
-	const [activeSlide, setActiveSlide] = useState<number>(activeSlideIndex);
+	const [activeSlide, setActiveSlide] = useState<number>(
+		initialActiveSlideIndex,
+	);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames(
+	const classes = outputClassNames(
 		[
 			"slideshow",
 			notASlideshow ? "single-slide" : "",
@@ -67,49 +73,56 @@ export default function Slideshow({
 			transition: "opacity 1s ease",
 		};
 	})();
+	const getSlideOffset = useCallback(
+		(slideIndex: number) => {
+			const componentRef = sectionRef.current;
+			const slidesRef = slideContainerRef.current;
 
-	function getSlideOffset(slideIndex: number) {
-		const componentRef = sectionRef.current;
-		const slidesRef = slideContainerRef.current;
+			if (!componentRef || !slidesRef) return;
 
-		if (!componentRef || !slidesRef) return;
+			const sidePadding =
+				Number(
+					getComputedStyle(componentRef)
+						.getPropertyValue("--side-padding")
+						.replace("rem", ""),
+				) * 16;
 
-		const sidePadding =
-			Number(
-				getComputedStyle(componentRef)
-					.getPropertyValue("--side-padding")
-					.replace("rem", ""),
-			) * 16;
+			if (slideIndex === 0) return -1;
+			if (slideIndex === slides.length - 1) return slidesRef.scrollWidth;
 
-		if (slideIndex === 0) return -1;
-		if (slideIndex === slides.length - 1) return slidesRef.scrollWidth;
+			const slideRef = slideRefs[slideIndex].ref.current;
 
-		const slideRef = slideRefs[slideIndex].ref.current;
+			if (!slideRef) return null;
 
-		if (!slideRef) return null;
+			return (
+				slideRef.getBoundingClientRect().left +
+				slidesRef.scrollLeft -
+				sidePadding
+			);
+		},
+		[slideRefs, slides.length],
+	);
+	const scrollToSlide = useCallback(
+		(slideIndex: number, useSmoothScrolling = true) => {
+			const slidesRef = slideContainerRef.current;
 
-		return (
-			slideRef.getBoundingClientRect().left +
-			slidesRef.scrollLeft -
-			sidePadding
-		);
-	}
+			if (!slidesRef) return;
 
-	function scrollToSlide(slideIndex: number) {
-		const slidesRef = slideContainerRef.current;
+			const offset = getSlideOffset(slideIndex);
 
-		if (!slidesRef) return;
+			if (!offset) return;
 
-		const offset = getSlideOffset(slideIndex);
+			const scrollOptions: ScrollToOptions = {
+				top: 0,
+				left: offset,
+			};
 
-		if (!offset) return;
+			if (useSmoothScrolling) scrollOptions.behavior = "smooth";
 
-		slidesRef.scroll({
-			top: 0,
-			left: offset,
-			behavior: "smooth",
-		});
-	}
+			slidesRef.scroll(scrollOptions);
+		},
+		[getSlideOffset],
+	);
 
 	function handleArrowClick(direction: "forward" | "backward") {
 		const slidesRef = slideContainerRef.current;
@@ -175,7 +188,9 @@ export default function Slideshow({
 	}, [activeSlide, slideRefs, notASlideshow]);
 
 	useEffect(() => {
-		// TODO: scroll to slide on slideshow render if activeSlideIndex > 0
+		if (initialActiveSlideIndex <= 0) return;
+
+		scrollToSlide(initialActiveSlideIndex, false);
 	}, []);
 
 	if (!slides.length) return null;
@@ -229,20 +244,18 @@ export default function Slideshow({
 			</div>
 
 			{!notASlideshow && useDots && (
-				<div className={styles.dots}>
-					{slides.map((slide, index) => {
-						const isActiveDot = activeSlide === index;
+				<SlideshowDots
+					slideIDs={slides.map((slide) => slide.id)}
+					activeSlideIndex={activeSlide}
+					dotClickHandler={handleDotClick}
+				/>
+			)}
 
-						return (
-							<SlideshowDot
-								key={`${slide.id}-dot`}
-								active={isActiveDot}
-								onClick={() => handleDotClick(index)}
-								aria-label={`Go to slide ${index + 1}`}
-							/>
-						);
-					})}
-				</div>
+			{!notASlideshow && !useDots && (
+				<SlideshowSlideCounter
+					slidesLength={slides.length}
+					activeSlideIndex={activeSlide}
+				/>
 			)}
 		</section>
 	);
