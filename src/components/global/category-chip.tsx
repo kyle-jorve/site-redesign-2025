@@ -1,5 +1,5 @@
 import { CategoryType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/global/category-chips.module.css";
 
@@ -19,12 +19,10 @@ export default function CategoryChip({
 	className = "",
 	...otherProps
 }: CategoryChipProps) {
-	const classes = printClassNames([
-		styles["category-chip"],
-		styles[size],
-		styles[color],
-		className,
-	]);
+	const classes = outputClassNames(
+		["category-chip", size, color, className],
+		[styles],
+	);
 	const url = `/projects?categories=${JSON.stringify([category.name])}`;
 
 	return addLink ? (

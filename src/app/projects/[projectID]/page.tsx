@@ -116,7 +116,12 @@ export default async function ProjectDetailPage({
 				url={data.link?.url}
 				buttonText={data.link?.text}
 			/>
-			{!!data.features?.length && <FeatureGrid slides={data.features} />}
+			{!!data.features?.length && (
+				<FeatureGrid
+					slides={data.features}
+					useLightbox={true}
+				/>
+			)}
 			{!!data.descriptionTitle && !!data.descriptionBody && (
 				<ProjectDescriptionGrid
 					supertitle={data.descriptionSupertitle}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, createContext, useEffect } from "react";
+import { ImageMetaType } from "@/types/global-types";
 import { CategoryType } from "@/types/gallery-types";
 import { projectFilters } from "@/data/gallery-data";
 
@@ -8,46 +9,83 @@ export type SiteContextType = {
 	favedProjects: string[];
 	filters: CategoryType[];
 	hideShell: boolean;
+	lightboxActiveIndex: number;
+	lightboxImages: ImageMetaType[];
+	lightboxId: string;
+	lightboxOpen: boolean;
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainRef: React.RefObject<HTMLElement | null> | null;
 	visited: boolean;
 
+	closeLightbox: Function;
+	openLightbox: (
+		contents: SiteContextType["lightboxImages"],
+		activeIndex: SiteContextType["lightboxActiveIndex"],
+	) => void;
 	resetFilters: Function;
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
 	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	setHideShell: React.Dispatch<React.SetStateAction<boolean>>;
+	setlightboxImages: React.Dispatch<
+		React.SetStateAction<SiteContextType["lightboxImages"]>
+	>;
 	setLoadStatus: React.Dispatch<
-		React.SetStateAction<"idle" | "page-out" | "page-in">
+		React.SetStateAction<SiteContextType["loadStatus"]>
 	>;
 	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
 	updateFilters: (ids: string[]) => void;
 };
 
-const SiteContext = createContext<SiteContextType>({
+const defaults: SiteContextType = {
 	favedProjects: [],
 	filters: [],
 	hideShell: false,
+	lightboxActiveIndex: 0,
+	lightboxImages: [],
+	lightboxId: "project-lightbox",
+	lightboxOpen: false,
 	loadStatus: "idle",
 	mainRef: null,
 	visited: false,
 
+	closeLightbox: () => {},
+	openLightbox: () => {},
 	resetFilters: () => {},
 	setFavedProjects: () => {},
 	setFilters: () => {},
 	setHideShell: () => {},
+	setlightboxImages: () => {},
 	setLoadStatus: () => {},
 	setVisited: () => {},
 	updateFilters: () => {},
-});
+};
+
+const SiteContext = createContext<SiteContextType>(defaults);
 
 export default SiteContext;
 
 export function SiteContextProvider({ children }: React.PropsWithChildren) {
-	const [favedProjects, setFavedProjects] = useState<string[]>([]);
-	const [hideShell, setHideShell] = useState<boolean>(false);
-	const [loadStatus, setLoadStatus] =
-		useState<SiteContextType["loadStatus"]>("idle");
-	const [visited, setVisited] = useState<SiteContextType["visited"]>(false);
+	const [favedProjects, setFavedProjects] = useState<
+		SiteContextType["favedProjects"]
+	>(defaults.favedProjects);
+	const [hideShell, setHideShell] = useState<SiteContextType["hideShell"]>(
+		defaults.hideShell,
+	);
+	const [lightboxActiveIndex, setLightboxActiveIndex] = useState<
+		SiteContextType["lightboxActiveIndex"]
+	>(defaults.lightboxActiveIndex);
+	const [lightboxImages, setlightboxImages] = useState<
+		SiteContextType["lightboxImages"]
+	>([]);
+	const [lightboxOpen, setLightboxOpen] = useState<
+		SiteContextType["lightboxOpen"]
+	>(defaults.lightboxOpen);
+	const [loadStatus, setLoadStatus] = useState<SiteContextType["loadStatus"]>(
+		defaults.loadStatus,
+	);
+	const [visited, setVisited] = useState<SiteContextType["visited"]>(
+		defaults.visited,
+	);
 	const unsetFilters = Object.values(projectFilters).map((filter) => ({
 		...filter,
 		active: false,
@@ -57,6 +95,19 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	);
 	const mainRef = useRef<HTMLElement>(null);
 	const favoritesStorageKey = "favorites";
+
+	function openLightbox(
+		contents: SiteContextType["lightboxImages"],
+		activeIndex: SiteContextType["lightboxActiveIndex"],
+	) {
+		setlightboxImages(contents);
+		setLightboxActiveIndex(activeIndex);
+		setLightboxOpen(true);
+	}
+
+	function closeLightbox() {
+		setLightboxOpen(false);
+	}
 
 	function updateFilters(ids: string[]) {
 		setFilters((prev) => {
@@ -135,14 +186,21 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 				favedProjects,
 				filters,
 				hideShell,
+				lightboxActiveIndex,
+				lightboxImages,
+				lightboxId: defaults.lightboxId,
+				lightboxOpen,
 				loadStatus,
 				mainRef,
 				visited,
 
+				closeLightbox,
+				openLightbox,
 				resetFilters,
 				setFavedProjects,
 				setFilters,
 				setHideShell,
+				setlightboxImages,
 				setLoadStatus,
 				setVisited,
 				updateFilters,

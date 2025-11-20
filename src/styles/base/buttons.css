@@ -350,6 +350,10 @@
 	&.arrow-right::before {
 		content: "\f061";
 	}
+
+	&.cross::before {
+		content: "\f00d";
+	}
 }
 
 /*===================================*/

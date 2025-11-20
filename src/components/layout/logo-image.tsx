@@ -1,5 +1,5 @@
 import { LogoProps } from "./logo";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import styles from "@/styles/components/layout/header.module.css";
 
 export type LogoImageProps = {
@@ -11,7 +11,7 @@ export default function LogoImage({
 	className = "",
 	...otherProps
 }: LogoImageProps) {
-	const classes = printClassNames([styles["logo-img"], className]);
+	const classes = outputClassNames(["logo-img", className], [styles]);
 	const srcUrl =
 		color === "standard" ? "/images/logo.svg" : "/images/logo-dark.svg";
 

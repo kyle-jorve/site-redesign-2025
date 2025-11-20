@@ -10,8 +10,15 @@ export type MainProps = React.PropsWithChildren<
 >;
 
 export default function Main({ children, ...otherProps }: MainProps) {
-	const { mainRef, loadStatus, visited, setLoadStatus, setVisited } =
-		useContext(SiteContext);
+	const {
+		mainRef,
+		lightboxOpen,
+		loadStatus,
+		visited,
+		setLoadStatus,
+		setVisited,
+		closeLightbox,
+	} = useContext(SiteContext);
 	const path = usePathname();
 
 	useEffect(() => {
@@ -26,6 +33,7 @@ export default function Main({ children, ...otherProps }: MainProps) {
 		const main = mainRef?.current;
 		const transition = getElementTransition(main);
 
+		closeLightbox();
 		setLoadStatus("page-in");
 		setTimeout(() => {
 			setLoadStatus("idle");
@@ -37,6 +45,7 @@ export default function Main({ children, ...otherProps }: MainProps) {
 			className={loadStatus === "page-out" ? "out" : ""}
 			ref={mainRef}
 			{...otherProps}
+			inert={lightboxOpen}
 		>
 			{children}
 		</main>

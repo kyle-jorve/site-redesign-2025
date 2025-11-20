@@ -1,11 +1,11 @@
 import { CategoryType } from "@/types/gallery-types";
 import { SiteContextType } from "@/utils/site-context";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 
 export type FilterChipProps = {
 	category: CategoryType;
 	handleClick: SiteContextType["updateFilters"];
-} & React.HTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function FilterChip({
 	category,
@@ -14,7 +14,7 @@ export default function FilterChip({
 	onClick = () => {},
 	...otherProps
 }: FilterChipProps) {
-	const classes = printClassNames(["filter-chip", className]);
+	const classes = outputClassNames(["filter-chip", className]);
 
 	function clickHandler(event: React.MouseEvent<HTMLButtonElement>) {
 		handleClick([category.name]);

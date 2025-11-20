@@ -1,0 +1,57 @@
+.lightbox {
+	--vertical-padding: 1rem;
+
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	width: 100%;
+	height: 100%;
+	padding: var(--vertical-padding) 0;
+	margin: 0;
+	background: var(--dark-translucent-background);
+	backdrop-filter: var(--backdrop-blur);
+	border: none;
+	overscroll-behavior: contain;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition), visibility var(--transition);
+
+	&:not(.active),
+	&:not(.active) * {
+		pointer-events: none;
+	}
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.close-button {
+		position: absolute;
+		inset: 1rem 1rem auto auto;
+		z-index: 2;
+	}
+
+	.image {
+		width: auto;
+		max-width: 100%;
+		max-height: calc(
+			100vh - (var(--vertical-padding) * 2) -
+				(var(--long-shadow-offset) * 2) - var(--dot-width) -
+				var(--dots-margin)
+		);
+		margin: 0 auto;
+		border-radius: var(--border-radius);
+		box-shadow: var(--hard-shadow-gold-long);
+		object-fit: contain;
+	}
+
+	@media (min-width: 64em) {
+		--vertical-padding: 2rem;
+	}
+}

@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
+import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/gallery/project-detail.module.css";
 
@@ -31,7 +32,7 @@ export default function ProjectDescriptionGrid({
 }: ProjectDescriptionGridProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["description-grid"], className]);
+	const classes = outputClassNames(["description-grid", className], [styles]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
 		sources: [
@@ -86,17 +87,20 @@ export default function ProjectDescriptionGrid({
 
 			{!!images.length && (
 				<div className={styles["image-grid"]}>
-					{imageConfigs.map((image) => {
+					{imageConfigs.map((image, index) => {
 						return (
-							<div
+							<LightboxImageTrigger
 								key={image.name}
+								lightboxImages={images}
+								imageTitle={image.title}
+								index={index}
 								className={styles["image-wrapper"]}
 							>
 								<ResponsiveImage
 									className={styles.image}
 									image={image}
 								/>
-							</div>
+							</LightboxImageTrigger>
 						);
 					})}
 				</div>

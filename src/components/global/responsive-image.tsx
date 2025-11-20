@@ -2,7 +2,7 @@
 
 import { useState, forwardRef } from "react";
 import { ImageDataType, ImageSourceType } from "@/types/global-types";
-import { printClassNames, getThumbnailUrl } from "@/utils/utils";
+import { outputClassNames, getThumbnailUrl } from "@/utils/utils";
 
 export type ResponsiveImageProps = {
 	image: ImageDataType;
@@ -22,7 +22,7 @@ const ResponsiveImage = forwardRef<HTMLImageElement, ResponsiveImageProps>(
 		ref,
 	) {
 		const [loaded, setLoaded] = useState<boolean>(false);
-		const classes = printClassNames([
+		const classes = outputClassNames([
 			"image",
 			loaded ? "loaded" : "",
 			className,

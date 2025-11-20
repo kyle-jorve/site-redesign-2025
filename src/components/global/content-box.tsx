@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 
 export type ContentBoxProps = {
 	size?: "standard" | "small";
@@ -11,7 +11,7 @@ export default function ContentBox({
 	className = "",
 	...otherProps
 }: ContentBoxProps) {
-	const classes = printClassNames(["content-box", size, className]);
+	const classes = outputClassNames(["content-box", size, className]);
 
 	return (
 		<div

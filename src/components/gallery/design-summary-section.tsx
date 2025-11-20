@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import { ProjectType } from "@/types/gallery-types";
 import ProblemSolution from "@/components/gallery/problem-solution";
 import ButtonLinkRow from "@/components/global/button-link-row";
@@ -27,7 +27,7 @@ export default function DesignSummarySection({
 }: DesignSummerySectionProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["design-summary"], className]);
+	const classes = outputClassNames(["design-summary", className], [styles]);
 
 	if (!problemText && !solutionText && !overviewText && !url) return null;
 

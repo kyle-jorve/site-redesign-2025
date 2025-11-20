@@ -145,9 +145,9 @@
 	&::after {
 		inset: 24px -20px -16px;
 		z-index: -2;
-		background: var(--header-footer-background);
+		background: var(--dark-translucent-background);
 		border: var(--border-dark);
-		backdrop-filter: var(--backdrop-blur-large);
+		backdrop-filter: var(--backdrop-blur);
 	}
 
 	&.hidden:not(:has(.nav-parent.expanded)) {
@@ -208,7 +208,7 @@
 	.dropdown-menu {
 		inset: auto auto calc(100% + 1.5rem) 50%;
 		translate: -50% -1rem;
-		background: var(--header-footer-background);
+		background: var(--dark-translucent-background);
 		border: var(--border-dark);
 		box-shadow: var(--hard-shadow-red-long);
 		backdrop-filter: var(--backdrop-blur);

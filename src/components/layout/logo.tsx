@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import LogoImage from "./logo-image";
 import styles from "@/styles/components/layout/header.module.css";
@@ -12,7 +12,7 @@ export default function Logo({
 	className = "",
 	...otherProps
 }: LogoProps) {
-	const classes = printClassNames([styles.logo, className]);
+	const classes = outputClassNames(["logo", className], [styles]);
 
 	return (
 		<CustomLink

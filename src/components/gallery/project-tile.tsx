@@ -4,7 +4,7 @@ import {
 	ImageDataType,
 	ImageMetaType,
 } from "@/types/global-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
@@ -29,11 +29,10 @@ export default function ProjectTile({
 	className = "",
 	...otherProps
 }: ProjectTileProps) {
-	const classes = printClassNames([
-		styles["project-tile"],
-		styles[variant],
-		className,
-	]);
+	const classes = outputClassNames(
+		["project-tile", variant, className],
+		[styles],
+	);
 	const Heading = heading as React.ElementType;
 	const url = `/projects/${name}/`;
 	const primaryCategory =

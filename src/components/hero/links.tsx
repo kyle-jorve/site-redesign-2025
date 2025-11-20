@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useContext } from "react";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import { SocialMediaObjectType } from "@/types/global-types";
 import SiteContext from "@/utils/site-context";
 import ButtonLink from "@/components/global/button-link";
@@ -21,7 +21,7 @@ export function LinkList({
 	className = "",
 	...otherProps
 }: LinkListProps) {
-	const classes = printClassNames([styles["link-list"], className]);
+	const classes = outputClassNames(["link-list", className], [styles]);
 	const { setHideShell } = useContext(SiteContext);
 
 	useEffect(() => {
@@ -63,7 +63,7 @@ export default function Links({
 	className = "",
 	...otherProps
 }: LinksProps) {
-	const classes = printClassNames([styles.links, className]);
+	const classes = outputClassNames(["links", className], [styles]);
 
 	return (
 		<div

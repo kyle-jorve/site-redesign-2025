@@ -1,5 +1,5 @@
 import { CategoryType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import styles from "@/styles/components/hero/interior-hero.module.css";
 
@@ -18,7 +18,7 @@ export default function InteriorHero({
 	className = "",
 	...otherProps
 }: InteriorHeroProps) {
-	const classes = printClassNames([styles["interior-hero"], className]);
+	const classes = outputClassNames(["interior-hero", className], [styles]);
 
 	return (
 		<section

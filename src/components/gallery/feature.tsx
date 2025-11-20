@@ -5,15 +5,17 @@ import { getThumbnailUrl } from "@/utils/utils";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
+import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import styles from "@/styles/components/gallery/feature-grid.module.css";
 
-export type FeatureProps = Omit<FeatureType, "name"> &
-	React.HTMLAttributes<HTMLElement>;
+export type FeatureProps = Omit<FeatureType, "name"> & {
+	useLightbox?: boolean;
+} & React.HTMLAttributes<HTMLElement>;
 
 export default function Feature({
 	title,
@@ -27,6 +29,7 @@ export default function Feature({
 	number = undefined,
 	category = undefined,
 	supertitle = undefined,
+	useLightbox = false,
 	className = "",
 	...otherProps
 }: FeatureProps) {
@@ -34,11 +37,10 @@ export default function Feature({
 	const intersected = useIntersectionObserver(articleRef);
 	const [activeImage, setActiveImage] = useState<number>(0);
 	const imagesData = Array.isArray(image) ? image : [image];
-	const classes = printClassNames([
-		styles.feature,
-		styles[alignment],
-		className,
-	]);
+	const classes = outputClassNames(
+		["feature", alignment, className],
+		[styles],
+	);
 	const mobileSource = {
 		imageWidth: 640,
 		imageHeight: 640,
@@ -79,19 +81,40 @@ export default function Feature({
 		</video>
 	) : (
 		imageConfig.map((image, index) => {
-			const classes = printClassNames([
-				styles.image,
-				imagesData.length > 1 && activeImage !== index
-					? styles.hide
-					: "",
-			]);
+			const classes = outputClassNames(
+				[
+					imagesData.length > 1 && activeImage !== index
+						? "hide"
+						: "",
+					"image-container",
+				],
+				[styles],
+			);
 
-			return (
-				<ResponsiveImage
+			return useLightbox && !url ? (
+				<LightboxImageTrigger
 					key={image.name}
+					lightboxImages={imagesData}
+					imageTitle={image.title}
+					index={index}
 					className={classes}
-					image={image}
-				/>
+				>
+					<ResponsiveImage
+						className={styles.image}
+						image={image}
+					/>
+				</LightboxImageTrigger>
+			) : (
+				<div
+					className={classes}
+					key={image.name}
+				>
+					<ResponsiveImage
+						key={image.name}
+						className={styles.image}
+						image={image}
+					/>
+				</div>
 			);
 		})
 	);

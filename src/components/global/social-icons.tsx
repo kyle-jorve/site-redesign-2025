@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import { socialMedia } from "@/data/global-data";
 import styles from "@/styles/components/global/social-icons.module.css";
@@ -12,7 +12,7 @@ export default function SocialIcons({
 	className = "",
 	...otherProps
 }: SocialIconsProps) {
-	const classes = printClassNames([styles.social, className]);
+	const classes = outputClassNames(["social", className], [styles]);
 
 	return (
 		<div

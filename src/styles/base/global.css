@@ -2,6 +2,10 @@ html,
 body {
 	padding: 0;
 	margin: 0;
+
+	&:has(.lightbox.active) {
+		overflow: hidden;
+	}
 }
 
 hmtl {
@@ -73,6 +77,43 @@ iframe {
 img,
 svg {
 	height: auto;
+}
+
+.image-container {
+	position: relative;
+}
+
+.lightbox-trigger-button {
+	position: absolute;
+	inset: 0;
+	z-index: 4;
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	padding: 0.5rem;
+	margin: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+
+	&::before {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.5rem;
+		aspect-ratio: 1;
+		font: var(--fa-font-solid);
+		font-size: var(--font-size-x-small);
+		line-height: var(--leading-none);
+		text-align: center;
+		color: var(--blue);
+		content: "\f00e";
+		background-color: rgba(253, 233, 206, 0.6);
+		border: var(--border-width) solid transparent;
+		border-radius: 50%;
+		backdrop-filter: var(--backdrop-blur);
+		transition: color var(--transition), background-color var(--transition);
+	}
 }
 
 .image {
@@ -152,13 +193,18 @@ a {
 	cursor: pointer;
 }
 
+button:disabled {
+	pointer-events: none;
+	cursor: not-allowed;
+}
+
 .content-box {
 	position: relative;
 	z-index: 2;
 	padding: calc(var(--padding-content) + var(--border-width-wide))
 		var(--padding-content) var(--padding-content);
 	background: rgba(254, 246, 231, 0.4);
-	backdrop-filter: var(--backdrop-blur-large);
+	backdrop-filter: var(--backdrop-blur);
 	border: var(--border-red);
 	border-radius: var(--border-radius);
 
@@ -179,9 +225,25 @@ a {
 	}
 }
 
+@media (hover: hover) {
+	.lightbox-trigger-button:hover::before {
+		color: var(--cream);
+		background-color: var(--blue);
+	}
+}
+
 @media (min-width: 40em) {
 	body {
 		padding-bottom: 0;
+	}
+
+	.lightbox-trigger-button {
+		padding: 1rem;
+
+		&::before {
+			width: 2rem;
+			font-size: var(--font-size-base);
+		}
 	}
 }
 
@@ -192,60 +254,5 @@ a {
 
 	.content-box.small {
 		padding: calc(1.5rem + var(--border-width-wide)) 1.5rem 1.5rem;
-	}
-}
-
-@keyframes gradient-wipe {
-	0% {
-		--gradient-color: var(--blue);
-		background-position: -300% center;
-	}
-	16.66% {
-		--gradient-color: var(--blue);
-		background-position: 400% center;
-	}
-	16.67% {
-		--gradient-color: var(--blue-light);
-		background-position: 400% center;
-	}
-	33.32% {
-		--gradient-color: var(--blue-light);
-		background-position: -300% center;
-	}
-	33.33% {
-		--gradient-color: var(--gold);
-		background-position: -300% center;
-	}
-	49.9% {
-		--gradient-color: var(--gold);
-		background-position: 400% center;
-	}
-	50% {
-		--gradient-color: var(--red);
-		background-position: 400% center;
-	}
-	66.66% {
-		--gradient-color: var(--red);
-		background-position: -300% center;
-	}
-	66.67% {
-		--gradient-color: var(--sunset);
-		background-position: -300% center;
-	}
-	83.32% {
-		--gradient-color: var(--sunset);
-		background-position: 400% center;
-	}
-	83.33% {
-		--gradient-color: var(--violet);
-		background-position: 400% center;
-	}
-	99.9% {
-		--gradient-color: var(--violet);
-		background-position: -300% center;
-	}
-	100% {
-		--gradient-color: var(--blue);
-		background-position: -300% center;
 	}
 }

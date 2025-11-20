@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useIntersectionObserver } from "@/utils/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ResumeItem from "@/components/cv/resume-item";
 import styles from "@/styles/components/cv/resume.module.css";
 
@@ -21,7 +21,7 @@ export default function ResumeSection({
 }: ResumeSectionProps) {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles["resume-section"], className]);
+	const classes = outputClassNames(["resume-section", className], [styles]);
 	const Heading = heading as React.ElementType;
 
 	return (

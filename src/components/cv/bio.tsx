@@ -8,7 +8,7 @@ import {
 	ImageDataType,
 } from "@/types/global-types";
 import { BioType } from "@/types/cv-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
@@ -35,7 +35,7 @@ export default function Bio({
 }: BioProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = printClassNames([styles.bio, styles[placement], className]);
+	const classes = outputClassNames(["bio", placement, className], [styles]);
 	const isHero = placement === "hero";
 	const Heading = heading as React.ElementType;
 	const imageConfig: ImageDataType = {

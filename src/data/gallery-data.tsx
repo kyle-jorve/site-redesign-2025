@@ -81,7 +81,7 @@ export const projects: ProjectType[] = [
 			mediaData.ignobleBloodVignettesSpreadKyra,
 			mediaData.ignobleBloodVignettesSpreadSamil,
 			mediaData.ignobleBloodVignettesSpreadCapor,
-			mediaData.ignobleBloodVignettesSpreadCargha,
+			mediaData.ignobleBloodVignettesSpreadKargha,
 		],
 		summary: `An art book project to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		features: [
@@ -150,7 +150,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: mediaData.ignobleBloodVignettesPageCargha,
+				image: mediaData.ignobleBloodVignettesPageKargha,
 			},
 		],
 		descriptionTitle: "Illustrating Ignoble Blood",
@@ -174,8 +174,8 @@ export const projects: ProjectType[] = [
 		imageGrid: [
 			mediaData.herbalist,
 			mediaData.ignobleBloodVignettesAndel,
-			mediaData.ignobleBloodVignettesCargha,
-			mediaData.ignobleBloodVignettesCarghaPortrait,
+			mediaData.ignobleBloodVignettesKargha,
+			mediaData.ignobleBloodVignettesKarghaPortrait,
 			mediaData.ignobleBloodVignettesKyra,
 			mediaData.ignobleBloodVignettesPendrake,
 			mediaData.ignobleBloodVignettesKyraPortrait,
@@ -1279,7 +1279,7 @@ export const projects: ProjectType[] = [
 				</p>
 				<p>
 					The illustration that inspired the world of Post-Autumn is
-					very old (and very bad), at this point, so I won&apos;t be
+					very old (and very bad) at this point, so I won&apos;t be
 					sharing it. The world it spawned, however, continues to live
 					and grow in my imagination.
 				</p>

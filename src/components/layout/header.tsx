@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useContext, useState } from "react";
 import SiteContext from "@/utils/site-context";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import Logo from "@/components/layout/logo";
 import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";
@@ -11,10 +11,10 @@ import navStyles from "@/styles/components/layout/navigation.module.css";
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const { hideShell } = useContext(SiteContext);
+	const { hideShell, lightboxOpen } = useContext(SiteContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
-	const classes = printClassNames([styles.header, className]);
+	const classes = outputClassNames(["header", className], [styles]);
 	const breakpoint = 640;
 
 	// set mobile nav hidden state on scroll
@@ -46,6 +46,7 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 				ref={headerRef}
 				className={classes}
 				{...otherProps}
+				inert={lightboxOpen}
 			>
 				<div className={styles.inner}>
 					<Logo />

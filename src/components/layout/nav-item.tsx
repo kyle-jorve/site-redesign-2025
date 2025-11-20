@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/navigation.module.css";
 
@@ -17,12 +17,10 @@ export default function NavItem({
 	...otherProps
 }: NavItemProps) {
 	const path = usePathname();
-	const classes = printClassNames([
-		styles["nav-item"],
-		styles[name],
-		path.startsWith(url) ? styles.current : "",
-		className,
-	]);
+	const classes = outputClassNames(
+		["nav-item", name, path.startsWith(url) ? "current" : "", className],
+		[styles],
+	);
 
 	return (
 		<CustomLink

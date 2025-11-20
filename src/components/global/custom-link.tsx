@@ -2,7 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useContext } from "react";
-import { printClassNames, getElementTransition } from "@/utils/utils";
+import { outputClassNames, getElementTransition } from "@/utils/utils";
 import Link from "next/link";
 import SiteContext from "@/utils/site-context";
 
@@ -23,7 +23,7 @@ export default function CustomLink({
 	const router = useRouter();
 	const path = usePathname();
 	const { mainRef, setLoadStatus } = useContext(SiteContext);
-	const classes = printClassNames([className]);
+	const classes = outputClassNames([className]);
 	const linkIsExternal =
 		to.includes("http") ||
 		to.includes("mailto:") ||

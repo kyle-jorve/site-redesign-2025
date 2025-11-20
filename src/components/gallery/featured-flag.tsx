@@ -1,4 +1,4 @@
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type FeaturedFlagProps = {
@@ -10,11 +10,10 @@ export default function FeaturedFlag({
 	className = "",
 	...otherProps
 }: FeaturedFlagProps) {
-	const classes = printClassNames([
-		styles["featured-flag"],
-		styles[size],
-		className,
-	]);
+	const classes = outputClassNames(
+		["featured-flag", size, className],
+		[styles],
+	);
 
 	return (
 		<span

@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { printClassNames, deriveButtonShadowColor } from "@/utils/utils";
+import { outputClassNames, deriveButtonShadowColor } from "@/utils/utils";
 import SiteContext from "@/utils/site-context";
 import CircleButton, {
 	CircleButtonProps,
@@ -13,7 +13,7 @@ export type FavButtonProps = {
 	projectTitle: string;
 	color?: CircleButtonProps["color"];
 	shadowColor?: CircleButtonProps["shadowColor"];
-} & React.HTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function FavButton({
 	projectID,
@@ -27,7 +27,7 @@ export default function FavButton({
 	const derivedShadowColor = deriveButtonShadowColor(color, shadowColor);
 	const { favedProjects, setFavedProjects } = useContext(SiteContext);
 	const isFaved = favedProjects.includes(projectID);
-	const classes = printClassNames([styles["fave-button"], className]);
+	const classes = outputClassNames(["fave-button", className], [styles]);
 
 	function updateFaves(
 		id: string,

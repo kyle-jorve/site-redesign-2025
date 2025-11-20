@@ -7,6 +7,7 @@ import PreconnectResources from "@/components/layout/preconnect-resources";
 import Main from "@/components/layout/main";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import Lightbox from "@/components/global/lightbox";
 
 const defaultTitle =
 	"Kyle Jorve | Design, Development, Illustration, and Writing";
@@ -56,6 +57,7 @@ export default function RootLayout({
 					<Header />
 					<Main>{children}</Main>
 					<Footer />
+					<Lightbox />
 				</SiteContextProvider>
 				<Script src="https://kit.fontawesome.com/867df664d5.js" />
 			</body>

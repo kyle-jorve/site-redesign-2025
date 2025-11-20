@@ -1,6 +1,6 @@
 import { ImageDataType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { printClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
@@ -17,15 +17,14 @@ export default function MenuTile({
 	className = "",
 	...otherProps
 }: MenuTileProps) {
-	const classes = printClassNames([
-		styles["menu-tile"],
-		styles[type],
-		className,
-	]);
-	const headerClasses = printClassNames([
-		type !== "long" ? "underline underline-light underline-center" : "",
-		styles.header,
-	]);
+	const classes = outputClassNames(["menu-tile", type, className], [styles]);
+	const headerClasses = outputClassNames(
+		[
+			type !== "long" ? "underline underline-light underline-center" : "",
+			"header",
+		],
+		[styles],
+	);
 	const imageConfig: ImageDataType | undefined = image
 		? {
 				...image,
