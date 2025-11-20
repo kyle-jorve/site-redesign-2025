@@ -77,7 +77,8 @@
 			z-index: 2;
 			display: block;
 			content: "";
-			background: var(--gradient-dark-vertical), rgba(231, 177, 89, 0.5);
+			background: var(--gradient-dark-vertical),
+				color(from var(--gold) srgb r g b / 0.5);
 			pointer-events: none;
 		}
 	}

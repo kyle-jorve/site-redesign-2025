@@ -288,20 +288,20 @@
 	--black: #000;
 	--white: #fff;
 
-	--navy: #0b1d26; /* rgb(11, 29, 38) */
-	--blue: #2a2e4b; /* rgb(42, 46, 75) */
-	--blue-light: #4b5181; /* rgb(75, 81, 129) */
-	--egg: #fef6e7; /* rgb(254, 246, 231) */
-	--cream: #fde9ce; /* rgb(253, 233, 206) */
-	--gold: #e7b159; /* rgb(231, 177, 89) */
-	--gold-light: #f2e1ae; /* rgb(242, 225, 174) */
-	--peach: #f28d88; /* rgb(242, 141, 136) */
-	--red: #f75551; /* rgb(247, 85, 81) */
-	--red-dark: #c94341; /* rgb(201, 67, 65) */
-	--red-light: #ff7370; /* rgb(255, 115, 112) */
-	--sunset: #d85887; /* rgb(216, 88, 135) */
-	--violet: #6e577b; /* rgb(110, 87, 123) */
-	--mint: #91cab1; /* rgb(145, 202, 177) */
+	--navy: #0b1d26;
+	--blue: #2a2e4b;
+	--blue-light: #4b5181;
+	--egg: #fef6e7;
+	--cream: #fde9ce;
+	--gold: #e7b159;
+	--gold-light: #f2e1ae;
+	--peach: #f28d88;
+	--red: #f75551;
+	--red-dark: #c94341;
+	--red-light: #ff7370;
+	--sunset: #d85887;
+	--violet: #6e577b;
+	--mint: #91cab1;
 
 	--body-bg: var(--cream);
 	--dark-translucent-background: color(from var(--navy) srgb r g b / 0.85);
@@ -388,7 +388,7 @@
 	--border-blue-light-color: var(--blue-light);
 	--border-red-color: var(--red);
 	--border-gold-color: var(--gold);
-	--border-light-color: rgba(242, 225, 174, 0.75);
+	--border-light-color: color(from var(--gold-light) srgb r g b / 0.75);
 	--border-cream-color: var(--cream);
 
 	--border-dark: var(--border-width) solid var(--border-dark-color);
@@ -461,11 +461,13 @@
 		var(--shadow-color-gold);
 
 	--exploding-shadow: var(--long-shadow-offset-applied)
-			rgba(231, 177, 89, 0.5),
-		var(--longer-shadow-offset-applied) rgba(231, 177, 89, 0.25);
+			color(from var(--gold) srgb r g b / 0.5),
+		var(--longer-shadow-offset-applied)
+			color(from var(--gold) srgb r g b / 0.25);
 	--exploding-shadow-long: var(--longer-shadow-offset-applied)
-			rgba(231, 177, 89, 0.5),
-		var(--longest-shadow-offset-applied) rgba(231, 177, 89, 0.25);
+			color(from var(--gold) srgb r g b / 0.5),
+		var(--longest-shadow-offset-applied)
+			color(from var(--gold) srgb r g b / 0.25);
 
 	--chromatic-distortion-shadow: 0.25rem -0.125rem rgba(0, 255, 208, 0.5),
 		-0.25rem 0.125rem rgba(255, 0, 230, 0.5);
