@@ -113,7 +113,7 @@
 		font-weight: var(--font-weight-extrabold);
 		font-size: var(--font-size-small);
 		color: var(--cream);
-		background: color(from var(--blue) srgb r g b / 0.66);
+		background: var(--blue-translucent-background);
 		backdrop-filter: var(--backdrop-blur);
 		border: var(--border-blue-light);
 		border-radius: var(--border-radius);

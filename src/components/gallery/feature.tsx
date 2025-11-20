@@ -95,6 +95,7 @@ export default function Feature({
 				<LightboxImageTrigger
 					key={image.name}
 					lightboxImages={imagesData}
+					imageTitle={image.title}
 					index={index}
 					className={classes}
 				>

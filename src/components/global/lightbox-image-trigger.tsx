@@ -5,14 +5,16 @@ import { outputClassNames } from "@/utils/utils";
 
 export type LightboxImageTriggerProps = {
 	lightboxImages: ImageMetaType[];
+	imageTitle: string;
 	index: number;
 } & React.HTMLAttributes<HTMLDivElement> &
 	React.PropsWithChildren;
 
 export default function LightboxImageTrigger({
-	children,
 	lightboxImages,
+	imageTitle,
 	index,
+	children,
 	className = "",
 	...otherProps
 }: LightboxImageTriggerProps) {
@@ -28,7 +30,7 @@ export default function LightboxImageTrigger({
 			<button
 				className="lightbox-trigger-button"
 				onClick={() => openLightbox(lightboxImages, index)}
-				aria-label={`open image in lightbox`}
+				aria-label={`open ${imageTitle} image in lightbox`}
 				aria-controls={lightboxId}
 				aria-expanded={lightboxOpen}
 			></button>

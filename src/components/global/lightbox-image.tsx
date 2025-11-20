@@ -38,6 +38,8 @@ export default function LightboxImage({
 		<ResponsiveImage
 			className={classes}
 			image={imageConfig}
+			loading="eager"
+			fetchPriority="high"
 			{...otherProps}
 		/>
 	);

@@ -11,7 +11,7 @@ import navStyles from "@/styles/components/layout/navigation.module.css";
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const { hideShell } = useContext(SiteContext);
+	const { hideShell, lightboxOpen } = useContext(SiteContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
 	const classes = outputClassNames(["header", className], [styles]);
@@ -46,6 +46,7 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 				ref={headerRef}
 				className={classes}
 				{...otherProps}
+				inert={lightboxOpen}
 			>
 				<div className={styles.inner}>
 					<Logo />

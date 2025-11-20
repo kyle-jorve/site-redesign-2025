@@ -304,7 +304,8 @@
 	--mint: #91cab1; /* rgb(145, 202, 177) */
 
 	--body-bg: var(--cream);
-	--header-footer-background: rgba(11, 29, 38, 0.9);
+	--dark-translucent-background: color(from var(--navy) srgb r g b / 0.85);
+	--blue-translucent-background: color(from var(--blue) srgb r g b / 0.8);
 	--supertitle-color: var(--blue-light);
 	--title-color: var(--red);
 	--superheading-color: var(--red);
@@ -531,5 +532,4 @@
 	--long-transition: 0.6s ease;
 
 	--backdrop-blur: blur(16px);
-	--backdrop-blur-large: blur(64px);
 }

@@ -12,6 +12,7 @@ export type MainProps = React.PropsWithChildren<
 export default function Main({ children, ...otherProps }: MainProps) {
 	const {
 		mainRef,
+		lightboxOpen,
 		loadStatus,
 		visited,
 		setLoadStatus,
@@ -44,6 +45,7 @@ export default function Main({ children, ...otherProps }: MainProps) {
 			className={loadStatus === "page-out" ? "out" : ""}
 			ref={mainRef}
 			{...otherProps}
+			inert={lightboxOpen}
 		>
 			{children}
 		</main>

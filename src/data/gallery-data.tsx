@@ -81,7 +81,7 @@ export const projects: ProjectType[] = [
 			mediaData.ignobleBloodVignettesSpreadKyra,
 			mediaData.ignobleBloodVignettesSpreadSamil,
 			mediaData.ignobleBloodVignettesSpreadCapor,
-			mediaData.ignobleBloodVignettesSpreadCargha,
+			mediaData.ignobleBloodVignettesSpreadKargha,
 		],
 		summary: `An art book project to showcase the characters and world of my original, in-progress fantasy series, Ignoble Blood.`,
 		features: [
@@ -150,7 +150,7 @@ export const projects: ProjectType[] = [
 						</p>
 					</>
 				),
-				image: mediaData.ignobleBloodVignettesPageCargha,
+				image: mediaData.ignobleBloodVignettesPageKargha,
 			},
 		],
 		descriptionTitle: "Illustrating Ignoble Blood",
@@ -174,8 +174,8 @@ export const projects: ProjectType[] = [
 		imageGrid: [
 			mediaData.herbalist,
 			mediaData.ignobleBloodVignettesAndel,
-			mediaData.ignobleBloodVignettesCargha,
-			mediaData.ignobleBloodVignettesCarghaPortrait,
+			mediaData.ignobleBloodVignettesKargha,
+			mediaData.ignobleBloodVignettesKarghaPortrait,
 			mediaData.ignobleBloodVignettesKyra,
 			mediaData.ignobleBloodVignettesPendrake,
 			mediaData.ignobleBloodVignettesKyraPortrait,

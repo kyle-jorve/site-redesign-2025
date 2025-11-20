@@ -92,6 +92,7 @@ export default function ProjectDescriptionGrid({
 							<LightboxImageTrigger
 								key={image.name}
 								lightboxImages={images}
+								imageTitle={image.title}
 								index={index}
 								className={styles["image-wrapper"]}
 							>

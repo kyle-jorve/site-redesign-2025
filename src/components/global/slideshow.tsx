@@ -16,16 +16,25 @@ export type SlideshowProps = {
 	slides: SlideType[];
 	initialActiveSlideIndex?: number;
 	/**
-	 * If useDots is set to `false`, a slide counter will appear at the bottom of the slideshow instaed
+	 * If `useDots` is set to `false`, a slide counter will appear at the bottom of the slideshow instead.
+	 *
+	 * If `insideLightbox` is set to `true`, `useDots` will automatically be `false`.
 	 */
 	useDots?: boolean;
+	/**
+	 * If `insideLightbox` is set to `true`, `useFadeIn` will automatically be `false`.
+	 */
 	useFadeIn?: boolean;
 	/**
-	 * Used for areas with dark backgrounds
+	 * Used for areas with dark backgrounds.
+	 *
+	 * If `insideLightbox` is set to `true`, `useLightMode` will automatically be `true`.
 	 */
 	useLightMode?: boolean;
 	/**
-	 * Limit slide aspect ratio to 16:9
+	 * Limit slide aspect ratio to 16:9.
+	 *
+	 * If `insideLightbox` is set to `true`, `controlSlideAspect` will automatically be `false`.
 	 */
 	controlSlideAspect?: boolean;
 	insideLightbox?: boolean;
@@ -53,19 +62,25 @@ export default function Slideshow({
 		initialActiveSlideIndex,
 	);
 	const intersected = useIntersectionObserver(sectionRef);
+	const useDotsActual = insideLightbox ? false : useDots;
+	const useFadeInActual = insideLightbox ? false : useFadeIn;
+	const useLightModeActual = insideLightbox ? true : useLightMode;
+	const controlSlideAspectActual = insideLightbox
+		? false
+		: controlSlideAspect;
 	const classes = outputClassNames(
 		[
 			"slideshow",
 			notASlideshow ? "single-slide" : "",
-			useLightMode ? "light-mode" : "",
-			controlSlideAspect ? "controlled-slide-aspect" : "",
+			useLightModeActual ? "light-mode" : "",
+			controlSlideAspectActual ? "controlled-slide-aspect" : "",
 			insideLightbox ? "inside-lightbox" : "",
 			className,
 		],
 		[styles],
 	);
 	const sectionStyles: React.CSSProperties | undefined = (() => {
-		if (!useFadeIn) return otherProps.style;
+		if (!useFadeInActual) return otherProps.style;
 
 		return {
 			...otherProps.style,
@@ -134,15 +149,8 @@ export default function Slideshow({
 			activeSlide,
 			slides.length,
 		);
-		const destinationOffset = getSlideOffset(destinationIndex);
 
-		if (!destinationOffset) return;
-
-		slidesRef.scroll({
-			top: 0,
-			left: destinationOffset,
-			behavior: "smooth",
-		});
+		scrollToSlide(destinationIndex);
 	}
 
 	function handleDotClick(index: number) {
@@ -209,7 +217,9 @@ export default function Slideshow({
 							className={`${styles["arrow"]} ${styles["prev"]}`}
 							icon="arrow-left"
 							aria-label="go to previous slide"
-							shadowColor={useLightMode ? "light" : undefined}
+							shadowColor={
+								useLightModeActual ? "light" : undefined
+							}
 							onClick={() => handleArrowClick("backward")}
 						/>
 
@@ -217,7 +227,9 @@ export default function Slideshow({
 							className={`${styles["arrow"]} ${styles["next"]}`}
 							icon="arrow-right"
 							aria-label="go to next slide"
-							shadowColor={useLightMode ? "light" : undefined}
+							shadowColor={
+								useLightModeActual ? "light" : undefined
+							}
 							onClick={() => handleArrowClick("forward")}
 						/>
 					</div>
@@ -243,7 +255,7 @@ export default function Slideshow({
 				</div>
 			</div>
 
-			{!notASlideshow && useDots && (
+			{!notASlideshow && useDotsActual && (
 				<SlideshowDots
 					slideIDs={slides.map((slide) => slide.id)}
 					activeSlideIndex={activeSlide}
@@ -251,7 +263,7 @@ export default function Slideshow({
 				/>
 			)}
 
-			{!notASlideshow && !useDots && (
+			{!notASlideshow && !useDotsActual && (
 				<SlideshowSlideCounter
 					slidesLength={slides.length}
 					activeSlideIndex={activeSlide}

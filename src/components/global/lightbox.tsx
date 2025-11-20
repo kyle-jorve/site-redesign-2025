@@ -22,6 +22,7 @@ export default function Lightbox({
 		closeLightbox,
 		setlightboxImages,
 	} = useContext(SiteContext);
+	const lightboxRef = useRef<HTMLDialogElement | null>(null);
 	const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 	const classes = outputClassNames(
 		["lightbox", lightboxOpen ? "active" : "", className],
@@ -38,13 +39,18 @@ export default function Lightbox({
 		return otherPropsCopy;
 	})();
 
-	function handleTransitionEnd() {
+	function handleTransitionEnd(event: React.TransitionEvent) {
+		const lightboxEl = lightboxRef?.current;
+
+		if (!lightboxEl || event.target !== lightboxEl) return;
+
 		if (!lightboxOpen) setlightboxImages([]);
 		else closeButtonRef.current?.focus();
 	}
 
 	return (
 		<dialog
+			ref={lightboxRef}
 			className={classes}
 			id={lightboxId}
 			open={lightboxOpen}

@@ -48,6 +48,7 @@ export default function ProjectSlideshow({
 			<LightboxImageTrigger
 				className={slideshowStyles["image-wrapper"]}
 				lightboxImages={images}
+				imageTitle={config.title}
 				index={index}
 			>
 				<ResponsiveImage

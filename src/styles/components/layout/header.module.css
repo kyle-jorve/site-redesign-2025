@@ -7,10 +7,10 @@
 		position: relative;
 		z-index: 100;
 		padding: 0.5rem;
-		background: var(--header-footer-background);
+		background: var(--dark-translucent-background);
 		border-radius: var(--border-radius-large);
 		border: var(--border-dark);
-		backdrop-filter: var(--backdrop-blur-large);
+		backdrop-filter: var(--backdrop-blur);
 		transition: translate var(--transition);
 	}
 

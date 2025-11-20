@@ -3,7 +3,7 @@ body {
 	padding: 0;
 	margin: 0;
 
-	&:has(.lightbox.open) {
+	&:has(.lightbox.active) {
 		overflow: hidden;
 	}
 }
@@ -204,7 +204,7 @@ button:disabled {
 	padding: calc(var(--padding-content) + var(--border-width-wide))
 		var(--padding-content) var(--padding-content);
 	background: rgba(254, 246, 231, 0.4);
-	backdrop-filter: var(--backdrop-blur-large);
+	backdrop-filter: var(--backdrop-blur);
 	border: var(--border-red);
 	border-radius: var(--border-radius);
 

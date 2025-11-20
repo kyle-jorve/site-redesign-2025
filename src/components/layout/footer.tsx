@@ -11,7 +11,7 @@ export type FooterProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Footer({ className = "", ...otherProps }: FooterProps) {
 	const classes = outputClassNames(["footer", className], [styles]);
-	const { hideShell } = useContext(SiteContext);
+	const { hideShell, lightboxOpen } = useContext(SiteContext);
 
 	if (hideShell) return null;
 
@@ -19,6 +19,7 @@ export default function Footer({ className = "", ...otherProps }: FooterProps) {
 		<footer
 			className={classes}
 			{...otherProps}
+			inert={lightboxOpen}
 		>
 			<SocialIcons className={styles["footer-icons"]} />
 
