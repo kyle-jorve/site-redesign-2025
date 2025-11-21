@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { deriveButtonShadowColor, outputClassNames } from "@/utils/utils";
+import { deriveButtonShadowColor, outputClassNames } from "@/utils";
 
 export type CircleButtonProps = {
 	icon: "heart" | "arrow-left" | "arrow-right" | "cross";

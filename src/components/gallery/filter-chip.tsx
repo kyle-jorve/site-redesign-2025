@@ -1,6 +1,6 @@
 import { CategoryType } from "@/types/gallery-types";
-import { SiteContextType } from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import { SiteContextType } from "@/context/site-context";
+import { outputClassNames } from "@/utils";
 
 export type FilterChipProps = {
 	category: CategoryType;

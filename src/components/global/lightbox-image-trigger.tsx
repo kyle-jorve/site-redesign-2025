@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ImageMetaType } from "@/types/global-types";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
+import { outputClassNames } from "@/utils";
 
 export type LightboxImageTriggerProps = {
 	lightboxImages: ImageMetaType[];

@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { getThumbnailUrl } from "@/utils/utils";
-import { useIntersectionObserver } from "@/utils/hooks";
+import { getThumbnailUrl } from "@/utils";
+import { useIntersectionObserver } from "@/hooks";
 import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";

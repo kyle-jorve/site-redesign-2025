@@ -1,5 +1,5 @@
 import { LogoProps } from "./logo";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import styles from "@/styles/components/layout/header.module.css";
 
 export type LogoImageProps = {

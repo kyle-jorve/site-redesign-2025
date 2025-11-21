@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext } from "react";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
+import { outputClassNames } from "@/utils";
 import { copyrightText } from "@/data/global-data";
 import SocialIcons from "@/components/global/social-icons";
 import styles from "@/styles/components/layout/footer.module.css";

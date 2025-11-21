@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import styles from "@/styles/components/global/slideshow.module.css";
 
 export type SlideshowSlideProps = {

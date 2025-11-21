@@ -2,8 +2,7 @@
 
 import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import SiteContext from "@/utils/site-context";
-import { getElementTransition } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
 
 export type MainProps = React.PropsWithChildren<
 	React.HTMLAttributes<HTMLElement>
@@ -11,13 +10,14 @@ export type MainProps = React.PropsWithChildren<
 
 export default function Main({ children, ...otherProps }: MainProps) {
 	const {
-		mainRef,
 		lightboxOpen,
 		loadStatus,
+		mainTransitionDuration,
 		visited,
+
+		closeLightbox,
 		setLoadStatus,
 		setVisited,
-		closeLightbox,
 	} = useContext(SiteContext);
 	const path = usePathname();
 
@@ -30,21 +30,21 @@ export default function Main({ children, ...otherProps }: MainProps) {
 	useEffect(() => {
 		if (!visited) return;
 
-		const main = mainRef?.current;
-		const transition = getElementTransition(main);
-
 		closeLightbox();
 		setLoadStatus("page-in");
 		setTimeout(() => {
 			setLoadStatus("idle");
-		}, transition);
+		}, mainTransitionDuration);
 	}, [path, visited]);
 
 	return (
 		<main
 			className={loadStatus === "page-out" ? "out" : ""}
-			ref={mainRef}
 			{...otherProps}
+			style={{
+				...otherProps.style,
+				transitionDuration: `${mainTransitionDuration}ms`,
+			}}
 			inert={lightboxOpen}
 		>
 			{children}

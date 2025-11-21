@@ -1,20 +1,20 @@
 "use client";
 
-import { useState, useRef, createContext, useEffect } from "react";
+import { useState, createContext, useEffect } from "react";
 import { ImageMetaType } from "@/types/global-types";
-import { CategoryType } from "@/types/gallery-types";
-import { projectFilters } from "@/data/gallery-data";
+// import { CategoryType } from "@/types/gallery-types";
+// import { projectFilters } from "@/data/gallery-data";
 
 export type SiteContextType = {
 	favedProjects: string[];
-	filters: CategoryType[];
+	// filters: CategoryType[];
 	hideShell: boolean;
 	lightboxActiveIndex: number;
 	lightboxImages: ImageMetaType[];
 	lightboxId: string;
 	lightboxOpen: boolean;
 	loadStatus: "idle" | "page-out" | "page-in";
-	mainRef: React.RefObject<HTMLElement | null> | null;
+	mainTransitionDuration: number;
 	visited: boolean;
 
 	closeLightbox: Function;
@@ -22,9 +22,9 @@ export type SiteContextType = {
 		contents: SiteContextType["lightboxImages"],
 		activeIndex: SiteContextType["lightboxActiveIndex"],
 	) => void;
-	resetFilters: Function;
+	// resetFilters: Function;
 	setFavedProjects: React.Dispatch<React.SetStateAction<string[]>>;
-	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
+	// setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
 	setHideShell: React.Dispatch<React.SetStateAction<boolean>>;
 	setlightboxImages: React.Dispatch<
 		React.SetStateAction<SiteContextType["lightboxImages"]>
@@ -33,31 +33,31 @@ export type SiteContextType = {
 		React.SetStateAction<SiteContextType["loadStatus"]>
 	>;
 	setVisited: React.Dispatch<React.SetStateAction<boolean>>;
-	updateFilters: (ids: string[]) => void;
+	// updateFilters: (ids: string[]) => void;
 };
 
 const defaults: SiteContextType = {
 	favedProjects: [],
-	filters: [],
+	// filters: [],
 	hideShell: false,
 	lightboxActiveIndex: 0,
 	lightboxImages: [],
 	lightboxId: "project-lightbox",
 	lightboxOpen: false,
 	loadStatus: "idle",
-	mainRef: null,
+	mainTransitionDuration: 300,
 	visited: false,
 
 	closeLightbox: () => {},
 	openLightbox: () => {},
-	resetFilters: () => {},
+	// resetFilters: () => {},
 	setFavedProjects: () => {},
-	setFilters: () => {},
+	// setFilters: () => {},
 	setHideShell: () => {},
 	setlightboxImages: () => {},
 	setLoadStatus: () => {},
 	setVisited: () => {},
-	updateFilters: () => {},
+	// updateFilters: () => {},
 };
 
 const SiteContext = createContext<SiteContextType>(defaults);
@@ -86,14 +86,13 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 	const [visited, setVisited] = useState<SiteContextType["visited"]>(
 		defaults.visited,
 	);
-	const unsetFilters = Object.values(projectFilters).map((filter) => ({
-		...filter,
-		active: false,
-	}));
-	const [filters, setFilters] = useState<SiteContextType["filters"]>(
-		structuredClone(unsetFilters),
-	);
-	const mainRef = useRef<HTMLElement>(null);
+	// const unsetFilters = Object.values(projectFilters).map((filter) => ({
+	// 	...filter,
+	// 	active: false,
+	// }));
+	// const [filters, setFilters] = useState<SiteContextType["filters"]>(
+	// 	structuredClone(unsetFilters),
+	// );
 	const favoritesStorageKey = "favorites";
 
 	function openLightbox(
@@ -109,25 +108,25 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 		setLightboxOpen(false);
 	}
 
-	function updateFilters(ids: string[]) {
-		setFilters((prev) => {
-			return prev.map((cat) => {
-				const newCat = {
-					...cat,
-				};
-				const match = ids.some((id) => id === cat.name);
+	// function updateFilters(ids: string[]) {
+	// 	setFilters((prev) => {
+	// 		return prev.map((cat) => {
+	// 			const newCat = {
+	// 				...cat,
+	// 			};
+	// 			const match = ids.some((id) => id === cat.name);
 
-				if (match && cat.active) newCat.active = false;
-				else if (match) newCat.active = true;
+	// 			if (match && cat.active) newCat.active = false;
+	// 			else if (match) newCat.active = true;
 
-				return newCat;
-			});
-		});
-	}
+	// 			return newCat;
+	// 		});
+	// 	});
+	// }
 
-	function resetFilters() {
-		setFilters(structuredClone(unsetFilters));
-	}
+	// function resetFilters() {
+	// 	setFilters(structuredClone(unsetFilters));
+	// }
 
 	function checkLocalStorageAvailability() {
 		return (() => {
@@ -184,26 +183,26 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 		<SiteContext.Provider
 			value={{
 				favedProjects,
-				filters,
+				// filters,
 				hideShell,
 				lightboxActiveIndex,
 				lightboxImages,
 				lightboxId: defaults.lightboxId,
 				lightboxOpen,
 				loadStatus,
-				mainRef,
+				mainTransitionDuration: defaults.mainTransitionDuration,
 				visited,
 
 				closeLightbox,
 				openLightbox,
-				resetFilters,
+				// resetFilters,
 				setFavedProjects,
-				setFilters,
+				// setFilters,
 				setHideShell,
 				setlightboxImages,
 				setLoadStatus,
 				setVisited,
-				updateFilters,
+				// updateFilters,
 			}}
 		>
 			{children}

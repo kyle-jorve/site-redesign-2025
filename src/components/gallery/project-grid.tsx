@@ -1,10 +1,17 @@
 "use client";
 
-import { useContext, useRef, useState, useEffect, Suspense } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
-import { ProjectTileType, CategoryType } from "@/types/gallery-types";
-import { getElementTransition, outputClassNames } from "@/utils/utils";
-import SiteContext from "@/utils/site-context";
+import {
+	useContext,
+	useRef,
+	useState,
+	useEffect,
+	Suspense,
+	useCallback,
+} from "react";
+import { useIntersectionObserver } from "@/hooks";
+import { ProjectTileType } from "@/types/gallery-types";
+import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
 import styles from "@/styles/components/gallery/projects.module.css";
@@ -24,9 +31,6 @@ export default function ProjectGrid({
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const { filters, favedProjects } = useContext(SiteContext);
-	const [filteredProjects, setFilteredProjects] = useState<ProjectTileType[]>(
-		getFilteredProjects(),
-	);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
 	const classes = outputClassNames(["project-grid", className], [styles]);
 	const projectsClasses = outputClassNames(
@@ -37,8 +41,7 @@ export default function ProjectGrid({
 		["body-text", "large", "no-results-message"],
 		[styles],
 	);
-
-	function getFilteredProjects() {
+	const getFilteredProjects = useCallback(() => {
 		const activeFilters = filters.filter((filter) => filter.active);
 		const featuredFilterActive = activeFilters.some(
 			(filter) => filter.name === "featured",
@@ -58,7 +61,10 @@ export default function ProjectGrid({
 				activeFilters.some((af) => af.name === cat.name),
 			);
 		});
-	}
+	}, [favedProjects, filters, projects]);
+	const [filteredProjects, setFilteredProjects] = useState<ProjectTileType[]>(
+		getFilteredProjects(),
+	);
 
 	useEffect(() => {
 		if (!filteredProjects.length) {
@@ -66,14 +72,17 @@ export default function ProjectGrid({
 			return;
 		}
 
-		const transition = getElementTransition(projectsRef?.current);
-
 		setHideGrid(true);
-		setTimeout(() => {
-			setFilteredProjects(getFilteredProjects());
-			setHideGrid(false);
-		}, transition);
 	}, [filters]);
+
+	function handleGridTransitionEnd(event: React.TransitionEvent) {
+		const projectsEl = projectsRef?.current;
+
+		if (!projectsEl || event.target !== projectsEl || !hideGrid) return;
+
+		setFilteredProjects(getFilteredProjects());
+		setHideGrid(false);
+	}
 
 	return (
 		<section
@@ -96,6 +105,7 @@ export default function ProjectGrid({
 				<div
 					ref={projectsRef}
 					className={projectsClasses}
+					onTransitionEnd={handleGridTransitionEnd}
 				>
 					{filteredProjects.map((proj, index) => {
 						const isLong =

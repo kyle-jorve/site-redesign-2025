@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useContext, useRef } from "react";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
+import { outputClassNames } from "@/utils";
 import CircleButton from "@/components/global/circle-button";
 import LightboxImage from "@/components/global/lightbox-image";
 import Slideshow, { SlideType } from "@/components/global/slideshow";

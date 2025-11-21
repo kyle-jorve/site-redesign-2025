@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
+import { useIntersectionObserver } from "@/hooks";
 import { MenuTileType } from "@/types/hero-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import MenuTile from "@/components/hero/menu-tile";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
 

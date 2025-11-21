@@ -2,8 +2,8 @@
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
-import { outputClassNames } from "@/utils/utils";
-import SiteContext from "@/utils/site-context";
+import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import FilterChip from "@/components/gallery/filter-chip";
 import styles from "@/styles/components/gallery/filters.module.css";
 

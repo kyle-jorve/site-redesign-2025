@@ -1,7 +1,7 @@
 import "@/styles/base/_index.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { SiteContextProvider } from "@/utils/site-context";
+import { SiteContextProvider } from "@/context/site-context";
 import { bioImageBody } from "@/data/media-data";
 import PreconnectResources from "@/components/layout/preconnect-resources";
 import Main from "@/components/layout/main";

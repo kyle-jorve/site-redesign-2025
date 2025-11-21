@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
+import { useIntersectionObserver } from "@/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ResumeItem from "@/components/cv/resume-item";
 import styles from "@/styles/components/cv/resume.module.css";
 

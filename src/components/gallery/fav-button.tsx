@@ -1,8 +1,8 @@
 "use client";
 
 import { useContext } from "react";
-import { outputClassNames, deriveButtonShadowColor } from "@/utils/utils";
-import SiteContext from "@/utils/site-context";
+import { outputClassNames, deriveButtonShadowColor } from "@/utils";
+import SiteContext from "@/context/site-context";
 import CircleButton, {
 	CircleButtonProps,
 } from "@/components/global/circle-button";

@@ -2,9 +2,9 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useContext } from "react";
-import { outputClassNames, getElementTransition } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import Link from "next/link";
-import SiteContext from "@/utils/site-context";
+import SiteContext from "@/context/site-context";
 
 export type CustomLinkProps = {
 	to: string;
@@ -22,7 +22,7 @@ export default function CustomLink({
 }: CustomLinkProps) {
 	const router = useRouter();
 	const path = usePathname();
-	const { mainRef, setLoadStatus } = useContext(SiteContext);
+	const { mainTransitionDuration, setLoadStatus } = useContext(SiteContext);
 	const classes = outputClassNames([className]);
 	const linkIsExternal =
 		to.includes("http") ||
@@ -43,13 +43,10 @@ export default function CustomLink({
 			return;
 		}
 
-		const main = mainRef?.current;
-		const transition = getElementTransition(main);
-
 		setLoadStatus("page-out");
 		setTimeout(() => {
 			router.push(to);
-		}, transition);
+		}, mainTransitionDuration);
 		onClick(event);
 	}
 

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useContext, useState } from "react";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
+import { outputClassNames } from "@/utils";
 import Logo from "@/components/layout/logo";
 import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";

@@ -2,7 +2,7 @@
 
 import { useState, forwardRef } from "react";
 import { ImageDataType, ImageSourceType } from "@/types/global-types";
-import { outputClassNames, getThumbnailUrl } from "@/utils/utils";
+import { outputClassNames, getThumbnailUrl } from "@/utils";
 
 export type ResponsiveImageProps = {
 	image: ImageDataType;

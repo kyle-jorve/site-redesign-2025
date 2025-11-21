@@ -1,6 +1,6 @@
 import { ImageDataType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/hero/menu-tiles.module.css";

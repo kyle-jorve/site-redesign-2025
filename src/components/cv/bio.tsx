@@ -1,14 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
+import { useIntersectionObserver } from "@/hooks";
 import {
 	HeadingType,
 	ImageMetaType,
 	ImageDataType,
 } from "@/types/global-types";
 import { BioType } from "@/types/cv-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";

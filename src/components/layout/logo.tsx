@@ -1,4 +1,4 @@
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import CustomLink from "@/components/global/custom-link";
 import LogoImage from "./logo-image";
 import styles from "@/styles/components/layout/header.module.css";
