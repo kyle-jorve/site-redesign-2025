@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { MenuTileType } from "@/types/hero-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import MenuTiles from "@/components/hero/menu-tiles";
 import styles from "@/styles/components/hero/home-hero.module.css";

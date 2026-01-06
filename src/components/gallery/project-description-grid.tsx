@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
-import { outputClassNames } from "@/utils/utils";
+import { useIntersectionObserver } from "@/hooks";
+import { outputClassNames } from "@/utils";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
 import ContentBox from "@/components/global/content-box";

@@ -1,4 +1,4 @@
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ButtonLink, { ButtonLinkProps } from "@/components/global/button-link";
 
 export type ButtonLinkRowProps = {

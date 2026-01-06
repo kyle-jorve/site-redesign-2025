@@ -1,4 +1,4 @@
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 
 export type ContentBoxProps = {
 	size?: "standard" | "small";

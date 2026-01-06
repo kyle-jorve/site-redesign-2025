@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useContext, useState } from "react";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import SiteContext from "@/context/site-context";
+import LightboxContext from "@/context/lightbox-context";
+import { outputClassNames } from "@/utils";
 import Logo from "@/components/layout/logo";
 import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";
@@ -11,7 +12,8 @@ import navStyles from "@/styles/components/layout/navigation.module.css";
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
 export default function Header({ className = "", ...otherProps }: HeaderProps) {
-	const { hideShell, lightboxOpen } = useContext(SiteContext);
+	const { hideShell } = useContext(SiteContext);
+	const { lightboxOpen } = useContext(LightboxContext);
 	const headerRef = useRef<HTMLElement>(null);
 	const [mobileNavHidden, setMobileNavHidden] = useState<boolean>(false);
 	const classes = outputClassNames(["header", className], [styles]);

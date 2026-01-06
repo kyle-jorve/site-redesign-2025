@@ -1,5 +1,5 @@
 import CustomLink from "@/components/global/custom-link";
-import { outputClassNames, deriveButtonShadowColor } from "@/utils/utils";
+import { outputClassNames, deriveButtonShadowColor } from "@/utils";
 
 export type ButtonLinkProps = {
 	url: string;

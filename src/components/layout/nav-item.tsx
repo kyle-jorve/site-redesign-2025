@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/layout/navigation.module.css";
 

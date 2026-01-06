@@ -1,21 +1,28 @@
 "use client";
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { useState, useContext, useEffect } from "react";
-import { outputClassNames } from "@/utils/utils";
-import SiteContext from "@/utils/site-context";
+import { useState, useEffect } from "react";
+import { outputClassNames } from "@/utils";
+import { CategoryType } from "@/types/gallery-types";
 import FilterChip from "@/components/gallery/filter-chip";
 import styles from "@/styles/components/gallery/filters.module.css";
 
-export type FiltersProps = React.HTMLAttributes<HTMLDivElement>;
+export type FiltersProps = {
+	filters: CategoryType[];
+	resetFilters: Function;
+	setFilters: React.Dispatch<React.SetStateAction<CategoryType[]>>;
+	updateFilters: (ids: string[]) => void;
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export default function Filters({
+	filters,
+	resetFilters,
+	setFilters,
+	updateFilters,
 	className = "",
 	...otherProps
 }: FiltersProps) {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
-	const { filters, resetFilters, updateFilters, setFilters } =
-		useContext(SiteContext);
 	const classes = outputClassNames(["filters", className], [styles]);
 	const filterMenuID = "filter-menu";
 	const activeFilters = filters.filter((cat) => cat.active);

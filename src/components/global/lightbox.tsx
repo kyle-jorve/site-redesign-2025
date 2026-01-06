@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useContext, useRef } from "react";
-import SiteContext from "@/utils/site-context";
-import { outputClassNames } from "@/utils/utils";
+import LightboxContext from "@/context/lightbox-context";
+import { outputClassNames } from "@/utils";
 import CircleButton from "@/components/global/circle-button";
 import LightboxImage from "@/components/global/lightbox-image";
 import Slideshow, { SlideType } from "@/components/global/slideshow";
@@ -21,7 +21,7 @@ export default function Lightbox({
 		lightboxOpen,
 		closeLightbox,
 		setlightboxImages,
-	} = useContext(SiteContext);
+	} = useContext(LightboxContext);
 	const lightboxRef = useRef<HTMLDialogElement | null>(null);
 	const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 	const classes = outputClassNames(

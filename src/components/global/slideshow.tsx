@@ -1,6 +1,6 @@
 import { useState, useRef, createRef, useEffect, useCallback } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
-import { outputClassNames, getDestinationSlideIndex } from "@/utils/utils";
+import { useIntersectionObserver } from "@/hooks";
+import { outputClassNames } from "@/utils";
 import CircleButton from "@/components/global/circle-button";
 import SlideshowSlide from "@/components/global/slideshow-slide";
 import SlideshowDots from "@/components/global/slideshow-dots";
@@ -11,6 +11,8 @@ export type SlideType = {
 	id: string;
 	content: React.ReactElement;
 };
+
+export type ArrowDirectionType = "forward" | "backward";
 
 export type SlideshowProps = {
 	slides: SlideType[];
@@ -139,18 +141,24 @@ export default function Slideshow({
 		[getSlideOffset],
 	);
 
-	function handleArrowClick(direction: "forward" | "backward") {
+	function getDestinationSlideIndex(direction: ArrowDirectionType): number {
+		if (direction === "forward" && activeSlide === slides.length - 1)
+			return 0;
+		else if (direction === "forward") return activeSlide + 1;
+
+		if (direction === "backward" && activeSlide === 0)
+			return slides.length - 1;
+		else if (direction === "backward") return activeSlide - 1;
+
+		return 0;
+	}
+
+	function handleArrowClick(direction: ArrowDirectionType) {
 		const slidesRef = slideContainerRef.current;
 
 		if (!slidesRef) return;
 
-		const destinationIndex = getDestinationSlideIndex(
-			direction,
-			activeSlide,
-			slides.length,
-		);
-
-		scrollToSlide(destinationIndex);
+		scrollToSlide(getDestinationSlideIndex(direction));
 	}
 
 	function handleDotClick(index: number) {

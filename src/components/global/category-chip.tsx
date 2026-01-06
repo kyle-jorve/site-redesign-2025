@@ -1,5 +1,5 @@
 import { CategoryType } from "@/types/gallery-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import CustomLink from "@/components/global/custom-link";
 import styles from "@/styles/components/global/category-chips.module.css";
 

@@ -1,5 +1,5 @@
 import { ImageMetaType, ImageDataType } from "@/types/global-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
 import styles from "@/styles/components/global/lightbox.module.css";
 

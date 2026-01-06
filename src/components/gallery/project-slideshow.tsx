@@ -1,7 +1,7 @@
 "use client";
 
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import Slideshow, { SlideType } from "@/components/global/slideshow";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";

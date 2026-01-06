@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { NavItemType } from "@/types/global-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import NavItem from "@/components/layout/nav-item";
 import styles from "@/styles/components/layout/navigation.module.css";
 

@@ -1,6 +1,6 @@
 import { HeadingType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import Feature from "@/components/gallery/feature";
 import HeadingBar from "@/components/global/heading-bar";
 import styles from "@/styles/components/gallery/feature-grid.module.css";

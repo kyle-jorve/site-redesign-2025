@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useContext } from "react";
-import { outputClassNames } from "@/utils/utils";
+import { outputClassNames } from "@/utils";
 import { SocialMediaObjectType } from "@/types/global-types";
-import SiteContext from "@/utils/site-context";
+import SiteContext from "@/context/site-context";
 import ButtonLink from "@/components/global/button-link";
 import styles from "@/styles/components/hero/links.module.css";
 

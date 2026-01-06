@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useIntersectionObserver } from "@/utils/hooks";
-import { outputClassNames } from "@/utils/utils";
+import { useIntersectionObserver } from "@/hooks";
+import { outputClassNames } from "@/utils";
 import { HeadingType } from "@/types/global-types";
 import { ButtonLinkRowProps } from "@/components/global/button-link-row";
 import ButtonLinkRow from "@/components/global/button-link-row";

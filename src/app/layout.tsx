@@ -1,7 +1,9 @@
 import "@/styles/base/_index.css";
 import type { Metadata } from "next";
 import Script from "next/script";
-import { SiteContextProvider } from "@/utils/site-context";
+import { SiteContextProvider } from "@/context/site-context";
+import { ProjectsContextProvider } from "@/context/projects-context";
+import { LightboxContextProvider } from "@/context/lightbox-context";
 import { bioImageBody } from "@/data/media-data";
 import PreconnectResources from "@/components/layout/preconnect-resources";
 import Main from "@/components/layout/main";
@@ -53,11 +55,15 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<SiteContextProvider>
-					<PreconnectResources />
-					<Header />
-					<Main>{children}</Main>
-					<Footer />
-					<Lightbox />
+					<LightboxContextProvider>
+						<ProjectsContextProvider>
+							<PreconnectResources />
+							<Header />
+							<Main>{children}</Main>
+							<Footer />
+							<Lightbox />
+						</ProjectsContextProvider>
+					</LightboxContextProvider>
 				</SiteContextProvider>
 				<Script src="https://kit.fontawesome.com/867df664d5.js" />
 			</body>
