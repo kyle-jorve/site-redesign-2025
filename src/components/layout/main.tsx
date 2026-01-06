@@ -3,6 +3,7 @@
 import { useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import SiteContext from "@/context/site-context";
+import LightboxContext from "@/context/lightbox-context";
 
 export type MainProps = React.PropsWithChildren<
 	React.HTMLAttributes<HTMLElement>
@@ -10,15 +11,14 @@ export type MainProps = React.PropsWithChildren<
 
 export default function Main({ children, ...otherProps }: MainProps) {
 	const {
-		lightboxOpen,
 		loadStatus,
 		mainTransitionDuration,
 		visited,
 
-		closeLightbox,
 		setLoadStatus,
 		setVisited,
 	} = useContext(SiteContext);
+	const { lightboxOpen, closeLightbox } = useContext(LightboxContext);
 	const path = usePathname();
 
 	useEffect(() => {

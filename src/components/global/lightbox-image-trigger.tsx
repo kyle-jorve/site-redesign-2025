@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ImageMetaType } from "@/types/global-types";
-import SiteContext from "@/context/site-context";
+import LightboxContext from "@/context/lightbox-context";
 import { outputClassNames } from "@/utils";
 
 export type LightboxImageTriggerProps = {
@@ -18,7 +18,8 @@ export default function LightboxImageTrigger({
 	className = "",
 	...otherProps
 }: LightboxImageTriggerProps) {
-	const { lightboxId, lightboxOpen, openLightbox } = useContext(SiteContext);
+	const { lightboxId, lightboxOpen, openLightbox } =
+		useContext(LightboxContext);
 	const classes = outputClassNames(["image-container", className]);
 
 	return (
