@@ -3,7 +3,7 @@
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { useState, useContext, useEffect } from "react";
 import { outputClassNames } from "@/utils";
-import SiteContext from "@/context/site-context";
+import ProjectsContext from "@/context/projects-context";
 import FilterChip from "@/components/gallery/filter-chip";
 import styles from "@/styles/components/gallery/filters.module.css";
 
@@ -15,7 +15,7 @@ export default function Filters({
 }: FiltersProps) {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false);
 	const { filters, resetFilters, updateFilters, setFilters } =
-		useContext(SiteContext);
+		useContext(ProjectsContext);
 	const classes = outputClassNames(["filters", className], [styles]);
 	const filterMenuID = "filter-menu";
 	const activeFilters = filters.filter((cat) => cat.active);

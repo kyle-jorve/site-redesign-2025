@@ -11,7 +11,7 @@ import {
 import { useIntersectionObserver } from "@/hooks";
 import { ProjectTileType } from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
-import SiteContext from "@/context/site-context";
+import ProjectsContext from "@/context/projects-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
 import styles from "@/styles/components/gallery/projects.module.css";
@@ -30,7 +30,7 @@ export default function ProjectGrid({
 	const sectionRef = useRef<HTMLElement>(null);
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const { filters, favedProjects } = useContext(SiteContext);
+	const { filters, favedProjects } = useContext(ProjectsContext);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
 	const classes = outputClassNames(["project-grid", className], [styles]);
 	const projectsClasses = outputClassNames(
