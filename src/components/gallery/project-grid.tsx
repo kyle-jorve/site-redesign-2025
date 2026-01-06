@@ -9,7 +9,11 @@ import {
 	useCallback,
 } from "react";
 import { useIntersectionObserver } from "@/hooks";
-import { ProjectTileType } from "@/types/gallery-types";
+import {
+	ProjectTileType,
+	CategoryType,
+	CategoriesType,
+} from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
 import ProjectsContext from "@/context/projects-context";
 import Filters from "@/components/gallery/filters";
@@ -17,11 +21,13 @@ import ProjectTile from "@/components/gallery/project-tile";
 import styles from "@/styles/components/gallery/projects.module.css";
 
 export type ProjectGridProps = {
+	projectFilters: CategoriesType;
 	projects: ProjectTileType[];
 	noResultsMessage: string;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function ProjectGrid({
+	projectFilters,
 	projects,
 	noResultsMessage,
 	className = "",
@@ -30,7 +36,14 @@ export default function ProjectGrid({
 	const sectionRef = useRef<HTMLElement>(null);
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const { filters, favedProjects } = useContext(ProjectsContext);
+	const initialFilters = Object.values(projectFilters).map((filter) => ({
+		...filter,
+		active: false,
+	}));
+	const [filters, setFilters] = useState<CategoryType[]>(
+		structuredClone(initialFilters),
+	);
+	const { favedProjects } = useContext(ProjectsContext);
 	const [hideGrid, setHideGrid] = useState<boolean>(false);
 	const classes = outputClassNames(["project-grid", className], [styles]);
 	const projectsClasses = outputClassNames(
@@ -84,6 +97,26 @@ export default function ProjectGrid({
 		setHideGrid(false);
 	}
 
+	function updateFilters(ids: string[]) {
+		setFilters((prev) => {
+			return prev.map((cat) => {
+				const newCat = {
+					...cat,
+				};
+				const match = ids.some((id) => id === cat.name);
+
+				if (match && cat.active) newCat.active = false;
+				else if (match) newCat.active = true;
+
+				return newCat;
+			});
+		});
+	}
+
+	function resetFilters() {
+		setFilters(structuredClone(initialFilters));
+	}
+
 	return (
 		<section
 			ref={sectionRef}
@@ -96,7 +129,12 @@ export default function ProjectGrid({
 			}}
 		>
 			<Suspense fallback={null}>
-				<Filters />
+				<Filters
+					filters={filters}
+					resetFilters={resetFilters}
+					setFilters={setFilters}
+					updateFilters={updateFilters}
+				/>
 			</Suspense>
 
 			{!filteredProjects.length ? (

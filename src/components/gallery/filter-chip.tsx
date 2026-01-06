@@ -1,10 +1,10 @@
 import { CategoryType } from "@/types/gallery-types";
-import { ProjectsContextType } from "@/context/projects-context";
+import { FiltersProps } from "@/components/gallery/filters";
 import { outputClassNames } from "@/utils";
 
 export type FilterChipProps = {
 	category: CategoryType;
-	handleClick: ProjectsContextType["updateFilters"];
+	handleClick: FiltersProps["updateFilters"];
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export default function FilterChip({

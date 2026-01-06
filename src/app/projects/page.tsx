@@ -19,6 +19,7 @@ export default function ProjectsPage() {
 				}
 			/>
 			<ProjectGrid
+				projectFilters={galleryData.projectFilters}
 				projects={galleryData.projectsSorted}
 				noResultsMessage={galleryData.noResultsMessage}
 			/>
