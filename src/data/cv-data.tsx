@@ -99,17 +99,23 @@ export const resume: ResumeType = {
 									requirements
 								</li>
 								<li>
-									Contributed 72 merged pull requests to the
-									company&apos;s proprietary React component
-									library, built using Storybook and
+									Contributed{" "}
+									<CustomLink to="https://github.com/kyle-jorve?tab=overview&org=simpleviewinc">
+										72 merged pull requests
+									</CustomLink>{" "}
+									to the company&apos;s proprietary React
+									component library, built using Storybook and
 									TypeScript, enhancing scalability and code
 									reusability and utilizing agile software
 									development methodologies; wrote automated
 									testing for each component build using Jest
 								</li>
 								<li>
-									Contributed over 200 merged pull requests to
-									the company&apos;s foundational code
+									Contributed over{" "}
+									<CustomLink to="https://github.com/kyle-jorve?tab=overview&org=simpleviewinc">
+										200 merged pull requests
+									</CustomLink>{" "}
+									to the company&apos;s foundational code
 									repositories, improving quality of life and
 									performance of every client&apos;s codebase
 									and becoming the Operations
@@ -215,7 +221,7 @@ export const resume: ResumeType = {
 					name: "ua-print-studio",
 					title: "Intern",
 					year: "2013",
-					company: "Universty of Arizona Digital Print Studio",
+					company: "University of Arizona Digital Print Studio",
 					description: (
 						<ul>
 							<li>
@@ -326,7 +332,7 @@ export const resume: ResumeType = {
 									<b />, <b>CSS</b>, <b>SCSS</b>,{" "}
 									<b>JavaScript</b>, <b></b>TypeScript
 								</b>
-								, and modern JavaScript frameworks such as
+								, and modern JavaScript frameworks such as{" "}
 								<b>ReactJS</b>, <b>Vue</b>, and <b>NextJS</b>,
 								and contributing to cross-functional teams. I am
 								extremely proficient in writing readable,
@@ -356,16 +362,6 @@ export const resume: ResumeType = {
 								Presently, I use this background to enhance my
 								design and communication skills.
 							</p>
-							{/* <p>
-								Thanks to the wide range of experience my
-								education and career have afforded me, I have
-								amassed a comprehensive and multidisciplined{" "}
-								<CustomLink to="/projects">
-									body of work
-								</CustomLink>{" "}
-								in the areas of print media, web design, and
-								virtual marketing.
-							</p> */}
 						</>
 					),
 				},
@@ -382,8 +378,11 @@ export const resume: ResumeType = {
 									Illustrator, InDesign, etc.)
 								</b>
 								, <b>Figma</b>, <b>Procreate</b>,{" "}
-								<b>Visual Studio Code</b>, and <b>GitHub</b> and
-								Git-based source control programs.
+								<b>Visual Studio Code</b>, and{" "}
+								<CustomLink to={socialMedia.github.url}>
+									GitHub
+								</CustomLink>{" "}
+								and Git-based source control programs.
 							</p>
 						</>
 					),
