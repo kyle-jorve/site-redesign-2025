@@ -59,17 +59,17 @@
 	.description-grid .image-wrapper {
 		aspect-ratio: 5 / 4;
 
-		&:nth-child(3n - 1) .image {
+		&:nth-child(even) .image {
 			border-radius: 0 var(--border-radius) var(--border-radius) 0;
 		}
 
-		&:nth-child(3n) .image {
+		&:nth-child(odd) .image {
 			border-radius: var(--border-radius) 0 0 var(--border-radius);
 		}
 
-		&:nth-child(3n - 2),
-		&:last-child:nth-child(3n - 1) {
+		&:first-child {
 			grid-column: span 2;
+			aspect-ratio: 5 / 3;
 
 			.image {
 				border-radius: 0;
@@ -79,7 +79,7 @@
 }
 
 @media (width >= 40em) and (width < 64em) {
-	.description-grid .image-wrapper:nth-child(3n - 2) {
+	.description-grid .image-wrapper:first-child {
 		aspect-ratio: 16 / 9;
 	}
 }
@@ -104,16 +104,23 @@
 	}
 
 	.description-grid {
+		--desc-box-top-overflow: 8rem;
+
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		align-items: start;
+		align-items: end;
 		gap: var(--grid-gap);
-		margin-top: 14rem;
+		margin-top: calc(var(--desc-box-top-overflow) + 6rem);
 
 		.desc-box {
-			width: calc(100% + 2.625rem - var(--padding-body-edge));
+			--column-overflow: 2.625rem;
+
+			align-self: start;
+			width: calc(
+				100% + var(--column-overflow) - var(--padding-body-edge)
+			);
 			max-width: var(--width-content);
-			margin: -8rem -2.625rem 2.625rem auto;
+			margin: calc(var(--desc-box-top-overflow) * -1)
+				calc(var(--column-overflow) * -1) var(--column-overflow) auto;
 		}
 
 		.title {
@@ -126,35 +133,60 @@
 
 		.image-wrapper {
 			aspect-ratio: 5 / 4;
+		}
+	}
+}
+
+@media (width >= 64em) and (width < 90em) {
+	.description-grid {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+
+		.desc-box {
+			grid-column: span 3;
+		}
+
+		.image-wrapper {
+			grid-column: span 2;
 
 			&:first-child {
 				align-self: end;
-				aspect-ratio: 1;
+				grid-column: span 3;
 			}
 
-			&:nth-child(3n) .image {
-				border-radius: 0 var(--border-radius) var(--border-radius) 0;
-			}
-
+			&:first-child .image,
 			&:nth-child(3n + 1) .image {
 				border-radius: var(--border-radius) 0 0 var(--border-radius);
 			}
 
-			&:nth-child(3n - 1),
-			&:nth-child(3n):last-child {
-				grid-column: span 2;
-				aspect-ratio: 2 / 1;
+			&:nth-child(3n) .image {
+				border-radius: var(--border-radius);
+			}
 
-				.image {
-					border-radius: 0;
-				}
+			&:nth-child(3n - 1) .image {
+				border-radius: 0 var(--border-radius) var(--border-radius) 0;
 			}
 		}
 	}
 }
 
 @media (min-width: 90em) {
-	.description-grid .title {
-		font-size: var(--font-size-heading-2);
+	.description-grid {
+		grid-template-columns: repeat(
+			auto-fill,
+			minmax(var(--width-content), 1fr)
+		);
+		padding: 0 var(--padding-body-edge);
+
+		.desc-box {
+			width: calc(100% + var(--column-overflow));
+		}
+
+		.title {
+			font-size: var(--font-size-heading-2);
+		}
+
+		.image {
+			border-radius: var(--border-radius);
+		}
 	}
 }
