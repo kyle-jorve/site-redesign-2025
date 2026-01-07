@@ -56,6 +56,21 @@ export const resume: ResumeType = {
 	title: <>R&eacute;sum&eacute;</>,
 	url: socialMedia.email.url,
 	buttonText: "Contact Me",
+	introduction: {
+		title: "Introduction",
+		content: (
+			<p>
+				I&apos;m a senior front-end developer and engineer with{" "}
+				{yearsOfExperience} years of professional experience in
+				front-end web development, front-end engineering, and web and
+				graphic design. I am extremely passionate about implementing
+				strong design and building excellent user experiences with an
+				emphasis on accessibility. I am fluent in HTML, CSS, and
+				JavaScript, and highly proficient in TypeScript, ReactJS, and
+				NextJS.
+			</p>
+		),
+	},
 	sections: [
 		{
 			name: "experience",
@@ -64,80 +79,107 @@ export const resume: ResumeType = {
 				{
 					name: "granicus",
 					title: "Senior Web Developer",
-					description: (
-						<>
-							<p>
-								At Granicus I build{" "}
-								<CustomLink
-									to={`/projects?categories=${JSON.stringify([
-										"development",
-									])}`}
-								>
-									front end components
-								</CustomLink>{" "}
-								for a wide variety of destination marketing
-								websites. I write performant, sustainable code
-								and undergo regular peer review. I work with
-								libraries like React and Vue, and languages like
-								JavaScript, TypeScript, HTML, and CSS.
-							</p>
-						</>
-					),
 					year: "2021 - Present",
 					company: "Granicus (formerly Simpleview)",
-				},
-				{
-					name: "desert-lab-studio",
-					title: "Designer + Developer",
 					description: (
 						<>
-							<p>
-								At Desert Lab Studio, I enjoyed a broad range of
-								responsibilities. My primary roles were as a web
-								designer and front end developer, but my job
-								covered a myriad of other disciplines, like
-								graphic design, marketing, and sales.
-							</p>
-							<p>
-								In summary, my experience at Desert Lab Studio
-								encompassed the following:
-							</p>
 							<ul>
 								<li>
-									I created print, web, and virtual marketing
-									materials for Desert Lab Studio, their
-									clients, and their various software
-									products.
+									Contributed to the development of over 100{" "}
+									<CustomLink
+										to={`/projects?categories=${JSON.stringify(
+											["development"],
+										)}`}
+									>
+										highly custom websites
+									</CustomLink>{" "}
+									for destination marketing organizations,
+									ensuring alignment with user experience,
+									brand consistency, and code resiliency
+									requirements
 								</li>
 								<li>
-									I designed and built websites using the
-									Umbraco CMS and a variety of web languages,
-									including HTML, CSS, SCSS, and JavaScript.
+									Contributed 72 merged pull requests to the
+									company&apos;s proprietary React component
+									library, built using Storybook and
+									TypeScript, enhancing scalability and code
+									reusability and utilizing agile software
+									development methodologies; wrote automated
+									testing for each component build using Jest
 								</li>
 								<li>
-									I created custom graphic and illustration
-									work for the purposes of marketing, web
-									design, advertising, and product
-									development.
+									Contributed over 200 merged pull requests to
+									the company&apos;s foundational code
+									repositories, improving quality of life and
+									performance of every client&apos;s codebase
+									and becoming the Operations
+									department&apos;s top contributor on GitHub
 								</li>
 								<li>
-									I attended trade shows to promote{" "}
-									<CustomLink to="/projects/theater-toolkit">
-										Theater Toolkit
-									</CustomLink>
-									, a software product for independent movie
-									theaters.
+									Championed accessibility across all web
+									projects, ensuring compliance with WCAG
+									standards and enhancing overall usability
+								</li>
+								<li>
+									Demonstrated mastery of web languages,
+									libraries, and frameworks like HTML, CSS,
+									TypeScript, JavaScript, React, Vue, and
+									NextJS, and a comprehensive grasp of coding
+									best practices
+								</li>
+								<li>
+									Optimized web pages and code repositories
+									for maximum efficiency, performance,
+									accessibility, and speed
 								</li>
 							</ul>
 						</>
 					),
+				},
+				{
+					name: "desert-lab-studio",
+					title: "Designer, Web Developer",
 					year: "2015 - 2021",
 					company:
 						"Desert Lab Studio (formerly Simply Bits Enterprise Services)",
+					description: (
+						<>
+							<ul>
+								<li>
+									Designed and built dozens of websites from
+									scratch for a wide variety of clientele
+									using the Umbraco CMS, with an emphasis on
+									customer satisfaction and quality user
+									experiences
+								</li>
+								<li>
+									Learned how to code on the job and was
+									promoted twice for demonstrating quick
+									learning ability and high proficiency
+								</li>
+								<li>
+									Created a full suite of branding and
+									marketing materials, including illustrations
+									and a website, for software product{" "}
+									<CustomLink to="/projects/theater-toolkit">
+										Theater Toolkit
+									</CustomLink>
+								</li>
+								<li>
+									Contributed to the development of modern
+									SaaS products and participated in all
+									aspects of the software development life
+									cycle, from concept and design to deployment
+								</li>
+							</ul>
+						</>
+					),
 				},
 				{
 					name: "new-nebula",
 					title: "Writer, Illustrator",
+					year: "2015",
+					company: "New Nebula Comic Anthology",
 					description: (
 						<p>
 							I wrote and illustrated an original story titled{" "}
@@ -145,39 +187,124 @@ export const resume: ResumeType = {
 							<i>New Nebula Volume 1</i>.
 						</p>
 					),
-					year: "2015",
-					company: "New Nebula Comic Anthology",
 				},
 				{
 					name: "zarpara",
 					title: "Designer, Illustrator",
-					description: (
-						<p>
-							I created custom illustrations and designed print
-							marketing materials and{" "}
-							<CustomLink to="/projects/zarpara-vineyard">
-								wine labels
-							</CustomLink>
-							.
-						</p>
-					),
 					year: "2013 - 2019",
 					company: "Zarpara Vineyard",
+					description: (
+						<ul>
+							<li>
+								Revitalized Zarpara&apos;s brand with{" "}
+								<CustomLink to="/projects/zarpara-vineyard">
+									illustrated wine labels
+								</CustomLink>
+								, ensuring consistent brand messaging and visual
+								appeal
+							</li>
+							<li>
+								Created illustrated print marketing materials,
+								optimizing design for maximum visual impact and
+								brand recognition
+							</li>
+						</ul>
+					),
 				},
 				{
 					name: "ua-print-studio",
 					title: "Intern",
-					description: (
-						<p>
-							I was responsible for printing in multiple formats
-							and assisting customers in a demanding environment.
-							I worked with a team to manage a steady flow of
-							customers, edited files to ensure optimum print
-							quality, and helped maintain large format printers.
-						</p>
-					),
 					year: "2013",
 					company: "Universty of Arizona Digital Print Studio",
+					description: (
+						<ul>
+							<li>
+								Helped maintain multiple large-format printers
+								in a demanding, fast-paced environment,
+								troubleshooting technical issues as they arose
+							</li>
+							<li>
+								Edited digital files to ensure optimum print
+								quality, demonstrating a keen eye for detail
+							</li>
+							<li>
+								Collaborated with a team to handle a steady flow
+								of customers and coordinate over 20 custom print
+								jobs per shift
+							</li>
+						</ul>
+					),
+				},
+			],
+		},
+		{
+			name: "projects",
+			title: "Projects",
+			items: [
+				{
+					name: "simpleview-base-client",
+					title: "Simpleview Base Client",
+					year: "2021 - Present",
+					description: (
+						<p>
+							Contributed over 200 pull requests to
+							Simpleview&apos;s base client repositories, which
+							are used as foundational code for every Simpleview
+							client website project. Reviewed and revised code
+							for maximum performance and scalability.
+						</p>
+					),
+				},
+				{
+					name: "destination-design-kit",
+					title: "Destination Design Kit",
+					year: "2021 - 2024",
+					description: (
+						<p>
+							Contributed 72 merged pull requests to Destination
+							Design Kit, Simpleview&apos;s proprietary React
+							component library, which was heavily researched for
+							user experience and accessibility, and built for
+							scalability with atomic design principles using
+							Storybook, TypeScript, and Jest for unit testing.
+						</p>
+					),
+				},
+				{
+					name: "theater-toolkit",
+					title: "Theater Toolkit",
+					year: "2016 - 2021",
+					description: (
+						<p>
+							Designed, illustrated, and built the marketing site
+							for{" "}
+							<CustomLink to="/projects/theater-toolkit">
+								Theater Toolkit
+							</CustomLink>
+							, a custom website product for independent theaters,
+							complete with a POS-integrated checkout process.
+							Created a variety of illustration, design, and
+							marketing assets. Attended tradeshows to promote the
+							product, demonstrating excellent verbal and written
+							communication skills.
+						</p>
+					),
+				},
+				{
+					name: "captive-content",
+					title: "Captive Content",
+					year: "2017 - 2018",
+					description: (
+						<p>
+							Designed, illustrated, and built the{" "}
+							<CustomLink to="/projects/captive-content">
+								Captive Content
+							</CustomLink>{" "}
+							marketing site, and delivered a variety of
+							illustration, design, and marketing assets, ensuring
+							consistent brand messaging.
+						</p>
+					),
 				},
 			],
 		},
@@ -187,34 +314,49 @@ export const resume: ResumeType = {
 			items: [
 				{
 					name: "web-development",
-					title: "Web Development",
+					title: "Front-End Web Development and Engineering",
 					description: (
 						<>
 							<p>
 								I have {yearsOfExperience} years of experience
-								in a variety of web languages, libraries, and
-								frameworks, including, but not limited to, the
-								following:
+								working with a variety of web languages,
+								libraries, and frameworks, including{" "}
+								<b>
+									HTML
+									<b />, <b>CSS</b>, <b>SCSS</b>,{" "}
+									<b>JavaScript</b>, <b></b>TypeScript
+								</b>
+								, and modern JavaScript frameworks such as
+								<b>ReactJS</b>, <b>Vue</b>, and <b>NextJS</b>,
+								and contributing to cross-functional teams. I am
+								extremely proficient in writing readable,
+								reusable, accessible, and scalable code, and
+								optimizing for maximum speed, performance,
+								scalability, and accessibility.
 							</p>
-							<ul>
-								<li>HTML</li>
-								<li>CSS</li>
-								<li>SCSS</li>
-								<li>JavaScript</li>
-								<li>TypeScript</li>
-								<li>React</li>
-								<li>Vue</li>
-								<li>NextJS</li>
-							</ul>
 						</>
 					),
 				},
 				{
-					name: "graphic-design",
-					title: "Graphic Design",
+					name: "design-and-illustration",
+					title: "Graphic Design and Illustration",
 					description: (
 						<>
 							<p>
+								I have amassed a comprehensive and
+								multidisciplinary{" "}
+								<CustomLink to="/projects">
+									body of work
+								</CustomLink>{" "}
+								in <b>print media</b>, <b>web design</b>,{" "}
+								<b>brand design</b>, and{" "}
+								<b>virtual marketing</b>. The primary focus of
+								my education was illustration, and in particular
+								I excelled at <b>digital illustration</b>.
+								Presently, I use this background to enhance my
+								design and communication skills.
+							</p>
+							{/* <p>
 								Thanks to the wide range of experience my
 								education and career have afforded me, I have
 								amassed a comprehensive and multidisciplined{" "}
@@ -223,47 +365,7 @@ export const resume: ResumeType = {
 								</CustomLink>{" "}
 								in the areas of print media, web design, and
 								virtual marketing.
-							</p>
-						</>
-					),
-				},
-				{
-					name: "illustration",
-					title: "Illustration",
-					description: (
-						<>
-							<p>
-								The primary focus of my education was{" "}
-								<CustomLink
-									to={`/projects?categories=${JSON.stringify([
-										"illustration",
-									])}`}
-								>
-									illustration
-								</CustomLink>
-								, and in particular I excelled at digital
-								illustration.
-							</p>
-							<p>
-								Presently, I use this background to enhance my
-								other skills, like{" "}
-								<CustomLink
-									to={`/projects?categories=${JSON.stringify([
-										"design",
-									])}`}
-								>
-									design
-								</CustomLink>{" "}
-								and{" "}
-								<CustomLink
-									to={`/projects?categories=${JSON.stringify([
-										"writing",
-									])}`}
-								>
-									writing
-								</CustomLink>
-								.
-							</p>
+							</p> */}
 						</>
 					),
 				},
@@ -273,23 +375,15 @@ export const resume: ResumeType = {
 					description: (
 						<>
 							<p>
-								I am expertly skilled in{" "}
-								<strong>Adobe Creative Cloud</strong> software,
-								most especially in <strong>Photoshop</strong>,{" "}
-								<strong>Illustrator</strong>, and{" "}
-								<strong>InDesign</strong>.
-							</p>
-							<p>
-								For drawing and painting I tend to use{" "}
-								<strong>Procreate</strong> on an iPad Pro.
-							</p>
-							<p>
-								For web design, my software of choice is{" "}
-								<strong>Figma</strong>.
-							</p>
-							<p>
-								My preferred IDE is{" "}
-								<strong>Visual Studio Code</strong>.
+								My skills are widely varied. I am extremely
+								proficient in{" "}
+								<b>
+									Adobe Creative Cloud (Photoshop,
+									Illustrator, InDesign, etc.)
+								</b>
+								, <b>Figma</b>, <b>Procreate</b>,{" "}
+								<b>Visual Studio Code</b>, and <b>GitHub</b> and
+								Git-based source control programs.
 							</p>
 						</>
 					),
@@ -302,58 +396,41 @@ export const resume: ResumeType = {
 			items: [
 				{
 					name: "university-of-arizona",
-					title: "Bachelor's of Fine Art, Emphasis in Visual Communication",
-					description: (
-						<p>
-							I graduated summa cum laude from the{" "}
-							<strong>University of Arizona</strong> in 2013,
-							earning a bachelor&apos;s degree in fine art with an
-							emphasis in visual communication and a concentration
-							in{" "}
-							<CustomLink
-								to={`/projects?categories=${JSON.stringify([
-									"illustration",
-								])}`}
-							>
-								illustration
-							</CustomLink>
-							.
-						</p>
-					),
+					title: "University of Arizona",
 					year: "2013",
-				},
-				{
-					name: "italy-study-abroad",
-					title: "Orvieto, Italy Study Abroad Program",
 					description: (
-						<p>
-							In 2012 I embarked on a summer study abroad program
-							through the University of Arizona. I stayed in{" "}
-							<strong>Orvieto, Italy</strong> for 5 weeks,
-							mingling with the locals, practicing my Italian, and
-							completing a small, illustrated book for the
-							end-of-term exhibition.
-						</p>
+						<ul>
+							<li>
+								Graduated summa cum laude with a bachelor&apos;s
+								of fine art, emphasis in{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify([
+										"illustration",
+									])}`}
+								>
+									visual communication
+								</CustomLink>
+							</li>
+							<li>
+								Completed a 5-week study abroad program in 2012
+								to Orvieto, Italy
+							</li>
+						</ul>
 					),
-					year: "2012",
 				},
 				{
 					name: "mesa-community-college",
-					title: "Associates of Fine Art",
+					title: "Mesa Community College",
+					year: "2009",
 					description: (
 						<p>
-							In 2009 I graduated from{" "}
-							<strong>Mesa Community College</strong> with an
-							associate&apos;s degree in fine art. My education
-							there focused most especially on the detailed study
-							of the{" "}
+							Earned an associate&apos;s of fine art, with an
+							emphasis in{" "}
 							<CustomLink to="/projects/figure-studies">
-								human figure
+								figure drawing
 							</CustomLink>
-							.
 						</p>
 					),
-					year: "2009",
 				},
 			],
 		},

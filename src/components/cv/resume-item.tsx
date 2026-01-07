@@ -11,14 +11,14 @@ export type ResumeItemProps = Omit<ResumeItemType, "name"> & {
 export default function ResumeItem({
 	title,
 	description,
-	heading = "h4",
+	heading = 4,
 	company = undefined,
 	year = undefined,
 	className = "",
 	...otherProps
 }: ResumeItemProps) {
 	const classes = outputClassNames(["resume-item", className], [styles]);
-	const Heading = heading as React.ElementType;
+	const Heading = `h${heading}` as React.ElementType;
 
 	return (
 		<li

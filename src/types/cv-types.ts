@@ -21,6 +21,10 @@ export type ResumeSectionType = {
 
 export type ResumeType = {
 	title: string | React.ReactElement;
+	introduction: {
+		title: string;
+		content: string | React.ReactElement;
+	};
 	sections: ResumeSectionType[];
 	url: string;
 	buttonText?: string;

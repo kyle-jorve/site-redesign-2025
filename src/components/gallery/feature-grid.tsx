@@ -17,7 +17,7 @@ export type FeatureGridProps = {
 
 export default function FeatureGrid({
 	slides,
-	heading = "h2",
+	heading = 2,
 	title = "Featured Work",
 	url = undefined,
 	headingBarButtonText = "See All",

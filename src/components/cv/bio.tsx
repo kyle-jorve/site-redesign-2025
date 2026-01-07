@@ -29,7 +29,7 @@ export default function Bio({
 	url = "/cv#resume",
 	buttonText = <>See R&eacute;sum&eacute;</>,
 	placement = "body",
-	heading = "h2",
+	heading = 2,
 	className = "",
 	...otherProps
 }: BioProps) {
@@ -37,7 +37,7 @@ export default function Bio({
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = outputClassNames(["bio", placement, className], [styles]);
 	const isHero = placement === "hero";
-	const Heading = heading as React.ElementType;
+	const Heading = `h${heading}` as React.ElementType;
 	const imageConfig: ImageDataType = {
 		...image,
 		sources: [

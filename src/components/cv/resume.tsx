@@ -11,14 +11,19 @@ export type ResumeProps = ResumeType & {
 
 export default function Resume({
 	title,
+	introduction,
 	sections,
 	url,
 	buttonText = "Contact Me",
-	heading = "h2",
+	heading = 2,
 	className = "",
 	...otherProps
 }: ResumeProps) {
 	const classes = outputClassNames(["resume", className], [styles]);
+	const introHeadingLevel = (
+		heading == 6 ? heading : heading + 1
+	) as HeadingType;
+	const IntroHeading = `h${introHeadingLevel}` as React.ElementType;
 
 	return (
 		<section
@@ -39,6 +44,13 @@ export default function Resume({
 			/>
 
 			<div className={styles.sections}>
+				<div className={styles.intro}>
+					<IntroHeading className={styles.title}>
+						{introduction.title}
+					</IntroHeading>
+					{introduction.content}
+				</div>
+
 				{sections.map((section) => {
 					return (
 						<ResumeSection

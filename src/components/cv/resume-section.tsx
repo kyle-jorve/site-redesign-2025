@@ -15,14 +15,14 @@ export type ResumeSectionProps = Omit<ResumeSectionType, "name"> & {
 export default function ResumeSection({
 	title,
 	items,
-	heading = "h3",
+	heading = 3,
 	className = "",
 	...otherProps
 }: ResumeSectionProps) {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
 	const classes = outputClassNames(["resume-section", className], [styles]);
-	const Heading = heading as React.ElementType;
+	const Heading = `h${heading}` as React.ElementType;
 
 	return (
 		<div

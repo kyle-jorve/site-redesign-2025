@@ -20,15 +20,20 @@
 	}
 
 	.sections {
-		gap: 4rem;
+		gap: 2rem;
+		width: 100%;
+		max-width: calc(var(--width-narrow) + (var(--padding-body-edge) * 2));
+		padding: 0 var(--padding-body-edge);
+		margin: 0 auto;
 	}
 }
 
 .resume-section {
-	width: 100%;
-	max-width: var(--width-narrow);
-	padding: 0 var(--padding-body-edge);
-	margin: 0 auto;
+	margin-bottom: 2rem;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 
 	.items-list {
 		gap: 1rem;
@@ -87,9 +92,9 @@
 
 			flex-direction: row;
 		}
+	}
 
-		.sections {
-			gap: 5rem;
-		}
+	.resume-section {
+		margin-bottom: 3rem;
 	}
 }

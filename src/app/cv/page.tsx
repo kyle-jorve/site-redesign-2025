@@ -16,7 +16,7 @@ export default function CVPage() {
 				{...cvData.bio}
 				image={cvData.bioHeroImage}
 				placement="hero"
-				heading="h1"
+				heading={1}
 			/>
 			<Resume {...cvData.resume} />
 			<ProjectGridInterior

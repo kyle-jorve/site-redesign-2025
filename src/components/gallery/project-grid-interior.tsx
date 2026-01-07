@@ -21,7 +21,7 @@ export default function ProjectGridInterior({
 	title,
 	projects,
 	url = undefined,
-	heading = "h2",
+	heading = 2,
 	buttonText = "See All",
 	className = "",
 	...otherProps
@@ -32,6 +32,7 @@ export default function ProjectGridInterior({
 		["project-grid-interior", className],
 		[styles],
 	);
+	const tileHeading = (heading === 6 ? heading : heading + 1) as HeadingType;
 
 	return (
 		<section
@@ -63,7 +64,7 @@ export default function ProjectGridInterior({
 							featured={proj.featured}
 							image={proj.thumbImage}
 							variant="small"
-							heading="h3"
+							heading={tileHeading}
 						/>
 					);
 				})}

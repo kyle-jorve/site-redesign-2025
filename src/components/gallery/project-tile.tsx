@@ -24,7 +24,7 @@ export default function ProjectTile({
 	categories,
 	image,
 	featured = false,
-	heading = "h2",
+	heading = 2,
 	variant = "standard",
 	className = "",
 	...otherProps
@@ -33,7 +33,7 @@ export default function ProjectTile({
 		["project-tile", variant, className],
 		[styles],
 	);
-	const Heading = heading as React.ElementType;
+	const Heading = `h${heading}` as React.ElementType;
 	const url = `/projects/${name}/`;
 	const primaryCategory =
 		categories.find((cat) => cat.primary) || categories[0];

@@ -199,11 +199,13 @@ a,
 
 b,
 strong,
-i {
+i,
+em {
 	font-weight: var(--font-weight-extrabold);
 }
 
-i {
+i,
+em {
 	font-style: italic;
 }
 

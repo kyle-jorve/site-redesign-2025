@@ -26,7 +26,7 @@ export default function HeadingBar({
 	width = "wide",
 	url = undefined,
 	underlineTitle = true,
-	heading = "h2",
+	heading = 2,
 	buttonType = undefined,
 	buttonColor = undefined,
 	buttonText = "See More",
@@ -45,7 +45,7 @@ export default function HeadingBar({
 		["title", underlineTitle ? "underline underline-center" : ""],
 		[styles],
 	);
-	const Heading = heading as React.ElementType;
+	const Heading = `h${heading}` as React.ElementType;
 
 	return (
 		<header
