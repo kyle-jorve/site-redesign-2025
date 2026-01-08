@@ -624,6 +624,59 @@ export const theaterToolkitLoyaltyAppFlyer: ImageMetaType = {
 };
 
 //==================================//
+//=====----- VISIT AUSTIN -----=====//
+//==================================//
+
+//----- images -----//
+
+export const visitAustinHomeHero: ImageMetaType = {
+	name: "visit-austin-home-hero",
+	title: "Visit Austin Home Hero",
+	pathKey: "visit-austin-home-hero",
+	alt: `A screenshot of the hero section of the Visit Austin website's home page`,
+	verticalOrientation: "top",
+	horizontalOrientation: "left",
+};
+
+export const visitAustinFooter: ImageMetaType = {
+	name: "visit-austin-footer",
+	title: "Visit Austin Footer",
+	pathKey: "visit-austin-footer",
+	alt: `A screenshot of the footer section of the Visit Austin website`,
+};
+
+export const visitAustinCalloutTiles: ImageMetaType = {
+	name: "visit-austin-callout-tiles",
+	title: "Visit Austin Callout Tiles",
+	pathKey: "visit-austin-callout-tiles",
+	alt: `A screenshot of the Visit Austin website's custom callout tiles`,
+};
+
+export const visitAustinDaySlideshow: ImageMetaType = {
+	name: "visit-austin-day-slideshow",
+	title: "Visit Austin Day Slideshow",
+	pathKey: "visit-austin-day-slideshow",
+	alt: `A screenshot of the Visit Austin website's Day Slideshow`,
+	verticalOrientation: "top",
+};
+
+export const visitAustinNightSlideshow: ImageMetaType = {
+	name: "visit-austin-night-slideshow",
+	title: "Visit Austin Night Slideshow",
+	pathKey: "visit-austin-night-slideshow",
+	alt: `A screenshot of the Visit Austin website's Night Slideshow`,
+	verticalOrientation: "top",
+};
+
+//----- videos -----//
+
+export const visitAustinNavigationVideo = "/videos/visit-austin-navigation.mp4";
+export const visitAustinCalloutTilesVideo =
+	"/videos/visit-austin-callout-tiles.mp4";
+export const visitAustinDayNightSlideshowVideo =
+	"/videos/visit-austin-day-night-slideshow.mp4";
+
+//==================================//
 //=====----- VISIT IRVING -----=====//
 //==================================//
 

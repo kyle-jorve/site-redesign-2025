@@ -314,9 +314,134 @@ export const projects: ProjectType[] = [
 		],
 	},
 	{
+		name: "visit-austin",
+		title: "Visit Austin",
+		featured: true,
+		categories: [
+			{
+				...categories.development,
+				primary: true,
+			},
+			categories.clientWork,
+		],
+		thumbImage: mediaData.visitAustinHomeHero,
+		slideshow: [
+			mediaData.visitAustinHomeHero,
+			mediaData.visitAustinFooter,
+			mediaData.visitAustinCalloutTiles,
+			mediaData.visitAustinDaySlideshow,
+			mediaData.visitAustinNightSlideshow,
+		],
+		summary: `A website to market Texas's very musical capital city of Austin.`,
+		overviewText: `I helped build the Visit Austin website alongside by teammates at Simpleview. Following are some curated examples of the work I contributed.`,
+		link: {
+			url: "https://www.austintexas.org/",
+			text: "Visit Website",
+		},
+		features: [
+			{
+				name: "visit-austin-navigation",
+				supertitle: "Rhythm and Peruse",
+				title: "The Header Navigation",
+				description: (
+					<>
+						<p className="body-text large">
+							It was my responsibility to build Austin&apos;s
+							header, footer, and navigation.
+						</p>
+						<p>
+							This was no small task, as the design was
+							deceptively complex, and full of subtle
+							interactivity. I spent a good amount of time
+							fine-tuning the user experience until everything
+							sang.
+						</p>
+					</>
+				),
+				image: mediaData.visitAustinHomeHero,
+				videoSrc: mediaData.visitAustinNavigationVideo,
+			},
+			{
+				name: "visit-austin-callout-tiles",
+				supertitle: "A Call to Interaction",
+				title: "The Marquee Callout Tiles",
+				description: (
+					<>
+						<p className="body-text large">
+							Visit Austin&apos;s Marquee Callout Tiles were both
+							a challenge and a joy to build.
+						</p>
+						<p>
+							First, there&apos;s the infinitely scrolling marquee
+							at the top. Next, the subtle but beautiful hover
+							effects on the outer tiles. And finally, the hidden
+							animated GIF that only appears when hovering over
+							the center tile.
+						</p>
+						<p>
+							I love to delight the users of the websites I build.
+							I love even more to build these little moments that
+							bring a site to life.
+						</p>
+					</>
+				),
+				image: mediaData.visitAustinCalloutTiles,
+				videoSrc: mediaData.visitAustinCalloutTilesVideo,
+			},
+			{
+				name: "visit-austin-day-night-slideshow",
+				supertitle: "Preview Austin Day or Night",
+				title: "The Day-Night Preview Slideshow",
+				description: (
+					<>
+						<p className="body-text large">
+							I absolutely love Simpleview&apos;s designers
+							because they make my job so much fun.
+						</p>
+						<p>
+							The Day-Night Slideshow is the sort of
+							website-defining element that all web developers
+							dream of building. It&apos;s a subtle invitation to
+							the user to find something hidden and unexpected.
+							Which makes it perfect for a website whose purpose
+							is to entice tourists to visit Austin&apos;s hidden
+							delights.
+						</p>
+					</>
+				),
+				image: mediaData.visitAustinNightSlideshow,
+				videoSrc: mediaData.visitAustinDayNightSlideshowVideo,
+			},
+		],
+		descriptionTitle: "Music to My Eyes",
+		descriptionBody: (
+			<>
+				<p className="body-text large">
+					Getting the opportunity to build something that both
+					reflects Austin&apos;s culture and helps the destination to
+					thrive was a dream come true.
+				</p>
+				<p>
+					While I did not design the <strong>Visit Austin</strong>{" "}
+					website, I am proud of the work I contributed to building
+					it. Whether you are new to travel or a Texas veteran, it is
+					my wish that the Visit Austin website encourages both
+					newcomers and honorary Texans not to overlook this
+					one-of-a-kind destination.
+				</p>
+			</>
+		),
+		imageGrid: [
+			mediaData.visitAustinHomeHero,
+			mediaData.visitAustinFooter,
+			mediaData.visitAustinCalloutTiles,
+			mediaData.visitAustinDaySlideshow,
+			mediaData.visitAustinNightSlideshow,
+		],
+	},
+	{
 		name: "visit-irving",
 		title: "Visit Irving",
-		featured: true,
 		categories: [
 			{
 				...categories.development,

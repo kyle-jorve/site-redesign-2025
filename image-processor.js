@@ -6,6 +6,13 @@ import path from "path";
 const settings = {
 	skipExistingDirectories: true,
 	ignoreList: [".DS_Store"],
+	includeList: [
+		// "visit-austin-callout-tiles",
+		// "visit-austin-day-slideshow",
+		// "visit-austin-footer",
+		// "visit-austin-home-hero",
+		// "visit-austin-night-slideshow",
+	],
 };
 
 async function processImages(inputDir) {
@@ -13,7 +20,17 @@ async function processImages(inputDir) {
 	const formats = ["avif", "webp", "jpg"];
 
 	try {
-		const files = await fs.readdir(inputDir);
+		let files = await fs.readdir(inputDir);
+
+		if (settings.includeList?.length) {
+			files = files.filter((file) => {
+				const ext = path.extname(file);
+				const base = path.basename(file, ext);
+
+				if (settings.includeList.includes(base)) return true;
+				return false;
+			});
+		}
 
 		for (let file of files) {
 			const ext = path.extname(file);
