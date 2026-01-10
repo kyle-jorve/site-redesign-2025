@@ -1,5 +1,5 @@
 import { outputClassNames } from "@/utils";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/featured-flag.module.css";
 
 export type FeaturedFlagProps = {
 	size?: "standard" | "small";

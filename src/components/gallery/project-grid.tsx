@@ -16,9 +16,10 @@ import {
 } from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
 import ProjectsContext from "@/context/projects-context";
+import SiteContext from "@/context/site-context";
 import Filters from "@/components/gallery/filters";
 import ProjectTile from "@/components/gallery/project-tile";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-grid.module.css";
 
 export type ProjectGridProps = {
 	projectFilters: CategoriesType;
@@ -36,6 +37,7 @@ export default function ProjectGrid({
 	const sectionRef = useRef<HTMLElement>(null);
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const initialFilters = Object.values(projectFilters).map((filter) => ({
 		...filter,
 		active: false,
@@ -125,7 +127,7 @@ export default function ProjectGrid({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			<Suspense fallback={null}>

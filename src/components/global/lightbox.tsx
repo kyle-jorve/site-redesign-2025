@@ -69,7 +69,6 @@ export default function Lightbox({
 
 			{!!lightboxImages.length && (
 				<Slideshow
-					className={styles.slideshow}
 					slides={slideshowSlides}
 					initialActiveSlideIndex={lightboxActiveIndex}
 					useDots={false}

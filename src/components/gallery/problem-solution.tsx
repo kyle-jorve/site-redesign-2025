@@ -1,7 +1,8 @@
 import { ProjectType } from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import styles from "@/styles/components/gallery/problem-solution.module.css";
+import projectDetailStyles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProblemSolutionProps = {
 	problemText: ProjectType["problemText"];
@@ -42,13 +43,13 @@ export default function ProblemSolution({
 						key={item.name}
 						size="small"
 					>
-						<h2 className={`heading-5 ${styles.title}`}>
+						<h2
+							className={`heading-5 ${projectDetailStyles.title}`}
+						>
 							{item.title}
 						</h2>
 
-						<p className={`body-text small ${styles.desc}`}>
-							{item.desc}
-						</p>
+						<p className="body-text small">{item.desc}</p>
 					</ContentBox>
 				);
 			})}

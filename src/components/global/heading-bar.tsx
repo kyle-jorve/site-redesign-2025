@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { outputClassNames } from "@/utils";
 import { HeadingType } from "@/types/global-types";
 import { ButtonLinkRowProps } from "@/components/global/button-link-row";
+import SiteContext from "@/context/site-context";
 import ButtonLinkRow from "@/components/global/button-link-row";
 import styles from "@/styles/components/global/heading-bar.module.css";
 
@@ -37,6 +38,7 @@ export default function HeadingBar({
 }: HeadingBarProps) {
 	const headerRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(headerRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const classes = outputClassNames(
 		["heading-bar", width, "underline underline-center", className],
 		[styles],
@@ -55,7 +57,7 @@ export default function HeadingBar({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			<Heading className={titleClasses}>{title}</Heading>

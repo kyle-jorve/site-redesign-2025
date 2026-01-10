@@ -1,15 +1,17 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { outputClassNames } from "@/utils";
 import { ImageDataType, ImageMetaType } from "@/types/global-types";
 import { ProjectType } from "@/types/gallery-types";
+import SiteContext from "@/context/site-context";
 import ContentBox from "@/components/global/content-box";
 import ButtonLink from "@/components/global/button-link";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import styles from "@/styles/components/gallery/project-description-grid.module.css";
+import projectDetailStyles from "@/styles/components/gallery/project-detail.module.css";
 
 export type ProjectDescriptionGridProps = {
 	title: ProjectType["descriptionTitle"];
@@ -32,6 +34,7 @@ export default function ProjectDescriptionGrid({
 }: ProjectDescriptionGridProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const classes = outputClassNames(["description-grid", className], [styles]);
 	const imageConfigs: ImageDataType[] = images.map((image) => ({
 		...image,
@@ -66,7 +69,7 @@ export default function ProjectDescriptionGrid({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			<ContentBox className={styles["desc-box"]}>
@@ -74,9 +77,11 @@ export default function ProjectDescriptionGrid({
 					<span className="superheading">{supertitle}</span>
 				)}
 
-				<h2 className={`underline ${styles.title}`}>{title}</h2>
+				<h2 className={`underline ${projectDetailStyles.title}`}>
+					{title}
+				</h2>
 
-				<div className={styles.desc}>{bodyText}</div>
+				<div>{bodyText}</div>
 
 				{url !== undefined && (
 					<div className="button-row">

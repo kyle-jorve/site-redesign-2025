@@ -6,15 +6,21 @@ import styles from "@/styles/components/layout/navigation.module.css";
 
 export type NavigationProps = {
 	isMobileNav?: boolean;
+	hidden?: boolean;
 } & React.HTMLAttributes<HTMLElement>;
 
 export default function Navigation({
 	isMobileNav = false,
+	hidden = false,
 	className = "",
 	...otherProps
 }: NavigationProps) {
 	const classes = outputClassNames(
-		[isMobileNav ? "mobile-navigation" : "navigation", className],
+		[
+			isMobileNav ? "mobile-navigation" : "navigation",
+			hidden ? "hidden" : "",
+			className,
+		],
 		[styles],
 	);
 

@@ -1,0 +1,25 @@
+.slideshow-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: 0 var(--padding-body-edge);
+	margin-top: var(--dots-margin);
+}
+
+.slideshow-dot {
+	display: block;
+	width: var(--dot-width);
+	aspect-ratio: 1;
+	padding: 0;
+	margin: 0;
+	background-color: var(--dot-background);
+	border: var(--dot-border);
+	border-radius: 50%;
+	transition: scale var(--transition), background-color var(--transition);
+
+	&.active {
+		scale: 1.75;
+		background-color: transparent;
+	}
+}

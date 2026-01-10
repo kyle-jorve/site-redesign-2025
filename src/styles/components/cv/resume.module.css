@@ -1,80 +1,27 @@
-.resume .sections,
-.resume-section .items-list {
+.resume {
+	margin-bottom: var(--section-margin);
+	scroll-margin-top: calc(10px + 4.75rem);
+}
+
+.header {
+	--heading-bar-title-color-override: var(--red);
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	width: 100%;
+}
+
+.sections {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
 	align-items: start;
 	align-content: start;
-}
-
-.resume {
-	margin-bottom: var(--section-margin);
-	scroll-margin-top: calc(10px + 4.75rem);
-
-	.header {
-		--heading-bar-title-color-override: var(--red);
-
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		width: 100%;
-	}
-
-	.sections {
-		gap: 2rem;
-		width: 100%;
-		max-width: calc(var(--width-narrow) + (var(--padding-body-edge) * 2));
-		padding: 0 var(--padding-body-edge);
-		margin: 0 auto;
-	}
-}
-
-.resume-section {
-	margin-bottom: 2rem;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	.items-list {
-		gap: 1rem;
-		padding: 0;
-		margin: 0;
-		list-style: none;
-	}
-}
-
-.resume-item {
-	.year,
-	.company {
-		display: block;
-		margin: 0;
-	}
-
-	.item-header {
-		display: flex;
-		flex-direction: column;
-		align-items: start;
-		gap: 1rem;
-		margin-bottom: 1.25rem;
-	}
-
-	.item-title {
-		margin: 0 0 0 -0.5rem;
-		letter-spacing: var(--tracking-medium);
-		line-height: var(--leading-small);
-		color: var(--cream);
-	}
-
-	.item-title-text {
-		padding: 0.25rem 0.625rem;
-		background: var(--red);
-		border-radius: var(--border-radius-small);
-		box-decoration-break: clone;
-	}
-
-	.desc > *:last-child {
-		margin: 0;
-	}
+	gap: 2rem;
+	width: 100%;
+	max-width: calc(var(--width-narrow) + (var(--padding-body-edge) * 2));
+	padding: 0 var(--padding-body-edge);
+	margin: 0 auto;
 }
 
 @media (min-width: 40em) {
@@ -86,15 +33,11 @@
 @media (min-width: 64em) {
 	.resume {
 		scroll-margin-top: calc(10px + 8.125rem);
-
-		.header {
-			--underlines-override-color: var(--blue-light);
-
-			flex-direction: row;
-		}
 	}
 
-	.resume-section {
-		margin-bottom: 3rem;
+	.header {
+		--underlines-override-color: var(--blue-light);
+
+		flex-direction: row;
 	}
 }

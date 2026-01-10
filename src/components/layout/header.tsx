@@ -7,7 +7,6 @@ import { outputClassNames } from "@/utils";
 import Logo from "@/components/layout/logo";
 import Navigation from "@/components/layout/navigation";
 import styles from "@/styles/components/layout/header.module.css";
-import navStyles from "@/styles/components/layout/navigation.module.css";
 
 export type HeaderProps = React.HTMLAttributes<HTMLElement>;
 
@@ -58,7 +57,7 @@ export default function Header({ className = "", ...otherProps }: HeaderProps) {
 
 			<Navigation
 				isMobileNav={true}
-				className={mobileNavHidden ? navStyles.hidden : ""}
+				hidden={mobileNavHidden}
 			/>
 		</>
 	);

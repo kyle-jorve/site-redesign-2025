@@ -1,0 +1,9 @@
+.slideshow {
+	margin-bottom: 5rem;
+}
+
+@media (min-width: 64em) {
+	.slideshow {
+		margin-bottom: 4rem;
+	}
+}

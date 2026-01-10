@@ -1,5 +1,5 @@
 import { outputClassNames } from "@/utils";
-import styles from "@/styles/components/global/slideshow.module.css";
+import styles from "@/styles/components/global/slideshow-dots.module.css";
 
 export type SlideshowDotsProps = {
 	slideIDs: string[];
@@ -14,7 +14,7 @@ export default function SlideshowDots({
 	className = "",
 	...otherProps
 }: SlideshowDotsProps) {
-	const classes = outputClassNames(["dots", className], [styles]);
+	const classes = outputClassNames(["slideshow-dots", className], [styles]);
 
 	return (
 		<div
@@ -23,7 +23,10 @@ export default function SlideshowDots({
 		>
 			{slideIDs.map((id, index) => {
 				const dotClasses = outputClassNames(
-					["dot", activeSlideIndex === index ? "active" : ""],
+					[
+						"slideshow-dot",
+						activeSlideIndex === index ? "active" : "",
+					],
 					[styles],
 				);
 

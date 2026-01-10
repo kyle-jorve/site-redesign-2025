@@ -1,7 +1,7 @@
 import { CategoryType } from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
 import CustomLink from "@/components/global/custom-link";
-import styles from "@/styles/components/global/category-chips.module.css";
+import styles from "@/styles/components/global/category-chip.module.css";
 
 export type CategoryChipProps = {
 	category: CategoryType;

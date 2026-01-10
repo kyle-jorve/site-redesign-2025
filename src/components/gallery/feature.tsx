@@ -1,17 +1,18 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { getThumbnailUrl } from "@/utils";
 import { useIntersectionObserver } from "@/hooks";
 import { ImageDataType } from "@/types/global-types";
 import { FeatureType } from "@/types/gallery-types";
 import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import CategoryChip from "@/components/global/category-chip";
 import ButtonLink from "@/components/global/button-link";
 import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
-import styles from "@/styles/components/gallery/feature-grid.module.css";
+import styles from "@/styles/components/gallery/feature.module.css";
 
 export type FeatureProps = Omit<FeatureType, "name"> & {
 	useLightbox?: boolean;
@@ -35,6 +36,7 @@ export default function Feature({
 }: FeatureProps) {
 	const articleRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(articleRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const [activeImage, setActiveImage] = useState<number>(0);
 	const imagesData = Array.isArray(image) ? image : [image];
 	const classes = outputClassNames(
@@ -146,7 +148,7 @@ export default function Feature({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			<div className={styles["content-col"]}>

@@ -1,6 +1,14 @@
-import { useState, useRef, createRef, useEffect, useCallback } from "react";
+import {
+	useState,
+	useRef,
+	createRef,
+	useEffect,
+	useCallback,
+	useContext,
+} from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import CircleButton from "@/components/global/circle-button";
 import SlideshowSlide from "@/components/global/slideshow-slide";
 import SlideshowDots from "@/components/global/slideshow-dots";
@@ -64,6 +72,7 @@ export default function Slideshow({
 		initialActiveSlideIndex,
 	);
 	const intersected = useIntersectionObserver(sectionRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const useDotsActual = insideLightbox ? false : useDots;
 	const useFadeInActual = insideLightbox ? false : useFadeIn;
 	const useLightModeActual = insideLightbox ? true : useLightMode;
@@ -87,7 +96,7 @@ export default function Slideshow({
 		return {
 			...otherProps.style,
 			opacity: intersected ? 1 : 0,
-			transition: "opacity 1s ease",
+			transition: intersectionTransition,
 		};
 	})();
 	const getSlideOffset = useCallback(
@@ -265,6 +274,7 @@ export default function Slideshow({
 
 			{!notASlideshow && useDotsActual && (
 				<SlideshowDots
+					className={styles.dots}
 					slideIDs={slides.map((slide) => slide.id)}
 					activeSlideIndex={activeSlide}
 					dotClickHandler={handleDotClick}

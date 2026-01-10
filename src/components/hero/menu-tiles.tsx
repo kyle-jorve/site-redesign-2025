@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { MenuTileType } from "@/types/hero-types";
 import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import MenuTile from "@/components/hero/menu-tile";
 import styles from "@/styles/components/hero/menu-tiles.module.css";
 
@@ -18,6 +19,7 @@ export default function MenuTiles({
 }: MenuTilesProps) {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(containerRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const classes = outputClassNames(["menu-tiles", className], [styles]);
 
 	return (
@@ -28,7 +30,7 @@ export default function MenuTiles({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			{tiles.map((tile) => {

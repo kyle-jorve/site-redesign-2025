@@ -1,7 +1,7 @@
 import { ImageMetaType, ImageDataType } from "@/types/global-types";
 import { outputClassNames } from "@/utils";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/global/lightbox.module.css";
+import styles from "@/styles/components/global/lightbox-image.module.css";
 
 export type LightboxImageProps = {
 	image: ImageMetaType;
@@ -12,7 +12,7 @@ export default function LightboxImage({
 	className = "",
 	...otherProps
 }: LightboxImageProps) {
-	const classes = outputClassNames(["image", className], [styles]);
+	const classes = outputClassNames(["lightbox-image", className], [styles]);
 	const imageConfig: ImageDataType = {
 		...image,
 		sources: [

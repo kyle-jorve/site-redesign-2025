@@ -1,12 +1,14 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { outputClassNames } from "@/utils";
 import { ProjectType } from "@/types/gallery-types";
+import SiteContext from "@/context/site-context";
 import ProblemSolution from "@/components/gallery/problem-solution";
 import ButtonLinkRow from "@/components/global/button-link-row";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import styles from "@/styles/components/gallery/design-summary-section.module.css";
+import projectDetailStyles from "@/styles/components/gallery/project-detail.module.css";
 
 export type DesignSummerySectionProps = {
 	problemText?: ProjectType["problemText"];
@@ -27,6 +29,7 @@ export default function DesignSummarySection({
 }: DesignSummerySectionProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const classes = outputClassNames(["design-summary", className], [styles]);
 
 	if (!problemText && !solutionText && !overviewText && !url) return null;
@@ -39,7 +42,7 @@ export default function DesignSummarySection({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			{problemText !== undefined && solutionText !== undefined && (
@@ -53,10 +56,10 @@ export default function DesignSummarySection({
 				<div
 					className={`content-box small ${styles["design-overview"]}`}
 				>
-					<h2 className={`heading-5 ${styles.title}`}>Overview</h2>
-					<p className={`body-text small ${styles.desc}`}>
-						{overviewText}
-					</p>
+					<h2 className={`heading-5 ${projectDetailStyles.title}`}>
+						Overview
+					</h2>
+					<p className="body-text small">{overviewText}</p>
 				</div>
 			)}
 

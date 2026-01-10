@@ -1,0 +1,12 @@
+.problem-solution-row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-content: start;
+	gap: 1rem;
+}
+
+@media (min-width: 40em) {
+	.problem-solution-row {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}

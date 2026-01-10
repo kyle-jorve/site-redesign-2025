@@ -5,6 +5,11 @@ export type BioType = {
 	buttonText?: React.ReactElement | string;
 };
 
+export type ResumeIntroType = {
+	title: string;
+	content: React.ReactElement | string;
+};
+
 export type ResumeItemType = {
 	name: string;
 	title: string;
@@ -21,10 +26,7 @@ export type ResumeSectionType = {
 
 export type ResumeType = {
 	title: string | React.ReactElement;
-	introduction: {
-		title: string;
-		content: string | React.ReactElement;
-	};
+	introduction: ResumeIntroType;
 	sections: ResumeSectionType[];
 	url: string;
 	buttonText?: string;

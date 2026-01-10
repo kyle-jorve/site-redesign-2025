@@ -1,8 +1,7 @@
 import { HeadingType } from "@/types/global-types";
 import { ResumeItemType } from "@/types/cv-types";
-import { outputClassNames } from "@/utils";
 import ContentBox from "@/components/global/content-box";
-import styles from "@/styles/components/cv/resume.module.css";
+import styles from "@/styles/components/cv/resume-item.module.css";
 
 export type ResumeItemProps = Omit<ResumeItemType, "name"> & {
 	heading?: HeadingType;
@@ -14,24 +13,18 @@ export default function ResumeItem({
 	heading = 4,
 	company = undefined,
 	year = undefined,
-	className = "",
 	...otherProps
 }: ResumeItemProps) {
-	const classes = outputClassNames(["resume-item", className], [styles]);
 	const Heading = `h${heading}` as React.ElementType;
 
 	return (
-		<li
-			className={classes}
-			{...otherProps}
-		>
-			<ContentBox
-				size="small"
-				className={styles.content}
-			>
+		<li {...otherProps}>
+			<ContentBox size="small">
 				<header className={styles["item-header"]}>
 					{year !== undefined && (
-						<span className={`heading-5 ${styles.year}`}>
+						<span
+							className={`heading-5 ${styles["minor-heading"]}`}
+						>
 							{year}
 						</span>
 					)}
@@ -43,7 +36,9 @@ export default function ResumeItem({
 					</Heading>
 
 					{company !== undefined && (
-						<span className={`heading-5 ${styles.company}`}>
+						<span
+							className={`heading-5 ${styles["minor-heading"]}`}
+						>
 							{company}
 						</span>
 					)}

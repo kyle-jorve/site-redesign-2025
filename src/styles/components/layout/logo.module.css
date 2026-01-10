@@ -1,0 +1,8 @@
+.logo {
+	display: block;
+	text-decoration: none;
+
+	&:focus-visible {
+		outline-color: var(--gold);
+	}
+}

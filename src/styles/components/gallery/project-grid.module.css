@@ -1,0 +1,30 @@
+.project-grid,
+.projects {
+	display: grid;
+	align-items: start;
+	align-content: start;
+}
+
+.projects {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: var(--grid-gap);
+	transition: opacity var(--transition), visibility var(--transition);
+
+	&.hide {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.project-grid {
+	grid-template-columns: minmax(0, 1fr);
+	gap: 2rem;
+	width: 100%;
+	max-width: var(--width-widest);
+	padding: 0 var(--padding-body-edge);
+	margin: 0 auto var(--section-margin);
+}
+
+.no-results-message {
+	text-align: center;
+}

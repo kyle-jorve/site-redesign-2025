@@ -2,6 +2,7 @@ import { HeadingType } from "@/types/global-types";
 import { ResumeType } from "@/types/cv-types";
 import { outputClassNames } from "@/utils";
 import HeadingBar from "@/components/global/heading-bar";
+import ResumeIntro from "@/components/cv/resume-intro";
 import ResumeSection from "@/components/cv/resume-section";
 import styles from "@/styles/components/cv/resume.module.css";
 
@@ -23,7 +24,6 @@ export default function Resume({
 	const introHeadingLevel = (
 		heading == 6 ? heading : heading + 1
 	) as HeadingType;
-	const IntroHeading = `h${introHeadingLevel}` as React.ElementType;
 
 	return (
 		<section
@@ -44,12 +44,11 @@ export default function Resume({
 			/>
 
 			<div className={styles.sections}>
-				<div className={styles.intro}>
-					<IntroHeading className={styles.title}>
-						{introduction.title}
-					</IntroHeading>
-					{introduction.content}
-				</div>
+				<ResumeIntro
+					heading={introHeadingLevel}
+					title={introduction.title}
+					content={introduction.content}
+				/>
 
 				{sections.map((section) => {
 					return (

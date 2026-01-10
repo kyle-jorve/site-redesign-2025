@@ -5,7 +5,7 @@ import { outputClassNames } from "@/utils";
 import Slideshow, { SlideType } from "@/components/global/slideshow";
 import LightboxImageTrigger from "@/components/global/lightbox-image-trigger";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/gallery/project-detail.module.css";
+import styles from "@/styles/components/gallery/project-slideshow.module.css";
 import slideshowStyles from "@/styles/components/global/slideshow.module.css";
 
 export type ProjectSlideshowProps = {

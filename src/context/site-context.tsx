@@ -4,6 +4,7 @@ import { useState, createContext } from "react";
 
 export type SiteContextType = {
 	hideShell: boolean;
+	intersectionTransition: string;
 	loadStatus: "idle" | "page-out" | "page-in";
 	mainTransitionDuration: number;
 	visited: boolean;
@@ -17,6 +18,7 @@ export type SiteContextType = {
 
 const defaults: SiteContextType = {
 	hideShell: false,
+	intersectionTransition: "opacity 1s ease",
 	loadStatus: "idle",
 	mainTransitionDuration: 300, // milliseconds
 	visited: false,
@@ -45,6 +47,7 @@ export function SiteContextProvider({ children }: React.PropsWithChildren) {
 		<SiteContext.Provider
 			value={{
 				hideShell,
+				intersectionTransition: defaults.intersectionTransition,
 				loadStatus,
 				mainTransitionDuration: defaults.mainTransitionDuration,
 				visited,

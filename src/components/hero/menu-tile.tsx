@@ -3,7 +3,7 @@ import { MenuTileType } from "@/types/hero-types";
 import { outputClassNames } from "@/utils";
 import ButtonLink from "@/components/global/button-link";
 import ResponsiveImage from "@/components/global/responsive-image";
-import styles from "@/styles/components/hero/menu-tiles.module.css";
+import styles from "@/styles/components/hero/menu-tile.module.css";
 
 export type MenuTileProps = MenuTileType & React.HTMLAttributes<HTMLElement>;
 

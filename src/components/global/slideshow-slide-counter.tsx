@@ -1,5 +1,5 @@
 import { outputClassNames } from "@/utils";
-import styles from "@/styles/components/global/slideshow.module.css";
+import styles from "@/styles/components/global/slideshow-slide-counter.module.css";
 
 export type SlideshowSlideCounterProps = {
 	slidesLength: number;

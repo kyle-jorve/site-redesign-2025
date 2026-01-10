@@ -1,0 +1,22 @@
+.design-summary {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-content: start;
+	gap: 2.5rem;
+	width: 100%;
+	max-width: var(--width-medium);
+	padding: 0 var(--padding-body-edge);
+	margin: 0 auto 7.5rem;
+}
+
+.design-overview {
+	width: 100%;
+	max-width: var(--width-content);
+	margin: 0 auto;
+}
+
+@media (min-width: 64em) {
+	.design-summary {
+		margin-bottom: 4.5rem;
+	}
+}

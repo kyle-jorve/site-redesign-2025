@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import {
 	HeadingType,
@@ -9,6 +9,7 @@ import {
 } from "@/types/global-types";
 import { BioType } from "@/types/cv-types";
 import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import ResponsiveImage from "@/components/global/responsive-image";
 import SocialIcons from "@/components/global/social-icons";
 import ButtonLink from "@/components/global/button-link";
@@ -35,6 +36,7 @@ export default function Bio({
 }: BioProps) {
 	const sectionRef = useRef<HTMLElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
+	const { intersectionTransition } = useContext(SiteContext);
 	const classes = outputClassNames(["bio", placement, className], [styles]);
 	const isHero = placement === "hero";
 	const Heading = `h${heading}` as React.ElementType;
@@ -66,7 +68,7 @@ export default function Bio({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
 			<article className={styles.inner}>

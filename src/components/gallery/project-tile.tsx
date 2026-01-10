@@ -10,7 +10,7 @@ import CustomLink from "@/components/global/custom-link";
 import ResponsiveImage from "@/components/global/responsive-image";
 import FavButton from "@/components/gallery/fav-button";
 import FeaturedFlag from "@/components/gallery/featured-flag";
-import styles from "@/styles/components/gallery/projects.module.css";
+import styles from "@/styles/components/gallery/project-tile.module.css";
 
 export type ProjectTileProps = Omit<ProjectTileType, "thumbImage"> & {
 	image: ImageMetaType;
@@ -126,9 +126,12 @@ export default function ProjectTile({
 			</div>
 
 			<div className={styles["image-wrapper"]}>
-				{featured && <FeaturedFlag />}
+				{featured && (
+					<FeaturedFlag className={styles["featured-flag"]} />
+				)}
 
 				<FavButton
+					className={styles["fav-button"]}
 					projectID={name}
 					projectTitle={title}
 				/>

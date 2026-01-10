@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import { useIntersectionObserver } from "@/hooks";
 import { HeadingType } from "@/types/global-types";
 import { ResumeSectionType } from "@/types/cv-types";
 import { outputClassNames } from "@/utils";
+import SiteContext from "@/context/site-context";
 import ResumeItem from "@/components/cv/resume-item";
-import styles from "@/styles/components/cv/resume.module.css";
+import styles from "@/styles/components/cv/resume-section.module.css";
 
 export type ResumeSectionProps = Omit<ResumeSectionType, "name"> & {
 	heading?: HeadingType;
@@ -21,7 +22,8 @@ export default function ResumeSection({
 }: ResumeSectionProps) {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const intersected = useIntersectionObserver(sectionRef);
-	const classes = outputClassNames(["resume-section", className], [styles]);
+	const { intersectionTransition } = useContext(SiteContext);
+	const classes = outputClassNames(["section", className], [styles]);
 	const Heading = `h${heading}` as React.ElementType;
 
 	return (
@@ -32,10 +34,10 @@ export default function ResumeSection({
 			style={{
 				...otherProps.style,
 				opacity: intersected ? 1 : 0,
-				transition: "opacity 1s ease",
+				transition: intersectionTransition,
 			}}
 		>
-			<Heading className={styles.title}>{title}</Heading>
+			<Heading>{title}</Heading>
 
 			<ul className={styles["items-list"]}>
 				{items.map((item) => {
