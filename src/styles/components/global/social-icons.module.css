@@ -3,123 +3,126 @@
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 1rem 1.5rem;
+}
+
+.social-icon {
+	--text-color: var(--cream);
+	--background-color: var(--red);
+	--box-shadow: var(--hard-shadow-gold);
+
+	--text-color-hover: var(--cream);
+	--background-color-hover: var(--red-light);
+	--box-shadow-hover: var(--hard-shadow-gold-long);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	aspect-ratio: 1;
+	flex-shrink: 0;
+	font-size: var(--font-size-2x-large);
+	line-height: var(--leading-none);
+	text-align: center;
+	text-decoration: none;
+	color: var(--text-color);
+	background-color: var(--background-color);
+	box-shadow: var(--box-shadow);
+	border-radius: 50%;
+	transition: color var(--transition), background-color var(--transition),
+		box-shadow var(--transition);
+
+	&::before {
+		transition: translate var(--transition);
+	}
+
+	&.dark {
+		--text-color: var(--gold-light);
+		--backgorund-color: var(--blue);
+		--box-shadow: none;
+
+		--text-color-hover: var(--blue);
+		--background-color-hover: var(--gold-light);
+	}
+
+	&.commerce {
+		--text-color: var(--red);
+		--background-color: var(--cream);
+		--box-shadow: var(--hard-shadow-red);
+
+		--text-color-hover: var(--red);
+		--background-color-hover: var(--egg);
+		--box-shadow-hover: var(--hard-shadow-red-long);
+	}
+
+	&.instagram::before,
+	&.bluesky::before,
+	&.linkedin::before,
+	&.github::before,
+	&.youtube::before {
+		font: var(--fa-font-brands);
+	}
+
+	&.email::before,
+	&.gumroad::before {
+		font: var(--fa-font-solid);
+	}
+
+	&.instagram::before {
+		content: "\f16d";
+	}
+
+	&.bluesky::before {
+		content: "\e671";
+	}
+
+	&.linkedin::before {
+		content: "\f0e1";
+	}
+
+	&.github::before {
+		content: "\f09b";
+	}
+
+	&.youtube::before {
+		content: "\f167";
+	}
+
+	&.email::before {
+		content: "\40";
+	}
+
+	&.gumroad::before {
+		font-size: var(--font-size-x-large);
+		content: "\f07a";
+	}
+}
+
+.social.bio-icons {
+	margin: 2rem 0 1rem;
 
 	.social-icon {
+		--box-shadow: var(--hard-shadow-blue);
+
+		--box-shadow-hover: var(--hard-shadow-blue-long);
+	}
+
+	.social-icon.commerce {
 		--text-color: var(--cream);
-		--background-color: var(--red);
-		--box-shadow: var(--hard-shadow-gold);
+		--background-color: var(--blue-light);
+		--box-shadow: var(--hard-shadow-red);
 
 		--text-color-hover: var(--cream);
-		--background-color-hover: var(--red-light);
-		--box-shadow-hover: var(--hard-shadow-gold-long);
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.75rem;
-		aspect-ratio: 1;
-		flex-shrink: 0;
-		font-size: var(--font-size-2x-large);
-		line-height: var(--leading-none);
-		text-align: center;
-		text-decoration: none;
-		color: var(--text-color);
-		background-color: var(--background-color);
-		box-shadow: var(--box-shadow);
-		border-radius: 50%;
-		transition: color var(--transition), background-color var(--transition),
-			box-shadow var(--transition);
-
-		&::before {
-			transition: translate var(--transition);
-		}
-
-		&.dark {
-			--text-color: var(--gold-light);
-			--backgorund-color: var(--blue);
-			--box-shadow: none;
-
-			--text-color-hover: var(--blue);
-			--background-color-hover: var(--gold-light);
-		}
-
-		&.commerce {
-			--text-color: var(--red);
-			--background-color: var(--cream);
-			--box-shadow: var(--hard-shadow-red);
-
-			--text-color-hover: var(--red);
-			--background-color-hover: var(--egg);
-			--box-shadow-hover: var(--hard-shadow-red-long);
-		}
-
-		&.instagram::before,
-		&.bluesky::before,
-		&.linkedin::before,
-		&.github::before,
-		&.youtube::before {
-			font: var(--fa-font-brands);
-		}
-
-		&.email::before,
-		&.gumroad::before {
-			font: var(--fa-font-solid);
-		}
-
-		&.instagram::before {
-			content: "\f16d";
-		}
-
-		&.bluesky::before {
-			content: "\e671";
-		}
-
-		&.linkedin::before {
-			content: "\f0e1";
-		}
-
-		&.github::before {
-			content: "\f09b";
-		}
-
-		&.youtube::before {
-			content: "\f167";
-		}
-
-		&.email::before {
-			content: "\40";
-		}
-
-		&.gumroad::before {
-			font-size: var(--font-size-x-large);
-			content: "\f07a";
-		}
+		--background-color-hover: var(--blue);
+		--box-shadow-hover: var(--hard-shadow-red-long);
 	}
+}
 
-	&.bio-icons {
-		margin: 2rem 0 1rem;
+@media (hover: hover) {
+	.social-icon:hover {
+		color: var(--text-color-hover, var(--text-color));
+		background-color: var(--background-color-hover);
 
-		.social-icon {
-			--box-shadow: var(--hard-shadow-blue);
-
-			--box-shadow-hover: var(--hard-shadow-blue-long);
-		}
-
-		.social-icon.commerce {
-			--text-color: var(--cream);
-			--background-color: var(--blue-light);
-			--box-shadow: var(--hard-shadow-red);
-
-			--text-color-hover: var(--cream);
-			--background-color-hover: var(--blue);
-			--box-shadow-hover: var(--hard-shadow-red-long);
-		}
-	}
-
-	@media (hover: hover) {
-		.social-icon:hover {
-			color: var(--text-color-hover, var(--text-color));
-			background-color: var(--background-color-hover);
+		@media (prefers-reduced-motion: no-preference) {
 			box-shadow: var(--box-shadow-hover, var(--box-shadow));
 
 			&::before {

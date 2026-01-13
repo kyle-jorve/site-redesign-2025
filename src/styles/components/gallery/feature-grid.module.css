@@ -20,12 +20,6 @@
 	margin: 0 auto;
 }
 
-@media (hover: hover) {
-	.feature .category:hover {
-		box-shadow: var(--hard-shadow-long);
-	}
-}
-
 @media (min-width: 64em) {
 	.feature-grid {
 		display: block;

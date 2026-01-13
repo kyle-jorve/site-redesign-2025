@@ -90,7 +90,7 @@
 	}
 }
 
-@media (hover: hover) {
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
 	.menu-tile:has(a:hover) {
 		box-shadow: var(--hard-shadow-long);
 

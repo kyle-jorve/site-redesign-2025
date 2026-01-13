@@ -87,13 +87,8 @@ svg {
 	background-color: var(--cream);
 
 	&:not(.loaded) {
-		--gradient-color: var(--blue);
-
-		background: linear-gradient(to right, var(--gradient-color));
-		background-repeat: no-repeat;
-		background-size: 75% 100%;
-		background-position: -300% 0;
-		animation: gradient-wipe 5s ease infinite;
+		background-color: var(--blue);
+		animation: background-color-fade 5s ease infinite;
 	}
 }
 

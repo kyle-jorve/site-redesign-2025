@@ -144,6 +144,12 @@
 	border-radius: var(--border-radius);
 }
 
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+	.feature .category:hover {
+		box-shadow: var(--hard-shadow-long);
+	}
+}
+
 @media (min-width: 64em) {
 	.feature {
 		display: grid;
@@ -208,7 +214,7 @@
 		order: unset;
 	}
 
-	@media (hover: hover) {
+	@media (prefers-reduced-motion: no-preference) and (hover: hover) {
 		.feature:hover .image-col {
 			box-shadow: var(--hard-shadow-gold-longer);
 

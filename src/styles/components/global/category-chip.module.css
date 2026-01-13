@@ -39,7 +39,10 @@
 	@media (hover: hover) {
 		a&:hover {
 			color: var(--text-color);
-			box-shadow: var(--hard-shadow);
+
+			@media (prefers-reduced-motion: no-preference) {
+				box-shadow: var(--hard-shadow);
+			}
 		}
 	}
 

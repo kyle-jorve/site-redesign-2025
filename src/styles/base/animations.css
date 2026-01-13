@@ -74,3 +74,27 @@
 		background-position: -300% center;
 	}
 }
+
+@keyframes background-color-fade {
+	0% {
+		background-color: var(--blue);
+	}
+	16.67% {
+		background-color: var(--blue-light);
+	}
+	33.33% {
+		background-color: var(--gold);
+	}
+	50% {
+		background-color: var(--red);
+	}
+	66.67% {
+		background-color: var(--sunset);
+	}
+	83.33% {
+		background-color: var(--violet);
+	}
+	100% {
+		background-color: var(--blue);
+	}
+}

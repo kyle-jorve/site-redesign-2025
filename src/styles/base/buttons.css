@@ -368,23 +368,28 @@
 		color: var(--text-color-hover);
 		background-color: var(--background-color-hover);
 		border-color: var(--border-color-hover);
-		box-shadow: var(--box-shadow-hover, var(--box-shadow));
+
+		@media (prefers-reduced-motion: no-preference) {
+			box-shadow: var(--box-shadow-hover, var(--box-shadow));
+		}
 	}
 
 	/*----- standard buttons -----*/
 
-	.button:hover {
-		&::after,
-		.button-text {
-			translate: 0.25rem -0.25rem;
-		}
+	@media (prefers-reduced-motion: no-preference) {
+		.button:hover {
+			&::after,
+			.button-text {
+				translate: 0.25rem -0.25rem;
+			}
 
-		&::after {
-			box-shadow: var(--hard-shadow);
-		}
+			&::after {
+				box-shadow: var(--hard-shadow);
+			}
 
-		.button-text {
-			text-shadow: var(--hard-shadow);
+			.button-text {
+				text-shadow: var(--hard-shadow);
+			}
 		}
 	}
 
@@ -398,13 +403,15 @@
 
 	/*----- circle buttons -----*/
 
-	.circle-button:hover {
-		&::before {
-			translate: 0.25rem -0.25rem;
-		}
+	@media (prefers-reduced-motion: no-preference) {
+		.circle-button:hover {
+			&::before {
+				translate: 0.25rem -0.25rem;
+			}
 
-		&.heart::after {
-			translate: calc(-50% + 0.25rem) calc(-50% - 0.25rem);
+			&.heart::after {
+				translate: calc(-50% + 0.25rem) calc(-50% - 0.25rem);
+			}
 		}
 	}
 }

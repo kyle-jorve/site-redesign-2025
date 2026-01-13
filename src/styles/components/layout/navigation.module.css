@@ -355,6 +355,19 @@
 		outline-color: var(--gold);
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		.nav-item:not(.dropdown-nav-item),
+		.dropdown-toggle {
+			&::after {
+				translate: -50% 0;
+			}
+		}
+
+		.dropdown-menu {
+			translate: 0 1rem;
+		}
+	}
+
 	@media (hover: hover) {
 		.nav-item:not(.dropdown-nav-item):hover,
 		.dropdown-toggle:not(.expanded):hover {

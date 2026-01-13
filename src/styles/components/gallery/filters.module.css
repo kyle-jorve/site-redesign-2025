@@ -3,94 +3,94 @@
 	flex-wrap: wrap;
 	align-items: center;
 	gap: 0.75rem 1rem;
+}
 
-	.filter-menu-wrapper {
-		position: relative;
-		z-index: 10;
-	}
+.filter-menu-wrapper {
+	position: relative;
+	z-index: 10;
+}
 
-	.filter-menu {
+.filter-menu {
+	position: absolute;
+	inset: calc(100% + 1.5rem) auto auto 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 200px;
+	max-width: calc(100vw - (var(--padding-body-edge) * 2));
+	padding: 1rem 0.75rem;
+	background: var(--dark-translucent-background);
+	border: var(--border-dark);
+	border-radius: var(--border-radius);
+	box-shadow: var(--hard-shadow-red-long);
+	backdrop-filter: var(--backdrop-blur);
+	opacity: 0;
+	visibility: hidden;
+	transition: translate var(--transition), opacity var(--transition),
+		visibility var(--transition);
+
+	&::before {
 		position: absolute;
-		inset: calc(100% + 1.5rem) auto auto 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		width: 200px;
-		max-width: calc(100vw - (var(--padding-body-edge) * 2));
-		padding: 1rem 0.75rem;
-		background: var(--dark-translucent-background);
-		border: var(--border-dark);
-		border-radius: var(--border-radius);
-		box-shadow: var(--hard-shadow-red-long);
-		backdrop-filter: var(--backdrop-blur);
-		opacity: 0;
-		visibility: hidden;
-		transition: translate var(--transition), opacity var(--transition),
-			visibility var(--transition);
-
-		&::before {
-			position: absolute;
-			inset: auto auto calc(100% - 0.625rem) 2rem;
-			font: var(--fa-font-solid);
-			font-size: 1.5rem;
-			color: var(--border-dark-color);
-			content: "\f0d8";
-		}
-
-		&:not(.open),
-		&:not(.open) * {
-			pointer-events: none;
-		}
-
-		.divider {
-			display: block;
-			width: 100%;
-			height: var(--border-width);
-			margin-top: 0.5rem;
-			background: var(--gold);
-			border-radius: var(--border-width);
-		}
-
-		&.open {
-			translate: 0 -0.5rem;
-			opacity: 1;
-			visibility: visible;
-		}
+		inset: auto auto calc(100% - 0.625rem) 2rem;
+		font: var(--fa-font-solid);
+		font-size: 1.5rem;
+		color: var(--border-dark-color);
+		content: "\f0d8";
 	}
 
-	.add-filter-button {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.5rem;
-		padding: 0.25rem 0.75rem 0.25rem 0.25rem;
-		margin: 0;
-		font-family: var(--font-body);
-		font-weight: var(--font-weight-black);
-		font-size: var(--font-size-base);
-		line-height: var(--leading-small);
-		letter-spacing: var(--tracking-x-small);
-		text-align: left;
-		color: var(--cream);
-		background: none;
-		border: none;
-		border-radius: var(--border-radius-rounded);
-		transition: background-color var(--transition);
+	&:not(.open),
+	&:not(.open) * {
+		pointer-events: none;
+	}
+
+	.divider {
+		display: block;
+		width: 100%;
+		height: var(--border-width);
+		margin-top: 0.5rem;
+		background: var(--gold);
+		border-radius: var(--border-width);
+	}
+
+	&.open {
+		translate: 0 -0.5rem;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.add-filter-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 0.75rem 0.25rem 0.25rem;
+	margin: 0;
+	font-family: var(--font-body);
+	font-weight: var(--font-weight-black);
+	font-size: var(--font-size-base);
+	line-height: var(--leading-small);
+	letter-spacing: var(--tracking-x-small);
+	text-align: left;
+	color: var(--cream);
+	background: none;
+	border: none;
+	border-radius: var(--border-radius-rounded);
+	transition: background-color var(--transition);
+
+	&::before {
+		font: var(--fa-font-solid);
+		font-size: var(--font-size-large);
+		color: var(--red);
+		content: "\f055";
+		transition: rotate var(--transition), color var(--transition);
+	}
+
+	&.active {
+		background-color: var(--blue-light);
 
 		&::before {
-			font: var(--fa-font-solid);
-			font-size: var(--font-size-large);
-			color: var(--red);
-			content: "\f055";
-			transition: rotate var(--transition), color var(--transition);
-		}
-
-		&.active {
-			background-color: var(--blue-light);
-
-			&::before {
-				rotate: 45deg;
-				color: inherit;
-			}
+			rotate: 45deg;
+			color: inherit;
 		}
 	}
 }

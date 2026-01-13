@@ -105,19 +105,21 @@
 
 @media (hover: hover) {
 	.project-tile:has(.link:hover) {
-		box-shadow: var(--hard-shadow-long);
-
-		&::before {
-			translate: 0.5rem -0.5rem;
-		}
-
 		.link {
 			color: inherit;
 		}
 
-		.title-text {
-			translate: 0.5rem -0.5rem;
-			text-shadow: var(--hard-shadow-long);
+		@media (prefers-reduced-motion: no-preference) {
+			box-shadow: var(--hard-shadow-long);
+
+			&::before {
+				translate: 0.5rem -0.5rem;
+			}
+
+			.title-text {
+				translate: 0.5rem -0.5rem;
+				text-shadow: var(--hard-shadow-long);
+			}
 		}
 	}
 }
