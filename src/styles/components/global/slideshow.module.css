@@ -47,7 +47,7 @@
 .slide-image {
 	width: auto;
 	height: calc(
-		100vh - (var(--long-shadow-offset) * 2) - var(--dot-width) -
+		100dvh - (var(--long-shadow-offset) * 2) - var(--dot-width) -
 			var(--dots-margin) - 4rem
 	);
 	margin: 0 auto;

@@ -2,7 +2,7 @@
 	width: auto;
 	max-width: 100%;
 	max-height: calc(
-		100vh - (var(--vertical-padding) * 2) - (var(--long-shadow-offset) * 2) -
+		100dvh - (var(--vertical-padding) * 2) - (var(--long-shadow-offset) * 2) -
 			var(--dot-width) - var(--dots-margin)
 	);
 	margin: 0 auto;
