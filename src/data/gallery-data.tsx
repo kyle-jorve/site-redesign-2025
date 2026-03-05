@@ -1414,6 +1414,11 @@ export const projects: ProjectType[] = [
 	},
 ];
 
+export const projectsSitemapData = projects.map((proj) => ({
+	name: proj.name,
+	imageKey: proj.thumbImage.pathKey,
+}));
+
 export const projectsSorted = (() => {
 	const featured = [...projects].filter((proj) => proj.featured);
 	const other = [...projects].filter((proj) => !proj.featured);

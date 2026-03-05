@@ -54,7 +54,7 @@ export const socialMedia: {
 	},
 } as const;
 
-export const navItems: NavType = [
+export const internalNavItems: NavItemType[] = [
 	{
 		name: "projects",
 		label: "Projects",
@@ -65,6 +65,10 @@ export const navItems: NavType = [
 		label: "CV",
 		url: "/cv",
 	},
+];
+
+export const navItems: NavType = [
+	...internalNavItems,
 	{
 		name: "social",
 		label: "Social",
