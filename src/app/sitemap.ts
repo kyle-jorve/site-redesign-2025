@@ -6,6 +6,10 @@ export default function Sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = "https://kylejorve.com";
 
 	return [
+		{
+			url: `${baseUrl}/`,
+			lastModified: new Date(),
+		},
 		...internalNavItems.map((item) => ({
 			url: `${baseUrl}${item.url}`,
 			lastModified: new Date(),
