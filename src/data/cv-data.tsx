@@ -151,9 +151,13 @@ export const resume: ResumeType = {
 					description: (
 						<ul>
 							<li>
-								Completed 72 merged pull requests to Destination
-								Design Kit (DDK), Simpleview&apos;s proprietary
-								React component library
+								Completed{" "}
+								<CustomLink to={socialMedia.github.url}>
+									72 merged pull requests
+								</CustomLink>{" "}
+								to Destination Design Kit (DDK),
+								Simpleview&apos;s proprietary React component
+								library
 							</li>
 							<li>
 								DDK was heavily researched for user experience
