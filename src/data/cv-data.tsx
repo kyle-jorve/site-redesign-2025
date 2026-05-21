@@ -59,19 +59,227 @@ export const resume: ResumeType = {
 	introduction: {
 		title: "Introduction",
 		content: (
-			<p>
-				I&apos;m a senior front-end developer and engineer with{" "}
-				{yearsOfExperience} years of professional experience in
-				front-end web development, front-end engineering, and web and
-				graphic design. I am extremely passionate about implementing
-				strong design and building excellent user experiences with an
-				emphasis on accessibility. I am fluent in HTML, CSS, and
-				JavaScript, and highly proficient in TypeScript, ReactJS, and
-				NextJS.
-			</p>
+			<>
+				<p>
+					I&apos;m a senior frontend developer and engineer with over
+					10 years of professional experience in frontend web
+					development and engineering. I am extremely passionate about
+					implementing strong design and building excellent user
+					experiences with an emphasis on accessibility. I am fluent
+					in HTML, CSS, and JavaScript, and highly proficient in
+					TypeScript, ReactJS, and NextJS.
+				</p>
+				<h4>Career Highlights</h4>
+				<ul>
+					<li>
+						Led design and frontend development and engineering
+						initiatives, and created a full suite of branding and
+						marketing materials for software product{" "}
+						<CustomLink to="/projects/theater-toolkit">
+							Theater Toolkit
+						</CustomLink>
+					</li>
+					<li>
+						Completed over{" "}
+						<CustomLink to={socialMedia.github.url}>
+							200 merged pull requests
+						</CustomLink>{" "}
+						to Simpleview&apos;s foundational code repositories,
+						becoming the Operations department&apos;s top
+						contributor on GitHub and reducing development time
+						across client projects by up to 50%
+					</li>
+					<li>
+						Championed accessibility across all Simpleview web
+						projects, ensuring compliance with WCAG standards and
+						enhancing overall usability
+					</li>
+					<li>
+						Mentored junior employees in frontend development, web
+						accessibility, source control, coding best practices,
+						web and graphic design, and user experience design via
+						regular peer reviews and one-on-one coaching sessions
+					</li>
+					<li>
+						Learned how to code on the job at Desert Lab Studio and
+						was promoted twice for demonstrating quick learning
+						ability and high proficiency
+					</li>
+				</ul>
+			</>
 		),
 	},
 	sections: [
+		{
+			name: "projects",
+			title: "Projects",
+			items: [
+				{
+					name: "simpleview-base-client",
+					title: "Simpleview Base Client",
+					year: "February 2021 - Present",
+					description: (
+						<ul>
+							<li>
+								Completed over{" "}
+								<CustomLink to={socialMedia.github.url}>
+									200 pull requests
+								</CustomLink>{" "}
+								to Simpleview&apos;s base client repositories,
+								which are used as foundational code for every
+								Simpleview client website project, reducing
+								overall development time by up to 50%
+							</li>
+							<li>
+								Reviewed and revised code across all
+								repositories for maximum performance and
+								scalability, raising loading performance and
+								speed across all client projects by 30%
+							</li>
+							<li>
+								Led initiatives to modernize legacy code,
+								optimize loading performance, and ensure
+								compliance with web accessibility standards
+							</li>
+						</ul>
+					),
+				},
+				{
+					name: "destination-design-kit",
+					title: "Destination Design Kit",
+					year: "August 2024",
+					description: (
+						<ul>
+							<li>
+								Completed 72 merged pull requests to Destination
+								Design Kit (DDK), Simpleview&apos;s proprietary
+								React component library
+							</li>
+							<li>
+								DDK was heavily researched for user experience
+								and accessibility, and built for scalability
+								with atomic design principles using Storybook,
+								TypeScript, and Jest for unit testing
+							</li>
+						</ul>
+					),
+				},
+				{
+					name: "theater-toolkit",
+					title: "Theater Toolkit",
+					year: "June 2016 - February 2021",
+					description: (
+						<ul>
+							<li>
+								Designed, illustrated, and built the marketing
+								site for{" "}
+								<CustomLink to="/projects/theater-toolkit">
+									Theater Toolkit
+								</CustomLink>
+								, a custom website product for independent
+								theaters, complete with a POS-integrated
+								checkout process
+							</li>
+							<li>
+								Created a full suite of illustration, design,
+								and marketing assets
+							</li>
+							<li>
+								Attended tradeshows to promote the product,
+								securing key sales opportunities and
+								demonstrating excellent verbal and written
+								communication skills
+							</li>
+						</ul>
+					),
+				},
+				{
+					name: "captive-content",
+					title: "Captive Content",
+					year: "March 2017 - May 2018",
+					description: (
+						<ul>
+							<li>
+								Designed, illustrated, and built the{" "}
+								<CustomLink to="projects/captive-content">
+									Captive Content
+								</CustomLink>{" "}
+								marketing site
+							</li>
+							<li>
+								Created a variety of illustration, design, and
+								marketing assets, ensuring consistent branding
+								and messaging
+							</li>
+						</ul>
+					),
+				},
+			],
+		},
+		{
+			name: "skills",
+			title: "Skills",
+			items: [
+				{
+					name: "web-development",
+					title: "Front-End Web Development and Engineering",
+					description: (
+						<ul>
+							<li>
+								<b>Languages:</b> HTML, CSS, SCSS, JavaScript,
+								TypeScript
+							</li>
+							<li>
+								<b>Libraries and Frameworks:</b> ReactJS, Vue,
+								NextJS
+							</li>
+							<li>
+								<b>Source control:</b> GitHub, Fork, Git-based
+								programs
+							</li>
+							<li>
+								<b>Other:</b> Visual Studio Code, Jest for unit
+								testing, Storybook, web accessibility, code
+								scalability, performance optimization,
+								cross-functional collaboration
+							</li>
+						</ul>
+					),
+				},
+				{
+					name: "design-and-illustration",
+					title: "Graphic Design and Illustration",
+					description: (
+						<ul>
+							<li>
+								<b>Media:</b> print, web design, brand design,
+								virtual marketing
+							</li>
+							<li>
+								<b>Visual communication:</b> digital
+								illustration, user interface (UI) design, user
+								experience (UX) design
+							</li>
+						</ul>
+					),
+				},
+				{
+					name: "software-proficiencies",
+					title: "Software Proficiencies",
+					description: (
+						<ul>
+							<li>
+								<b>Adobe:</b> Photoshop, Illustrator, InDesign
+							</li>
+							<li>
+								<b>Other:</b> Figma, Procreate, Visual Studio
+								Code, GitHub, Fork
+							</li>
+						</ul>
+					),
+				},
+			],
+		},
 		{
 			name: "experience",
 			title: "Experience",
@@ -79,125 +287,124 @@ export const resume: ResumeType = {
 				{
 					name: "granicus",
 					title: "Senior Web Developer",
-					year: "2021 - Present",
+					year: "February 2021 - Present",
 					company: "Granicus (formerly Simpleview)",
 					description: (
-						<>
-							<ul>
-								<li>
-									Contributed to the development of over 100{" "}
-									<CustomLink
-										to={`/projects?categories=${JSON.stringify(
-											["development"],
-										)}`}
-									>
-										highly custom websites
-									</CustomLink>{" "}
-									for destination marketing organizations,
-									ensuring alignment with user experience,
-									brand consistency, and code resiliency
-									requirements
-								</li>
-								<li>
-									Contributed{" "}
-									<CustomLink to="https://github.com/kyle-jorve?tab=overview&org=simpleviewinc">
-										72 merged pull requests
-									</CustomLink>{" "}
-									to the company&apos;s proprietary React
-									component library, built using Storybook and
-									TypeScript, enhancing scalability and code
-									reusability and utilizing agile software
-									development methodologies; wrote automated
-									testing for each component build using Jest
-								</li>
-								<li>
-									Contributed over{" "}
-									<CustomLink to="https://github.com/kyle-jorve?tab=overview&org=simpleviewinc">
-										200 merged pull requests
-									</CustomLink>{" "}
-									to the company&apos;s foundational code
-									repositories, improving quality of life and
-									performance of every client&apos;s codebase
-									and becoming the Operations
-									department&apos;s top contributor on GitHub
-								</li>
-								<li>
-									Championed accessibility across all web
-									projects, ensuring compliance with WCAG
-									standards and enhancing overall usability
-								</li>
-								<li>
-									Demonstrated mastery of web languages,
-									libraries, and frameworks like HTML, CSS,
-									TypeScript, JavaScript, React, Vue, and
-									NextJS, and a comprehensive grasp of coding
-									best practices
-								</li>
-								<li>
-									Optimized web pages and code repositories
-									for maximum efficiency, performance,
-									accessibility, and speed
-								</li>
-							</ul>
-						</>
+						<ul>
+							<li>
+								Mentored junior employees in frontend
+								development, web accessibility, source control,
+								and coding best practices via regular peer
+								reviews and one-on-one coaching sessions
+							</li>
+							<li>
+								Developed over{" "}
+								<CustomLink
+									to={`/projects?categories=${JSON.stringify(["development"])}`}
+								>
+									100 highly custom websites
+								</CustomLink>{" "}
+								for destination marketing organizations,
+								ensuring alignment with user experience, brand
+								consistency, and code resiliency requirements
+							</li>
+							<li>
+								Completed{" "}
+								<CustomLink to={socialMedia.github.url}>
+									72 merged pull requests
+								</CustomLink>{" "}
+								to the company&apos;s proprietary React
+								component library, built using Storybook and
+								TypeScript, enhancing scalability and code
+								reusability and utilizing agile software
+								development methodologies
+							</li>
+							<li>
+								Wrote automated unit tests for React components
+								using Jest
+							</li>
+							<li>
+								Completed over{" "}
+								<CustomLink to={socialMedia.github.url}>
+									200 merged pull requests
+								</CustomLink>{" "}
+								to the company&apos;s foundational code
+								repositories, improving quality of life and
+								performance of every client&apos;s codebase and
+								becoming the Operations department&apos;s top
+								contributor on GitHub, reducing overall
+								development time across client projects by 50%
+							</li>
+							<li>
+								Championed accessibility across all web
+								projects, ensuring compliance with WCAG
+								standards and enhancing overall usability
+							</li>
+							<li>
+								Established best practices for web languages,
+								libraries, and frameworks like HTML, CSS,
+								TypeScript, JavaScript, and React
+							</li>
+							<li>
+								Optimized web pages and code repositories for
+								maximum efficiency, performance, accessibility,
+								and speed, raising performance and accessibility
+								metrics across all client projects by 30%
+							</li>
+						</ul>
 					),
 				},
 				{
 					name: "desert-lab-studio",
-					title: "Designer, Web Developer",
-					year: "2015 - 2021",
+					title: "Designer and Web Developer",
+					year: "October 2015 - February 2021",
 					company:
 						"Desert Lab Studio (formerly Simply Bits Enterprise Services)",
 					description: (
-						<>
-							<ul>
-								<li>
-									Designed and built dozens of websites from
-									scratch for a wide variety of clientele
-									using the Umbraco CMS, with an emphasis on
-									customer satisfaction and quality user
-									experiences
-								</li>
-								<li>
-									Learned how to code on the job and was
-									promoted twice for demonstrating quick
-									learning ability and high proficiency
-								</li>
-								<li>
-									Created a full suite of branding and
-									marketing materials, including illustrations
-									and a website, for software product{" "}
-									<CustomLink to="/projects/theater-toolkit">
-										Theater Toolkit
-									</CustomLink>
-								</li>
-								<li>
-									Contributed to the development of modern
-									SaaS products and participated in all
-									aspects of the software development life
-									cycle, from concept and design to deployment
-								</li>
-							</ul>
-						</>
-					),
-				},
-				{
-					name: "new-nebula",
-					title: "Writer, Illustrator",
-					year: "2015",
-					company: "New Nebula Comic Anthology",
-					description: (
-						<p>
-							I wrote and illustrated an original story titled{" "}
-							<i>Ivory and Sinew</i> for the comic book anthology{" "}
-							<i>New Nebula Volume 1</i>.
-						</p>
+						<ul>
+							<li>
+								Designed and built dozens of websites for a wide
+								variety of clientele using the Umbraco CMS, with
+								an emphasis on customer satisfaction and quality
+								user experiences
+							</li>
+							<li>
+								Created reusable base client templates for
+								Umbraco, reducing project build time by 30%
+							</li>
+							<li>
+								Learned how to code on the job and was promoted
+								twice for demonstrating quick learning ability
+								and high proficiency
+							</li>
+							<li>
+								Created a full suite of branding and marketing
+								materials, including illustrations and a
+								website, for software product{" "}
+								<CustomLink to="/projects/theater-toolkit">
+									Theater Toolkit
+								</CustomLink>
+							</li>
+							<li>
+								Led the development of modern SaaS products and
+								collaborated among cross-functional teams in all
+								aspects of the software development life cycle,
+								from concept and design to deployment
+							</li>
+							<li>
+								Mentored junior employees in frontend
+								development, source control, coding best
+								practices, web and graphic design, and user
+								experience design via regular peer reviews and
+								one-on-one coaching sessions
+							</li>
+						</ul>
 					),
 				},
 				{
 					name: "zarpara",
-					title: "Designer, Illustrator",
-					year: "2013 - 2019",
+					title: "Designer and Illustrator",
+					year: "June 2013 - December 2019",
 					company: "Zarpara Vineyard",
 					description: (
 						<ul>
@@ -220,13 +427,13 @@ export const resume: ResumeType = {
 				{
 					name: "ua-print-studio",
 					title: "Intern",
-					year: "2013",
+					year: "January 2013 - May 2013",
 					company: "University of Arizona Digital Print Studio",
 					description: (
 						<ul>
 							<li>
-								Helped maintain multiple large-format printers
-								in a demanding, fast-paced environment,
+								Maintained multiple large-format printers in a
+								demanding, fast-paced environment,
 								troubleshooting technical issues as they arose
 							</li>
 							<li>
@@ -244,159 +451,13 @@ export const resume: ResumeType = {
 			],
 		},
 		{
-			name: "projects",
-			title: "Projects",
-			items: [
-				{
-					name: "simpleview-base-client",
-					title: "Simpleview Base Client",
-					year: "2021 - Present",
-					description: (
-						<p>
-							Contributed over 200 pull requests to
-							Simpleview&apos;s base client repositories, which
-							are used as foundational code for every Simpleview
-							client website project. Reviewed and revised code
-							for maximum performance and scalability.
-						</p>
-					),
-				},
-				{
-					name: "destination-design-kit",
-					title: "Destination Design Kit",
-					year: "2021 - 2024",
-					description: (
-						<p>
-							Contributed 72 merged pull requests to Destination
-							Design Kit, Simpleview&apos;s proprietary React
-							component library, which was heavily researched for
-							user experience and accessibility, and built for
-							scalability with atomic design principles using
-							Storybook, TypeScript, and Jest for unit testing.
-						</p>
-					),
-				},
-				{
-					name: "theater-toolkit",
-					title: "Theater Toolkit",
-					year: "2016 - 2021",
-					description: (
-						<p>
-							Designed, illustrated, and built the marketing site
-							for{" "}
-							<CustomLink to="/projects/theater-toolkit">
-								Theater Toolkit
-							</CustomLink>
-							, a custom website product for independent theaters,
-							complete with a POS-integrated checkout process.
-							Created a variety of illustration, design, and
-							marketing assets. Attended tradeshows to promote the
-							product, demonstrating excellent verbal and written
-							communication skills.
-						</p>
-					),
-				},
-				{
-					name: "captive-content",
-					title: "Captive Content",
-					year: "2017 - 2018",
-					description: (
-						<p>
-							Designed, illustrated, and built the{" "}
-							<CustomLink to="/projects/captive-content">
-								Captive Content
-							</CustomLink>{" "}
-							marketing site, and delivered a variety of
-							illustration, design, and marketing assets, ensuring
-							consistent brand messaging.
-						</p>
-					),
-				},
-			],
-		},
-		{
-			name: "skills",
-			title: "Skills",
-			items: [
-				{
-					name: "web-development",
-					title: "Front-End Web Development and Engineering",
-					description: (
-						<>
-							<p>
-								I have {yearsOfExperience} years of experience
-								working with a variety of web languages,
-								libraries, and frameworks, including{" "}
-								<b>
-									HTML
-									<b />, <b>CSS</b>, <b>SCSS</b>,{" "}
-									<b>JavaScript</b>, <b></b>TypeScript
-								</b>
-								, and modern JavaScript frameworks such as{" "}
-								<b>ReactJS</b>, <b>Vue</b>, and <b>NextJS</b>,
-								and contributing to cross-functional teams. I am
-								extremely proficient in writing readable,
-								reusable, accessible, and scalable code, and
-								optimizing for maximum speed, performance,
-								scalability, and accessibility.
-							</p>
-						</>
-					),
-				},
-				{
-					name: "design-and-illustration",
-					title: "Graphic Design and Illustration",
-					description: (
-						<>
-							<p>
-								I have amassed a comprehensive and
-								multidisciplinary{" "}
-								<CustomLink to="/projects">
-									body of work
-								</CustomLink>{" "}
-								in <b>print media</b>, <b>web design</b>,{" "}
-								<b>brand design</b>, and{" "}
-								<b>virtual marketing</b>. The primary focus of
-								my education was illustration, and in particular
-								I excelled at <b>digital illustration</b>.
-								Presently, I use this background to enhance my
-								design and communication skills.
-							</p>
-						</>
-					),
-				},
-				{
-					name: "software-proficiencies",
-					title: "Software Proficiencies",
-					description: (
-						<>
-							<p>
-								My skills are widely varied. I am extremely
-								proficient in{" "}
-								<b>
-									Adobe Creative Cloud (Photoshop,
-									Illustrator, InDesign, etc.)
-								</b>
-								, <b>Figma</b>, <b>Procreate</b>,{" "}
-								<b>Visual Studio Code</b>, and{" "}
-								<CustomLink to={socialMedia.github.url}>
-									GitHub
-								</CustomLink>{" "}
-								and Git-based source control programs.
-							</p>
-						</>
-					),
-				},
-			],
-		},
-		{
 			name: "education",
 			title: "Education",
 			items: [
 				{
 					name: "university-of-arizona",
 					title: "University of Arizona",
-					year: "2013",
+					year: "August 2010 - May 2013",
 					description: (
 						<ul>
 							<li>
@@ -420,7 +481,7 @@ export const resume: ResumeType = {
 				{
 					name: "mesa-community-college",
 					title: "Mesa Community College",
-					year: "2009",
+					year: "August 2006 - May 2009",
 					description: (
 						<p>
 							Earned an associate&apos;s of fine art, with an

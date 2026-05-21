@@ -15,12 +15,6 @@ export const standardLinks: SocialMediaObjectType[] = [
 		label: "Instagram",
 	},
 	{
-		name: "bluesky",
-		url: socialMedia.bluesky.url,
-		type: "standard",
-		label: "Bluesky",
-	},
-	{
 		name: "linkedin",
 		url: socialMedia.linkedin.url,
 		type: "standard",

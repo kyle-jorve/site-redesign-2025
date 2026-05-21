@@ -1,3 +1,9 @@
+import {
+	Bungee_Inline,
+	Bungee_Shade,
+	Nunito,
+	Pixelify_Sans,
+} from "next/font/google";
 import "@/styles/base/_index.css";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -11,6 +17,20 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import Lightbox from "@/components/global/lightbox";
 
+const bungeeInline = Bungee_Inline({
+	subsets: ["latin"],
+	weight: "400",
+});
+const bungeeShade = Bungee_Shade({
+	subsets: ["latin"],
+	weight: "400",
+});
+const nunito = Nunito({
+	subsets: ["latin"],
+});
+const pixelify = Pixelify_Sans({
+	subsets: ["latin"],
+});
 const defaultTitle =
 	"Kyle Jorve | Design, Development, Illustration, and Writing";
 const defaultDescription =
@@ -52,7 +72,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			className={`${bungeeInline.className} ${bungeeShade.className} ${nunito.className} ${pixelify.className}`}
+		>
 			<body>
 				<SiteContextProvider>
 					<LightboxContextProvider>

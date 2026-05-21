@@ -64,7 +64,9 @@
 
 .title-text {
 	display: block;
-	transition: translate var(--transition), text-shadow var(--transition);
+	transition:
+		translate var(--transition),
+		text-shadow var(--transition);
 }
 
 .image-wrapper {
@@ -76,7 +78,8 @@
 		z-index: 2;
 		display: block;
 		content: "";
-		background: var(--gradient-dark-radial), var(--gradient-sunset-diagonal);
+		background:
+			var(--gradient-dark-radial), var(--gradient-sunset-diagonal);
 		border-radius: var(--border-radius);
 		pointer-events: none;
 	}
@@ -212,27 +215,6 @@
 		align-items: start;
 		gap: 0.25rem;
 		font-size: var(--font-size-heading-3);
-
-		&::before,
-		&::after {
-			display: block;
-			height: var(--border-width);
-			background: var(--cream);
-			border-radius: var(--border-width);
-			content: "";
-			pointer-events: none;
-		}
-
-		&::before {
-			width: 100%;
-			margin-top: 0.5rem;
-			order: 1;
-		}
-
-		&::after {
-			width: 70%;
-			order: 2;
-		}
 	}
 
 	.project-tile.small {

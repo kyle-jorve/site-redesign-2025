@@ -22,11 +22,6 @@ export const socialMedia: {
 		type: "standard",
 		label: "Instagram",
 	},
-	bluesky: {
-		url: "https://bsky.app/profile/kylejorve.bsky.social",
-		type: "standard",
-		label: "Bluesky",
-	},
 	linkedin: {
 		url: "https://www.linkedin.com/in/kyle-jorve/",
 		type: "standard",

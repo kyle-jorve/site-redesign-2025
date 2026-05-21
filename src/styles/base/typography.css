@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Shade&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap");
-
 html {
 	font-size: var(--font-size-base);
 }
@@ -44,6 +42,13 @@ h1,
 	letter-spacing: 0;
 	text-transform: uppercase;
 	color: var(--heading-color);
+
+	p + &,
+	.body-text + &,
+	ol + &,
+	ul + & {
+		margin-top: calc(var(--heading-1-margin) * 2);
+	}
 }
 
 h2,
@@ -56,6 +61,13 @@ h2,
 	letter-spacing: 0;
 	text-transform: uppercase;
 	color: var(--heading-color);
+
+	p + &,
+	.body-text + &,
+	ol + &,
+	ul + & {
+		margin-top: calc(var(--heading-2-margin) * 2);
+	}
 }
 
 h3,
@@ -68,6 +80,13 @@ h3,
 	letter-spacing: var(--tracking-x-small);
 	text-transform: uppercase;
 	color: var(--heading-color);
+
+	p + &,
+	.body-text + &,
+	ol + &,
+	ul + & {
+		margin-top: calc(var(--heading-3-margin) * 2);
+	}
 }
 
 h4,
@@ -80,6 +99,13 @@ h4,
 	letter-spacing: var(--tracking-large);
 	text-transform: uppercase;
 	color: var(--heading-color);
+
+	p + &,
+	.body-text + &,
+	ol + &,
+	ul + & {
+		margin-top: calc(var(--heading-4-margin) * 2);
+	}
 }
 
 h5,
@@ -92,6 +118,13 @@ h6,
 	line-height: var(--leading-none);
 	letter-spacing: var(--tracking-large);
 	color: var(--heading-color);
+
+	p + &,
+	.body-text + &,
+	ol + &,
+	ul + & {
+		margin-top: calc(var(--heading-5-margin) * 2);
+	}
 }
 
 h5,
